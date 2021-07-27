@@ -50,6 +50,7 @@ jobs:
         
       - name: Update docs
         run: |
+          pkgdown::build_favicons(overwrite = TRUE)
           pkgdev::update_docs()
 
         shell: Rscript {0}
