@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![r-universe](https://dieghernan.r-universe.dev/badges/pkgdev)](https://dieghernan.r-universe.dev/)
 [![R-CMD-check](https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml/badge.svg)](https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -17,10 +18,23 @@ however feel free to use it (at your own risk :wink:).
 
 ## Installation
 
-Install the developing version of **pkgdev** running:
+You can install the developing version of `pkgdev` with:
 
 ``` r
 devtools::install_github("dieghernan/pkgdev")
+```
+
+Alternatively, you can install `pkgdev` using the
+[r-universe](https://dieghernan.r-universe.dev/ui#builds):
+
+``` r
+# Enable this universe
+options(repos = c(
+    dieghernan = 'https://dieghernan.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+
+
+install.packages('pkgdev')
 ```
 
 ## Related resources
