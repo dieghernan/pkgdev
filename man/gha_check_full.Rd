@@ -18,7 +18,7 @@ gha_check_full(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *")
 day of the month at 08:30 AM. See Details.}
 }
 \value{
-invisible
+A GitHub Action on \verb{<pkg>/.github/workflows}.
 }
 \description{
 The GitHub action created would run \verb{R CMD check} on your package.

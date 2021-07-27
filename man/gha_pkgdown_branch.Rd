@@ -24,7 +24,7 @@ gha_pkgdown_branch(
 \item{version}{Version of the platform. See Details.}
 }
 \value{
-invisible
+A GitHub Action on \verb{<pkg>/.github/workflows}.
 }
 \description{
 The GitHub action created would deploy a pkgdown site of your package
