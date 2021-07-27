@@ -189,7 +189,7 @@
   ],
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "fileSize": "60.697KB",
+  "fileSize": "62.384KB",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
   "keywords": [
