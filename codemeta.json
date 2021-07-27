@@ -1,5 +1,8 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "pkgdev",
   "description": "A small set of functions that takes advantage of Github\n    Actions for making your life easier as a R package developer. This\n    package is primarily intended for personal use, however feel free to\n    use it (at your own risk :)).",
@@ -186,10 +189,16 @@
   ],
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "fileSize": "58.926KB",
+  "fileSize": "60.307KB",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
-  "keywords": ["r", "rstats", "r-package", "developer-tools", "experimental"],
+  "keywords": [
+    "r",
+    "rstats",
+    "r-package",
+    "developer-tools",
+    "experimental"
+  ],
   "citation": [
     {
       "@type": "SoftwareSourceCode",
