@@ -54,6 +54,17 @@ options(repos = c(
 
 install.packages("pkgdev")
 ```
+
+## Example
+
+```{r, eval=FALSE}
+library(pkgdev)
+
+gha_update_docs()
+```
+
+
+
 ## Related resources
 
 -   **ThinkR**: [Preparing your package for a CRAN

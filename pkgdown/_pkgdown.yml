@@ -11,3 +11,13 @@ template:
 authors:
   Diego Hernangómez:
     href: 'https://dieghernan.github.io/'
+
+reference:
+- title: GitHub Actions
+  desc:  Install GHA on your package
+- contents:
+  - starts_with("gha_")
+- title: Other helpers
+- contents:
+  - add_global_gitgnore
+  - update_docs

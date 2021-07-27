@@ -38,9 +38,17 @@ options(repos = c(
 install.packages("pkgdev")
 ```
 
+## Example
+
+``` r
+library(pkgdev)
+
+gha_update_docs()
+```
+
 ## Related resources
 
-  - **ThinkR**: [Preparing your package for a CRAN
+-   **ThinkR**: [Preparing your package for a CRAN
     submission](https://github.com/ThinkR-open/prepare-for-cran)
-  - **{usethis} package**: [Create a release checklist in a GitHub
+-   **{usethis} package**: [Create a release checklist in a GitHub
     issue](https://usethis.r-lib.org/reference/use_release_issue.html)

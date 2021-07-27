@@ -40,3 +40,4 @@ vignettes/*.pdf
 pkgdev.Rcheck/
 pkgdev*.tar.gz
 pkgdev*.tgz
+docs/
