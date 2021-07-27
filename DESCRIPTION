@@ -16,6 +16,8 @@ License: MIT + file LICENSE
 URL: https://dieghernan.github.io/pkgdev/,
     https://github.com/dieghernan/pkgdev
 BugReports: https://github.com/dieghernan/pkgdev/issues
+Depends: 
+    R (>= 3.6.0)
 Imports: 
     codemetar (>= 0.3.2),
     devtools (>= 2.4.1),
