@@ -1,0 +1,33 @@
+Type: Package
+Package: pkgdev
+Title: Helpers to Develop a Package using GitHub Actions
+Version: 0.0.1.9000
+Authors@R: 
+    person(given = "Diego",
+           family = "Hernangómez",
+           role = c("aut", "cre", "cph"),
+           email = "diego.hernangomezherrero@gmail.com",
+           comment = c(ORCID = "0000-0001-8457-4658"))
+Description: A small set of functions that takes advantage of Github
+    Actions for making your life easier as a R package developer. This
+    package is primarily intended for personal use, however feel free to
+    use it (at your own risk :)).
+License: MIT + file LICENSE
+URL: https://dieghernan.github.io/pkgdev/,
+    https://github.com/dieghernan/pkgdev
+BugReports: https://github.com/dieghernan/pkgdev/issues
+Imports: 
+    codemetar (>= 0.3.2),
+    devtools (>= 2.4.1),
+    roxygen2 (>= 7.1.0),
+    styler (>= 1.5.1),
+    urlchecker (>= 1.0.0),
+    usethis (>= 2.0.0)
+Suggests: 
+    covr (>= 3.5.1),
+    jsonld (>= 2.2),
+    lintr (>= 2.0.1),
+    rcmdcheck (>= 1.3.3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
