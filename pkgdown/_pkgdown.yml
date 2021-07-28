@@ -21,3 +21,6 @@ reference:
 - contents:
   - add_global_gitgnore
   - update_docs
+- title: About the package
+- contents:
+  - pkgdev-package

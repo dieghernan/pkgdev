@@ -68,9 +68,9 @@ gha_check_full <-
 
 
     if (result) {
-      message("Success!")
+      cat(crayon::green("Success\n"))
     } else {
-      message("File not updated")
+      cat(crayon::magenta("File not updated\n"))
       return(invisible())
     }
 

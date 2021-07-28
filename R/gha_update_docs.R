@@ -75,9 +75,9 @@ gha_update_docs <-
 
 
     if (result) {
-      message("Success!")
+      cat(crayon::green("Success\n"))
     } else {
-      message("File not updated")
+      cat(crayon::magenta("File not updated\n"))
       return(invisible())
     }
 
@@ -99,7 +99,13 @@ gha_update_docs <-
     )
 
     writeLines(add_platform, con = file.path(destdir, "update-docs.yaml"))
-    message("Your package would be documented on ", platform, "-", version)
+
+    cat(crayon::green(
+      paste0(
+        "Your package would be deployed on ", platform, "-", version,
+        "\n"
+      )
+    ))
 
 
     return(invisible())

@@ -50,27 +50,27 @@ update_docs <- function(pkg = ".",
 
 
 
-  if (verbose) message("Add .gitignore to root")
+  if (verbose) cat(crayon::green("Add .gitignore to root\n"))
   add_global_gitgnore(pkg = pkg)
 
 
 
-  if (verbose) message("Cleaning description")
+  if (verbose) cat(crayon::green("Cleaning DESCRIPTION\n"))
   usethis::use_tidy_description()
 
-  if (verbose) message("Styling package")
+  if (verbose) cat(crayon::green("styler package\n"))
   styler::style_pkg(filetype = c(c("R", "Rmd", "Rprofile")))
 
-  if (verbose) message("Url check")
+  if (verbose) cat(crayon::green("Check URLs\n"))
   if (url_update) {
-    if (verbose) message("Update")
+    if (verbose) cat(crayon::blue("Update\n"))
     urlchecker::url_update(pkg)
   } else {
-    if (verbose) message("Check")
+    if (verbose) cat(crayon::blue("Just checking\n"))
     urlchecker::url_check(pkg)
   }
 
-  if (verbose) message("Roxygen")
+  if (verbose) cat(crayon::green("Roxygenising package\n"))
   roxygen2::roxygenise()
 
   # Check README.Rmd
@@ -78,18 +78,17 @@ update_docs <- function(pkg = ".",
   has_readme <- file.exists(readme_rmd)
 
   if (build_readme && has_readme) {
-    if (verbose) message("Rebuild README.Rmd")
+    if (verbose) cat(crayon::green("Rebuilding README\n"))
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
 
 
-  if (verbose) message("Codemeta")
+  if (verbose) cat(crayon::green("Creating codemetar\n"))
   if (!dir.exists(file.path(pkg, "inst"))) {
-    if (verbose) message("Create /inst folder")
+    if (verbose) cat(crayon::blue("Create inst/ folder\n"))
     dir.create(file.path(pkg, "inst"), recursive = TRUE)
   }
 
-  if (verbose) message("Creating codemetar")
   codemetar::write_codemeta(write_minimeta = TRUE)
 
   return(invisible())

@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "pkgdev",
-  "description": "A small set of functions that takes advantage of Github\n    Actions for making your life easier as a R package developer. This\n    package is primarily intended for personal use, however feel free to\n    use it (at your own risk :)).",
+  "description": "A small set of functions that takes advantage of GitHub\n    Actions for making your life easier as a R package developer. This\n    package is primarily intended for personal use, however feel free to\n    use it (at your own risk :)).",
   "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
   "codeRepository": "https://github.com/dieghernan/pkgdev",
   "relatedLink": "https://dieghernan.github.io/pkgdev/",
@@ -60,6 +60,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=covr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "goodpractice",
+      "name": "goodpractice",
+      "version": ">= 1.0.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=goodpractice"
     },
     {
       "@type": "SoftwareApplication",
@@ -120,6 +133,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=codemetar"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "crayon",
+      "name": "crayon",
+      "version": ">= 1.4.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=crayon"
     },
     {
       "@type": "SoftwareApplication",
@@ -189,7 +215,7 @@
   ],
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "fileSize": "68.713KB",
+  "fileSize": "300.986KB",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
   "keywords": [
@@ -197,7 +223,8 @@
     "rstats",
     "r-package",
     "developer-tools",
-    "experimental"
+    "experimental",
+    "github-actions"
   ],
   "citation": [
     {
