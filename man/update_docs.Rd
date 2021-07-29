@@ -10,7 +10,7 @@ update_docs(pkg = ".", url_update = TRUE, build_readme = TRUE, verbose = TRUE)
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
 \item{url_update}{Logical, do you want to update urls with
-\code{\link[urlchecker:url_update]{urlchecker::url_update()}} or just check?}
+\code{\link[urlchecker:url_update]{urlchecker::url_update()}}?}
 
 \item{build_readme}{Logical, build \code{README.Rmd} with
 \code{\link[devtools:build_rmd]{devtools::build_readme()}}}

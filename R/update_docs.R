@@ -64,7 +64,7 @@ update_docs <- function(pkg = ".",
   if (url_update) {
     if (verbose) cat(crayon::green("Check URLs\n"))
     urlchecker::url_update(pkg)
-  } 
+  }
 
   if (verbose) cat(crayon::green("Roxygenising package\n"))
   roxygen2::roxygenise()

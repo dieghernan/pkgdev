@@ -50,6 +50,7 @@ gha_update_docs()
 
 ## Related resources
 
+  - The [tidyverse style guide](https://style.tidyverse.org/).
   - **ThinkR**: [Preparing your package for a CRAN
     submission](https://github.com/ThinkR-open/prepare-for-cran)
   - **{usethis} package**: [Create a release checklist in a GitHub
