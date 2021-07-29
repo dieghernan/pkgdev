@@ -4,7 +4,13 @@
 \alias{update_docs}
 \title{Document your package}
 \usage{
-update_docs(pkg = ".", url_update = TRUE, build_readme = TRUE, verbose = TRUE)
+update_docs(
+  pkg = ".",
+  url_update = TRUE,
+  create_codemeta = TRUE,
+  build_readme = TRUE,
+  verbose = TRUE
+)
 }
 \arguments{
 \item{pkg}{Path to a (subdirectory of an) R package.}
@@ -13,7 +19,9 @@ update_docs(pkg = ".", url_update = TRUE, build_readme = TRUE, verbose = TRUE)
 \code{\link[urlchecker:url_update]{urlchecker::url_update()}}?}
 
 \item{build_readme}{Logical, build \code{README.Rmd} with
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}}
+\code{\link[devtools:build_rmd]{devtools::build_readme()}}
+@param create_codemeta Logical, do you want to create
+a codemeta file with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
 
 \item{verbose}{Display informative messages on the console}
 }
