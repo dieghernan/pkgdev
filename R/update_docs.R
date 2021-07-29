@@ -13,6 +13,8 @@
 #'  [urlchecker::url_update()]?
 #' @param build_readme Logical, build `README.Rmd` with
 #'   [devtools::build_readme()]
+#'  @param create_codemeta Logical, do you want to create 
+#'   a codemeta file with [codemetar::write_codemeta()]?
 #' @param verbose Display informative messages on the console
 #'
 #' @inheritParams styler::style_pkg
@@ -42,6 +44,7 @@
 
 update_docs <- function(pkg = ".",
                         url_update = TRUE,
+                        create_codemeta = TRUE,
                         build_readme = TRUE,
                         verbose = TRUE) {
 
@@ -64,7 +67,7 @@ update_docs <- function(pkg = ".",
   if (url_update) {
     if (verbose) cat(crayon::green("Check URLs\n"))
     urlchecker::url_update(pkg)
-  }
+  } 
 
   if (verbose) cat(crayon::green("Roxygenising package\n"))
   roxygen2::roxygenise()
@@ -78,7 +81,7 @@ update_docs <- function(pkg = ".",
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
 
-
+if (create_codemeta) {
   if (verbose) cat(crayon::green("Creating codemetar\n"))
   if (!dir.exists(file.path(pkg, "inst"))) {
     if (verbose) cat(crayon::blue("Create inst/ folder\n"))
@@ -86,6 +89,7 @@ update_docs <- function(pkg = ".",
   }
 
   codemetar::write_codemeta(write_minimeta = TRUE)
+  }
 
   return(invisible())
 }
