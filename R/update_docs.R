@@ -10,7 +10,7 @@
 #' * Write codemeta with [codemetar::write_codemeta()]
 #'
 #' @param url_update Logical, do you want to update urls with
-#'  [urlchecker::url_update()] or just check?
+#'  [urlchecker::url_update()]?
 #' @param build_readme Logical, build `README.Rmd` with
 #'   [devtools::build_readme()]
 #' @param verbose Display informative messages on the console
@@ -61,14 +61,10 @@ update_docs <- function(pkg = ".",
   if (verbose) cat(crayon::green("styler package\n"))
   styler::style_pkg(filetype = c(c("R", "Rmd", "Rprofile")))
 
-  if (verbose) cat(crayon::green("Check URLs\n"))
   if (url_update) {
-    if (verbose) cat(crayon::blue("Update\n"))
+    if (verbose) cat(crayon::green("Check URLs\n"))
     urlchecker::url_update(pkg)
-  } else {
-    if (verbose) cat(crayon::blue("Just checking\n"))
-    urlchecker::url_check(pkg)
-  }
+  } 
 
   if (verbose) cat(crayon::green("Roxygenising package\n"))
   roxygen2::roxygenise()
