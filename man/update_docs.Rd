@@ -18,10 +18,11 @@ update_docs(
 \item{url_update}{Logical, do you want to update urls with
 \code{\link[urlchecker:url_update]{urlchecker::url_update()}}?}
 
-\item{build_readme}{Logical, build \code{README.Rmd} with
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}
-@param create_codemeta Logical, do you want to create
+\item{create_codemeta}{Logical, do you want to create
 a codemeta file with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
+
+\item{build_readme}{Logical, build \code{README.Rmd} with
+\code{\link[devtools:build_rmd]{devtools::build_readme()}}}
 
 \item{verbose}{Display informative messages on the console}
 }

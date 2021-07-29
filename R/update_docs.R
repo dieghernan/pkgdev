@@ -13,7 +13,7 @@
 #'  [urlchecker::url_update()]?
 #' @param build_readme Logical, build `README.Rmd` with
 #'   [devtools::build_readme()]
-#'  @param create_codemeta Logical, do you want to create
+#' @param create_codemeta Logical, do you want to create
 #'   a codemeta file with [codemetar::write_codemeta()]?
 #' @param verbose Display informative messages on the console
 #'
