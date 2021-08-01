@@ -22,7 +22,7 @@ jobs:
       - name: Query dependencies
         run: |
           install.packages('remotes')
-          install.packages('devtools')
+          remotes::install_cran('devtools')
           remotes::install_cran("rcmdcheck")
           install.packages("pkgdown", dependencies = TRUE)
 
