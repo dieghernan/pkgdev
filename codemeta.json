@@ -126,13 +126,7 @@
       "identifier": "codemetar",
       "name": "codemetar",
       "version": ">= 0.3.2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=codemetar"
+      "sameAs": "https://github.com/ropensci/codemetar"
     },
     {
       "@type": "SoftwareApplication",
@@ -215,7 +209,7 @@
   ],
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "fileSize": "74.254KB",
+  "fileSize": "74.306KB",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
   "keywords": [
