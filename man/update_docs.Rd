@@ -40,6 +40,8 @@ Run routine checks on the package:
 \item Style code with \code{\link[styler:style_pkg]{styler::style_pkg()}}
 \item Check urls with \code{\link[urlchecker:url_check]{urlchecker::url_check()}}
 \item Roxygenise with \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}}
+\item Precompute vignettes if present
+(see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
 \item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
 \item Write codemeta with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
 }

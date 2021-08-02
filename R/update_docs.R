@@ -6,6 +6,8 @@
 #' * Style code with [styler::style_pkg()]
 #' * Check urls with [urlchecker::url_check()]
 #' * Roxygenise with [roxygen2::roxygenise()]
+#' * Precompute vignettes if present
+#'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
 #' * Write codemeta with [codemetar::write_codemeta()]
 #'
