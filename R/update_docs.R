@@ -82,14 +82,14 @@ update_docs <- function(pkg = ".",
     vignette_list <- list.files(file.path(pkg, "vignettes"))
     find_vignettes <- grep(".Rmd.orig$", vignette_list)
     if (length(find_vignettes) > 0) {
-      if (verbose) cat(crayon::green("Precomputing vignettes"))
+      if (verbose) cat(crayon::green("Precomputing vignettes\n"))
 
       vig <- vignette_list[find_vignettes]
       for (i in seq_len(length(find_vignettes))) {
         precompute_vignette(source = vig[i])
       }
     } else {
-      if (verbose) cat(crayon::green("No vignettes for precomputing found"))
+      if (verbose) cat(crayon::green("No vignettes for precomputing found\n"))
     }
   }
   # Check README.Rmd
