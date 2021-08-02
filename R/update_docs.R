@@ -16,6 +16,8 @@
 #' @param create_codemeta Logical, do you want to create
 #'   a codemeta file with [codemetar::write_codemeta()]?
 #' @param verbose Display informative messages on the console
+#' @param precompute Logical, detect and precompute vignettes? See also
+#'   [precompute_vignette()].
 #'
 #' @inheritParams styler::style_pkg
 #'
@@ -46,7 +48,8 @@ update_docs <- function(pkg = ".",
                         url_update = TRUE,
                         create_codemeta = TRUE,
                         build_readme = TRUE,
-                        verbose = TRUE) {
+                        verbose = TRUE,
+                        precompute = TRUE) {
 
   # Add global .gitignore
 
@@ -72,6 +75,21 @@ update_docs <- function(pkg = ".",
   if (verbose) cat(crayon::green("Roxygenising package\n"))
   roxygen2::roxygenise()
 
+
+  if (precompute) {
+    vignette_list <- list.files(file.path(pkg, "vignettes"))
+    find_vignettes <- grep(".Rmd.orig$", vignette_list)
+    if (length(find_vignettes) > 0) {
+      if (verbose) cat(crayon::green("Precomputing vignettes"))
+
+      vig <- vignette_list[find_vignettes]
+      for (i in seq_len(length(find_vignettes))) {
+        precompute_vignette(source = vig[i])
+      }
+    } else {
+      if (verbose) cat(crayon::green("No vignettes for precomputing found"))
+    }
+  }
   # Check README.Rmd
   readme_rmd <- file.path(pkg, "README.Rmd")
   has_readme <- file.exists(readme_rmd)

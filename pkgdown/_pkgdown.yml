@@ -20,6 +20,7 @@ reference:
 - title: Other helpers
 - contents:
   - add_global_gitgnore
+  - precompute_vignette
   - update_docs
 - title: About the package
 - contents:

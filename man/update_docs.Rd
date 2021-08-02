@@ -9,7 +9,8 @@ update_docs(
   url_update = TRUE,
   create_codemeta = TRUE,
   build_readme = TRUE,
-  verbose = TRUE
+  verbose = TRUE,
+  precompute = TRUE
 )
 }
 \arguments{
@@ -25,6 +26,9 @@ a codemeta file with \code{\link[codemetar:write_codemeta]{codemetar::write_code
 \code{\link[devtools:build_rmd]{devtools::build_readme()}}}
 
 \item{verbose}{Display informative messages on the console}
+
+\item{precompute}{Logical, detect and precompute vignettes? See also
+\code{\link[=precompute_vignette]{precompute_vignette()}}.}
 }
 \value{
 invisible, or some messages on \code{verbose = TRUE}.

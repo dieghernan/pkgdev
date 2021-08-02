@@ -9,3 +9,4 @@
 ^pkgdown$
 ^docs$
 ^codemeta\.json$
+^vignettes/precompute\.Rmd\.orig$
