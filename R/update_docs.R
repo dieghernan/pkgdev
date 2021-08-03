@@ -75,7 +75,11 @@ update_docs <- function(pkg = ".",
     tools::resaveRdaFiles(file.path(pkg, "data"))
   }
   if (verbose) cat(crayon::green("styler package\n"))
-  styler::style_pkg(filetype = c(c("R", "Rmd", "Rprofile")))
+  styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
+  
+  if (dir.exists(file.path(pkg, "vignettes"))) {
+    styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"))
+  }
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
     if (verbose) cat(crayon::green("styler external examples\n"))
