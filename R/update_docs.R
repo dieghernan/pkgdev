@@ -76,7 +76,7 @@ update_docs <- function(pkg = ".",
   }
   if (verbose) cat(crayon::green("styler package\n"))
   styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
-  
+
   if (dir.exists(file.path(pkg, "vignettes"))) {
     styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"))
   }
