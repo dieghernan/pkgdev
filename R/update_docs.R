@@ -3,6 +3,8 @@
 #' @description
 #' Run routine checks on the package:
 #' * Clean DESCRIPTION with [usethis::use_tidy_description()]
+#' * Compress the data of the paths `"./data"` and `"./R"` using
+#'   [tools::resaveRdaFiles()].
 #' * Style code with [styler::style_pkg()]
 #' * Check urls with [urlchecker::url_check()]
 #' * Roxygenise with [roxygen2::roxygenise()]
@@ -40,7 +42,8 @@
 #'
 #' @seealso [usethis::use_tidy_description()], [styler::style_pkg()],
 #'   [urlchecker::url_check()], [roxygen2::roxygenise()],
-#'   [devtools::build_readme()], [codemetar::write_codemeta()]
+#'   [devtools::build_readme()], [codemetar::write_codemeta()],
+#'   [tools::resaveRdaFiles()]
 #'
 #' @export
 #'
@@ -66,6 +69,11 @@ update_docs <- function(pkg = ".",
   if (verbose) cat(crayon::green("Cleaning DESCRIPTION\n"))
   usethis::use_tidy_description()
 
+  if (verbose) cat(crayon::green("Compressing data\n"))
+  tools::resaveRdaFiles(file.path(pkg, "R"))
+  if (dir.exists(file.path(pkg, "data"))) {
+    tools::resaveRdaFiles(file.path(pkg, "data"))
+  }
   if (verbose) cat(crayon::green("styler package\n"))
   styler::style_pkg(filetype = c(c("R", "Rmd", "Rprofile")))
 

@@ -37,6 +37,8 @@ invisible, or some messages on \code{verbose = TRUE}.
 Run routine checks on the package:
 \itemize{
 \item Clean DESCRIPTION with \code{\link[usethis:tidyverse]{usethis::use_tidy_description()}}
+\item Compress the data of the paths \code{"./data"} and \code{"./R"} using
+\code{\link[tools:checkRdaFiles]{tools::resaveRdaFiles()}}.
 \item Style code with \code{\link[styler:style_pkg]{styler::style_pkg()}}
 \item Check urls with \code{\link[urlchecker:url_check]{urlchecker::url_check()}}
 \item Roxygenise with \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}}
@@ -63,5 +65,6 @@ update_docs()
 \seealso{
 \code{\link[usethis:tidyverse]{usethis::use_tidy_description()}}, \code{\link[styler:style_pkg]{styler::style_pkg()}},
 \code{\link[urlchecker:url_check]{urlchecker::url_check()}}, \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}},
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
+\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}},
+\code{\link[tools:checkRdaFiles]{tools::resaveRdaFiles()}}
 }
