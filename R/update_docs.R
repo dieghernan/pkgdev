@@ -76,11 +76,10 @@ update_docs <- function(pkg = ".",
   }
   if (verbose) cat(crayon::green("styler package\n"))
   styler::style_pkg(filetype = c(c("R", "Rmd", "Rprofile")))
-  
+
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
     if (verbose) cat(crayon::green("styler external examples\n"))
     styler::style_dir(file.path(pkg, "inst", "examples"))
-  
   }
 
   if (url_update) {
