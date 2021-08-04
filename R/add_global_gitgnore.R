@@ -59,6 +59,9 @@ add_global_gitgnore <- function(pkg = ".") {
 
   # R Environment Variables
   usethis::use_git_ignore(".Renviron", directory = pkg)
+  
+  # Revdep
+  usethis::use_git_ignore("revdep", directory = pkg)
 
   # Extra ignores
   pkgname <- devtools::as.package(".")$package
