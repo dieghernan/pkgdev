@@ -1,8 +1,5 @@
 {
-  "@context": [
-    "https://doi.org/10.5063/schema/codemeta-2.0",
-    "http://schema.org"
-  ],
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "pkgdev",
   "description": "A small set of functions that takes advantage of GitHub\n    Actions for making your life easier as a R package developer. This\n    package is primarily intended for personal use, however feel free to\n    use it (at your own risk :)).",
@@ -27,7 +24,6 @@
       "@id": "https://orcid.org/0000-0001-8457-4658"
     }
   ],
-  "contributor": {},
   "copyrightHolder": [
     {
       "@type": "Person",
@@ -37,7 +33,6 @@
       "@id": "https://orcid.org/0000-0001-8457-4658"
     }
   ],
-  "funder": {},
   "maintainer": [
     {
       "@type": "Person",
@@ -127,21 +122,21 @@
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     }
   ],
-  "softwareRequirements": [
-    {
+  "softwareRequirements": {
+    "1": {
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
       "version": ">= 3.6.0"
     },
-    {
+    "2": {
       "@type": "SoftwareApplication",
       "identifier": "codemetar",
       "name": "codemetar",
       "version": ">= 0.3.2",
       "sameAs": "https://github.com/ropensci/codemetar"
     },
-    {
+    "3": {
       "@type": "SoftwareApplication",
       "identifier": "crayon",
       "name": "crayon",
@@ -154,7 +149,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=crayon"
     },
-    {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
@@ -167,7 +162,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
-    {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -180,7 +175,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -193,7 +188,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -206,7 +201,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -219,7 +214,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -231,21 +226,10 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
-    }
-  ],
-  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
-  "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "fileSize": "96.831KB",
-  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
-  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
-  "keywords": [
-    "r",
-    "rstats",
-    "r-package",
-    "developer-tools",
-    "experimental",
-    "github-actions"
-  ],
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "289.876KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
