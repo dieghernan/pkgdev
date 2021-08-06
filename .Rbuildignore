@@ -10,3 +10,4 @@
 ^docs$
 ^codemeta\.json$
 ^vignettes/precompute\.Rmd\.orig$
+^revdep$
