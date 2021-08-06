@@ -1,7 +1,7 @@
 Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
-Version: 0.0.1.9003
+Version: 0.0.1.9004
 Authors@R: 
     person(given = "Diego",
            family = "Hernangómez",

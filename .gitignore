@@ -43,4 +43,3 @@ pkgdev*.tgz
 docs/
 inst/doc
 revdep
-codemeta.json

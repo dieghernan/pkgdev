@@ -68,7 +68,7 @@ add_global_gitgnore <- function(pkg = ".") {
 
   # Codemeta
 
-  usethis::use_git_ignore("codemeta.json", directory = pkg)
+  usethis::use_build_ignore("codemeta.json")
 
   # Extra ignores
   pkgname <- devtools::as.package(".")$package
