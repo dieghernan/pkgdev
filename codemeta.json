@@ -71,19 +71,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "jsonld",
-      "name": "jsonld",
-      "version": ">= 2.2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=jsonld"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "lintr",
       "name": "lintr",
       "version": ">= 2.0.1",
@@ -131,10 +118,16 @@
     },
     "2": {
       "@type": "SoftwareApplication",
-      "identifier": "codemetar",
-      "name": "codemetar",
-      "version": ">= 0.3.2",
-      "sameAs": "https://github.com/ropensci/codemetar"
+      "identifier": "codemeta",
+      "name": "codemeta",
+      "version": ">= 0.1.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://github.com/cboettig/codemeta"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -229,7 +222,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "289.876KB",
+  "fileSize": "660.09KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

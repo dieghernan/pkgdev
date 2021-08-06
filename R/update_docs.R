@@ -120,12 +120,19 @@ update_docs <- function(pkg = ".",
 
   if (create_codemeta) {
     if (verbose) cat(crayon::green("Creating codemetar\n"))
-    if (!dir.exists(file.path(pkg, "inst"))) {
-      if (verbose) cat(crayon::blue("Create inst/ folder\n"))
-      dir.create(file.path(pkg, "inst"), recursive = TRUE)
-    }
 
-    codemetar::write_codemeta(write_minimeta = TRUE)
+    codemeta::write_codemeta()
+  }
+
+  # Cleanup previous pkgdev versions
+
+  if (file.exists(file.path("inst", "schemaorg.json"))) {
+    file.remove(file.path("inst", "schemaorg.json"))
+  }
+
+  if (dir.exists("inst")) {
+    list_inst <- list.files("inst")
+    if (length(list_inst) == 0) unlink("inst", recursive = TRUE)
   }
 
   return(invisible())
