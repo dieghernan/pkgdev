@@ -5,8 +5,8 @@
 #' on the gh-pages branch.
 #'
 #'
-#' @param platform	Platform to use for deploying the package. See Details
-#' @param version Version of the platform. See Details.
+#' @param platform	Platform to use for deploying the package. See **Details**
+#' @param version Version of the platform. See **Details**.
 #' @inheritParams gha_check_full
 #'
 #' @details

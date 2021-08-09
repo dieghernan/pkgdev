@@ -8,7 +8,7 @@
 #'
 #' @param overwrite	Overwrite the action if it was already present.
 #' @param cron_expr Valid cron expression. By default, the first
-#'   day of the month at 08:30 AM. See Details.
+#'   day of the month at 08:30 AM. See **Details**.
 #' @inheritParams update_docs
 #'
 #' @details

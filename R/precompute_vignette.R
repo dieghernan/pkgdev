@@ -7,7 +7,7 @@
 #' @param source Name without path of the `.Rmd.orig` file
 #'   (e.g. `"some_name.Rmd.orig"`).
 #' @param figure_ext Extension of the figures plotted on the vignette.
-#'   See Details.
+#'   See **Details**.
 #'
 #' @source <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>
 #'
