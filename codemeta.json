@@ -222,7 +222,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "288.582KB",
+  "fileSize": "288.554KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -235,8 +235,7 @@
         }
       ],
       "name": "pkgdev: ",
-      "url": "https://dieghernan.github.io/pkgdev/",
-      "description": "R package version "
+      "url": "https://dieghernan.github.io/pkgdev/"
     }
   ]
 }
