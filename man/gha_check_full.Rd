@@ -15,7 +15,7 @@ gha_check_full(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *")
 \item{overwrite}{Overwrite the action if it was already present.}
 
 \item{cron_expr}{Valid cron expression. By default, the first
-day of the month at 08:30 AM. See Details.}
+day of the month at 08:30 AM. See \strong{Details}.}
 }
 \value{
 A GitHub Action on \verb{<pkg>/.github/workflows}.

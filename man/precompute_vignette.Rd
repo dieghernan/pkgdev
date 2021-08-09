@@ -14,7 +14,7 @@ precompute_vignette(source, figure_ext = ".png")
 (e.g. \code{"some_name.Rmd.orig"}).}
 
 \item{figure_ext}{Extension of the figures plotted on the vignette.
-See Details.}
+See \strong{Details}.}
 }
 \value{
 A precomputed vignette

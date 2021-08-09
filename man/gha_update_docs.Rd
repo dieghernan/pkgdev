@@ -19,9 +19,9 @@ gha_update_docs(
 
 \item{overwrite}{Overwrite the action if it was already present.}
 
-\item{platform}{Platform to use for deploying the package. See Details}
+\item{platform}{Platform to use for deploying the package. See \strong{Details}}
 
-\item{version}{Version of the platform. See Details.}
+\item{version}{Version of the platform. See \strong{Details}.}
 }
 \value{
 A GitHub Action on \verb{<pkg>/.github/workflows}.
