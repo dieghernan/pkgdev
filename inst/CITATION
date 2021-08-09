@@ -9,7 +9,6 @@ citEntry(
   title = paste('pkgdev:', meta$Title),
   author = "Diego Hernangómez",
   year = year,
-  note = vers,
   url = url,
-  textVersion = paste0('Hernangómez, D (', year, '). pkgdev: ', meta$Title, '. ', vers, '. ', url)
+  textVersion = paste0('Hernangómez, D (', year, '). pkgdev: ', meta$Title, '. ', url)
 )
