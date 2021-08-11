@@ -70,9 +70,9 @@ update_docs <- function(pkg = ".",
   usethis::use_tidy_description()
 
   if (verbose) cat(crayon::green("Compressing data\n"))
-  tools::resaveRdaFiles(file.path(pkg, "R"))
+  tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
   if (dir.exists(file.path(pkg, "data"))) {
-    tools::resaveRdaFiles(file.path(pkg, "data"))
+    tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
   }
   if (verbose) cat(crayon::green("styler package\n"))
   styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
