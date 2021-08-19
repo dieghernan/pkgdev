@@ -222,7 +222,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "204.531KB",
+  "fileSize": "204.609KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -234,7 +234,7 @@
           "familyName": "Hernangómez"
         }
       ],
-      "name": "pkgdev: ",
+      "name": "pkgdev: Set of tools to help developing R packages",
       "url": "https://dieghernan.github.io/pkgdev/"
     }
   ]

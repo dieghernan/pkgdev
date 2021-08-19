@@ -11,3 +11,4 @@
 ^codemeta\.json$
 ^vignettes/precompute\.Rmd\.orig$
 ^revdep$
+^CITATION\.cff$
