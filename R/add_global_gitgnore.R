@@ -69,9 +69,10 @@ add_global_gitgnore <- function(pkg = ".") {
   # Codemeta
 
   usethis::use_build_ignore("codemeta.json")
+  usethis::use_build_ignore("CITATION.cff")
 
   # Extra ignores
-  pkgname <- devtools::as.package(".")$package
+  pkgname <- devtools::as.package(pkg)$package
   usethis::use_git_ignore(paste0(pkgname, ".Rcheck/"), directory = pkg)
   usethis::use_git_ignore(paste0(pkgname, "*.tar.gz"), directory = pkg)
   usethis::use_git_ignore(paste0(pkgname, "*.tgz"), directory = pkg)
