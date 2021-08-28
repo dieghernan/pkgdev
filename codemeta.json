@@ -127,7 +127,7 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/cboettig/codemeta"
+      "sameAs": "https://github.com/dieghernan/codemeta"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -222,7 +222,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "204.651KB",
+  "fileSize": "84.126KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
