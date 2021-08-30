@@ -20,7 +20,7 @@ update_docs(
 \code{\link[urlchecker:url_update]{urlchecker::url_update()}}?}
 
 \item{create_codemeta}{Logical, do you want to create
-a codemeta file with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
+a codemeta file with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}?}
 
 \item{build_readme}{Logical, build \code{README.Rmd} with
 \code{\link[devtools:build_rmd]{devtools::build_readme()}}}
@@ -45,7 +45,7 @@ Run routine checks on the package:
 \item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
 \item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
-\item Write codemeta with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
+\item Write codemeta with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}
 }
 }
 \details{
