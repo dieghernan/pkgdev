@@ -11,14 +11,14 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Write codemeta with [codemetar::write_codemeta()]
+#' * Write codemeta with [codemeta::write_codemeta()]
 #'
 #' @param url_update Logical, do you want to update urls with
 #'  [urlchecker::url_update()]?
 #' @param build_readme Logical, build `README.Rmd` with
 #'   [devtools::build_readme()]
 #' @param create_codemeta Logical, do you want to create
-#'   a codemeta file with [codemetar::write_codemeta()]?
+#'   a codemeta file with [codemeta::write_codemeta()]?
 #' @param verbose Display informative messages on the console
 #' @param precompute Logical, detect and precompute vignettes? See also
 #'   [precompute_vignette()].
@@ -119,7 +119,7 @@ update_docs <- function(pkg = ".",
   }
 
   if (create_codemeta) {
-    if (verbose) cat(crayon::green("Creating codemetar\n"))
+    if (verbose) cat(crayon::green("Creating codemeta\n"))
 
     codemeta::write_codemeta()
   }

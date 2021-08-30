@@ -23,9 +23,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
-          cache-version: 2.1.6
           extra-packages: |
-            remotes
             devtools
             rcmdcheck
             pkgdown

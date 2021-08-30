@@ -27,7 +27,7 @@ jobs:
           - {os: windows-latest, r: 'devel'}
           - {os: windows-latest, r: 'release'}
           - {os: windows-latest, r: 'oldrel'}
-          #- {os: macOS-latest, r: 'devel'}
+          - {os: macOS-latest, r: 'devel'}
           - {os: macOS-latest, r: 'release'}
           - {os: macOS-latest, r: 'oldrel'}
           - {os: ubuntu-20.04, r: 'release'}
@@ -51,7 +51,6 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
-          cache-version: 2.1.6
           extra-packages: rcmdcheck
 
       - name: Check
