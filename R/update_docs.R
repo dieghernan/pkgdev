@@ -42,7 +42,7 @@
 #'
 #' @seealso [usethis::use_tidy_description()], [styler::style_pkg()],
 #'   [urlchecker::url_check()], [roxygen2::roxygenise()],
-#'   [devtools::build_readme()], [codemetar::write_codemeta()],
+#'   [devtools::build_readme()], [codemeta::write_codemeta()],
 #'   [tools::resaveRdaFiles()]
 #'
 #' @export
