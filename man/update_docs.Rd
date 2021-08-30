@@ -65,6 +65,6 @@ update_docs()
 \seealso{
 \code{\link[usethis:tidyverse]{usethis::use_tidy_description()}}, \code{\link[styler:style_pkg]{styler::style_pkg()}},
 \code{\link[urlchecker:url_check]{urlchecker::url_check()}}, \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}},
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}},
+\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}},
 \code{\link[tools:checkRdaFiles]{tools::resaveRdaFiles()}}
 }
