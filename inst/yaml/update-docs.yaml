@@ -27,6 +27,7 @@ jobs:
             devtools
             rcmdcheck
             pkgdown
+            remotes
             dieghernan/pkgdev
           needs: website
 

@@ -25,6 +25,7 @@ jobs:
         with:
           extra-packages: |
             devtools
+            remotes
             rcmdcheck
             pkgdown
             dieghernan/pkgdev
