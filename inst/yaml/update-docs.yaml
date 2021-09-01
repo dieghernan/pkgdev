@@ -20,6 +20,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
         with:
           use-public-rspm: true
+          install-r: false
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
@@ -27,15 +28,8 @@ jobs:
             devtools
             rcmdcheck
             pkgdown
-            remotes
             dieghernan/pkgdev
           needs: website
-
-      - name: Install package
-        run: |
-          devtools::install()
-
-        shell: Rscript {0}
 
       - name: Update docs
         run: |
