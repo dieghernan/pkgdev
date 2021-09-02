@@ -6,7 +6,7 @@ url = 'https://dieghernan.github.io/pkgdev/'
 
 citEntry(
   entry = 'manual',
-  title = paste('pkgdev:', "Set of tools to help developing R packages"),
+  title = paste('pkgdev:', meta$Title),
   author = "Diego Hernangómez",
   year = year,
   url = url,
