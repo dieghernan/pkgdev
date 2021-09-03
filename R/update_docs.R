@@ -11,7 +11,8 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Write codemeta with [codemeta::write_codemeta()]
+#' * Write codemeta.json with [codemeta::write_codemeta()]
+#' * Write CITATION.cff with [cffr::cff_write()]
 #'
 #' @param url_update Logical, do you want to update urls with
 #'  [urlchecker::url_update()]?
@@ -22,6 +23,7 @@
 #' @param verbose Display informative messages on the console
 #' @param precompute Logical, detect and precompute vignettes? See also
 #'   [precompute_vignette()].
+#' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
 #'
@@ -54,7 +56,8 @@ update_docs <- function(pkg = ".",
                         create_codemeta = TRUE,
                         build_readme = TRUE,
                         verbose = TRUE,
-                        precompute = TRUE) {
+                        precompute = TRUE,
+                        ...) {
 
   # Add global .gitignore
 
@@ -123,6 +126,8 @@ update_docs <- function(pkg = ".",
 
     codemeta::write_codemeta()
   }
+  
+  cff::cff_write(...)
 
   # Cleanup previous pkgdev versions
 
