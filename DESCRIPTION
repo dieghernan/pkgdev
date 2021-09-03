@@ -21,6 +21,7 @@ Depends:
 Imports: 
     cffr,
     codemeta (>= 0.1.0),
+    jsonvalidate,
     crayon (>= 1.4.1),
     devtools (>= 2.4.1),
     knitr (>= 1.33),

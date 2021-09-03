@@ -15,13 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      # This is needed for workflows running on
-      # ubuntu-20.04 or later
-      - name: Install V8
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt-get install -y libv8-dev
-
       - uses: r-lib/actions/setup-pandoc@v1
 
       - uses: r-lib/actions/setup-r@v1
