@@ -163,6 +163,18 @@
     },
     "6": {
       "@type": "SoftwareApplication",
+      "identifier": "jsonvalidate",
+      "name": "jsonvalidate",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=jsonvalidate"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
       "version": ">= 1.33",
@@ -174,7 +186,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -187,7 +199,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -200,7 +212,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -213,7 +225,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -228,7 +240,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.291KB",
+  "fileSize": "83.309KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
