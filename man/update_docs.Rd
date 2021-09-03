@@ -8,9 +8,11 @@ update_docs(
   pkg = ".",
   url_update = TRUE,
   create_codemeta = TRUE,
+  create_cff = TRUE,
   build_readme = TRUE,
   verbose = TRUE,
-  precompute = TRUE
+  precompute = TRUE,
+  ...
 )
 }
 \arguments{
@@ -22,6 +24,9 @@ update_docs(
 \item{create_codemeta}{Logical, do you want to create
 a codemeta file with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}?}
 
+\item{create_cff}{Logical, do you want to create
+a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
+
 \item{build_readme}{Logical, build \code{README.Rmd} with
 \code{\link[devtools:build_rmd]{devtools::build_readme()}}}
 
@@ -29,6 +34,8 @@ a codemeta file with \code{\link[codemeta:write_codemeta]{codemeta::write_codeme
 
 \item{precompute}{Logical, detect and precompute vignettes? See also
 \code{\link[=precompute_vignette]{precompute_vignette()}}.}
+
+\item{...}{Additional arguments to functions}
 }
 \value{
 invisible, or some messages on \code{verbose = TRUE}.
@@ -45,7 +52,8 @@ Run routine checks on the package:
 \item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
 \item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
-\item Write codemeta with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}
+\item Write codemeta.json with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}
+\item Write CITATION.cff with \code{\link[cffr:cff_write]{cffr::cff_write()}}
 }
 }
 \details{

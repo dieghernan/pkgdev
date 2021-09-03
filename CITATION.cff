@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata.
+type: software
+license: MIT
+title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
+version: 0.0.1.9004
+abstract: A small set of functions that takes advantage of GitHub Actions for making
+  your life easier as a R package developer. This package is primarily intended for
+  personal use, however feel free to use it (at your own risk :)).
+authors:
+- family-names: Hernangómez
+  given-names: Diego
+  email: diego.hernangomezherrero@gmail.com
+  orcid: https://orcid.org/0000-0001-8457-4658
+repository-code: https://github.com/dieghernan/pkgdev
+url: https://dieghernan.github.io/pkgdev/
+contact:
+- family-names: Hernangómez
+  given-names: Diego
+  email: diego.hernangomezherrero@gmail.com
+  orcid: https://orcid.org/0000-0001-8457-4658

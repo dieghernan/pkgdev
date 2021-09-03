@@ -20,9 +20,12 @@
 #'   [devtools::build_readme()]
 #' @param create_codemeta Logical, do you want to create
 #'   a codemeta file with [codemeta::write_codemeta()]?
+#' @param create_cff Logical, do you want to create
+#'   a CITATION.cff file with [cffr::cff_write()]?
 #' @param verbose Display informative messages on the console
 #' @param precompute Logical, detect and precompute vignettes? See also
 #'   [precompute_vignette()].
+#'
 #' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
@@ -54,6 +57,7 @@
 update_docs <- function(pkg = ".",
                         url_update = TRUE,
                         create_codemeta = TRUE,
+                        create_cff = TRUE,
                         build_readme = TRUE,
                         verbose = TRUE,
                         precompute = TRUE,
@@ -126,8 +130,12 @@ update_docs <- function(pkg = ".",
 
     codemeta::write_codemeta()
   }
-  
-  cff::cff_write(...)
+  if (create_cff) {
+    if (verbose) cat(crayon::green("Creating CITATION.cff\n"))
+
+    cffr::cff_write(...)
+  }
+
 
   # Cleanup previous pkgdev versions
 

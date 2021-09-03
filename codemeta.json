@@ -118,6 +118,12 @@
     },
     "2": {
       "@type": "SoftwareApplication",
+      "identifier": "cffr",
+      "name": "cffr",
+      "sameAs": "https://github.com/dieghernan/cffr"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
       "identifier": "codemeta",
       "name": "codemeta",
       "version": ">= 0.1.0",
@@ -129,7 +135,7 @@
       },
       "sameAs": "https://github.com/cboettig/codemeta"
     },
-    "3": {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "crayon",
       "name": "crayon",
@@ -142,7 +148,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=crayon"
     },
-    "4": {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
@@ -155,7 +161,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
-    "5": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -168,7 +174,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "6": {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -181,7 +187,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -194,7 +200,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -207,7 +213,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -222,7 +228,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "82.575KB",
+  "fileSize": "84.041KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
