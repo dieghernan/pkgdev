@@ -21,7 +21,6 @@ Depends:
 Imports: 
     cffr (>= 0.0.0.9000),
     codemeta (>= 0.1.0),
-    codemetar,
     crayon (>= 1.4.1),
     devtools (>= 2.4.1),
     jsonvalidate (>= 1.1.0),
@@ -40,7 +39,7 @@ VignetteBuilder:
     knitr
 Remotes:
     dieghernan/cffr,
-    dieghernan/codemetar
+    dieghernan/codemeta
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
