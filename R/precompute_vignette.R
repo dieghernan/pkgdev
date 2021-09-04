@@ -68,13 +68,11 @@ precompute_vignette <- function(source,
 #'   are stored.
 #' @export
 #'
-precompute_vignette_all <- function(dir="vignettes"){
-
+precompute_vignette_all <- function(dir = "vignettes") {
   vignette_list <- list.files("vignettes")
 
   find_vignettes <- grep(".Rmd.orig$", vignette_list)
   if (length(find_vignettes) > 0) {
-
     vig <- vignette_list[find_vignettes]
     for (i in seq_len(length(find_vignettes))) {
       precompute_vignette(source = vig[i])
