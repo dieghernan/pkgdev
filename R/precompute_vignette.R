@@ -1,5 +1,7 @@
 #' Precompute vignettes
 #'
+#' @rdname precompute
+#'
 #' @description
 #' Precompute vignettes from CRAN, based on
 #' <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
@@ -59,4 +61,25 @@ precompute_vignette <- function(source,
   knitr::purl(source, output = r_file)
 
   return(invisible())
+}
+
+#' @rdname precompute
+#' @param dir Path to directory where the "Rmd.orig" files
+#'   are stored.
+#' @export
+#'
+precompute_vignette_all <- function(dir="vignettes"){
+
+  vignette_list <- list.files("vignettes")
+
+  find_vignettes <- grep(".Rmd.orig$", vignette_list)
+  if (length(find_vignettes) > 0) {
+
+    vig <- vignette_list[find_vignettes]
+    for (i in seq_len(length(find_vignettes))) {
+      precompute_vignette(source = vig[i])
+    }
+  } else {
+    cat(crayon::green("No vignettes for precomputing found\n"))
+  }
 }

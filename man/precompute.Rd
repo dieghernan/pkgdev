@@ -2,12 +2,15 @@
 % Please edit documentation in R/precompute_vignette.R
 \name{precompute_vignette}
 \alias{precompute_vignette}
+\alias{precompute_vignette_all}
 \title{Precompute vignettes}
 \source{
 \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}
 }
 \usage{
 precompute_vignette(source, figure_ext = ".png")
+
+precompute_vignette_all(dir = "vignettes")
 }
 \arguments{
 \item{source}{Name without path of the \code{.Rmd.orig} file
@@ -15,6 +18,9 @@ precompute_vignette(source, figure_ext = ".png")
 
 \item{figure_ext}{Extension of the figures plotted on the vignette.
 See \strong{Details}.}
+
+\item{dir}{Path to directory where the "Rmd.orig" files
+are stored.}
 }
 \value{
 A precomputed vignette
