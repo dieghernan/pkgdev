@@ -1,5 +1,5 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "pkgdev",
   "description": "A small set of functions that takes advantage of GitHub\n    Actions for making your life easier as a R package developer. This\n    package is primarily intended for personal use, however feel free to\n    use it (at your own risk :)).",
@@ -109,20 +109,21 @@
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     }
   ],
-  "softwareRequirements": [
-    {
+  "softwareRequirements": {
+    "1": {
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
       "version": ">= 3.6.0"
     },
-    {
+    "2": {
       "@type": "SoftwareApplication",
       "identifier": "cffr",
       "name": "cffr",
+      "version": ">= 0.0.0.9000",
       "sameAs": "https://github.com/dieghernan/cffr"
     },
-    {
+    "3": {
       "@type": "SoftwareApplication",
       "identifier": "codemeta",
       "name": "codemeta",
@@ -133,15 +134,9 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=codemeta"
+      "sameAs": "https://github.com/dieghernan/codemeta"
     },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "codemetar",
-      "name": "codemetar",
-      "sameAs": "https://github.com/dieghernan/codemetar"
-    },
-    {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "crayon",
       "name": "crayon",
@@ -154,7 +149,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=crayon"
     },
-    {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
@@ -167,10 +162,11 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
-    {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "jsonvalidate",
       "name": "jsonvalidate",
+      "version": ">= 1.1.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -179,7 +175,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonvalidate"
     },
-    {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -192,7 +188,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -205,7 +201,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -218,7 +214,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -231,7 +227,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -243,9 +239,10 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
-    }
-  ],
-  "fileSize": "83.385KB",
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "84.101KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -260,12 +257,5 @@
       "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
       "url": "https://dieghernan.github.io/pkgdev/"
     }
-  ],
-  "contributor": {},
-  "funder": {},
-  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
-  "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
-  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
-  "keywords": ["r", "rstats", "r-package", "developer-tools", "experimental", "github-actions"]
+  ]
 }
