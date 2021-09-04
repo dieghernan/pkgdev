@@ -128,7 +128,7 @@ update_docs <- function(pkg = ".",
   if (create_codemeta) {
     if (verbose) cat(crayon::green("Creating codemeta\n"))
 
-    codemeta::write_codemeta()
+    codemetar::write_codemeta()
   }
   if (create_cff) {
     if (verbose) cat(crayon::green("Creating CITATION.cff\n"))
