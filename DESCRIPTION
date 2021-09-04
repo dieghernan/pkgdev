@@ -40,6 +40,7 @@ VignetteBuilder:
     knitr
 Remotes:
     dieghernan/cffr,
+    dieghernan/codemeta,
     dieghernan/codemetar
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
