@@ -4,6 +4,8 @@
   "identifier": "pkgdev",
   "description": "A small set of functions that takes advantage of GitHub\n    Actions for making your life easier as a R package developer. This\n    package is primarily intended for personal use, however feel free to\n    use it (at your own risk :)).",
   "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
+  "codeRepository": "https://github.com/dieghernan/pkgdev",
+  "relatedLink": "https://dieghernan.github.io/pkgdev/",
   "issueTracker": "https://github.com/dieghernan/pkgdev/issues",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.0.1.9004",
@@ -125,7 +127,6 @@
       "@type": "SoftwareApplication",
       "identifier": "codemeta",
       "name": "codemeta",
-      "version": ">= 0.1.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -240,7 +241,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.395KB",
+  "fileSize": "83.384KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
