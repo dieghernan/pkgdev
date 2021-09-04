@@ -34,6 +34,7 @@ jobs:
             devtools
             rcmdcheck
             pkgdown
+            codemeta
             dieghernan/pkgdev
           needs: website
 
