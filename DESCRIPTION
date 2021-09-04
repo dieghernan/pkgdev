@@ -20,7 +20,7 @@ Depends:
     R (>= 3.6.0)
 Imports: 
     cffr (>= 0.0.0.9000),
-    codemeta (>= 0.1.0),
+    codemeta,
     crayon (>= 1.4.1),
     devtools (>= 2.4.1),
     jsonvalidate (>= 1.1.0),
