@@ -110,7 +110,7 @@ update_docs <- function(pkg = ".",
     if (verbose) cat(crayon::green("Rebuilding README\n"))
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
-  
+
   if (url_update) {
     if (verbose) cat(crayon::green("Check URLs\n"))
     urlchecker::url_update(pkg)
