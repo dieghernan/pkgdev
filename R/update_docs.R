@@ -85,12 +85,12 @@ update_docs <- function(pkg = ".",
   styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
 
   if (dir.exists(file.path(pkg, "vignettes"))) {
-    styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"), ...)
+    styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"))
   }
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
     if (verbose) cat(crayon::green("styler external examples\n"))
-    styler::style_dir(file.path(pkg, "inst", "examples"), ...)
+    styler::style_dir(file.path(pkg, "inst", "examples"))
   }
 
   if (url_update) {
