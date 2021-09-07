@@ -85,21 +85,21 @@ update_docs <- function(pkg = ".",
   styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
 
   if (dir.exists(file.path(pkg, "vignettes"))) {
-    styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"))
+    styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"), ...)
   }
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
     if (verbose) cat(crayon::green("styler external examples\n"))
-    styler::style_dir(file.path(pkg, "inst", "examples"))
+    styler::style_dir(file.path(pkg, "inst", "examples"), ...)
   }
 
   if (url_update) {
     if (verbose) cat(crayon::green("Check URLs\n"))
-    urlchecker::url_update(pkg)
+    urlchecker::url_update(pkg, ...)
   }
 
   if (verbose) cat(crayon::green("Roxygenising package\n"))
-  roxygen2::roxygenise()
+  roxygen2::roxygenise(...)
 
 
   if (precompute) {
@@ -112,13 +112,13 @@ update_docs <- function(pkg = ".",
 
   if (build_readme && has_readme) {
     if (verbose) cat(crayon::green("Rebuilding README\n"))
-    devtools::build_readme(pkg, quiet = isFALSE(verbose))
+    devtools::build_readme(pkg, quiet = isFALSE(verbose), ...)
   }
 
   if (create_codemeta) {
     if (verbose) cat(crayon::green("Creating codemeta\n"))
 
-    codemeta::write_codemeta()
+    codemeta::write_codemeta(...)
   }
   if (create_cff) {
     if (verbose) cat(crayon::green("Creating CITATION.cff\n"))
