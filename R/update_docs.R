@@ -93,10 +93,6 @@ update_docs <- function(pkg = ".",
     styler::style_dir(file.path(pkg, "inst", "examples"))
   }
 
-  if (url_update) {
-    if (verbose) cat(crayon::green("Check URLs\n"))
-    urlchecker::url_update(pkg)
-  }
 
   if (verbose) cat(crayon::green("Roxygenising package\n"))
   roxygen2::roxygenise()
@@ -113,6 +109,11 @@ update_docs <- function(pkg = ".",
   if (build_readme && has_readme) {
     if (verbose) cat(crayon::green("Rebuilding README\n"))
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
+  }
+  
+  if (url_update) {
+    if (verbose) cat(crayon::green("Check URLs\n"))
+    urlchecker::url_update(pkg)
   }
 
   if (create_codemeta) {
