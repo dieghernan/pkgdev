@@ -1,5 +1,10 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.0.1.9003
+# See also: https://dieghernan.github.io/cffr/
+# -----------------------------------------------------------
+ 
 cff-version: 1.2.0
-message: If you use this software, please cite it using these metadata.
+message: 'To cite package "pkgdev" in publications use:'
 type: software
 license: MIT
 title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
@@ -12,6 +17,14 @@ authors:
   given-names: Diego
   email: diego.hernangomezherrero@gmail.com
   orcid: https://orcid.org/0000-0001-8457-4658
+preferred-citation:
+  type: manual
+  title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
+  authors:
+  - family-names: Hernangómez
+    given-names: Diego
+  year: '2021'
+  url: https://dieghernan.github.io/pkgdev/
 repository-code: https://github.com/dieghernan/pkgdev
 url: https://dieghernan.github.io/pkgdev/
 contact:

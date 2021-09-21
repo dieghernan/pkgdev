@@ -35,7 +35,7 @@ The function would search for the desired precomputed vignette on the
 \subsection{Important}{
 
 On your \code{.Rmd.orig} file make sure you have set at least the following
-lines if you are producing plots:\if{html}{\out{<div class="r">}}\preformatted{knitr::opts_chunk$set(
+lines if you are producing plots:\if{html}{\out{<div class="sourceCode r">}}\preformatted{knitr::opts_chunk$set(
   ... ,
   fig.path = "./",
   ... ,
