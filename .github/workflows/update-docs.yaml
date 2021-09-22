@@ -30,7 +30,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
-          cache-version: 3
+          cache-version: 4
           extra-packages: |
             devtools
             rcmdcheck
