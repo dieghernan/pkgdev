@@ -38,8 +38,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    dieghernan/cffr,
-    cboettig/codemeta
+    cboettig/codemeta,
+    dieghernan/cffr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
