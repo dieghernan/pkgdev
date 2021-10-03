@@ -3,10 +3,7 @@ Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
 Version: 0.0.1.9004
 Authors@R: 
-    person(given = "Diego",
-           family = "Hernangómez",
-           role = c("aut", "cre", "cph"),
-           email = "diego.hernangomezherrero@gmail.com",
+    person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))
 Description: A small set of functions that takes advantage of GitHub
     Actions for making your life easier as a R package developer. This

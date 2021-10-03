@@ -13,6 +13,7 @@ This is an example of a precomputed vignette:
 
 
 ```r
+
 set.seed(1234)
 tbl <- data.frame(x = runif(10), y = runif(10))
 plot(x = tbl$x, y = tbl$y)
@@ -25,6 +26,7 @@ Another plot
 
 
 ```r
+
 plot(x = tbl$y, y = tbl$x)
 ```
 

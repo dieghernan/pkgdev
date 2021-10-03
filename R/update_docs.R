@@ -75,7 +75,7 @@ update_docs <- function(pkg = ".",
 
   if (verbose) cat(crayon::green("Cleaning DESCRIPTION\n"))
   usethis::use_tidy_description()
-  
+
   if (url_update) {
     if (verbose) cat(crayon::green("Check URLs\n"))
     urlchecker::url_update(pkg)
