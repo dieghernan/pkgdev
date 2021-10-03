@@ -75,6 +75,11 @@ update_docs <- function(pkg = ".",
 
   if (verbose) cat(crayon::green("Cleaning DESCRIPTION\n"))
   usethis::use_tidy_description()
+  
+  if (url_update) {
+    if (verbose) cat(crayon::green("Check URLs\n"))
+    urlchecker::url_update(pkg)
+  }
 
   if (verbose) cat(crayon::green("Compressing data\n"))
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
@@ -109,11 +114,6 @@ update_docs <- function(pkg = ".",
   if (build_readme && has_readme) {
     if (verbose) cat(crayon::green("Rebuilding README\n"))
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
-  }
-
-  if (url_update) {
-    if (verbose) cat(crayon::green("Check URLs\n"))
-    urlchecker::url_update(pkg)
   }
 
   if (create_codemeta) {
