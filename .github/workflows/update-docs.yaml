@@ -30,11 +30,11 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v1
         with:
+          cache-version: 99
           extra-packages: |
             rcmdcheck
             pkgdown
             dieghernan/pkgdev
-            cboettig/codemeta
           needs: website
 
       - name: Update docs
