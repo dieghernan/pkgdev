@@ -10,6 +10,9 @@
 #'   (e.g. `"some_name.Rmd.orig"`).
 #' @param figure_ext Extension of the figures plotted on the vignette.
 #'   See **Details**.
+#' @param create_r_file Wheter to create an additional R file with the code
+#' of the vignette.
+#' @param ... Parameters passed to [precompute_vignette()].
 #'
 #' @source <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>
 #'
@@ -39,7 +42,8 @@
 #'
 #'
 precompute_vignette <- function(source,
-                                figure_ext = ".png") {
+                                figure_ext = ".png",
+                                create_r_file = FALSE) {
   source <- file.path("vignettes", source)
   out <- gsub(".orig", "", source)
   usethis::use_build_ignore(source)
@@ -57,9 +61,10 @@ precompute_vignette <- function(source,
   rem <- file.remove(plots)
 
   # Create R file
-  r_file <- gsub(".Rmd", ".R", out)
-  knitr::purl(source, output = r_file)
-
+  if (create_r_file) {
+    r_file <- gsub(".Rmd", ".R", out)
+    knitr::purl(source, output = r_file)
+  }
   return(invisible())
 }
 
@@ -68,14 +73,14 @@ precompute_vignette <- function(source,
 #'   are stored.
 #' @export
 #'
-precompute_vignette_all <- function(dir = "vignettes") {
+precompute_vignette_all <- function(dir = "vignettes", ...) {
   vignette_list <- list.files("vignettes")
 
   find_vignettes <- grep(".Rmd.orig$", vignette_list)
   if (length(find_vignettes) > 0) {
     vig <- vignette_list[find_vignettes]
     for (i in seq_len(length(find_vignettes))) {
-      precompute_vignette(source = vig[i])
+      precompute_vignette(source = vig[i], ...)
     }
   } else {
     cat(crayon::green("No vignettes for precomputing found\n"))

@@ -8,9 +8,9 @@
 \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}
 }
 \usage{
-precompute_vignette(source, figure_ext = ".png")
+precompute_vignette(source, figure_ext = ".png", create_r_file = FALSE)
 
-precompute_vignette_all(dir = "vignettes")
+precompute_vignette_all(dir = "vignettes", ...)
 }
 \arguments{
 \item{source}{Name without path of the \code{.Rmd.orig} file
@@ -19,8 +19,13 @@ precompute_vignette_all(dir = "vignettes")
 \item{figure_ext}{Extension of the figures plotted on the vignette.
 See \strong{Details}.}
 
+\item{create_r_file}{Wheter to create an additional R file with the code
+of the vignette.}
+
 \item{dir}{Path to directory where the "Rmd.orig" files
 are stored.}
+
+\item{...}{Parameters passed to \code{\link[=precompute_vignette]{precompute_vignette()}}.}
 }
 \value{
 A precomputed vignette

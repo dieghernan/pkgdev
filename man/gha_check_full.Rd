@@ -36,5 +36,5 @@ gha_check_full(cron_expr = "57 16 12 * *")
 
 }
 \seealso{
-\code{\link[usethis:use_github_action]{usethis::use_github_action_check_full()}}
+\code{\link[usethis:usethis-defunct]{usethis::use_github_action_check_full()}}
 }

@@ -105,7 +105,7 @@ update_docs <- function(pkg = ".",
 
   if (precompute) {
     if (verbose) cat(crayon::green("Precomputing vignettes\n"))
-    precompute_vignette_all()
+    precompute_vignette_all(...)
   }
   # Check README.Rmd
   readme_rmd <- file.path(pkg, "README.Rmd")
