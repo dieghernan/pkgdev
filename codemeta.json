@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.1.1 (2021-08-10)",
+  "runtimePlatform": "R version 4.1.2 (2021-11-01)",
   "author": [
     {
       "@type": "Person",
@@ -121,7 +121,7 @@
       "identifier": "cffr",
       "name": "cffr",
       "version": ">= 0.0.0.9000",
-      "sameAs": "https://github.com/dieghernan/cffr"
+      "sameAs": "https://github.com/ropensci/cffr"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -241,7 +241,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.606KB",
+  "fileSize": "83.599KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
