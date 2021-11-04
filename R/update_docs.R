@@ -11,7 +11,8 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Compress images with [minimage::compress_images()].
+#' * Compress images with [magick::image_write()]
+#'   (`.png` only).
 #' * Write codemeta.json with [codemeta::write_codemeta()]
 #' * Write CITATION.cff with [cffr::cff_write()]
 #'
@@ -116,22 +117,34 @@ update_docs <- function(pkg = ".",
     if (verbose) cat(crayon::green("Rebuilding README\n"))
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
-  
+
   # Compress images
   if (dir.exists(file.path(pkg, "man", "figures"))) {
-    if (verbose) cat(crayon::green("Compressing images on man/figures"))
-    minimage::compress_images(file.path(pkg, "man", "figures"), 
-    verbose = FALSE, 
-    overwrite = TRUE)
+    if (verbose) cat(crayon::green("Compressing images on man/figures\n"))
+    pngs <- list.files(
+      path = file.path(pkg, "man", "figures"),
+      pattern = ".png", full.names = T
+    )
+
+    for (i in pngs) {
+      r <- magick::image_read(i)
+      magick::image_write(r, i, compression = "Lossless")
+    }
   }
-  
+
   if (dir.exists(file.path(pkg, "vignettes"))) {
-    if (verbose) cat(crayon::green("Compressing images on vignettes"))
-    minimage::compress_images(file.path(pkg, "vignettes"), 
-    verbose = FALSE,
-    overwrite = TRUE)
+    if (verbose) cat(crayon::green("Compressing images on vignettes\n"))
+    pngs <- list.files(
+      path = file.path(pkg, "vignettes"),
+      pattern = ".png", full.names = T
+    )
+
+    for (i in pngs) {
+      r <- magick::image_read(i)
+      magick::image_write(r, i, compression = "Lossless")
+    }
   }
-  
+
 
   if (create_codemeta) {
     if (verbose) cat(crayon::green("Creating codemeta\n"))

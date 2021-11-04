@@ -22,11 +22,11 @@ Imports:
     devtools (>= 2.4.1),
     jsonvalidate (>= 1.1.0),
     knitr (>= 1.33),
+    magick,
     roxygen2 (>= 7.1.0),
     styler (>= 1.5.1),
     urlchecker (>= 1.0.0),
-    usethis (>= 2.0.0),
-    minimage
+    usethis (>= 2.0.0)
 Suggests: 
     covr (>= 3.5.1),
     goodpractice (>= 1.0.2),
@@ -38,7 +38,8 @@ VignetteBuilder:
 Remotes:
     cboettig/codemeta,
     ropensci/cffr
-    ardata-fr/minimage
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+SystemRequirements: ImageMagick++: ImageMagick-c++-devel (rpm) or
+    libmagick++-dev (deb)
