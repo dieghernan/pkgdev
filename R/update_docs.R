@@ -11,6 +11,7 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
+#' * Compress images with [minimage::compress_images()].
 #' * Write codemeta.json with [codemeta::write_codemeta()]
 #' * Write CITATION.cff with [cffr::cff_write()]
 #'
@@ -115,6 +116,22 @@ update_docs <- function(pkg = ".",
     if (verbose) cat(crayon::green("Rebuilding README\n"))
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
+  
+  # Compress images
+  if (dir.exists(file.path(pkg, "man", "figures"))) {
+    if (verbose) cat(crayon::green("Compressing images on man/figures"))
+    minimage::compress_images(file.path(pkg, "man", "figures"), 
+    verbose = FALSE, 
+    overwrite = TRUE)
+  }
+  
+  if (dir.exists(file.path(pkg, "vignettes"))) {
+    if (verbose) cat(crayon::green("Compressing images on vignettes"))
+    minimage::compress_images(file.path(pkg, "vignettes"), 
+    verbose = FALSE,
+    overwrite = TRUE)
+  }
+  
 
   if (create_codemeta) {
     if (verbose) cat(crayon::green("Creating codemeta\n"))
