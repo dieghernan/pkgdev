@@ -120,8 +120,13 @@
       "@type": "SoftwareApplication",
       "identifier": "cffr",
       "name": "cffr",
-      "version": ">= 0.0.0.9000",
-      "sameAs": "https://github.com/ropensci/cffr"
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=cffr"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -241,7 +246,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.599KB",
+  "fileSize": "83.564KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
