@@ -1,7 +1,7 @@
 url: 'https://dieghernan.github.io/pkgdev/'
 template:
-  path: inst/pkgdown/templates
   params:
+    bootstrap: 5
     bootswatch: united
   opengraph:
     twitter:
