@@ -120,6 +120,7 @@
       "@type": "SoftwareApplication",
       "identifier": "cffr",
       "name": "cffr",
+      "version": ">= 0.2.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -130,15 +131,16 @@
     },
     "3": {
       "@type": "SoftwareApplication",
-      "identifier": "codemeta",
-      "name": "codemeta",
+      "identifier": "codemetar",
+      "name": "codemetar",
+      "version": ">= 0.3.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/cboettig/codemeta"
+      "sameAs": "https://CRAN.R-project.org/package=codemetar"
     },
     "4": {
       "@type": "SoftwareApplication",
@@ -246,11 +248,11 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.564KB",
+  "fileSize": "84.404KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
-      "datePublished": "2021",
+      "datePublished": "2022",
       "author": [
         {
           "@type": "Person",

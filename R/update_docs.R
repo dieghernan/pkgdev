@@ -11,7 +11,9 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Write codemeta.json with [codemeta::write_codemeta()]
+#' * Compress images with [magick::image_write()]
+#'   (`.png` only).
+#' * Write codemeta.json with [codemetar::write_codemeta()]
 #' * Write CITATION.cff with [cffr::cff_write()]
 #'
 #' @param url_update Logical, do you want to update urls with
@@ -19,7 +21,7 @@
 #' @param build_readme Logical, build `README.Rmd` with
 #'   [devtools::build_readme()]
 #' @param create_codemeta Logical, do you want to create
-#'   a codemeta file with [codemeta::write_codemeta()]?
+#'   a codemeta file with [codemetar::write_codemeta()]?
 #' @param create_cff Logical, do you want to create
 #'   a CITATION.cff file with [cffr::cff_write()]?
 #' @param verbose Display informative messages on the console
@@ -47,7 +49,7 @@
 #'
 #' @seealso [usethis::use_tidy_description()], [styler::style_pkg()],
 #'   [urlchecker::url_check()], [roxygen2::roxygenise()],
-#'   [devtools::build_readme()], [codemeta::write_codemeta()],
+#'   [devtools::build_readme()], [codemetar::write_codemeta()],
 #'   [tools::resaveRdaFiles()]
 #'
 #' @export
@@ -119,7 +121,7 @@ update_docs <- function(pkg = ".",
   if (create_codemeta) {
     if (verbose) cat(crayon::green("Creating codemeta\n"))
 
-    codemeta::write_codemeta()
+    codemetar::write_codemeta()
   }
   if (create_cff) {
     if (verbose) cat(crayon::green("Creating CITATION.cff\n"))

@@ -22,7 +22,7 @@ update_docs(
 \code{\link[urlchecker:url_update]{urlchecker::url_update()}}?}
 
 \item{create_codemeta}{Logical, do you want to create
-a codemeta file with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}?}
+a codemeta file with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
 
 \item{create_cff}{Logical, do you want to create
 a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
@@ -52,7 +52,9 @@ Run routine checks on the package:
 \item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
 \item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
-\item Write codemeta.json with \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}}
+\item Compress images with \code{\link[magick:editing]{magick::image_write()}}
+(\code{.png} only).
+\item Write codemeta.json with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
 \item Write CITATION.cff with \code{\link[cffr:cff_write]{cffr::cff_write()}}
 }
 }
@@ -73,6 +75,6 @@ update_docs()
 \seealso{
 \code{\link[usethis:tidyverse]{usethis::use_tidy_description()}}, \code{\link[styler:style_pkg]{styler::style_pkg()}},
 \code{\link[urlchecker:url_check]{urlchecker::url_check()}}, \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}},
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemeta:write_codemeta]{codemeta::write_codemeta()}},
+\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}},
 \code{\link[tools:checkRdaFiles]{tools::resaveRdaFiles()}}
 }
