@@ -64,7 +64,7 @@ references:
   year: '2022'
   notes: Imports
   url: https://CRAN.R-project.org/package=cffr
-  version: '>= 0.1.0'
+  version: '>= 0.2.0'
 - type: software
   title: 'codemetar: Generate ''CodeMeta'' Metadata for R Packages'
   authors:
@@ -87,7 +87,7 @@ references:
     email: csardi.gabor@gmail.com
   year: '2022'
   notes: Imports
-  url: https://github.com/r-lib/crayon#readme
+  url: https://CRAN.R-project.org/package=crayon
   version: '>= 1.4.1'
 - type: software
   title: 'devtools: Tools to Make Developing R Packages Easier'
@@ -104,6 +104,7 @@ references:
     orcid: https://orcid.org/0000-0002-6983-2759
   year: '2022'
   notes: Imports
+  url: https://CRAN.R-project.org/package=devtools
   version: '>= 2.4.1'
 - type: software
   title: 'jsonvalidate: Validate ''JSON'' Schema'
@@ -119,6 +120,7 @@ references:
     given-names: Evgeny
   year: '2022'
   notes: Imports
+  url: https://CRAN.R-project.org/package=jsonvalidate
   version: '>= 1.1.0'
 - type: software
   title: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
@@ -129,7 +131,7 @@ references:
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2022'
   notes: Imports
-  url: https://yihui.org/knitr/
+  url: https://CRAN.R-project.org/package=knitr
   version: '>= 1.33'
 - type: software
   title: 'roxygen2: In-Line Documentation for R'
@@ -148,6 +150,7 @@ references:
     given-names: Manuel
   year: '2022'
   notes: Imports
+  url: https://CRAN.R-project.org/package=roxygen2
   version: '>= 7.1.0'
 - type: software
   title: 'styler: Non-Invasive Pretty Printing of R Code'
@@ -160,6 +163,7 @@ references:
     email: lorenz.walthert@icloud.com
   year: '2022'
   notes: Imports
+  url: https://CRAN.R-project.org/package=styler
   version: '>= 1.5.1'
 - type: software
   title: 'urlchecker: Run CRAN URL Checks from Older R Versions'
@@ -173,7 +177,7 @@ references:
     email: csardi.gabor@gmail.com
   year: '2022'
   notes: Imports
-  url: https://github.com/r-lib/urlchecker
+  url: https://CRAN.R-project.org/package=urlchecker
   version: '>= 1.0.0'
 - type: software
   title: 'usethis: Automate Package and Project Setup'
@@ -192,6 +196,7 @@ references:
     orcid: https://orcid.org/0000-0003-0299-5825
   year: '2022'
   notes: Imports
+  url: https://CRAN.R-project.org/package=usethis
   version: '>= 2.0.0'
 - type: software
   title: 'covr: Test Coverage for Packages'
@@ -201,6 +206,7 @@ references:
     email: james.f.hester@gmail.com
   year: '2022'
   notes: Suggests
+  url: https://CRAN.R-project.org/package=covr
   version: '>= 3.5.1'
 - type: software
   title: 'goodpractice: Advice on R Package Building'
@@ -213,7 +219,7 @@ references:
     email: hfrick@mango-solutions.com
   year: '2022'
   notes: Suggests
-  url: https://github.com/mangothecat/goodpractice
+  url: https://CRAN.R-project.org/package=goodpractice
   version: '>= 1.0.2'
 - type: software
   title: 'lintr: A ''Linter'' for R Code'
@@ -227,7 +233,7 @@ references:
     given-names: Russ
   year: '2022'
   notes: Suggests
-  url: https://github.com/jimhester/lintr
+  url: https://CRAN.R-project.org/package=lintr
   version: '>= 2.0.1'
 - type: software
   title: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
@@ -237,6 +243,7 @@ references:
     email: csardi.gabor@gmail.com
   year: '2022'
   notes: Suggests
+  url: https://CRAN.R-project.org/package=rcmdcheck
   version: '>= 1.3.3'
 - type: software
   title: 'rmarkdown: Dynamic Documents for R'
@@ -275,4 +282,5 @@ references:
     orcid: https://orcid.org/0000-0003-3925-190X
   year: '2022'
   notes: Suggests
+  url: https://CRAN.R-project.org/package=rmarkdown
   version: '>= 2.9'
