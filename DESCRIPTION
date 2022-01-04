@@ -16,7 +16,7 @@ BugReports: https://github.com/dieghernan/pkgdev/issues
 Depends: 
     R (>= 3.6.0)
 Imports: 
-    cffr (>= 0.2.0),
+    cffr (>= 0.1.0),
     codemetar (>= 0.3.3),
     crayon (>= 1.4.1),
     devtools (>= 2.4.1),
