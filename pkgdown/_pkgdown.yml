@@ -1,8 +1,7 @@
 url: 'https://dieghernan.github.io/pkgdev/'
 template:
-  params:
-    bootstrap: 5
-    bootswatch: united
+  bootstrap: 5
+  bootswatch: united
   opengraph:
     twitter:
       creator: "@dhernangomez"
