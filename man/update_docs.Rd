@@ -52,7 +52,7 @@ Run routine checks on the package:
 \item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
 \item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
-\item Compress images with \code{\link[magick:editing]{magick::image_write()}}
+\item Compress images with \code{\link[magick:image_write]{magick::image_write()}}
 (\code{.png} only).
 \item Write codemeta.json with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
 \item Write CITATION.cff with \code{\link[cffr:cff_write]{cffr::cff_write()}}

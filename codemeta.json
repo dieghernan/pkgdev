@@ -120,7 +120,7 @@
       "@type": "SoftwareApplication",
       "identifier": "cffr",
       "name": "cffr",
-      "version": ">= 0.2.0",
+      "version": ">= 0.1.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -248,7 +248,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "84.404KB",
+  "fileSize": "83.741KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -263,5 +263,10 @@
       "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
       "url": "https://dieghernan.github.io/pkgdev/"
     }
-  ]
+  ],
+  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
+  "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
+  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
+  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
+  "keywords": ["r", "rstats", "r-package", "developer-tools", "experimental", "github-actions"]
 }
