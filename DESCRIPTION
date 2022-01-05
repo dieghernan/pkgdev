@@ -19,6 +19,7 @@ Imports:
     cffr (>= 0.2.0),
     codemetar (>= 0.3.3),
     crayon (>= 1.4.1),
+    jsonld,
     devtools (>= 2.4.1),
     jsonvalidate (>= 1.1.0),
     knitr (>= 1.33),
