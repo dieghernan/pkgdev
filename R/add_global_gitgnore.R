@@ -77,6 +77,8 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore(paste0(pkgname, "*.tar.gz"), directory = pkg)
   usethis::use_git_ignore(paste0(pkgname, "*.tgz"), directory = pkg)
 
+  usethis::use_build_ignore("CRAN-SUBMISSION")
+  usethis::use_git_ignore("CRAN-SUBMISSION", directory = pkg)
 
   return(invisible())
 }
