@@ -258,9 +258,22 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
+    "13": {
+      "@type": "SoftwareApplication",
+      "identifier": "V8",
+      "name": "V8",
+      "version": ">= 4.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=V8"
+    },
     "SystemRequirements": null
   },
-  "fileSize": "82.175KB",
+  "fileSize": "82.19KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
