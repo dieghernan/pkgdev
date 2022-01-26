@@ -44,3 +44,4 @@ docs/
 inst/doc
 revdep
 CRAN-SUBMISSION
+.github/pkg.lock
