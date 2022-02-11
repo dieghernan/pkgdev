@@ -81,7 +81,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore("CRAN-SUBMISSION", directory = pkg)
 
   usethis::use_git_ignore(".github/pkg.lock", directory = pkg)
-  
+
   usethis::use_build_ignore("pkgdown")
 
   return(invisible())
