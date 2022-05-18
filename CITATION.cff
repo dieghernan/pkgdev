@@ -272,6 +272,17 @@ references:
   url: https://CRAN.R-project.org/package=lintr
   version: '>= 2.0.1'
 - type: software
+  title: magick
+  abstract: 'magick: Advanced Graphics and Image-Processing in R'
+  notes: Suggests
+  authors:
+  - family-names: Ooms
+    given-names: Jeroen
+    email: jeroen@berkeley.edu
+    orcid: https://orcid.org/0000-0002-4035-0289
+  year: '2022'
+  url: https://CRAN.R-project.org/package=magick
+- type: software
   title: rcmdcheck
   abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
   notes: Suggests
