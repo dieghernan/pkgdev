@@ -31,6 +31,8 @@ Imports:
     usethis (>= 2.0.0),
     V8 (>= 4.0.0)
 Suggests: 
+    tidyverse,
+    cli,
     covr (>= 3.5.1),
     goodpractice (>= 1.0.2),
     lintr (>= 2.0.1),
