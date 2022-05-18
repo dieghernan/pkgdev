@@ -32,6 +32,7 @@ Suggests:
     covr (>= 3.5.1),
     goodpractice (>= 1.0.2),
     lintr (>= 2.0.1),
+    magick,
     rcmdcheck (>= 1.3.3),
     rmarkdown (>= 2.9)
 Remotes:
