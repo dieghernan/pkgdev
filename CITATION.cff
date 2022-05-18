@@ -111,6 +111,27 @@ references:
   url: https://CRAN.R-project.org/package=devtools
   version: '>= 2.4.1'
 - type: software
+  title: remotes
+  abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''
+  notes: Imports
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  - family-names: Hester
+    given-names: Jim
+    email: jim.hester@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+  - family-names: Chang
+    given-names: Winston
+  - family-names: Morgan
+    given-names: Martin
+  - family-names: Tenenbaum
+    given-names: Dan
+  year: '2022'
+  url: https://CRAN.R-project.org/package=remotes
+- type: software
   title: jsonld
   abstract: 'jsonld: JSON for Linking Data'
   notes: Imports
@@ -184,6 +205,23 @@ references:
   year: '2022'
   url: https://CRAN.R-project.org/package=styler
   version: '>= 1.5.1'
+- type: software
+  title: sessioninfo
+  abstract: 'sessioninfo: R Session Information'
+  notes: Imports
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+  - family-names: Chang
+    given-names: Winston
+  - family-names: Flight
+    given-names: Robert
+  - family-names: Müller
+    given-names: Kirill
+  - family-names: Hester
+    given-names: Jim
+  year: '2022'
+  url: https://CRAN.R-project.org/package=sessioninfo
 - type: software
   title: urlchecker
   abstract: 'urlchecker: Run CRAN URL Checks from Older R Versions'
@@ -271,17 +309,6 @@ references:
   year: '2022'
   url: https://CRAN.R-project.org/package=lintr
   version: '>= 2.0.1'
-- type: software
-  title: magick
-  abstract: 'magick: Advanced Graphics and Image-Processing in R'
-  notes: Suggests
-  authors:
-  - family-names: Ooms
-    given-names: Jeroen
-    email: jeroen@berkeley.edu
-    orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2022'
-  url: https://CRAN.R-project.org/package=magick
 - type: software
   title: rcmdcheck
   abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
