@@ -34,6 +34,8 @@ Suggests:
     lintr (>= 2.0.1),
     rcmdcheck (>= 1.3.3),
     rmarkdown (>= 2.9)
+Remotes:
+    MangoTheCat/goodpractice
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
