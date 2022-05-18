@@ -11,8 +11,6 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Compress images with [magick::image_write()]
-#'   (`.png` only).
 #' * Write codemeta.json with [codemetar::write_codemeta()]
 #' * Write CITATION.cff with [cffr::cff_write()]
 #'
