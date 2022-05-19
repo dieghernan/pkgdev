@@ -45,3 +45,4 @@ inst/doc
 revdep
 CRAN-SUBMISSION
 .github/pkg.lock
+cran-comments.md

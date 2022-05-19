@@ -79,7 +79,7 @@ add_global_gitgnore <- function(pkg = ".") {
 
   usethis::use_build_ignore("CRAN-SUBMISSION")
   usethis::use_git_ignore("CRAN-SUBMISSION", directory = pkg)
-  
+
   usethis::use_build_ignore("cran-comments.md")
   usethis::use_git_ignore("cran-comments.md", directory = pkg)
 

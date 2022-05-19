@@ -64,7 +64,6 @@ references:
     email: diego.hernangomezherrero@gmail.com
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2022'
-  url: https://CRAN.R-project.org/package=cffr
   version: '>= 0.2.0'
 - type: software
   title: codemetar
@@ -79,7 +78,6 @@ references:
     given-names: Maëlle
     orcid: https://orcid.org/0000-0002-2815-0399
   year: '2022'
-  url: https://CRAN.R-project.org/package=codemetar
   version: '>= 0.3.3'
 - type: software
   title: crayon
@@ -90,7 +88,7 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2022'
-  url: https://CRAN.R-project.org/package=crayon
+  url: https://github.com/r-lib/crayon#readme
   version: '>= 1.4.1'
 - type: software
   title: devtools
@@ -108,8 +106,45 @@ references:
     email: jenny@rstudio.com
     orcid: https://orcid.org/0000-0002-6983-2759
   year: '2022'
-  url: https://CRAN.R-project.org/package=devtools
   version: '>= 2.4.1'
+- type: software
+  title: jsonld
+  abstract: 'jsonld: JSON for Linking Data'
+  notes: Imports
+  authors:
+  - family-names: Ooms
+    given-names: Jeroen
+    email: jeroen@berkeley.edu
+    orcid: https://orcid.org/0000-0002-4035-0289
+  year: '2022'
+- type: software
+  title: jsonvalidate
+  abstract: 'jsonvalidate: Validate ''JSON'' Schema'
+  notes: Imports
+  authors:
+  - family-names: FitzJohn
+    given-names: Rich
+    email: rich.fitzjohn@gmail.com
+  - family-names: Ashton
+    given-names: Rob
+  - family-names: Buus
+    given-names: Mathias
+  - family-names: Poberezkin
+    given-names: Evgeny
+  year: '2022'
+  version: '>= 1.1.0'
+- type: software
+  title: knitr
+  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  notes: Imports
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2022'
+  url: https://yihui.org/knitr/
+  version: '>= 1.33'
 - type: software
   title: remotes
   abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''
@@ -130,47 +165,6 @@ references:
   - family-names: Tenenbaum
     given-names: Dan
   year: '2022'
-  url: https://CRAN.R-project.org/package=remotes
-- type: software
-  title: jsonld
-  abstract: 'jsonld: JSON for Linking Data'
-  notes: Imports
-  authors:
-  - family-names: Ooms
-    given-names: Jeroen
-    email: jeroen@berkeley.edu
-    orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2022'
-  url: https://CRAN.R-project.org/package=jsonld
-- type: software
-  title: jsonvalidate
-  abstract: 'jsonvalidate: Validate ''JSON'' Schema'
-  notes: Imports
-  authors:
-  - family-names: FitzJohn
-    given-names: Rich
-    email: rich.fitzjohn@gmail.com
-  - family-names: Ashton
-    given-names: Rob
-  - family-names: Buus
-    given-names: Mathias
-  - family-names: Poberezkin
-    given-names: Evgeny
-  year: '2022'
-  url: https://CRAN.R-project.org/package=jsonvalidate
-  version: '>= 1.1.0'
-- type: software
-  title: knitr
-  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
-  notes: Imports
-  authors:
-  - family-names: Xie
-    given-names: Yihui
-    email: xie@yihui.name
-    orcid: https://orcid.org/0000-0003-0645-5666
-  year: '2022'
-  url: https://CRAN.R-project.org/package=knitr
-  version: '>= 1.33'
 - type: software
   title: roxygen2
   abstract: 'roxygen2: In-Line Documentation for R'
@@ -189,22 +183,7 @@ references:
   - family-names: Eugster
     given-names: Manuel
   year: '2022'
-  url: https://CRAN.R-project.org/package=roxygen2
   version: '>= 7.1.0'
-- type: software
-  title: styler
-  abstract: 'styler: Non-Invasive Pretty Printing of R Code'
-  notes: Imports
-  authors:
-  - family-names: Müller
-    given-names: Kirill
-    email: krlmlr+r@mailbox.org
-  - family-names: Walthert
-    given-names: Lorenz
-    email: lorenz.walthert@icloud.com
-  year: '2022'
-  url: https://CRAN.R-project.org/package=styler
-  version: '>= 1.5.1'
 - type: software
   title: sessioninfo
   abstract: 'sessioninfo: R Session Information'
@@ -221,7 +200,19 @@ references:
   - family-names: Hester
     given-names: Jim
   year: '2022'
-  url: https://CRAN.R-project.org/package=sessioninfo
+- type: software
+  title: styler
+  abstract: 'styler: Non-Invasive Pretty Printing of R Code'
+  notes: Imports
+  authors:
+  - family-names: Müller
+    given-names: Kirill
+    email: krlmlr+r@mailbox.org
+  - family-names: Walthert
+    given-names: Lorenz
+    email: lorenz.walthert@icloud.com
+  year: '2022'
+  version: '>= 1.5.1'
 - type: software
   title: urlchecker
   abstract: 'urlchecker: Run CRAN URL Checks from Older R Versions'
@@ -235,7 +226,7 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2022'
-  url: https://CRAN.R-project.org/package=urlchecker
+  url: https://github.com/r-lib/urlchecker
   version: '>= 1.0.0'
 - type: software
   title: usethis
@@ -255,7 +246,6 @@ references:
     email: malcolmbarrett@gmail.com
     orcid: https://orcid.org/0000-0003-0299-5825
   year: '2022'
-  url: https://CRAN.R-project.org/package=usethis
   version: '>= 2.0.0'
 - type: software
   title: V8
@@ -267,18 +257,7 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2022'
-  url: https://CRAN.R-project.org/package=V8
   version: '>= 4.0.0'
-- type: software
-  title: tidyverse
-  abstract: 'tidyverse: Easily Install and Load the ''Tidyverse'''
-  notes: Suggests
-  authors:
-  - family-names: Wickham
-    given-names: Hadley
-    email: hadley@rstudio.com
-  year: '2022'
-  url: https://CRAN.R-project.org/package=tidyverse
 - type: software
   title: cli
   abstract: 'cli: Helpers for Developing Command Line Interfaces'
@@ -288,7 +267,6 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2022'
-  url: https://CRAN.R-project.org/package=cli
 - type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'
@@ -298,7 +276,6 @@ references:
     given-names: Jim
     email: james.f.hester@gmail.com
   year: '2022'
-  url: https://CRAN.R-project.org/package=covr
   version: '>= 3.5.1'
 - type: software
   title: goodpractice
@@ -327,7 +304,7 @@ references:
   - family-names: Hyde
     given-names: Russ
   year: '2022'
-  url: https://CRAN.R-project.org/package=lintr
+  url: https://github.com/jimhester/lintr
   version: '>= 2.0.1'
 - type: software
   title: rcmdcheck
@@ -338,7 +315,6 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2022'
-  url: https://CRAN.R-project.org/package=rcmdcheck
   version: '>= 1.3.3'
 - type: software
   title: rmarkdown
@@ -378,5 +354,13 @@ references:
     email: rich@rstudio.com
     orcid: https://orcid.org/0000-0003-3925-190X
   year: '2022'
-  url: https://CRAN.R-project.org/package=rmarkdown
   version: '>= 2.9'
+- type: software
+  title: tidyverse
+  abstract: 'tidyverse: Easily Install and Load the ''Tidyverse'''
+  notes: Suggests
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2022'
