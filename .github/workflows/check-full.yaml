@@ -55,4 +55,4 @@ jobs:
           extra-packages: needs: check
           needs: check
           
-      - uses: r-lib/actions/check-r-package@v 
+      - uses: r-lib/actions/check-r-package@v2
