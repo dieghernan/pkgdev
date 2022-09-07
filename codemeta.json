@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.2.0 (2022-04-22)",
+  "runtimePlatform": "R version 4.2.1 (2022-06-23)",
   "author": [
     {
       "@type": "Person",
@@ -73,6 +73,12 @@
       "identifier": "goodpractice",
       "name": "goodpractice",
       "version": ">= 1.0.2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
       "sameAs": "https://github.com/MangoTheCat/goodpractice"
     },
     {
@@ -315,7 +321,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "81.576KB",
+  "fileSize": "81.525KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

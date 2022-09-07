@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.2.2
+# CITATION file created with {cffr} R package, v0.2.3
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -282,12 +282,23 @@ references:
   abstract: 'goodpractice: Advice on R Package Building'
   notes: Suggests
   authors:
+  - family-names: Marks
+    given-names: Karina
+    email: karina.marks@ascent.io
+  - family-names: de Bortoli
+    given-names: Daniel
   - family-names: Csardi
     given-names: Gabor
     email: csardi.gabor@gmail.com
   - family-names: Frick
     given-names: Hannah
-    email: hfrick@mango-solutions.com
+    email: hannah.frick@gmail.com
+  - family-names: Jones
+    given-names: Owen
+    email: owenjonesuob@gmail.com
+  - family-names: Alexander
+    given-names: Hannah
+    email: halexander@mango-solutions.com
   year: '2022'
   url: https://github.com/mangothecat/goodpractice
   version: '>= 1.0.2'
@@ -303,8 +314,13 @@ references:
     given-names: Florent
   - family-names: Hyde
     given-names: Russ
+  - family-names: Chirico
+    given-names: Michael
+  - family-names: Ren
+    given-names: Kun
+  - family-names: Rosenstock
+    given-names: Alexander
   year: '2022'
-  url: https://github.com/jimhester/lintr
   version: '>= 2.0.1'
 - type: software
   title: rcmdcheck
