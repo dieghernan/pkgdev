@@ -62,7 +62,6 @@ update_docs <- function(pkg = ".",
                         verbose = TRUE,
                         precompute = TRUE,
                         ...) {
-
   # Add global .gitignore
 
 

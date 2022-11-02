@@ -18,7 +18,6 @@
 #' }
 #'
 add_global_gitgnore <- function(pkg = ".") {
-
   # Template from Github
   # History files
   usethis::use_git_ignore(".Rhistory", directory = pkg)
