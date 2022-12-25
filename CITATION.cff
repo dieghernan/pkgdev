@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.3.0
+# CITATION file created with {cffr} R package, v0.4.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -45,12 +45,12 @@ references:
 - type: software
   title: 'R: A Language and Environment for Statistical Computing'
   notes: Depends
+  url: https://www.R-project.org/
   authors:
   - name: R Core Team
   location:
     name: Vienna, Austria
   year: '2022'
-  url: https://www.R-project.org/
   institution:
     name: R Foundation for Statistical Computing
   version: '>= 3.6.0'
@@ -58,6 +58,8 @@ references:
   title: cffr
   abstract: 'cffr: Generate Citation File Format (''cff'') Metadata for R Packages'
   notes: Imports
+  url: https://docs.ropensci.org/cffr/
+  repository: https://CRAN.R-project.org/package=cffr
   authors:
   - family-names: Hernangómez
     given-names: Diego
@@ -69,6 +71,8 @@ references:
   title: codemetar
   abstract: 'codemetar: Generate ''CodeMeta'' Metadata for R Packages'
   notes: Imports
+  url: https://docs.ropensci.org/codemetar/
+  repository: https://CRAN.R-project.org/package=codemetar
   authors:
   - family-names: Boettiger
     given-names: Carl
@@ -83,17 +87,20 @@ references:
   title: crayon
   abstract: 'crayon: Colored Terminal Output'
   notes: Imports
+  url: https://github.com/r-lib/crayon#readme
+  repository: https://CRAN.R-project.org/package=crayon
   authors:
   - family-names: Csárdi
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2022'
-  url: https://github.com/r-lib/crayon#readme
   version: '>= 1.4.1'
 - type: software
   title: devtools
   abstract: 'devtools: Tools to Make Developing R Packages Easier'
   notes: Imports
+  url: https://devtools.r-lib.org/
+  repository: https://CRAN.R-project.org/package=devtools
   authors:
   - family-names: Wickham
     given-names: Hadley
@@ -111,6 +118,8 @@ references:
   title: jsonld
   abstract: 'jsonld: JSON for Linking Data'
   notes: Imports
+  url: https://docs.ropensci.org/jsonld
+  repository: https://CRAN.R-project.org/package=jsonld
   authors:
   - family-names: Ooms
     given-names: Jeroen
@@ -121,6 +130,8 @@ references:
   title: jsonvalidate
   abstract: 'jsonvalidate: Validate ''JSON'' Schema'
   notes: Imports
+  url: https://docs.ropensci.org/jsonvalidate/
+  repository: https://CRAN.R-project.org/package=jsonvalidate
   authors:
   - family-names: FitzJohn
     given-names: Rich
@@ -137,18 +148,21 @@ references:
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Imports
+  url: https://yihui.org/knitr/
+  repository: https://CRAN.R-project.org/package=knitr
   authors:
   - family-names: Xie
     given-names: Yihui
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2022'
-  url: https://yihui.org/knitr/
   version: '>= 1.33'
 - type: software
   title: remotes
   abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''
   notes: Imports
+  url: https://remotes.r-lib.org
+  repository: https://CRAN.R-project.org/package=remotes
   authors:
   - family-names: Csárdi
     given-names: Gábor
@@ -169,6 +183,8 @@ references:
   title: roxygen2
   abstract: 'roxygen2: In-Line Documentation for R'
   notes: Imports
+  url: https://roxygen2.r-lib.org/
+  repository: https://CRAN.R-project.org/package=roxygen2
   authors:
   - family-names: Wickham
     given-names: Hadley
@@ -188,6 +204,8 @@ references:
   title: sessioninfo
   abstract: 'sessioninfo: R Session Information'
   notes: Imports
+  url: https://github.com/r-lib/sessioninfo#readme
+  repository: https://CRAN.R-project.org/package=sessioninfo
   authors:
   - family-names: Wickham
     given-names: Hadley
@@ -204,6 +222,8 @@ references:
   title: styler
   abstract: 'styler: Non-Invasive Pretty Printing of R Code'
   notes: Imports
+  url: https://styler.r-lib.org
+  repository: https://CRAN.R-project.org/package=styler
   authors:
   - family-names: Müller
     given-names: Kirill
@@ -218,6 +238,8 @@ references:
   title: urlchecker
   abstract: 'urlchecker: Run CRAN URL Checks from Older R Versions'
   notes: Imports
+  url: https://github.com/r-lib/urlchecker
+  repository: https://CRAN.R-project.org/package=urlchecker
   authors:
   - name: R Core team
   - family-names: Hester
@@ -227,12 +249,13 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2022'
-  url: https://github.com/r-lib/urlchecker
   version: '>= 1.0.0'
 - type: software
   title: usethis
   abstract: 'usethis: Automate Package and Project Setup'
   notes: Imports
+  url: https://usethis.r-lib.org
+  repository: https://CRAN.R-project.org/package=usethis
   authors:
   - family-names: Wickham
     given-names: Hadley
@@ -252,6 +275,8 @@ references:
   title: V8
   abstract: 'V8: Embedded JavaScript and WebAssembly Engine for R'
   notes: Imports
+  url: https://v8.dev
+  repository: https://CRAN.R-project.org/package=V8
   authors:
   - family-names: Ooms
     given-names: Jeroen
@@ -263,6 +288,8 @@ references:
   title: cli
   abstract: 'cli: Helpers for Developing Command Line Interfaces'
   notes: Suggests
+  url: https://cli.r-lib.org
+  repository: https://CRAN.R-project.org/package=cli
   authors:
   - family-names: Csárdi
     given-names: Gábor
@@ -272,6 +299,8 @@ references:
   title: covr
   abstract: 'covr: Test Coverage for Packages'
   notes: Suggests
+  url: https://covr.r-lib.org
+  repository: https://CRAN.R-project.org/package=covr
   authors:
   - family-names: Hester
     given-names: Jim
@@ -282,6 +311,8 @@ references:
   title: goodpractice
   abstract: 'goodpractice: Advice on R Package Building'
   notes: Suggests
+  url: https://github.com/mangothecat/goodpractice
+  repository: https://CRAN.R-project.org/package=goodpractice
   authors:
   - family-names: Marks
     given-names: Karina
@@ -301,12 +332,13 @@ references:
     given-names: Hannah
     email: halexander@mango-solutions.com
   year: '2022'
-  url: https://github.com/mangothecat/goodpractice
   version: '>= 1.0.2'
 - type: software
   title: lintr
   abstract: 'lintr: A ''Linter'' for R Code'
   notes: Suggests
+  url: https://lintr.r-lib.org
+  repository: https://CRAN.R-project.org/package=lintr
   authors:
   - family-names: Hester
     given-names: Jim
@@ -331,6 +363,8 @@ references:
   title: rcmdcheck
   abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
   notes: Suggests
+  url: https://r-lib.github.io/rcmdcheck/
+  repository: https://CRAN.R-project.org/package=rcmdcheck
   authors:
   - family-names: Csárdi
     given-names: Gábor
@@ -341,6 +375,8 @@ references:
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
   notes: Suggests
+  url: https://pkgs.rstudio.com/rmarkdown/
+  repository: https://CRAN.R-project.org/package=rmarkdown
   authors:
   - family-names: Allaire
     given-names: JJ
@@ -380,6 +416,8 @@ references:
   title: tidyverse
   abstract: 'tidyverse: Easily Install and Load the ''Tidyverse'''
   notes: Suggests
+  url: https://tidyverse.tidyverse.org
+  repository: https://CRAN.R-project.org/package=tidyverse
   authors:
   - family-names: Wickham
     given-names: Hadley
