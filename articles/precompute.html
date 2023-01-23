@@ -92,15 +92,13 @@
     
 <p>This is an example of a precomputed vignette:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1234</span><span class="op">)</span></span>
 <span><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">tbl</span><span class="op">$</span><span class="va">x</span>, y <span class="op">=</span> <span class="va">tbl</span><span class="op">$</span><span class="va">y</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plot-1.png" alt="plot of chunk plot" width="100%"></p>
 <p>Another plot</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">tbl</span><span class="op">$</span><span class="va">y</span>, y <span class="op">=</span> <span class="va">tbl</span><span class="op">$</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">tbl</span><span class="op">$</span><span class="va">y</span>, y <span class="op">=</span> <span class="va">tbl</span><span class="op">$</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
 <p><img src="plot2-1.png" alt="plot of chunk plot2" width="100%"></p>
   </main>
 </div>
