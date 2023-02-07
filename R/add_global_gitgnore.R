@@ -69,13 +69,13 @@ add_global_gitgnore <- function(pkg = ".") {
   fnew <- f[f != "revdep"]
   writeLines(fnew, ".gitignore")
 
-  if (dir.exists(file.path(pkg,"revdep"))){
-    revdepig <- c("checks", "library", "checks.noindex", "library.noindex",
-    "data.sqlite", "*.html")
+  if (dir.exists(file.path(pkg, "revdep"))) {
+    revdepig <- c(
+      "checks", "library", "checks.noindex", "library.noindex",
+      "data.sqlite", "*.html"
+    )
 
-    usethis::use_git_ignore(revdepig, directory = file.path(pkg,"revdep"))
-
-
+    usethis::use_git_ignore(revdepig, directory = file.path(pkg, "revdep"))
   }
 
   # Ignore this also on build
