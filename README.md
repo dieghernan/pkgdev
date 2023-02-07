@@ -27,7 +27,7 @@ devtools::install_github("dieghernan/pkgdev")
 ```
 
 Alternatively, you can install `pkgdev` using the
-[r-universe](https://dieghernan.r-universe.dev/ui#builds):
+[r-universe](http://dieghernan.r-universe.dev/ui/):
 
 ``` r
 # Enable this universe

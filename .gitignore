@@ -46,3 +46,12 @@ revdep
 CRAN-SUBMISSION
 .github/pkg.lock
 cran-comments.md
+revdep/checks
+revdep/library
+revdep/checks.noindex
+revdep/library.noindex
+revdep/data.sqlite
+revdep/*.html
+revdep/download
+revdep/lib
+revdep/cloud.noindex

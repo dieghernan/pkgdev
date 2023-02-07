@@ -60,13 +60,15 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore(".Renviron", directory = pkg)
 
   # Revdep
-  
-  v <- c("checks","library","checks.noindex","library.noindex","data.sqlite",
-  "*.html","download","lib","cloud.noindex")
-  
-  usethis::use_git_ignore(paste0("revdep/",v), directory = pkg)
-  
-  
+
+  v <- c(
+    "checks", "library", "checks.noindex", "library.noindex", "data.sqlite",
+    "*.html", "download", "lib", "cloud.noindex"
+  )
+
+  usethis::use_git_ignore(paste0("revdep/", v), directory = pkg)
+
+
   # Ignore this also on build
   usethis::use_build_ignore("revdep")
 
