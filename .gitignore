@@ -42,7 +42,6 @@ pkgdev*.tar.gz
 pkgdev*.tgz
 docs/
 inst/doc
-revdep
 CRAN-SUBMISSION
 .github/pkg.lock
 cran-comments.md
@@ -55,3 +54,5 @@ revdep/*.html
 revdep/download
 revdep/lib
 revdep/cloud.noindex
+.Rproj.user
+.Rdata

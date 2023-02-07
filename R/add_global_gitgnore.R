@@ -21,7 +21,7 @@ add_global_gitgnore <- function(pkg = ".") {
   # Template from Github
   # History files
   usethis::use_git_ignore(".Rproj.user", directory = pkg)
-  
+
   usethis::use_git_ignore(".Rhistory", directory = pkg)
   usethis::use_git_ignore(".Rapp.history", directory = pkg)
 
@@ -66,16 +66,9 @@ add_global_gitgnore <- function(pkg = ".") {
   # Revdep
   # Cleanup previous versions
   f <- readLines(".gitignore")
-  f <- f[f != "revdep"]
-  writeLines(".gitignore", f)
-  
-  
-  v <- c("checks","library","checks.noindex","library.noindex","data.sqlite",
-  "*.html","download","lib","cloud.noindex")
-  
-  usethis::use_git_ignore(paste0("revdep/",v), directory = pkg)
-  
-  
+  fnew <- f[f != "revdep"]
+  writeLines(fnew, ".gitignore")
+
   # Ignore this also on build
   usethis::use_build_ignore("revdep")
 
