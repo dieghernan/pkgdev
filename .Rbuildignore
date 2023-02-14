@@ -14,3 +14,6 @@
 ^CITATION\.cff$
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
+^pkgdev\.Rcheck$
+^pkgdev.*\.tar\.gz$
+^pkgdev.*\.tgz$

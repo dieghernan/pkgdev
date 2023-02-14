@@ -8,7 +8,7 @@
   "codeRepository": "https://github.com/dieghernan/pkgdev",
   "issueTracker": "https://github.com/dieghernan/pkgdev/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.0.1.9004",
+  "version": "0.1.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -321,7 +321,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "81.659KB",
+  "fileSize": "81.691KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

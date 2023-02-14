@@ -71,9 +71,9 @@ update_docs <- function(pkg = ".",
   add_global_gitgnore(pkg = pkg)
 
 
-  this <- list.files(".", pattern = "Rproj$")
+  this <- list.files(".", pattern = "Rproja$")
 
-  if (file.exists(this)) {
+  if (all(file.exists(this), length(this) > 0)) {
     if (verbose) cat(crayon::green("Add Markdown options to *.Rproj file\n"))
     usethis::write_union(this, c("MarkdownWrap: Column", "MarkdownWrapAtColumn: 80"))
   }
