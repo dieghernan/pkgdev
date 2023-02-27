@@ -1,7 +1,7 @@
 Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))
@@ -23,6 +23,7 @@ Imports:
     jsonld,
     jsonvalidate (>= 1.1.0),
     knitr (>= 1.33),
+    pkgdown,
     remotes,
     roxygen2 (>= 7.1.0),
     sessioninfo,

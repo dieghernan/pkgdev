@@ -1,3 +1,7 @@
+# pkgdev (development version)
+
+* Add `pkgdown` to Imports
+
 # pkgdev 0.1.0
 
 # pkgdev 0.0.1.9000

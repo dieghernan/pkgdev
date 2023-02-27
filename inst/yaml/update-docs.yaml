@@ -26,7 +26,6 @@ jobs:
         with:
           extra-packages: |
             local::.
-            any::pkgdown
             any::rcmdcheck
             dieghernan/pkgdev
           needs: website
