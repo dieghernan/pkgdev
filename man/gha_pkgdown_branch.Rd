@@ -31,7 +31,7 @@ The GitHub action created would deploy a pkgdown site of your package
 on the gh-pages branch.
 }
 \details{
-Check \url{https://github.com/actions/virtual-environments} to see the available
+Check \url{https://github.com/actions/runner-images} to see the available
 options.
 }
 \examples{

@@ -31,7 +31,7 @@ The GitHub action created would document your package (see \code{\link[=update_d
 would check it and would deploy the package on a gh-pages branch.
 }
 \details{
-Check \url{https://github.com/actions/virtual-environments} to see the available
+Check \url{https://github.com/actions/runner-images} to see the available
 options.
 }
 \examples{
