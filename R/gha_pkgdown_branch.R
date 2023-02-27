@@ -10,7 +10,7 @@
 #' @inheritParams gha_check_full
 #'
 #' @details
-#' Check <https://github.com/actions/virtual-environments> to see the available
+#' Check <https://github.com/actions/runner-images> to see the available
 #' options.
 #'
 #'
