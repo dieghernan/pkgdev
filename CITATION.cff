@@ -8,7 +8,7 @@ message: 'To cite package "pkgdev" in publications use:'
 type: software
 license: MIT
 title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
-version: 0.1.0
+version: 0.1.0.9000
 abstract: A small set of functions that takes advantage of GitHub Actions for making
   your life easier as a R package developer. This package is primarily intended for
   personal use, however feel free to use it (at your own risk :)).
@@ -157,6 +157,24 @@ references:
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2023'
   version: '>= 1.33'
+- type: software
+  title: pkgdown
+  abstract: 'pkgdown: Make Static HTML Documentation for a Package'
+  notes: Imports
+  url: https://pkgdown.r-lib.org
+  repository: https://CRAN.R-project.org/package=pkgdown
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+    orcid: https://orcid.org/0000-0003-4757-117X
+  - family-names: Hesselberth
+    given-names: Jay
+    orcid: https://orcid.org/0000-0002-6299-179X
+  - family-names: Salmon
+    given-names: Maëlle
+    orcid: https://orcid.org/0000-0002-2815-0399
+  year: '2023'
 - type: software
   title: remotes
   abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''
