@@ -105,7 +105,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_build_ignore("pkgdown.yaml")
   usethis::use_build_ignore("pkgdown.yml")
   usethis::use_build_ignore(".imgbotconfig")
-  
+
 
   return(invisible())
 }

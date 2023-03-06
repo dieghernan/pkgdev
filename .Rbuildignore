@@ -17,3 +17,6 @@
 ^pkgdev\.Rcheck$
 ^pkgdev.*\.tar\.gz$
 ^pkgdev.*\.tgz$
+^pkgdown\.yaml$
+^pkgdown\.yml$
+^\.imgbotconfig$
