@@ -1,7 +1,7 @@
 Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
-Version: 0.1.0.9000
+Version: 0.1.0.9010
 Authors@R: 
     person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))
@@ -17,8 +17,8 @@ Depends:
     R (>= 3.6.0)
 Imports: 
     cffr (>= 0.2.0),
+    cli (>= 3.4.0),
     codemetar (>= 0.3.3),
-    crayon (>= 1.4.1),
     devtools (>= 2.4.1),
     jsonld,
     jsonvalidate (>= 1.1.0),
@@ -32,7 +32,6 @@ Imports:
     usethis (>= 2.0.0),
     V8 (>= 4.0.0)
 Suggests: 
-    cli,
     covr (>= 3.5.1),
     goodpractice (>= 1.0.2),
     lintr (>= 2.0.1),

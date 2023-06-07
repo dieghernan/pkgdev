@@ -77,9 +77,12 @@ gha_pkgdown_branch <-
 
 
     if (result) {
-      cat(crayon::green("Success\n"))
+      cli::cli_alert_success(paste(
+        cli::col_green("Action updated correctly."),
+        "See {.file {file.path(destdir, basename(filepath))}}"
+      ))
     } else {
-      cat(crayon::magenta("File not updated\n"))
+      cli::cli_alert_danger(cli::col_red("File not updated"))
       return(invisible())
     }
 
@@ -101,11 +104,9 @@ gha_pkgdown_branch <-
     )
 
     writeLines(add_platform, con = file.path(destdir, "pkgdown-gh-pages.yaml"))
-    cat(crayon::green(
-      paste0(
-        "Your package would be deployed on ", platform, "-", version,
-        "\n"
-      )
+    cli::cli_alert_info(paste(
+      "Your package would be deployed on",
+      "{.val {paste0(platform, '-', version)}}"
     ))
 
     return(invisible())

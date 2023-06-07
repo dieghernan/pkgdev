@@ -68,9 +68,12 @@ gha_check_full <-
 
 
     if (result) {
-      cat(crayon::green("Success\n"))
+      cli::cli_alert_success(paste(
+        cli::col_green("Action updated correctly."),
+        "See {.file {file.path(destdir, basename(filepath))}}"
+      ))
     } else {
-      cat(crayon::magenta("File not updated\n"))
+      cli::cli_alert_danger(cli::col_red("File not updated"))
       return(invisible())
     }
 

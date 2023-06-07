@@ -67,51 +67,64 @@ update_docs <- function(pkg = ".",
 
 
 
-  if (verbose) cat(crayon::green("Add .gitignore to root\n"))
+  if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
   add_global_gitgnore(pkg = pkg)
 
 
-  this <- list.files(".", pattern = "Rproja$")
+  this <- list.files(".", pattern = "Rproj$")
 
   if (all(file.exists(this), length(this) > 0)) {
-    if (verbose) cat(crayon::green("Add Markdown options to *.Rproj file\n"))
-    usethis::write_union(this, c("MarkdownWrap: Column", "MarkdownWrapAtColumn: 80"))
+    if (verbose) {
+      cli::cli_alert_info("Add Markdown options to {.file {this}} file")
+    }
+    usethis::write_union(this, c(
+      "MarkdownWrap: Column",
+      "MarkdownWrapAtColumn: 80"
+    ))
   }
 
 
 
-  if (verbose) cat(crayon::green("Cleaning DESCRIPTION\n"))
+  if (verbose) cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
   usethis::use_tidy_description()
 
   if (url_update) {
-    if (verbose) cat(crayon::green("Check URLs\n"))
+    if (verbose) cli::cli_alert_info("Checking URLs with {.pkg urlchecker}")
     urlchecker::url_update(pkg)
   }
 
-  if (verbose) cat(crayon::green("Compressing data\n"))
+  if (verbose) cli::cli_alert_info("Compressing data in {.path ./R}")
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
   if (dir.exists(file.path(pkg, "data"))) {
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
   }
-  if (verbose) cat(crayon::green("styler package\n"))
+  if (verbose) cli::cli_alert_info("Styling package with {.pkg styler}")
   styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
 
   if (dir.exists(file.path(pkg, "vignettes"))) {
-    styler::style_dir(file.path(pkg, "vignettes"), filetype = c("R", "Rmd", "Rprofile"))
+    styler::style_dir(file.path(pkg, "vignettes"), filetype = c(
+      "R", "Rmd",
+      "Rprofile"
+    ))
   }
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
-    if (verbose) cat(crayon::green("styler external examples\n"))
+    if (verbose) {
+      cli::cli_alert_info(paste(
+        "Styling external examples in",
+        "{.path {file.path('inst', 'examples')}}"
+      ))
+    }
     styler::style_dir(file.path(pkg, "inst", "examples"))
   }
 
 
-  if (verbose) cat(crayon::green("Roxygenising package\n"))
+  if (verbose) cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
   roxygen2::roxygenise()
 
 
   if (precompute) {
-    if (verbose) cat(crayon::green("Precomputing vignettes\n"))
+    if (verbose) cli::cli_alert_info("Precomputing vignettes")
     precompute_vignette_all(...)
   }
   # Check README.Rmd
@@ -119,17 +132,22 @@ update_docs <- function(pkg = ".",
   has_readme <- file.exists(readme_rmd)
 
   if (build_readme && has_readme) {
-    if (verbose) cat(crayon::green("Rebuilding README\n"))
+    if (verbose) cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
 
   if (create_codemeta) {
-    if (verbose) cat(crayon::green("Creating codemeta\n"))
-
+    if (verbose) {
+      cli::cli_alert_info(
+        "Creating {.file codemeta.json} with {.pkg codemetar}"
+      )
+    }
     codemetar::write_codemeta()
   }
   if (create_cff) {
-    if (verbose) cat(crayon::green("Creating CITATION.cff\n"))
+    if (verbose) {
+      cli::cli_alert_info("Creating {.file CITATION.cff} with {.pkg cffr}")
+    }
 
     cffr::cff_write(...)
   }

@@ -18,7 +18,10 @@ tbl <- data.frame(x = runif(10), y = runif(10))
 plot(x = tbl$x, y = tbl$y)
 ```
 
+<div class="figure">
 <img src="./plot-1.png" alt="plot of chunk plot" width="100%" />
+<p class="caption">plot of chunk plot</p>
+</div>
 
 
 Another plot
@@ -28,4 +31,7 @@ Another plot
 plot(x = tbl$y, y = tbl$x)
 ```
 
+<div class="figure">
 <img src="./plot2-1.png" alt="plot of chunk plot2" width="100%" />
+<p class="caption">plot of chunk plot2</p>
+</div>

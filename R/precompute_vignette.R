@@ -10,7 +10,7 @@
 #'   (e.g. `"some_name.Rmd.orig"`).
 #' @param figure_ext Extension of the figures plotted on the vignette.
 #'   See **Details**.
-#' @param create_r_file Wheter to create an additional R file with the code
+#' @param create_r_file Whether to create an additional R file with the code
 #' of the vignette.
 #' @param ... Parameters passed to [precompute_vignette()].
 #'
@@ -48,17 +48,27 @@ precompute_vignette <- function(source,
   out <- gsub(".orig", "", source)
   usethis::use_build_ignore(source)
 
-
-  knitr::knit(input = source, output = out)
-
+  cli::cli_alert("Precomputing {.file {source}}")
+  knitr::knit(input = source, output = out, quiet = TRUE)
+  cli::cli_alert("Resulting vignette in {.file {out}}")
   # Move plot files to dir
 
   plots <- list.files(".", pattern = figure_ext)
   plots_to_move <- file.path("vignettes", plots)
 
   res <- file.copy(plots, plots_to_move, overwrite = TRUE)
-
+  rm(res)
   rem <- file.remove(plots)
+  rm(rem)
+  # Cropping plots
+
+  l <- list.files("vignettes",
+    pattern = paste0("*", figure_ext, "$"),
+    full.names = TRUE
+  )
+
+  if (length(l) > 0) ul <- lapply(l, knitr::plot_crop)
+  rm(ul)
 
   # Create R file
   if (create_r_file) {
@@ -83,6 +93,8 @@ precompute_vignette_all <- function(dir = "vignettes", ...) {
       precompute_vignette(source = vig[i], ...)
     }
   } else {
-    cat(crayon::green("No vignettes for precomputing found\n"))
+    cli::cli_alert_info(
+      "No vignettes for precomputing found in {.path {file.path(dir)}} "
+    )
   }
 }

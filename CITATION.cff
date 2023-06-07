@@ -8,7 +8,7 @@ message: 'To cite package "pkgdev" in publications use:'
 type: software
 license: MIT
 title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
-version: 0.1.0.9000
+version: 0.1.0.9010
 abstract: A small set of functions that takes advantage of GitHub Actions for making
   your life easier as a R package developer. This package is primarily intended for
   personal use, however feel free to use it (at your own risk :)).
@@ -68,6 +68,18 @@ references:
   year: '2023'
   version: '>= 0.2.0'
 - type: software
+  title: cli
+  abstract: 'cli: Helpers for Developing Command Line Interfaces'
+  notes: Imports
+  url: https://cli.r-lib.org
+  repository: https://CRAN.R-project.org/package=cli
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  year: '2023'
+  version: '>= 3.4.0'
+- type: software
   title: codemetar
   abstract: 'codemetar: Generate ''CodeMeta'' Metadata for R Packages'
   notes: Imports
@@ -83,18 +95,6 @@ references:
     orcid: https://orcid.org/0000-0002-2815-0399
   year: '2023'
   version: '>= 0.3.3'
-- type: software
-  title: crayon
-  abstract: 'crayon: Colored Terminal Output'
-  notes: Imports
-  url: https://github.com/r-lib/crayon#readme
-  repository: https://CRAN.R-project.org/package=crayon
-  authors:
-  - family-names: Csárdi
-    given-names: Gábor
-    email: csardi.gabor@gmail.com
-  year: '2023'
-  version: '>= 1.4.1'
 - type: software
   title: devtools
   abstract: 'devtools: Tools to Make Developing R Packages Easier'
@@ -277,16 +277,20 @@ references:
   authors:
   - family-names: Wickham
     given-names: Hadley
-    email: hadley@rstudio.com
+    email: hadley@posit.co
     orcid: https://orcid.org/0000-0003-4757-117X
   - family-names: Bryan
     given-names: Jennifer
-    email: jenny@rstudio.com
+    email: jenny@posit.co
     orcid: https://orcid.org/0000-0002-6983-2759
   - family-names: Barrett
     given-names: Malcolm
     email: malcolmbarrett@gmail.com
     orcid: https://orcid.org/0000-0003-0299-5825
+  - family-names: Teucher
+    given-names: Andy
+    email: andy.teucher@posit.co
+    orcid: https://orcid.org/0000-0002-7840-692X
   year: '2023'
   version: '>= 2.0.0'
 - type: software
@@ -302,17 +306,6 @@ references:
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2023'
   version: '>= 4.0.0'
-- type: software
-  title: cli
-  abstract: 'cli: Helpers for Developing Command Line Interfaces'
-  notes: Suggests
-  url: https://cli.r-lib.org
-  repository: https://CRAN.R-project.org/package=cli
-  authors:
-  - family-names: Csárdi
-    given-names: Gábor
-    email: csardi.gabor@gmail.com
-  year: '2023'
 - type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'

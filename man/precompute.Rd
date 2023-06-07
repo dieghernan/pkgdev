@@ -19,7 +19,7 @@ precompute_vignette_all(dir = "vignettes", ...)
 \item{figure_ext}{Extension of the figures plotted on the vignette.
 See \strong{Details}.}
 
-\item{create_r_file}{Wheter to create an additional R file with the code
+\item{create_r_file}{Whether to create an additional R file with the code
 of the vignette.}
 
 \item{dir}{Path to directory where the "Rmd.orig" files
