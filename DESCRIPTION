@@ -23,6 +23,7 @@ Imports:
     jsonld,
     jsonvalidate (>= 1.1.0),
     knitr (>= 1.33),
+    magick,
     pkgdown,
     remotes,
     roxygen2 (>= 7.1.0),

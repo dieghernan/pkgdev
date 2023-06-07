@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.0 (2023-04-21)",
+  "runtimePlatform": "R version 4.3.0 (2023-04-21 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -220,6 +220,18 @@
     },
     "9": {
       "@type": "SoftwareApplication",
+      "identifier": "magick",
+      "name": "magick",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=magick"
+    },
+    "10": {
+      "@type": "SoftwareApplication",
       "identifier": "pkgdown",
       "name": "pkgdown",
       "provider": {
@@ -230,7 +242,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=pkgdown"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "remotes",
       "name": "remotes",
@@ -242,7 +254,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=remotes"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -255,7 +267,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "sessioninfo",
       "name": "sessioninfo",
@@ -267,7 +279,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -280,7 +292,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -293,7 +305,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -306,7 +318,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "V8",
       "name": "V8",
@@ -321,7 +333,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.472KB",
+  "fileSize": "75.729KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

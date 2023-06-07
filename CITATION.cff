@@ -158,6 +158,18 @@ references:
   year: '2023'
   version: '>= 1.33'
 - type: software
+  title: magick
+  abstract: 'magick: Advanced Graphics and Image-Processing in R'
+  notes: Imports
+  url: https://docs.ropensci.org/magick/
+  repository: https://CRAN.R-project.org/package=magick
+  authors:
+  - family-names: Ooms
+    given-names: Jeroen
+    email: jeroen@berkeley.edu
+    orcid: https://orcid.org/0000-0002-4035-0289
+  year: '2023'
+- type: software
   title: pkgdown
   abstract: 'pkgdown: Make Static HTML Documentation for a Package'
   notes: Imports
