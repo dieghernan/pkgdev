@@ -16,7 +16,10 @@
 .navbar-brand {
   font-weight: 800;
 }
-footer-chulapa{background-color:#0d1117;color:#8b949e;font-weight:400;border-top:0}.footer-chulapa a{color:#58a6ff;text-decoration:none;font-weight:700}.footer-chulapa a:hover,.footer-chulapa a:focus{color:#8b949e}
+
+#navbar {
+  font-weight: 800;
+}
 
 footer {
   width: 100vw;
