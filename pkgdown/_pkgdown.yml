@@ -14,9 +14,9 @@ template:
     body-bg: "#fff"
     body-color: "#24292f"
     navbar-bg: "#22272e"
-    headings-font-family: {google: "Inter Tight"}
-    font-family-base: {google: "Inter"}
-    font-family-monospace: {google: "Roboto Mono"}
+    heading_font: {google: "Inter Tight"}
+    base_font: {google: "Inter"}
+    code_font: {google: "Roboto Mono"}
     headings-font-weight: 800
     text-muted: "#6A788A"
   opengraph:
