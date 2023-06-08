@@ -23,6 +23,7 @@ template:
     code_font: "Roboto Mono"
     headings-font-weight: 800
     text-muted: "#6A788A"
+    link-decoration: "none"
   opengraph:
     twitter:
       creator: "@dhernangomez"
