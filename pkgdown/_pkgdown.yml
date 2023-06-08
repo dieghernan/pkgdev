@@ -3,6 +3,7 @@ template:
   bootstrap: 5
   navbar:
     bg: dark
+    type: dark
   bslib:
     primary: "#22272e"
     link-color: "#0969da"
@@ -13,7 +14,8 @@ template:
     black: "#0d1117"
     body-bg: "#fff"
     body-color: "#24292f"
-    navbar-bg: "#22272e"
+    navbar-bg-dark: "#22272e"
+    navbar-dark-color: "#fff"
     heading_font: {google: "Inter Tight"}
     base_font: {google: "Inter"}
     code_font: {google: "Roboto Mono"}
