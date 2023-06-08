@@ -1,9 +1,10 @@
 url: 'https://dieghernan.github.io/pkgdev/'
+
+navbar:
+  bg: dark
+  type: dark
 template:
   bootstrap: 5
-  navbar:
-    bg: dark
-    type: dark
   bslib:
     primary: "#22272e"
     link-color: "#0969da"
