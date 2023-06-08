@@ -17,9 +17,9 @@ template:
     body-color: "#24292f"
     navbar-bg-dark: "#22272e"
     navbar-dark-color: "#fff"
-    heading_font: {google: "Inter Tight"}
-    base_font: {google: "Inter"}
-    code_font: {google: "Roboto Mono"}
+    heading_font: "Inter Tight", Roboto
+    base_font: "Inter", Roboto
+    code_font: "Roboto Mono", monospace
     headings-font-weight: 800
     text-muted: "#6A788A"
   opengraph:
