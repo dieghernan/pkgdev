@@ -5,6 +5,7 @@ navbar:
   type: dark
 template:
   bootstrap: 5
+  theme: haddock
   bslib:
     primary: "#22272e"
     link-color: "#0969da"
