@@ -1,7 +1,6 @@
 url: 'https://dieghernan.github.io/pkgdev/'
 
 template:
-  bootstrap: 5
   package: gitdevr
   theme: haddock
   opengraph:
