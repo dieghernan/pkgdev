@@ -41,7 +41,7 @@ Suggests:
     tidyverse
 VignetteBuilder: 
     knitr
+Config/Needs/website: dieghernan/gitdevr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Config/Needs/website: dieghernan/gitdevr
