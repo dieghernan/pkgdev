@@ -23,5 +23,5 @@ add_global_gitgnore()
 
 }
 \seealso{
-\code{\link[usethis:use_git_ignore]{usethis::use_git_ignore()}}
+\code{\link[usethis:use_git_ignore]{usethis::use_git_ignore()}}, \code{\link[usethis:git_vaccinate]{usethis::git_vaccinate()}}
 }
