@@ -8,7 +8,7 @@
 #'
 #' @export
 #'
-#' @seealso [usethis::use_git_ignore()]
+#' @seealso [usethis::use_git_ignore()], [usethis::git_vaccinate()]
 #'
 #' @return A .gitignore file
 #'
@@ -62,6 +62,9 @@ add_global_gitgnore <- function(pkg = ".") {
 
   # R Environment Variables
   usethis::use_git_ignore(".Renviron", directory = pkg)
+  
+  # Vaccinate
+  usethis::git_vaccinate()
 
   # Revdep
   # Cleanup previous versions
