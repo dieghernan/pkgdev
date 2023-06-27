@@ -82,7 +82,7 @@ update_docs <- function(pkg = ".",
       "MarkdownWrapAtColumn: 80"
     ))
   }
-  
+
   if (verbose) cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
   usethis::use_blank_slate()
 
