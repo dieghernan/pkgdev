@@ -309,7 +309,7 @@ references:
   title: V8
   abstract: 'V8: Embedded JavaScript and WebAssembly Engine for R'
   notes: Imports
-  url: https://v8.dev
+  url: https://jeroen.r-universe.dev/V8
   repository: https://CRAN.R-project.org/package=V8
   authors:
   - family-names: Ooms
