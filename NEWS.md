@@ -4,6 +4,7 @@
 -   Add `.imgbotconfig` to `.Rbuildignore`.
 -   Remove `crayon` and use `cli` instead.
 -   Crop the pngs of the precomputed vignettes with `knitr::plot_crop()`
+-   Use `lintr::use_lintr()` and add specific options.
 
 # pkgdev 0.1.0
 

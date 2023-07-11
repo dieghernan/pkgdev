@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.1 (2023-06-16 ucrt)",
+  "runtimePlatform": "R version 4.3.1 (2023-06-16)",
   "author": [
     {
       "@type": "Person",
@@ -74,19 +74,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=goodpractice"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "lintr",
-      "name": "lintr",
-      "version": ">= 2.0.1",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=lintr"
     },
     {
       "@type": "SoftwareApplication",
@@ -226,6 +213,19 @@
     },
     "9": {
       "@type": "SoftwareApplication",
+      "identifier": "lintr",
+      "name": "lintr",
+      "version": ">= 2.0.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=lintr"
+    },
+    "10": {
+      "@type": "SoftwareApplication",
       "identifier": "magick",
       "name": "magick",
       "provider": {
@@ -236,7 +236,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magick"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "pkgdown",
       "name": "pkgdown",
@@ -248,7 +248,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=pkgdown"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "remotes",
       "name": "remotes",
@@ -260,7 +260,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=remotes"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -273,7 +273,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "sessioninfo",
       "name": "sessioninfo",
@@ -285,7 +285,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -298,7 +298,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -311,7 +311,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -324,7 +324,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "17": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "V8",
       "name": "V8",
@@ -339,7 +339,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "76.106KB",
+  "fileSize": "75.474KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

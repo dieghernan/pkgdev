@@ -63,10 +63,6 @@ update_docs <- function(pkg = ".",
                         precompute = TRUE,
                         ...) {
   # Add global .gitignore
-
-
-
-
   if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
   add_global_gitgnore(pkg = pkg)
 
@@ -86,6 +82,17 @@ update_docs <- function(pkg = ".",
   if (verbose) cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
   usethis::use_blank_slate()
 
+
+  if (!file.exists(".lintr")) {
+    if (verbose) cli::cli_alert_info("Add {.file .lintr} file")
+    lintr::use_lintr()
+
+    # Ignore data-raw
+    lnt <- readLines(".lintr")
+    unlink(".lintr")
+    newln <- c(lnt, 'exclusions: list("data-raw")')
+    writeLines(newln, ".lintr")
+  }
 
 
   if (verbose) cli::cli_alert_info("Cleaning {.file DESCRIPTION}")

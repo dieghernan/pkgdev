@@ -23,6 +23,7 @@ Imports:
     jsonld,
     jsonvalidate (>= 1.1.0),
     knitr (>= 1.33),
+    lintr (>= 2.0.1),
     magick,
     pkgdown,
     remotes,
@@ -36,7 +37,6 @@ Suggests:
     covr (>= 3.5.1),
     gitdevr,
     goodpractice (>= 1.0.2),
-    lintr (>= 2.0.1),
     rcmdcheck (>= 1.3.3),
     rmarkdown (>= 2.9),
     tidyverse
@@ -44,7 +44,7 @@ VignetteBuilder:
     knitr
 Remotes:
     dieghernan/gitdevr
-Config/Needs/website: dieghernan/gitdevr, pkgdown
+Config/Needs/website: dieghernan/gitdevr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

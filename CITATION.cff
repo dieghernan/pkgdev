@@ -158,6 +158,32 @@ references:
   year: '2023'
   version: '>= 1.33'
 - type: software
+  title: lintr
+  abstract: 'lintr: A ''Linter'' for R Code'
+  notes: Imports
+  url: https://lintr.r-lib.org
+  repository: https://CRAN.R-project.org/package=lintr
+  authors:
+  - family-names: Hester
+    given-names: Jim
+    email: james.f.hester@gmail.com
+  - family-names: Angly
+    given-names: Florent
+  - family-names: Hyde
+    given-names: Russ
+  - family-names: Chirico
+    given-names: Michael
+  - family-names: Ren
+    given-names: Kun
+  - family-names: Rosenstock
+    given-names: Alexander
+  - family-names: Patil
+    given-names: Indrajeet
+    email: patilindrajeet.science@gmail.com
+    orcid: https://orcid.org/0000-0003-1995-6531
+  year: '2023'
+  version: '>= 2.0.1'
+- type: software
   title: magick
   abstract: 'magick: Advanced Graphics and Image-Processing in R'
   notes: Imports
@@ -367,32 +393,6 @@ references:
     email: halexander@mango-solutions.com
   year: '2023'
   version: '>= 1.0.2'
-- type: software
-  title: lintr
-  abstract: 'lintr: A ''Linter'' for R Code'
-  notes: Suggests
-  url: https://lintr.r-lib.org
-  repository: https://CRAN.R-project.org/package=lintr
-  authors:
-  - family-names: Hester
-    given-names: Jim
-    email: james.f.hester@gmail.com
-  - family-names: Angly
-    given-names: Florent
-  - family-names: Hyde
-    given-names: Russ
-  - family-names: Chirico
-    given-names: Michael
-  - family-names: Ren
-    given-names: Kun
-  - family-names: Rosenstock
-    given-names: Alexander
-  - family-names: Patil
-    given-names: Indrajeet
-    email: patilindrajeet.science@gmail.com
-    orcid: https://orcid.org/0000-0003-1995-6531
-  year: '2023'
-  version: '>= 2.0.1'
 - type: software
   title: rcmdcheck
   abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
