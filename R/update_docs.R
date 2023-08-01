@@ -154,7 +154,7 @@ update_docs <- function(pkg = ".",
         "Creating {.file codemeta.json} with {.pkg codemetar}"
       )
     }
-    codemetar::write_codemeta()
+    codemetar::write_codemeta(write_minimeta = TRUE)
   }
   if (create_cff) {
     if (verbose) {
