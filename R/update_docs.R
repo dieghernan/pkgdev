@@ -77,7 +77,8 @@ update_docs <- function(pkg = ".",
       "MarkdownWrap: Column",
       "MarkdownWrapAtColumn: 80",
       "AutoAppendNewline: Yes",
-      "StripTrailingWhitespace: Yes"
+      "StripTrailingWhitespace: Yes",
+      "LineEndingConversion: Posix"
     ))
   }
 
