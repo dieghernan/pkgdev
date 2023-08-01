@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "type": "SoftwareSourceCode",
+      "author": {
+        "id": "https://orcid.org/0000-0001-8457-4658"
+      },
+      "codeRepository": "https://github.com/dieghernan/pkgdev",
+      "copyrightHolder": {
+        "id": "https://orcid.org/0000-0001-8457-4658",
+        "type": "Person",
+        "email": "diego.hernangomezherrero@gmail.com",
+        "familyName": "Hernangómez",
+        "givenName": "Diego"
+      },
+      "description": "A small set of functions that takes advantage of GitHub Actions for making your life easier as a R package developer. This package is primarily intended for personal use, however feel free to use it (at your own risk :)).",
+      "license": "https://spdx.org/licenses/MIT",
+      "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
+      "programmingLanguage": {
+        "type": "ComputerLanguage",
+        "name": "R",
+        "url": "https://r-project.org"
+      },
+      "runtimePlatform": "R version 4.3.1 (2023-06-16)",
+      "version": "0.1.0.9010"
+    },
+    {
+      "type": "SoftwareSourceCode",
+      "author": {
+        "type": "Person",
+        "familyName": "Hernangómez",
+        "givenName": "Diego"
+      },
+      "name": "pkgdev: Helpers to Develop a Package using GitHub Actions"
+    }
+  ]
+}
