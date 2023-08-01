@@ -71,11 +71,13 @@ update_docs <- function(pkg = ".",
 
   if (all(file.exists(this), length(this) > 0)) {
     if (verbose) {
-      cli::cli_alert_info("Add Markdown options to {.file {this}} file")
+      cli::cli_alert_info("Add project options to {.file {this}} file")
     }
     usethis::write_union(this, c(
       "MarkdownWrap: Column",
-      "MarkdownWrapAtColumn: 80"
+      "MarkdownWrapAtColumn: 80",
+      "AutoAppendNewline: Yes",
+      "StripTrailingWhitespace: Yes"  
     ))
   }
 
