@@ -60,15 +60,6 @@ precompute_vignette <- function(source,
   rm(res)
   rem <- file.remove(plots)
   rm(rem)
-  # Cropping plots
-
-  l <- list.files("vignettes",
-    pattern = paste0("*", figure_ext, "$"),
-    full.names = TRUE
-  )
-
-  if (length(l) > 0) ul <- lapply(l, knitr::plot_crop)
-  rm(ul)
 
   # Create R file
   if (create_r_file) {
