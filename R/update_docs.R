@@ -166,7 +166,7 @@ update_docs <- function(pkg = ".",
         newlns <- trimws(lns, which = "right")
 
         # Add EOL
-        if (identical(newlns[length(newlns)], "")) newlns <- c(newlns, "")
+        if (!identical(newlns[length(newlns)], "")) newlns <- c(newlns, "")
         usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
       })
     }
