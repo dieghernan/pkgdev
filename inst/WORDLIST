@@ -1,8 +1,10 @@
 CMD
+CodeFactor
 GHA
 Lifecycle
 ORCID
 Precompute
+RStudio
 Rmd
 Roxygenise
 ThinkR
@@ -17,7 +19,6 @@ gitgnore
 gitignore
 json
 pkgdown
-pngs
 precompute
 precomputed
 roxygenise

@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_global_gitgnore.R
 \name{add_global_gitgnore}
 \alias{add_global_gitgnore}
-\title{Add .gitignore to package}
+\title{Add \code{.gitignore} to package}
 \usage{
 add_global_gitgnore(pkg = ".")
 }
@@ -10,11 +10,11 @@ add_global_gitgnore(pkg = ".")
 \item{pkg}{Path to a (subdirectory of an) R package.}
 }
 \value{
-A .gitignore file
+Invisible, and writes a global \code{.gitignore} file
 }
 \description{
-Adds a global .gitgnore file to the package. File based on default
-.gitignore provided by GitHub.
+Adds a global \code{.gitgnore} file to the package. File based on default
+\code{.gitignore} provided by GitHub.
 }
 \examples{
 \dontrun{

@@ -31,7 +31,7 @@ Imports:
     sessioninfo,
     styler (>= 1.5.1),
     urlchecker (>= 1.0.0),
-    usethis (>= 2.0.0),
+    usethis (>= 2.2.2),
     V8 (>= 4.0.0)
 Suggests: 
     covr (>= 3.5.1),
@@ -43,7 +43,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    dieghernan/gitdevr
+    dieghernan/gitdevr,
+    r-lib/usethis
 Config/Needs/website: dieghernan/gitdevr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

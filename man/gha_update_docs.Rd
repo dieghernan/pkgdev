@@ -24,7 +24,7 @@ gha_update_docs(
 \item{version}{Version of the platform. See \strong{Details}.}
 }
 \value{
-A GitHub Action on \verb{<pkg>/.github/workflows}.
+A GitHub Action on \code{.github/workflows}.
 }
 \description{
 The GitHub action created would document your package (see \code{\link[=update_docs]{update_docs()}}),

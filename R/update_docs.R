@@ -53,7 +53,6 @@
 #' @export
 #'
 #'
-
 update_docs <- function(pkg = ".",
                         url_update = TRUE,
                         create_codemeta = TRUE,
@@ -81,6 +80,23 @@ update_docs <- function(pkg = ".",
       "LineEndingConversion: Posix"
     ))
   }
+
+  # Add Global options
+  if (verbose) {
+    cli::cli_alert_info("Setting RStudio Global Options")
+  }
+
+  usethis::use_rstudio_preferences(
+    graphics_backend = "ragg",
+    rainbow_parentheses = TRUE,
+    visual_markdown_editing_wrap_at_column = 80L,
+    visual_markdown_editing_wrap = "column",
+    check_arguments_to_r_function_calls = TRUE,
+    check_unexpected_assignment_in_function_call = TRUE,
+    warn_if_no_such_variable_in_scope = TRUE,
+    warn_variable_defined_but_not_used = TRUE,
+    style_diagnostics = TRUE
+  )
 
   if (verbose) cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
   usethis::use_blank_slate()
@@ -131,6 +147,29 @@ update_docs <- function(pkg = ".",
     styler::style_dir(file.path(pkg, "inst", "examples"))
   }
 
+
+  # Clean trailing spaces on yamls
+
+  actions <- list.files(".github",
+    pattern = "yaml$|yml$", full.names = TRUE,
+    recursive = TRUE
+  )
+  others <- list.files(
+    pattern = "yaml$|yml$", full.names = TRUE,
+    recursive = TRUE
+  )
+  allyml <- c(actions, others)
+
+  if (length(allyml) > 0) {
+    lapply(allyml, function(x) {
+      lns <- readLines(x, warn = FALSE)
+      newlns <- trimws(lns, which = "right")
+
+      # Add EOL
+      if (identical(newlns[length(newlns)], "")) newlns <- c(newlns, "")
+      usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
+    })
+  }
 
   if (verbose) cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
   roxygen2::roxygenise()

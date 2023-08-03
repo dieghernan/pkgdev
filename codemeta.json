@@ -315,14 +315,14 @@
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
-      "version": ">= 2.0.0",
+      "version": ">= 2.2.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=usethis"
+      "sameAs": "https://github.com/r-lib/usethis"
     },
     "18": {
       "@type": "SoftwareApplication",
@@ -339,7 +339,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "85.533KB",
+  "fileSize": "87.109KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

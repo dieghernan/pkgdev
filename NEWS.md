@@ -3,8 +3,10 @@
 -   Add `pkgdown` to Imports
 -   Add `.imgbotconfig` to `.Rbuildignore`.
 -   Remove `crayon` and use `cli` instead.
--   Crop the pngs of the precomputed vignettes with `knitr::plot_crop()`
 -   Use `lintr::use_lintr()` and add specific options.
+-   Clean `yaml/yml` files of trailing white spaces and adds an empty line at
+    the end of the file
+-   **CAUTION**: `update_docs()` modifies RStudio Global and Project options.
 
 # pkgdev 0.1.0
 

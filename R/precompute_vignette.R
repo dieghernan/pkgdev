@@ -44,12 +44,12 @@
 precompute_vignette <- function(source,
                                 figure_ext = ".png",
                                 create_r_file = FALSE) {
-  source <- file.path("vignettes", source)
-  out <- gsub(".orig", "", source)
-  usethis::use_build_ignore(source)
+  src_path <- file.path("vignettes", source)
+  out <- gsub(".orig", "", src_path)
+  usethis::use_build_ignore(src_path)
 
-  cli::cli_alert("Precomputing {.file {source}}")
-  knitr::knit(input = source, output = out, quiet = TRUE)
+  cli::cli_alert("Precomputing {.file {src_path}}")
+  knitr::knit(input = src_path, output = out, quiet = TRUE)
   cli::cli_alert("Resulting vignette in {.file {out}}")
   # Move plot files to dir
 
@@ -64,7 +64,7 @@ precompute_vignette <- function(source,
   # Create R file
   if (create_r_file) {
     r_file <- gsub(".Rmd", ".R", out)
-    knitr::purl(source, output = r_file)
+    knitr::purl(src_path, output = r_file)
   }
   return(invisible())
 }

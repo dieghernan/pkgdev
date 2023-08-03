@@ -20,7 +20,7 @@
 #'
 #' @export
 #'
-#' @return A GitHub Action on `<pkg>/.github/workflows`.
+#' @return A GitHub Action on `.github/workflows`.
 #'
 #' @examples
 #' \dontrun{
@@ -63,12 +63,8 @@ gha_update_docs <-
       directory = file.path(pkg, ".github")
     )
 
-
-
-
     # Get action file
-    filepath <-
-      system.file("yaml/update-docs.yaml", package = "pkgdev")
+    filepath <- system.file("yaml/update-docs.yaml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)

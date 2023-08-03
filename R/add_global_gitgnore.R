@@ -1,8 +1,8 @@
-#' Add .gitignore to package
+#' Add `.gitignore` to package
 #'
 #' @description
-#' Adds a global .gitgnore file to the package. File based on default
-#' .gitignore provided by GitHub.
+#' Adds a global `.gitgnore` file to the package. File based on default
+#' `.gitignore` provided by GitHub.
 #'
 #' @inheritParams update_docs
 #'
@@ -10,7 +10,7 @@
 #'
 #' @seealso [usethis::use_git_ignore()], [usethis::git_vaccinate()]
 #'
-#' @return A .gitignore file
+#' @return Invisible, and writes a global `.gitignore` file
 #'
 #' @examples
 #' \dontrun{

@@ -330,7 +330,7 @@ references:
     email: andy.teucher@posit.co
     orcid: https://orcid.org/0000-0002-7840-692X
   year: '2023'
-  version: '>= 2.0.0'
+  version: '>= 2.2.2'
 - type: software
   title: V8
   abstract: 'V8: Embedded JavaScript and WebAssembly Engine for R'

@@ -53,7 +53,7 @@ jobs:
             any::lintr
 
       - name: Run lintr
-        run: | 
+        run: |
           out <- lintr::lint_package()
           lintr::sarif_output(out, "lintr-results.sarif")
         shell: Rscript {0}
