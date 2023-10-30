@@ -195,6 +195,9 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2023'
+  identifiers:
+  - type: url
+    value: https://ropensci.r-universe.dev/magick
 - type: software
   title: pkgdown
   abstract: 'pkgdown: Make Static HTML Documentation for a Package'
