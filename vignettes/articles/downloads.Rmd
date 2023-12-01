@@ -1,0 +1,195 @@
+---
+title: "Downloads of my packages"
+---
+
+*Updated: `r format(Sys.Date(),"%d %b %Y")`*
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  tidy = "styler",
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
+  dev = "ragg_png",
+  dpi = 300,
+  out.width = "100%"
+)
+```
+
+Downloads of my packages from CRAN.
+
+
+```{r include=FALSE}
+library(cranlogs)
+library(tidyverse)
+Sys.setenv("R_CRAN_WEB" = "https://cloud.r-project.org")
+crandb <- unique(tools::CRAN_package_db()$Package)
+mypaks <- c(
+  "giscoR", "rogtemplate", "mapSpain", "tidyBdE", "climaemet",
+  "CatastRo", "CatastRoNav", "rostemplate", "igoR",
+  "nominatimlite", "cffr", "pkgdev", "rasterpic", "tidyterra",
+  "gitdevr"
+)
+
+# Packages in CRAN
+mypaks <- mypaks[mypaks %in% crandb]
+
+dwn <- lapply(mypaks, cranlogs::cran_downloads, from = "2016-01-01")
+
+dwn <- dwn %>%
+  bind_rows() %>%
+  tidyr::drop_na() %>%
+  filter(count > 0)
+
+# By month
+library(lubridate)
+
+
+dwn_m <- dwn %>%
+  mutate(m = lubridate::ceiling_date(dwn$date, "month") - 1) %>%
+  group_by(package, m) %>%
+  summarise(downloads = sum(count))
+
+
+# First date on CRAN
+
+first_date_on_cran <- function(pkg) {
+  url <- paste0(
+    "https://crandb.r-pkg.org/",
+    pkg, "/all"
+  )
+  d <- jsonlite::fromJSON(url)$versions[[1]]$Date
+
+  df <- data.frame(
+    package = pkg,
+    date = as.Date(d)
+  )
+  return(df)
+}
+
+fechas <- lapply(unique(dwn$package), first_date_on_cran) %>%
+  bind_rows()
+
+# factors by first date on CRAN
+fact <- fechas %>%
+  arrange(date) %>%
+  pull(package) %>%
+  unique() %>%
+  rev()
+
+dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
+```
+
+
+## Downloads
+
+```{r echo=FALSE}
+palk <- unname(Polychrome::kelly.colors(length(mypaks) + 1))[-1]
+
+ggplot(dwn_m, aes(x = m)) +
+  geom_col(aes(y = downloads, fill = package)) +
+  theme_minimal() +
+  scale_fill_manual(values = palk) +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(
+    fill = "package",
+    x = "",
+    y = "# monthly downloads"
+  ) +
+  theme(axis.title = element_text(size = 8))
+```
+
+## Weekly downloads
+
+```{r echo=FALSE}
+dwn_w <- dwn %>%
+  filter(date >= (Sys.Date() - years(1))) %>%
+  mutate(m = lubridate::ceiling_date(date, "week")) %>%
+  group_by(package, m) %>%
+  summarise(downloads = sum(count))
+
+dwn_w$package <- factor(dwn_w$package, levels = unique(rev(fact)))
+
+ggplot(dwn_w, aes(x = m)) +
+  geom_col(aes(y = downloads), fill = "#f3c300") +
+  geom_smooth(aes(y = downloads), color = "#222222", se = FALSE) +
+  facet_wrap(vars(package)) +
+  scale_x_date(
+    date_breaks = "3 months",
+    labels = scales::label_date("%Y-%m")
+  ) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::label_comma()) +
+  labs(
+    fill = "package",
+    x = "",
+    y = "# weekly downloads"
+  ) +
+  theme(
+    axis.title = element_text(size = 8),
+    axis.text.x = element_text(size = 6)
+  )
+```
+
+
+## Data
+
+```{r datos, echo=FALSE}
+library(reactable)
+
+lastyear <- dwn %>%
+  filter(date >= (Sys.Date() - 365)) %>%
+  group_by(package) %>%
+  summarise(last_year = sum(count, na.rm = TRUE))
+
+
+lastmonth <- dwn %>%
+  filter(date >= (Sys.Date() - months(1))) %>%
+  group_by(package) %>%
+  summarise(last_month = sum(count, na.rm = TRUE))
+
+lastweek <- dwn %>%
+  filter(date >= (Sys.Date() - 7)) %>%
+  group_by(package) %>%
+  summarise(last_week = sum(count, na.rm = TRUE))
+
+last_day <- dwn %>%
+  filter(date == max(dwn$date, na.rm = TRUE)) %>%
+  select(package, last_day = count)
+
+avg_daily <- dwn %>%
+  group_by(package) %>%
+  summarise(avg = round(mean(count, na.rm = TRUE), 1))
+
+# Une todo y da nombres
+end <-
+  fechas %>%
+  left_join(avg_daily) %>%
+  left_join(last_day) %>%
+  left_join(lastweek) %>%
+  left_join(lastmonth) %>%
+  left_join(lastyear) %>%
+  as_tibble() %>%
+  arrange(desc(date))
+
+names(end) <- c(
+  "package",
+  "on CRAN",
+  "avg daily downloads", "last day",
+  "last week", "last month", "last year"
+)
+
+reactable(
+  end,
+  filterable = TRUE,
+  searchable = TRUE,
+  showPageSizeOptions = TRUE,
+  striped = TRUE,
+  paginationType = "jump",
+  elementId = "station-table",
+  defaultPageSize = length(fact)
+)
+```

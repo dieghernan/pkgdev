@@ -45,7 +45,8 @@ VignetteBuilder:
 Remotes:
     dieghernan/gitdevr,
     r-lib/usethis
-Config/Needs/website: dieghernan/gitdevr
+Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, jsonlite,
+    lubridate, reactable, Polychrome
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
