@@ -32,8 +32,9 @@ jobs:
 
       - name: Update docs
         run: |
-
-          pkgdev::update_docs()
+          
+          # Not bulding README to avoid a conflict
+          pkgdev::update_docs(build_readme = TRUE)
 
         shell: Rscript {0}
 
