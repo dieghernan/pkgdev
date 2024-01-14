@@ -4,7 +4,6 @@ title: "Downloads of my packages"
 
 *Updated: `r format(Sys.Date(),"%d %b %Y")`*
 
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -21,7 +20,6 @@ knitr::opts_chunk$set(
 
 Downloads of my packages from CRAN.
 
-
 ```{r include=FALSE}
 library(cranlogs)
 library(tidyverse)
@@ -31,7 +29,7 @@ mypaks <- c(
   "giscoR", "rogtemplate", "mapSpain", "tidyBdE", "climaemet",
   "CatastRo", "CatastRoNav", "rostemplate", "igoR",
   "nominatimlite", "cffr", "pkgdev", "rasterpic", "tidyterra",
-  "gitdevr"
+  "gitdevr", "arcgeocoder"
 )
 
 # Packages in CRAN
@@ -61,12 +59,17 @@ first_date_on_cran <- function(pkg) {
     "https://crandb.r-pkg.org/",
     pkg, "/all"
   )
-  d <- jsonlite::fromJSON(url)$versions[[1]]$Date
 
+  all <- jsonlite::fromJSON(url)$versions
+  d <- all[[1]]$Date
+  lv <- all[[length(all)]]
+  lv <- as.Date(lv$`Date/Publication`)
   df <- data.frame(
     package = pkg,
-    date = as.Date(d)
+    date = as.Date(d),
+    lv = as.Date(lv)
   )
+  df <- as_tibble(df)
   return(df)
 }
 
@@ -82,7 +85,6 @@ fact <- fechas %>%
 
 dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
 ```
-
 
 ## Downloads
 
@@ -134,7 +136,6 @@ ggplot(dwn_w, aes(x = m)) +
   )
 ```
 
-
 ## Data
 
 ```{r datos, echo=FALSE}
@@ -177,7 +178,7 @@ end <-
 
 names(end) <- c(
   "package",
-  "on CRAN",
+  "on CRAN", "Latest CRAN Version",
   "avg daily downloads", "last day",
   "last week", "last month", "last year"
 )

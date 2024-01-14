@@ -32,7 +32,7 @@ jobs:
 
       - name: Update docs
         run: |
-          
+
           # Not bulding README to avoid a conflict
           pkgdev::update_docs(build_readme = TRUE)
 
