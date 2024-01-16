@@ -2,7 +2,7 @@ name: Clear all Github actions caches manually
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 15 12 * *"
+    - cron:  '0 7 * * 1,3,5'
 
 jobs:
   cache-clear:

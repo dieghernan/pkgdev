@@ -18,7 +18,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-
 ## On CRAN
 
 Downloads of my packages from CRAN.
@@ -198,10 +197,10 @@ reactable(
 )
 ```
 
-
 ## On Posit Package Manager
 
-Downloads and data available of my packages from [Posit Package Manager](https://packagemanager.posit.co/client/#/).
+Downloads and data available of my packages from [Posit Package
+Manager](https://packagemanager.posit.co/client/#/).
 
 ```{r data-posit, echo=FALSE}
 res <- lapply(mypaks, function(x) {
@@ -217,8 +216,11 @@ res <- lapply(mypaks, function(x) {
   }
 
   info <- jsonlite::read_json(tmp)
-  len1 <- vapply(info, length, FUN.VALUE = integer(1)) == 1
-  df_init <- as.data.frame(info[len1])
+
+  df_init <- as_tibble(
+    info[c("name", "date_publication", "occurred", "package_size", "version")]
+  )
+
 
   df_prep <- df_init %>%
     mutate(
@@ -257,4 +259,3 @@ reactable(
   defaultPageSize = nrow(res_all)
 )
 ```
-
