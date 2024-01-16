@@ -18,6 +18,9 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+## On CRAN
+
 Downloads of my packages from CRAN.
 
 ```{r include=FALSE}
@@ -86,7 +89,7 @@ fact <- fechas %>%
 dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
 ```
 
-## Downloads
+### Historic
 
 ```{r echo=FALSE}
 palk <- unname(Polychrome::kelly.colors(length(mypaks) + 1))[-1]
@@ -104,7 +107,7 @@ ggplot(dwn_m, aes(x = m)) +
   theme(axis.title = element_text(size = 8))
 ```
 
-## Weekly downloads
+### Weekly downloads
 
 ```{r echo=FALSE}
 dwn_w <- dwn %>%
@@ -136,7 +139,7 @@ ggplot(dwn_w, aes(x = m)) +
   )
 ```
 
-## Data
+### Download data
 
 ```{r datos, echo=FALSE}
 library(reactable)
@@ -190,7 +193,68 @@ reactable(
   showPageSizeOptions = TRUE,
   striped = TRUE,
   paginationType = "jump",
-  elementId = "station-table",
+  elementId = "cran-dwn",
   defaultPageSize = length(fact)
 )
 ```
+
+
+## On Posit Package Manager
+
+Downloads and data available of my packages from [Posit Package Manager](https://packagemanager.posit.co/client/#/).
+
+```{r data-posit, echo=FALSE}
+res <- lapply(mypaks, function(x) {
+  tmp <- tempfile(fileext = ".json")
+  api_res <- suppressWarnings(try(download.file(
+    paste0("https://packagemanager.posit.co/__api__/repos/1/packages/", x),
+    tmp,
+    quiet = TRUE
+  ), silent = TRUE))
+
+  if (inherits(api_res, "try-error")) {
+    return(NULL)
+  }
+
+  info <- jsonlite::read_json(tmp)
+  len1 <- vapply(info, length, FUN.VALUE = integer(1)) == 1
+  df_init <- as.data.frame(info[len1])
+
+  df_prep <- df_init %>%
+    mutate(
+      date_in_cran = as.Date(date_publication),
+      date_in_ppm = as.Date(occurred),
+      psize = paste(round(package_size / (1024^2), 2), "Mb"),
+      mdown = as.integer(info$downloads)
+    ) %>%
+    select(
+      package = name,
+      lvers = version,
+      date_in_cran, date_in_ppm, , psize, mdown
+    )
+
+
+  df_prep
+})
+
+res_all <- bind_rows(res) %>%
+  arrange(desc(mdown))
+
+names(res_all) <- c(
+  "package", "Latest Version", "Version in CRAN",
+  "Version in Posit", "Package Size", "Downloads (Last month)"
+)
+
+
+reactable(
+  res_all,
+  filterable = TRUE,
+  searchable = TRUE,
+  showPageSizeOptions = TRUE,
+  striped = TRUE,
+  paginationType = "jump",
+  elementId = "posit-dwn",
+  defaultPageSize = nrow(res_all)
+)
+```
+
