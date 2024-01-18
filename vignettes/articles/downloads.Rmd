@@ -24,6 +24,8 @@ Downloads of my packages from CRAN.
 
 ```{r include=FALSE}
 library(cranlogs)
+library(tibble)
+library(dplyr)
 library(tidyverse)
 Sys.setenv("R_CRAN_WEB" = "https://cloud.r-project.org")
 crandb <- unique(tools::CRAN_package_db()$Package)
