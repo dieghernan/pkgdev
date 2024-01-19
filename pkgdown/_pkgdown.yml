@@ -22,6 +22,7 @@ reference:
   - add_global_gitgnore
   - precompute_vignette
   - update_docs
+  - optimize_imgs
 - title: About the package
 - contents:
   - pkgdev-package
