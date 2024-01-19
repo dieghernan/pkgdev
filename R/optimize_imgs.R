@@ -93,13 +93,13 @@ optimize_imgs <- function(path, outfile = path, qlty = 92) {
   newsc <- format(news, units = "auto")
 
 
-  cli::cli_alert_success(
-    paste(
-      "Optimizing {.file {path}} with ratio {api_answer$percent}%",
-      "(size {newsc}, was {oldc}). Output: {.file {outfile}}"
-    )
-  )
+  cli::cli_alert_success("Optimizing {.file {path}}:")
 
+  cli::cli_bullets(c(
+    "i" = "Ratio: {api_answer$percent}%",
+    "i" = "Current size: {newsc} (was {oldc})",
+    "i" = "Output: {.file {outfile}}"
+  ))
   ov <- httr::GET(api_answer$dest, httr::write_disk(outfile, overwrite = TRUE))
 
 
