@@ -11,6 +11,7 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
+#' * Optimize images with [optimize_imgs_all()]
 #' * Write codemeta.json with [codemetar::write_codemeta()]
 #' * Write CITATION.cff with [cffr::cff_write()]
 #'
@@ -26,6 +27,8 @@
 #' @param precompute Logical, detect and precompute vignettes? See also
 #'   [precompute_vignette()].
 #'
+#' @param opt_imgs Logical. Optimize images with [optimize_imgs_all()]?
+#' @param opt_dir,opt_ext See `dir` and `ext` in [optimize_imgs_all()].
 #' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
@@ -60,6 +63,9 @@ update_docs <- function(pkg = ".",
                         build_readme = TRUE,
                         verbose = TRUE,
                         precompute = TRUE,
+                        opt_imgs = TRUE,
+                        opt_dir = c("man/figures", "vignettes"),
+                        opt_ext = "png$|jpg$",
                         ...) {
   # Add global .gitignore
   if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
@@ -186,6 +192,10 @@ update_docs <- function(pkg = ".",
   if (build_readme && has_readme) {
     if (verbose) cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
+  }
+
+  if (opt_imgs) {
+    optimize_imgs_all(dir = opt_dir, ext = opt_ext)
   }
 
   if (create_codemeta) {

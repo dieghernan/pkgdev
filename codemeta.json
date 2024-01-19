@@ -175,6 +175,18 @@
     },
     "6": {
       "@type": "SoftwareApplication",
+      "identifier": "httr",
+      "name": "httr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=httr"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
       "identifier": "jsonld",
       "name": "jsonld",
       "provider": {
@@ -185,7 +197,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonld"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "jsonvalidate",
       "name": "jsonvalidate",
@@ -198,7 +210,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonvalidate"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -211,7 +223,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "lintr",
       "name": "lintr",
@@ -224,7 +236,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lintr"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "magick",
       "name": "magick",
@@ -236,7 +248,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magick"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "pkgdown",
       "name": "pkgdown",
@@ -248,7 +260,19 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=pkgdown"
     },
-    "12": {
+    "13": {
+      "@type": "SoftwareApplication",
+      "identifier": "png",
+      "name": "png",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=png"
+    },
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "remotes",
       "name": "remotes",
@@ -260,7 +284,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=remotes"
     },
-    "13": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -273,7 +297,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "14": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "sessioninfo",
       "name": "sessioninfo",
@@ -285,7 +309,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
     },
-    "15": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -298,7 +322,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "16": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -311,7 +335,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "17": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -324,7 +348,7 @@
       },
       "sameAs": "https://github.com/r-lib/usethis"
     },
-    "18": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "V8",
       "name": "V8",
@@ -339,7 +363,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "87.43KB",
+  "fileSize": "312.854KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

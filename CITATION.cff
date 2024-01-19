@@ -115,6 +115,17 @@ references:
   year: '2024'
   version: '>= 2.4.1'
 - type: software
+  title: httr
+  abstract: 'httr: Tools for Working with URLs and HTTP'
+  notes: Imports
+  url: https://httr.r-lib.org/
+  repository: https://CRAN.R-project.org/package=httr
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2024'
+- type: software
   title: jsonld
   abstract: 'jsonld: JSON for Linking Data'
   notes: Imports
@@ -215,6 +226,17 @@ references:
   - family-names: Salmon
     given-names: Maëlle
     orcid: https://orcid.org/0000-0002-2815-0399
+  year: '2024'
+- type: software
+  title: png
+  abstract: 'png: Read and write PNG images'
+  notes: Imports
+  url: http://www.rforge.net/png/
+  repository: https://CRAN.R-project.org/package=png
+  authors:
+  - family-names: Urbanek
+    given-names: Simon
+    email: Simon.Urbanek@r-project.org
   year: '2024'
 - type: software
   title: remotes
