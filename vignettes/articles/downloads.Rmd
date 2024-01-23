@@ -33,7 +33,7 @@ mypaks <- c(
   "giscoR", "rogtemplate", "mapSpain", "tidyBdE", "climaemet",
   "CatastRo", "CatastRoNav", "rostemplate", "igoR",
   "nominatimlite", "cffr", "pkgdev", "rasterpic", "tidyterra",
-  "gitdevr", "arcgeocoder"
+  "gitdevr", "arcgeocoder", "resmush"
 )
 
 # Packages in CRAN
