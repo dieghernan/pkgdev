@@ -286,6 +286,12 @@
     },
     "15": {
       "@type": "SoftwareApplication",
+      "identifier": "resmush",
+      "name": "resmush",
+      "sameAs": "https://github.com/dieghernan/resmush"
+    },
+    "16": {
+      "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
       "version": ">= 7.1.0",
@@ -297,7 +303,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "sessioninfo",
       "name": "sessioninfo",
@@ -309,7 +315,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
     },
-    "17": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -322,7 +328,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "18": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -335,7 +341,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "19": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -348,7 +354,7 @@
       },
       "sameAs": "https://github.com/r-lib/usethis"
     },
-    "20": {
+    "21": {
       "@type": "SoftwareApplication",
       "identifier": "V8",
       "name": "V8",
@@ -363,7 +369,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "312.887KB",
+  "fileSize": "308.386KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

@@ -7,7 +7,7 @@
 -   Clean `yaml/yml` files of trailing white spaces and adds an empty line at
     the end of the file
 -   **CAUTION**: `update_docs()` modifies RStudio Global and Project options.
--   New function for optimizing images `optimize_imgs()`.
+-   New capability for optimizing images with `resmush::resmush_dir()`.
 
 # pkgdev 0.1.0
 

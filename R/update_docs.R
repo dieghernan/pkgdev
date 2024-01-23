@@ -11,7 +11,7 @@
 #' * Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 #' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Optimize images with [optimize_imgs_all()]
+#' * Optimize images with [resmush::resmush_dir()]
 #' * Write codemeta.json with [codemetar::write_codemeta()]
 #' * Write CITATION.cff with [cffr::cff_write()]
 #'
@@ -27,8 +27,9 @@
 #' @param precompute Logical, detect and precompute vignettes? See also
 #'   [precompute_vignette()].
 #'
-#' @param opt_imgs Logical. Optimize images with [optimize_imgs_all()]?
-#' @param opt_dir,opt_ext See `dir` and `ext` in [optimize_imgs_all()].
+#' @param opt_imgs Logical. Optimize images with [resmush::resmush_dir()]?
+#' @param opt_dir,opt_ext,opt_suffix
+#'   See `dir`, `ext` and `suffix` in [resmush::resmush_dir()].
 #' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
@@ -66,6 +67,7 @@ update_docs <- function(pkg = ".",
                         opt_imgs = TRUE,
                         opt_dir = c("man/figures", "vignettes"),
                         opt_ext = "png$|jpg$",
+                        opt_suffix = NA,
                         ...) {
   # Add global .gitignore
   if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
@@ -195,7 +197,10 @@ update_docs <- function(pkg = ".",
   }
 
   if (opt_imgs) {
-    optimize_imgs_all(dir = opt_dir, ext = opt_ext)
+    resmush::resmush_dir(
+      dir = opt_dir, ext = opt_ext, verbose = verbose,
+      suffix = opt_suffix
+    )
   }
 
   if (create_codemeta) {

@@ -29,6 +29,7 @@ Imports:
     pkgdown,
     png,
     remotes,
+    resmush,
     roxygen2 (>= 7.1.0),
     sessioninfo,
     styler (>= 1.5.1),
@@ -46,6 +47,7 @@ VignetteBuilder:
     knitr
 Remotes:
     dieghernan/gitdevr,
+    dieghernan/resmush,
     r-lib/usethis
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, jsonlite,
     lubridate, reactable, Polychrome

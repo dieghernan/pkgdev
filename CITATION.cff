@@ -261,6 +261,17 @@ references:
     given-names: Dan
   year: '2024'
 - type: software
+  title: resmush
+  abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
+  notes: Imports
+  url: https://dieghernan.github.io/resmush/
+  authors:
+  - family-names: Hernangómez
+    given-names: Diego
+    email: diego.hernangomezherrero@gmail.com
+    orcid: https://orcid.org/0000-0001-8457-4658
+  year: '2024'
+- type: software
   title: roxygen2
   abstract: 'roxygen2: In-Line Documentation for R'
   notes: Imports

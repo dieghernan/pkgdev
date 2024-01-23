@@ -15,6 +15,7 @@ update_docs(
   opt_imgs = TRUE,
   opt_dir = c("man/figures", "vignettes"),
   opt_ext = "png$|jpg$",
+  opt_suffix = NA,
   ...
 )
 }
@@ -38,9 +39,9 @@ a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 \item{precompute}{Logical, detect and precompute vignettes? See also
 \code{\link[=precompute_vignette]{precompute_vignette()}}.}
 
-\item{opt_imgs}{Logical. Optimize images with \code{\link[=optimize_imgs_all]{optimize_imgs_all()}}?}
+\item{opt_imgs}{Logical. Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}?}
 
-\item{opt_dir, opt_ext}{See \code{dir} and \code{ext} in \code{\link[=optimize_imgs_all]{optimize_imgs_all()}}.}
+\item{opt_dir, opt_ext, opt_suffix}{See \code{dir}, \code{ext} and \code{suffix} in \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.}
 
 \item{...}{Additional arguments to functions}
 }
@@ -59,7 +60,7 @@ Run routine checks on the package:
 \item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
 \item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
-\item Optimize images with \code{\link[=optimize_imgs_all]{optimize_imgs_all()}}
+\item Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}
 \item Write codemeta.json with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
 \item Write CITATION.cff with \code{\link[cffr:cff_write]{cffr::cff_write()}}
 }
