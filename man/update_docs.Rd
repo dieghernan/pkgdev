@@ -15,7 +15,7 @@ update_docs(
   opt_imgs = TRUE,
   opt_dir = c("man/figures", "vignettes"),
   opt_ext = "png$|jpg$",
-  opt_suffix = NA,
+  opt_overwrite = TRUE,
   ...
 )
 }
@@ -41,7 +41,7 @@ a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 
 \item{opt_imgs}{Logical. Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}?}
 
-\item{opt_dir, opt_ext, opt_suffix}{See \code{dir}, \code{ext} and \code{suffix} in \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.}
+\item{opt_dir, opt_ext, opt_overwrite}{See \code{dir}, \code{ext} and \code{overwrite} in \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.}
 
 \item{...}{Additional arguments to functions}
 }

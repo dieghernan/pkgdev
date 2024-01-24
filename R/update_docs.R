@@ -28,8 +28,8 @@
 #'   [precompute_vignette()].
 #'
 #' @param opt_imgs Logical. Optimize images with [resmush::resmush_dir()]?
-#' @param opt_dir,opt_ext,opt_suffix
-#'   See `dir`, `ext` and `suffix` in [resmush::resmush_dir()].
+#' @param opt_dir,opt_ext,opt_overwrite
+#'   See `dir`, `ext` and `overwrite` in [resmush::resmush_dir()].
 #' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
@@ -67,7 +67,7 @@ update_docs <- function(pkg = ".",
                         opt_imgs = TRUE,
                         opt_dir = c("man/figures", "vignettes"),
                         opt_ext = "png$|jpg$",
-                        opt_suffix = NA,
+                        opt_overwrite = TRUE,
                         ...) {
   # Add global .gitignore
   if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
@@ -199,7 +199,7 @@ update_docs <- function(pkg = ".",
   if (opt_imgs) {
     resmush::resmush_dir(
       dir = opt_dir, ext = opt_ext, verbose = verbose,
-      suffix = opt_suffix
+      overwrite = opt_overwrite
     )
   }
 
