@@ -59,21 +59,21 @@ dwn_m <- dwn %>%
 # First date on CRAN
 
 first_date_on_cran <- function(pkg) {
-  url <- paste0(
-    "https://crandb.r-pkg.org/",
-    pkg, "/all"
-  )
+  all <- pkgsearch::cran_package_history(pkg)
 
-  all <- jsonlite::fromJSON(url)$versions
-  d <- all[[1]]$Date
-  lv <- all[[length(all)]]
-  lv <- as.Date(lv$`Date/Publication`)
-  df <- data.frame(
-    package = pkg,
-    date = as.Date(d),
-    lv = as.Date(lv)
-  )
-  df <- as_tibble(df)
+  d <- all %>%
+    select(`Date/Publication`) %>%
+    slice_head(n = 1) %>%
+    pull() %>%
+    as.Date()
+
+  lv <- all %>%
+    select(`Date/Publication`) %>%
+    slice_tail(n = 1) %>%
+    pull() %>%
+    as.Date()
+
+  df <- tibble(package = pkg, date = d, lv = lv)
   return(df)
 }
 
