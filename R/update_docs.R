@@ -198,7 +198,7 @@ update_docs <- function(pkg = ".",
 
   if (opt_imgs) {
     resmush::resmush_dir(
-      dir = opt_dir, ext = opt_ext, verbose = verbose,
+      dir = opt_dir, ext = opt_ext, report = verbose,
       overwrite = opt_overwrite
     )
   }

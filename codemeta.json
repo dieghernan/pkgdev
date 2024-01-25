@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/dieghernan/pkgdev",
   "issueTracker": "https://github.com/dieghernan/pkgdev/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0.9010",
+  "version": "0.1.0.9051",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.2 (2023-10-31)",
+  "runtimePlatform": "R version 4.3.2 (2023-10-31 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -369,7 +369,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "308.425KB",
+  "fileSize": "309.359KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
