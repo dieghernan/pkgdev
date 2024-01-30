@@ -46,37 +46,32 @@ precompute_vignette <- function(source,
                                 pkg = ".",
                                 figure_ext = ".png",
                                 create_r_file = FALSE) {
-  src_path <- file.path("vignettes", source)
-  out <- gsub(".orig", "", src_path)
-  usethis::use_build_ignore(src_path)
-
   pkg <- devtools::as.package(pkg)
-
   local_install2(pkg)
 
-  nm <- pkg$package
-  # nolint start
-  ver <- packageVersion(nm)
-  # nolint end
-  cli::cli_alert_info("Precomputing with {.pkg {nm}} {ver}")
+  for (f_path in source) {
+    src_path <- file.path("vignettes", f_path)
+    out <- gsub(".orig", "", src_path)
+    usethis::use_build_ignore(src_path)
 
-  cli::cli_alert("Precomputing {.file {src_path}}")
-  knitr::knit(input = src_path, output = out, quiet = TRUE)
-  cli::cli_alert("Resulting vignette in {.file {out}}")
-  # Move plot files to dir
+    cli::cli_alert("Precomputing {.file {src_path}}")
+    knitr::knit(input = src_path, output = out, quiet = TRUE)
+    cli::cli_alert("Resulting vignette in {.file {out}}")
+    # Move plot files to dir
 
-  plots <- list.files(".", pattern = figure_ext)
-  plots_to_move <- file.path("vignettes", plots)
+    plots <- list.files(".", pattern = figure_ext)
+    plots_to_move <- file.path("vignettes", plots)
 
-  res <- file.copy(plots, plots_to_move, overwrite = TRUE)
-  rm(res)
-  rem <- file.remove(plots)
-  rm(rem)
+    res <- file.copy(plots, plots_to_move, overwrite = TRUE)
+    rm(res)
+    rem <- file.remove(plots)
+    rm(rem)
 
-  # Create R file
-  if (create_r_file) {
-    r_file <- gsub(".Rmd", ".R", out)
-    knitr::purl(src_path, output = r_file)
+    # Create R file
+    if (create_r_file) {
+      r_file <- gsub(".Rmd", ".R", out)
+      knitr::purl(src_path, output = r_file)
+    }
   }
   return(invisible())
 }
@@ -92,12 +87,10 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
   find_vignettes <- grep(".Rmd.orig$", vignette_list)
   if (length(find_vignettes) > 0) {
     vig <- vignette_list[find_vignettes]
-    for (i in seq_len(length(find_vignettes))) {
-      precompute_vignette(source = vig[i], pkg = pkg, ...)
-    }
+    precompute_vignette(source = vig, pkg = pkg, ...)
   } else {
     cli::cli_alert_info(
-      "No vignettes for precomputing found in {.path {file.path(dir)}} "
+      "No vignettes for precomputing found in {.path {file.path(dir)}}"
     )
   }
 }
@@ -107,7 +100,14 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
 local_install2 <- function(pkg = ".", quiet = TRUE, env = parent.frame()) {
   pkg <- devtools::as.package(pkg)
 
-  cli::cli_inform(c(i = "Installing {.pkg {pkg$package}} in temporary library"))
+  nm <- pkg$package
+  # nolint start
+  ver <- packageVersion(nm)
+  # nolint end
+
+  cli::cli_inform(c(
+    i = "Installing {.pkg {nm}} {.strong  v{ver}} in temporary library"
+  ))
   withr::local_temp_libpaths(.local_envir = env)
   devtools::install(pkg,
     upgrade = "never",

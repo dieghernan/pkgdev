@@ -20,30 +20,26 @@ Imports:
     cli (>= 3.4.0),
     codemetar (>= 0.3.3),
     devtools (>= 2.4.1),
-    httr,
-    jsonld,
-    jsonvalidate (>= 1.1.0),
     knitr (>= 1.33),
     lintr (>= 2.0.1),
-    magick,
-    pkgdown,
-    png,
-    remotes,
     resmush,
     roxygen2 (>= 7.1.0),
-    sessioninfo,
     styler (>= 1.5.1),
     urlchecker (>= 1.0.0),
     usethis (>= 2.2.2),
-    V8 (>= 4.0.0),
     withr
 Suggests: 
     covr (>= 3.5.1),
     gitdevr,
     goodpractice (>= 1.0.2),
+    magick,
+    pkgdown,
     rcmdcheck (>= 1.3.3),
+    remotes,
     rmarkdown (>= 2.9),
-    tidyverse
+    sessioninfo,
+    tidyverse,
+    V8 (>= 4.0.0)
 VignetteBuilder: 
     knitr
 Remotes:

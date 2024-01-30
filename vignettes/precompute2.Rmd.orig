@@ -1,0 +1,35 @@
+---
+title: "A second precomputed vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{A second precomputed vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<!-- precompute2.Rmd is generated from precompute2.Rmd.orig Please edit that file -->
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  dev = "ragg_png",
+  tidy = "styler",
+  fig.path = "./",
+  out.width = "100%"
+)
+```
+
+This is an example of another precomputed vignette:
+
+```{r table}
+
+set.seed(1234)
+tbl <- data.frame(x=runif(10), y=runif(10))
+
+tbl
+
+```

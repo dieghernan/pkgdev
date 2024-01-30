@@ -25,3 +25,4 @@
 ^CONTRIBUTING\.md$
 ^vignettes/articles$
 ^Rplots\.pdf$
+^vignettes/precompute2\.Rmd\.orig$
