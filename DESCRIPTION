@@ -21,6 +21,7 @@ Imports:
     codemetar (>= 0.3.3),
     devtools (>= 2.4.1),
     knitr (>= 1.33),
+    jsonld,
     lintr (>= 2.0.1),
     resmush,
     roxygen2 (>= 7.1.0),
