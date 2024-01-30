@@ -185,7 +185,7 @@ update_docs <- function(pkg = ".",
 
   if (precompute) {
     if (verbose) cli::cli_alert_info("Precomputing vignettes")
-    precompute_vignette_all(...)
+    precompute_vignette_all(pkg = pkg, ...)
   }
   # Check README.Rmd
   readme_rmd <- file.path(pkg, "README.Rmd")

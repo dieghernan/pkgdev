@@ -14,6 +14,7 @@
 #' of the vignette.
 #' @param ... Parameters passed to [precompute_vignette()].
 #'
+#' @inheritParams update_docs
 #' @source <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>
 #'
 #' @details
@@ -42,11 +43,22 @@
 #'
 #'
 precompute_vignette <- function(source,
+                                pkg = ".",
                                 figure_ext = ".png",
                                 create_r_file = FALSE) {
   src_path <- file.path("vignettes", source)
   out <- gsub(".orig", "", src_path)
   usethis::use_build_ignore(src_path)
+
+  pkg <- devtools::as.package(pkg)
+
+  local_install2(pkg)
+
+  nm <- pkg$package
+  # nolint start
+  ver <- packageVersion(nm)
+  # nolint end
+  cli::cli_alert_info("Precomputing with {.pkg {nm}} {ver}")
 
   cli::cli_alert("Precomputing {.file {src_path}}")
   knitr::knit(input = src_path, output = out, quiet = TRUE)
@@ -74,18 +86,31 @@ precompute_vignette <- function(source,
 #'   are stored.
 #' @export
 #'
-precompute_vignette_all <- function(dir = "vignettes", ...) {
+precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
   vignette_list <- list.files("vignettes")
 
   find_vignettes <- grep(".Rmd.orig$", vignette_list)
   if (length(find_vignettes) > 0) {
     vig <- vignette_list[find_vignettes]
     for (i in seq_len(length(find_vignettes))) {
-      precompute_vignette(source = vig[i], ...)
+      precompute_vignette(source = vig[i], pkg = pkg, ...)
     }
   } else {
     cli::cli_alert_info(
       "No vignettes for precomputing found in {.path {file.path(dir)}} "
     )
   }
+}
+
+
+# From devtools
+local_install2 <- function(pkg = ".", quiet = TRUE, env = parent.frame()) {
+  pkg <- devtools::as.package(pkg)
+
+  cli::cli_inform(c(i = "Installing {.pkg {pkg$package}} in temporary library"))
+  withr::local_temp_libpaths(.local_envir = env)
+  devtools::install(pkg,
+    upgrade = "never",
+    reload = FALSE, quick = TRUE, quiet = quiet
+  )
 }

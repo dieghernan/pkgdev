@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/dieghernan/pkgdev",
   "issueTracker": "https://github.com/dieghernan/pkgdev/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0.9051",
+  "version": "0.1.0.9060",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.2 (2023-10-31)",
+  "runtimePlatform": "R version 4.3.2 (2023-10-31 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -367,9 +367,21 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=V8"
     },
+    "22": {
+      "@type": "SoftwareApplication",
+      "identifier": "withr",
+      "name": "withr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=withr"
+    },
     "SystemRequirements": null
   },
-  "fileSize": "308.429KB",
+  "fileSize": "310.275KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
