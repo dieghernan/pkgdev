@@ -14,7 +14,7 @@ https://ropensci.org/blog/2019/12/08/precompute-vignettes/."><meta property="og:
       <img src="../apple-touch-icon-180x180.png" alt="pkgdev logo" height="34" class="d-inline-block me-1">
       pkgdev</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9051</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9060</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,9 +63,14 @@ https://ropensci.org/blog/2019/12/08/precompute-vignettes/."><meta property="og:
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">precompute_vignette</span><span class="op">(</span><span class="va">source</span>, figure_ext <span class="op">=</span> <span class="st">".png"</span>, create_r_file <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">precompute_vignette</span><span class="op">(</span></span>
+<span>  <span class="va">source</span>,</span>
+<span>  pkg <span class="op">=</span> <span class="st">"."</span>,</span>
+<span>  figure_ext <span class="op">=</span> <span class="st">".png"</span>,</span>
+<span>  create_r_file <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">precompute_vignette_all</span><span class="op">(</span>dir <span class="op">=</span> <span class="st">"vignettes"</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">precompute_vignette_all</span><span class="op">(</span>dir <span class="op">=</span> <span class="st">"vignettes"</span>, pkg <span class="op">=</span> <span class="st">"."</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -77,6 +82,10 @@ https://ropensci.org/blog/2019/12/08/precompute-vignettes/."><meta property="og:
     <dl><dt>source</dt>
 <dd><p>Name without path of the <code>.Rmd.orig</code> file
 (e.g. <code>"some_name.Rmd.orig"</code>).</p></dd>
+
+
+<dt>pkg</dt>
+<dd><p>Path to a (subdirectory of an) R package.</p></dd>
 
 
 <dt>figure_ext</dt>
