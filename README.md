@@ -31,14 +31,9 @@ Alternatively, you can install `pkgdev` using the
 [r-universe](https://dieghernan.r-universe.dev/pkgdev):
 
 ``` r
-# Enable this universe
-options(repos = c(
-  dieghernan = "https://dieghernan.r-universe.dev",
-  CRAN = "https://cloud.r-project.org"
-))
-
-
-install.packages("pkgdev")
+# Install pkgdev in R:
+install.packages("pkgdev", repos = c("https://dieghernan.r-universe.dev",
+ "https://cloud.r-project.org"))
 ```
 
 ## Example
