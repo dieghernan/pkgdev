@@ -170,6 +170,7 @@ references:
   abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
   notes: Imports
   url: https://dieghernan.github.io/resmush/
+  repository: https://CRAN.R-project.org/package=resmush
   authors:
   - family-names: Hernangómez
     given-names: Diego
