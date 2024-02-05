@@ -45,7 +45,6 @@ VignetteBuilder:
     knitr
 Remotes:
     dieghernan/gitdevr,
-    dieghernan/resmush,
     r-lib/usethis
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, jsonlite,
     lubridate, reactable, Polychrome, pkgsearch
