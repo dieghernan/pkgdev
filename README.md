@@ -32,8 +32,10 @@ Alternatively, you can install `pkgdev` using the
 
 ``` r
 # Install pkgdev in R:
-install.packages("pkgdev", repos = c("https://dieghernan.r-universe.dev",
- "https://cloud.r-project.org"))
+install.packages("pkgdev", repos = c(
+  "https://dieghernan.r-universe.dev",
+  "https://cloud.r-project.org"
+))
 ```
 
 ## Example

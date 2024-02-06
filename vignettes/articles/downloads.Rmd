@@ -122,7 +122,7 @@ dwn_w$package <- factor(dwn_w$package, levels = unique(rev(fact)))
 ggplot(dwn_w, aes(x = m)) +
   geom_col(aes(y = downloads), fill = "#f3c300") +
   geom_smooth(aes(y = downloads), color = "#222222", se = FALSE) +
-  facet_wrap(vars(package)) +
+  facet_wrap(vars(package), scales = "free_y") +
   scale_x_date(
     date_breaks = "3 months",
     labels = scales::label_date("%Y-%m")
@@ -132,7 +132,7 @@ ggplot(dwn_w, aes(x = m)) +
   labs(
     fill = "package",
     x = "",
-    y = "# weekly downloads"
+    y = "# weekly downloads (free scales)"
   ) +
   theme(
     axis.title = element_text(size = 8),
