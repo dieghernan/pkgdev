@@ -174,7 +174,7 @@ update_docs <- function(pkg = ".",
     }
     styler::style_dir(file.path(pkg, "man", "chunks"))
   }
-  
+
   # Clean trailing spaces on yamls
   if (!env_var_is_true("CI")) {
     actions <- list.files(".github",
