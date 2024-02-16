@@ -155,7 +155,26 @@ update_docs <- function(pkg = ".",
     styler::style_dir(file.path(pkg, "inst", "examples"))
   }
 
+  if (dir.exists(file.path(pkg, "man", "roxygen2"))) {
+    if (verbose) {
+      cli::cli_alert_info(paste(
+        "Styling meta roxygen2 in",
+        "{.path {file.path('man', 'roxygen2')}}"
+      ))
+    }
+    styler::style_dir(file.path(pkg, "man", "roxygen2"))
+  }
 
+  if (dir.exists(file.path(pkg, "man", "chunks"))) {
+    if (verbose) {
+      cli::cli_alert_info(paste(
+        "Styling chunks in",
+        "{.path {file.path('man', 'chunks')}}"
+      ))
+    }
+    styler::style_dir(file.path(pkg, "man", "chunks"))
+  }
+  
   # Clean trailing spaces on yamls
   if (!env_var_is_true("CI")) {
     actions <- list.files(".github",
