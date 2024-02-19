@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# CITATION file created with {cffr} R package, v0.5.0.9000
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -48,11 +48,10 @@ references:
   url: https://www.R-project.org/
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
   version: '>= 3.6.0'
 - type: software
   title: cffr
@@ -84,7 +83,7 @@ references:
   abstract: 'codemetar: Generate ''CodeMeta'' Metadata for R Packages'
   notes: Imports
   url: https://docs.ropensci.org/codemetar/
-  repository: https://CRAN.R-project.org/package=codemetar
+  repository: https://ropensci.r-universe.dev
   authors:
   - family-names: Boettiger
     given-names: Carl
@@ -340,9 +339,6 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2024'
-  identifiers:
-  - type: url
-    value: https://ropensci.r-universe.dev/magick
 - type: software
   title: pkgdown
   abstract: 'pkgdown: Make Static HTML Documentation for a Package'
