@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.2 (2023-10-31 ucrt)",
+  "runtimePlatform": "R version 4.3.2 (2023-10-31)",
   "author": [
     {
       "@type": "Person",
@@ -350,7 +350,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "311.53KB",
+  "fileSize": "310.249KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -366,7 +366,7 @@
       "url": "https://dieghernan.github.io/pkgdev/"
     }
   ],
-  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/main/NEWS.md",
+  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
