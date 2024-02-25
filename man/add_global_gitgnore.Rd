@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_global_gitgnore.R
 \name{add_global_gitgnore}
 \alias{add_global_gitgnore}
-\title{Add \code{.gitignore} to package.}
+\title{Add \code{.gitignore} to package}
 \usage{
 add_global_gitgnore(pkg = ".")
 }
