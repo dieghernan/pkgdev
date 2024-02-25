@@ -1,4 +1,4 @@
-#' Add `.gitignore` to package.
+#' Add `.gitignore` to package
 #'
 #' @description
 #' Adds a global `.gitgnore` file to the package. File based on default
