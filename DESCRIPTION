@@ -25,6 +25,8 @@ Imports:
     lintr (>= 2.0.1),
     resmush,
     roxygen2 (>= 7.1.0),
+    roxygen2md,
+    stringr,
     styler (>= 1.5.1),
     urlchecker (>= 1.0.0),
     usethis (>= 2.2.2),

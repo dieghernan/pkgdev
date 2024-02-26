@@ -299,6 +299,30 @@
     },
     "11": {
       "@type": "SoftwareApplication",
+      "identifier": "roxygen2md",
+      "name": "roxygen2md",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=roxygen2md"
+    },
+    "12": {
+      "@type": "SoftwareApplication",
+      "identifier": "stringr",
+      "name": "stringr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=stringr"
+    },
+    "13": {
+      "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
       "version": ">= 1.5.1",
@@ -310,7 +334,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "12": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -323,7 +347,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "13": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -336,7 +360,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "14": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -350,7 +374,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "310.244KB",
+  "fileSize": "312.601KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

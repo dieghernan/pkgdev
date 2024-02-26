@@ -199,6 +199,28 @@ references:
   year: '2024'
   version: '>= 7.1.0'
 - type: software
+  title: roxygen2md
+  abstract: 'roxygen2md: ''Roxygen'' to ''Markdown'''
+  notes: Imports
+  url: https://roxygen2md.r-lib.org/
+  repository: https://CRAN.R-project.org/package=roxygen2md
+  authors:
+  - family-names: Müller
+    given-names: Kirill
+    email: kirill@cynkra.com
+  year: '2024'
+- type: software
+  title: stringr
+  abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
+  notes: Imports
+  url: https://stringr.tidyverse.org
+  repository: https://CRAN.R-project.org/package=stringr
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2024'
+- type: software
   title: styler
   abstract: 'styler: Non-Invasive Pretty Printing of R Code'
   notes: Imports

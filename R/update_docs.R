@@ -65,7 +65,10 @@ update_docs <- function(pkg = ".",
                         verbose = TRUE,
                         precompute = TRUE,
                         opt_imgs = TRUE,
-                        opt_dir = c("man/figures", "vignettes", "pkgdown/favicon"),
+                        opt_dir = c(
+                          "man/figures", "vignettes",
+                          "pkgdown/favicon"
+                        ),
                         opt_ext = "png$|jpg$",
                         opt_overwrite = TRUE,
                         ...) {
@@ -200,6 +203,25 @@ update_docs <- function(pkg = ".",
   }
   if (verbose) cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
   roxygen2::roxygenise()
+
+  if (verbose) cli::cli_alert_info("Checking {.var .Rd} titles")
+
+  rdtit <- check_rd_titles(pkg)
+
+
+  if (!is.null(rdtit)) {
+    enddot <- rdtit[rdtit$last == ".", ]
+
+    if (nrow(enddot) == 0) {
+      cli::cli_alert_success("{.var Rd} files doesn't end with {.val .}")
+    } else {
+      cli::cli_alert_warning("Found {.var Rd} files that ends with {.val .}")
+      rds <- as.character(enddot$src)
+      rds <- paste0("{.file ", rds, "}")
+      names(rds) <- rep("*", length(rds))
+      cli::cli_bullets(rds)
+    }
+  }
 
 
   if (precompute) {
