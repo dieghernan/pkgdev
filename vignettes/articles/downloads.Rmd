@@ -128,7 +128,7 @@ dwn_w$package <- factor(dwn_w$package, levels = unique(rev(fact)))
 ggplot(dwn_w, aes(x = m)) +
   geom_area(aes(y = downloads), fill = "#f3c300") +
   geom_smooth(aes(y = downloads), color = "#222222", se = FALSE) +
-  facet_wrap(vars(package), scales = "free_y") +
+  facet_wrap(vars(package), scales = "free_y", ncol = 3) +
   scale_x_date(
     date_breaks = "3 months",
     labels = scales::label_date("%Y-%m")
@@ -184,7 +184,7 @@ end <-
   left_join(lastmonth) %>%
   left_join(lastyear) %>%
   as_tibble() %>%
-  arrange(desc(date))
+  arrange(desc(avg))
 
 names(end) <- c(
   "package",
@@ -201,7 +201,7 @@ reactable(
   striped = TRUE,
   paginationType = "jump",
   elementId = "cran-dwn",
-  defaultPageSize = length(fact)
+  defaultPageSize = 25
 )
 ```
 
@@ -264,6 +264,6 @@ reactable(
   striped = TRUE,
   paginationType = "jump",
   elementId = "posit-dwn",
-  defaultPageSize = nrow(res_all)
+  defaultPageSize = 25
 )
 ```
