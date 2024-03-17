@@ -104,8 +104,10 @@ ggplot(dwn_m, aes(x = m)) +
   geom_smooth(data = tot, aes(m, ntot), color = "grey40", se = TRUE) +
   theme_minimal() +
   scale_fill_manual(values = palk) +
-  scale_y_continuous(labels = scales::label_comma(), 
-                     limits = c(0, max(tot$ntot)*1.05)) +
+  scale_y_continuous(
+    labels = scales::label_comma(),
+    limits = c(0, max(tot$ntot) * 1.05)
+  ) +
   labs(
     fill = "package",
     x = "",
