@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# CITATION file created with {cffr} R package, v1.0.0
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -48,11 +48,10 @@ references:
   url: https://www.R-project.org/
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
   version: '>= 3.6.0'
 - type: software
   title: cffr
@@ -334,8 +333,9 @@ references:
   - family-names: Marks
     given-names: Karina
     email: karina.marks@ascent.io
-  - family-names: de Bortoli
+  - family-names: Bortoli
     given-names: Daniel
+    name-particle: de
   - family-names: Csardi
     given-names: Gabor
     email: csardi.gabor@gmail.com
