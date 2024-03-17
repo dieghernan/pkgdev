@@ -95,8 +95,14 @@ dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
 ```{r echo=FALSE}
 palk <- unname(Polychrome::kelly.colors(length(mypaks) + 1))[-1]
 
+tot <- dwn_m %>%
+  group_by(m) %>%
+  summarise(ntot = sum(downloads))
+
+
 ggplot(dwn_m, aes(x = m)) +
   geom_col(aes(y = downloads, fill = package)) +
+  geom_smooth(data = tot, aes(m, ntot), color = "grey40", se = TRUE) +
   theme_minimal() +
   scale_fill_manual(values = palk) +
   scale_y_continuous(labels = scales::label_comma()) +
@@ -120,7 +126,7 @@ dwn_w <- dwn %>%
 dwn_w$package <- factor(dwn_w$package, levels = unique(rev(fact)))
 
 ggplot(dwn_w, aes(x = m)) +
-  geom_col(aes(y = downloads), fill = "#f3c300") +
+  geom_area(aes(y = downloads), fill = "#f3c300") +
   geom_smooth(aes(y = downloads), color = "#222222", se = FALSE) +
   facet_wrap(vars(package), scales = "free_y") +
   scale_x_date(
