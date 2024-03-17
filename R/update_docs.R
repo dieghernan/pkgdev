@@ -212,9 +212,7 @@ update_docs <- function(pkg = ".",
   if (!is.null(rdtit)) {
     enddot <- rdtit[rdtit$last == ".", ]
 
-    if (nrow(enddot) == 0) {
-      cli::cli_alert_success("{.var Rd} files doesn't end with {.val .}")
-    } else {
+    if (nrow(enddot) != 0) {
       cli::cli_alert_warning("Found {.var Rd} files that ends with {.val .}")
       rds <- as.character(enddot$src)
       rds <- paste0("{.file ", rds, "}")

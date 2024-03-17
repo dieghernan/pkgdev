@@ -99,13 +99,13 @@ tot <- dwn_m %>%
   group_by(m) %>%
   summarise(ntot = sum(downloads))
 
-
 ggplot(dwn_m, aes(x = m)) +
   geom_col(aes(y = downloads, fill = package)) +
   geom_smooth(data = tot, aes(m, ntot), color = "grey40", se = TRUE) +
   theme_minimal() +
   scale_fill_manual(values = palk) +
-  scale_y_continuous(labels = scales::label_comma()) +
+  scale_y_continuous(labels = scales::label_comma(), 
+                     limits = c(0, max(tot$ntot)*1.05)) +
   labs(
     fill = "package",
     x = "",
@@ -201,7 +201,12 @@ reactable(
   striped = TRUE,
   paginationType = "jump",
   elementId = "cran-dwn",
-  defaultPageSize = 25
+  defaultPageSize = 25,
+  columns = list(package = colDef(cell = function(value) {
+    # Render as a link
+    url <- paste0("https://CRAN.R-project.org/package=", value)
+    htmltools::tags$a(href = url, target = "_blank", as.character(value))
+  }))
 )
 ```
 
@@ -264,6 +269,11 @@ reactable(
   striped = TRUE,
   paginationType = "jump",
   elementId = "posit-dwn",
-  defaultPageSize = 25
+  defaultPageSize = 25,
+  columns = list(package = colDef(cell = function(value) {
+    # Render as a link
+    url <- paste0("https://CRAN.R-project.org/package=", value)
+    htmltools::tags$a(href = url, target = "_blank", as.character(value))
+  }))
 )
 ```
