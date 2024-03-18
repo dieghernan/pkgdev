@@ -152,6 +152,7 @@ ggplot(dwn_w, aes(x = m)) +
 
 ```{r datos, echo=FALSE}
 library(reactable)
+library(htmltools)
 
 lastyear <- dwn %>%
   filter(date >= (Sys.Date() - 365)) %>%
@@ -191,7 +192,7 @@ end <-
 names(end) <- c(
   "package",
   "on CRAN", "Latest CRAN Version",
-  "avg daily downloads", "last day",
+  "daily avg.", "last day",
   "last week", "last month", "last year"
 )
 
@@ -201,14 +202,47 @@ reactable(
   searchable = TRUE,
   showPageSizeOptions = TRUE,
   striped = TRUE,
+  defaultColDef = colDef(
+    minWidth = 150, vAlign = "center", footerStyle = list(fontWeight = "bold"),
+    footer = function(values) {
+      if (!is.numeric(values)) {
+        return()
+      }
+      prettyNum(sum(values), big.mark = ".", decimal.mark = ",")
+    }
+  ),
   paginationType = "jump",
   elementId = "cran-dwn",
-  defaultPageSize = 25,
-  columns = list(package = colDef(cell = function(value) {
-    # Render as a link
-    url <- paste0("https://CRAN.R-project.org/package=", value)
-    htmltools::tags$a(href = url, target = "_blank", as.character(value))
-  }))
+  columns <- list(
+    package = colDef(
+      cell = function(value) {
+        # Render as a link
+        url <- paste0("https://CRAN.R-project.org/package=", value)
+        badge <- paste0("https://badges.cranchecks.info/worst/", value, ".svg")
+        link <- htmltools::a(href = url, target = "_blank", as.character(value))
+        div(
+          div(link, style = list(fontWeight = "bold")),
+          div(htmltools::img(src = badge, alt = as.character(value)),
+            style = list(fontSize = "75%")
+          )
+        )
+      },
+      align = "left",
+      sticky = "left",
+      rowHeader = TRUE
+    ),
+    "daily avg." = colDef(
+      format = colFormat(separators = TRUE),
+      footer = function(values) {
+        p <- round(mean(values), 2)
+        prettyNum(p, big.mark = ".", decimal.mark = ",")
+      }
+    ),
+    "last day" = colDef(format = colFormat(separators = TRUE)),
+    "last week" = colDef(format = colFormat(separators = TRUE)),
+    "last month" = colDef(format = colFormat(separators = TRUE)),
+    "last year" = colDef(format = colFormat(separators = TRUE))
+  )
 )
 ```
 
@@ -262,20 +296,36 @@ names(res_all) <- c(
   "Version in Posit", "Package Size", "Downloads (Last month)"
 )
 
-
 reactable(
   res_all,
   filterable = TRUE,
   searchable = TRUE,
   showPageSizeOptions = TRUE,
   striped = TRUE,
+  defaultColDef = colDef(
+    minWidth = 150, vAlign = "center", footerStyle = list(fontWeight = "bold"),
+    footer = function(values) {
+      if (!is.numeric(values)) {
+        return()
+      }
+      prettyNum(sum(values), big.mark = ".", decimal.mark = ",")
+    }
+  ),
   paginationType = "jump",
   elementId = "posit-dwn",
-  defaultPageSize = 25,
-  columns = list(package = colDef(cell = function(value) {
-    # Render as a link
-    url <- paste0("https://CRAN.R-project.org/package=", value)
-    htmltools::tags$a(href = url, target = "_blank", as.character(value))
-  }))
+  columns = list(
+    package = colDef(
+      cell = function(value) {
+        # Render as a link
+        url <- paste0("https://CRAN.R-project.org/package=", value)
+        link <- htmltools::a(href = url, target = "_blank", as.character(value))
+        div(link, style = list(fontWeight = "bold"))
+      },
+      align = "left",
+      sticky = "left",
+      rowHeader = TRUE
+    ),
+    "Downloads (Last month)" = colDef(format = colFormat(separators = TRUE))
+  )
 )
 ```
