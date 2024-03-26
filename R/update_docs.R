@@ -106,7 +106,9 @@ update_docs <- function(pkg = ".",
     check_unexpected_assignment_in_function_call = TRUE,
     warn_if_no_such_variable_in_scope = TRUE,
     warn_variable_defined_but_not_used = TRUE,
-    style_diagnostics = TRUE
+    style_diagnostics = TRUE,
+    show_doc_outline_rmd = TRUE,
+    visual_markdown_editing_list_spacing = "tight"
   )
 
   if (verbose) cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
