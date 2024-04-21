@@ -186,6 +186,9 @@ update_docs <- function(pkg = ".",
       pattern = "yaml$|yml$", full.names = TRUE,
       recursive = TRUE
     )
+    } else {
+    actions <- NULL
+    }
     others <- list.files(
       pattern = "yaml$|yml$", full.names = TRUE,
       recursive = TRUE
@@ -202,7 +205,7 @@ update_docs <- function(pkg = ".",
         usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
       })
     }
-  }
+
   if (verbose) cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
   roxygen2::roxygenise()
 
