@@ -186,25 +186,25 @@ update_docs <- function(pkg = ".",
       pattern = "yaml$|yml$", full.names = TRUE,
       recursive = TRUE
     )
-    } else {
+  } else {
     actions <- NULL
-    }
-    others <- list.files(
-      pattern = "yaml$|yml$", full.names = TRUE,
-      recursive = TRUE
-    )
-    allyml <- c(actions, others)
+  }
+  others <- list.files(
+    pattern = "yaml$|yml$", full.names = TRUE,
+    recursive = TRUE
+  )
+  allyml <- c(actions, others)
 
-    if (length(allyml) > 0) {
-      lapply(allyml, function(x) {
-        lns <- readLines(x, warn = FALSE)
-        newlns <- trimws(lns, which = "right")
+  if (length(allyml) > 0) {
+    lapply(allyml, function(x) {
+      lns <- readLines(x, warn = FALSE)
+      newlns <- trimws(lns, which = "right")
 
-        # Add EOL
-        if (!identical(newlns[length(newlns)], "")) newlns <- c(newlns, "")
-        usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
-      })
-    }
+      # Add EOL
+      if (!identical(newlns[length(newlns)], "")) newlns <- c(newlns, "")
+      usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
+    })
+  }
 
   if (verbose) cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
   roxygen2::roxygenise()

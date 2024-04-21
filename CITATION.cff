@@ -328,7 +328,6 @@ references:
   abstract: 'goodpractice: Advice on R Package Building'
   notes: Suggests
   url: https://github.com/mangothecat/goodpractice
-  repository: https://CRAN.R-project.org/package=goodpractice
   authors:
   - family-names: Marks
     given-names: Karina

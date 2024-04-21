@@ -66,14 +66,7 @@
       "@type": "SoftwareApplication",
       "identifier": "goodpractice",
       "name": "goodpractice",
-      "version": ">= 1.0.2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=goodpractice"
+      "version": ">= 1.0.2"
     },
     {
       "@type": "SoftwareApplication",
@@ -374,7 +367,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "312.653KB",
+  "fileSize": "312.657KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
