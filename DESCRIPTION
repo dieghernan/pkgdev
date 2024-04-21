@@ -46,7 +46,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    dieghernan/gitdevr, MangoTheCat/goodpractice
+    dieghernan/gitdevr,
+    MangoTheCat/goodpractice
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, jsonlite,
     lubridate, reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8

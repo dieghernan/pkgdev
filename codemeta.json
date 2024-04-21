@@ -66,7 +66,8 @@
       "@type": "SoftwareApplication",
       "identifier": "goodpractice",
       "name": "goodpractice",
-      "version": ">= 1.0.2"
+      "version": ">= 1.0.2",
+      "sameAs": "https://github.com/MangoTheCat/goodpractice"
     },
     {
       "@type": "SoftwareApplication",
@@ -367,7 +368,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "312.657KB",
+  "fileSize": "312.687KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
