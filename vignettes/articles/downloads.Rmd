@@ -178,6 +178,9 @@ avg_daily <- dwn %>%
   group_by(package) %>%
   summarise(avg = round(mean(count, na.rm = TRUE), 1))
 
+avg_daily_all <- dwn %>%
+  summarise(avg = round(mean(count, na.rm = TRUE), 1))
+
 # Une todo y da nombres
 end <-
   fechas %>%
@@ -234,7 +237,7 @@ reactable(
     "daily avg." = colDef(
       format = colFormat(separators = TRUE),
       footer = function(values) {
-        p <- round(mean(values), 2)
+        p <- round(avg_daily_all$avg, 2)
         prettyNum(p, big.mark = ".", decimal.mark = ",")
       }
     ),
