@@ -226,6 +226,23 @@ update_docs <- function(pkg = ".",
     }
   }
 
+  if (verbose) cli::cli_alert_info("Looking for {.val #'} in {.var .Rd} files")
+
+  rdhash <- check_rd_hash(pkg)
+
+
+  if (!is.null(rdhash)) {
+    has_hash <- rdhash[rdhash$bad_hash == TRUE, ]
+
+    if (nrow(has_hash) != 0) {
+      cli::cli_alert_warning("Found {.val #'} in {.var Rd} files")
+      rds <- as.character(has_hash$src)
+      rds <- paste0("{.file ", rds, "}")
+      names(rds) <- rep("*", length(rds))
+      cli::cli_bullets(rds)
+    }
+  }
+
 
   if (precompute) {
     if (verbose) cli::cli_alert_info("Precomputing vignettes")

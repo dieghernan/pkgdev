@@ -40,21 +40,9 @@ mypaks <- c(
 mypaks <- mypaks[mypaks %in% crandb]
 
 dwn <- lapply(mypaks, cranlogs::cran_downloads, from = "2016-01-01")
-
 dwn <- dwn %>%
   bind_rows() %>%
-  tidyr::drop_na() %>%
-  filter(count > 0)
-
-# By month
-library(lubridate)
-
-
-dwn_m <- dwn %>%
-  mutate(m = lubridate::ceiling_date(dwn$date, "month") - 1) %>%
-  group_by(package, m) %>%
-  summarise(downloads = sum(count))
-
+  as_tibble()
 
 # First date on CRAN
 
@@ -79,6 +67,25 @@ first_date_on_cran <- function(pkg) {
 
 fechas <- lapply(unique(dwn$package), first_date_on_cran) %>%
   bind_rows()
+
+
+
+dwn <- dwn %>%
+  left_join(fechas %>% select(package, d_cran = date)) %>%
+  filter(date >= d_cran) %>%
+  select(-d_cran) %>%
+  tidyr::replace_na(list(count = 0)) %>%
+  filter(date < Sys.Date())
+
+# By month
+library(lubridate)
+
+
+dwn_m <- dwn %>%
+  mutate(m = lubridate::ceiling_date(dwn$date, "month") - 1) %>%
+  group_by(package, m) %>%
+  summarise(downloads = sum(count))
+
 
 # factors by first date on CRAN
 fact <- fechas %>%

@@ -327,8 +327,13 @@ references:
   title: goodpractice
   abstract: 'goodpractice: Advice on R Package Building'
   notes: Suggests
-  url: https://github.com/mangothecat/goodpractice
+  url: https://docs.ropensci.org/goodpractice/
+  repository: https://CRAN.R-project.org/package=goodpractice
   authors:
+  - family-names: Padgham
+    given-names: Mark
+    email: mark@ropensci.org
+    orcid: https://orcid.org/0000-0003-2172-5265
   - family-names: Marks
     given-names: Karina
     email: karina.marks@ascent.io
@@ -361,9 +366,6 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2024'
-  identifiers:
-  - type: url
-    value: https://ropensci.r-universe.dev/magick
 - type: software
   title: pkgdown
   abstract: 'pkgdown: Make Static HTML Documentation for a Package'
