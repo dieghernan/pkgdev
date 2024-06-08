@@ -73,7 +73,7 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/MangoTheCat/goodpractice"
+      "sameAs": "https://CRAN.R-project.org/package=goodpractice"
     },
     {
       "@type": "SoftwareApplication",
@@ -374,7 +374,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "313.528KB",
+  "fileSize": "313.493KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
