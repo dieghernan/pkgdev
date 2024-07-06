@@ -370,7 +370,7 @@ references:
   title: pkgdown
   abstract: 'pkgdown: Make Static HTML Documentation for a Package'
   notes: Suggests
-  url: https://pkgdown.r-lib.org/
+  url: https://pkgdown.r-lib.org
   repository: https://CRAN.R-project.org/package=pkgdown
   authors:
   - family-names: Wickham
@@ -383,11 +383,6 @@ references:
   - family-names: Salmon
     given-names: Maëlle
     orcid: https://orcid.org/0000-0002-2815-0399
-  - family-names: Roy
-    given-names: Olivier
-  - family-names: Brüggemann
-    given-names: Salim
-    orcid: https://orcid.org/0000-0002-5329-5987
   year: '2024'
 - type: software
   title: rcmdcheck
