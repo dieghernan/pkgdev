@@ -178,7 +178,7 @@ lastweek <- dwn %>%
   summarise(last_week = sum(count, na.rm = TRUE))
 
 last_day <- dwn %>%
-  filter(date == max(dwn$date, na.rm = TRUE)) %>%
+  filter(date == max(dwn$date, na.rm = TRUE) - 1) %>%
   select(package, last_day = count)
 
 avg_daily <- dwn %>%
