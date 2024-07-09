@@ -185,12 +185,14 @@ avg_daily <- dwn %>%
   group_by(package) %>%
   summarise(avg = round(mean(count, na.rm = TRUE), 1))
 
-avg_daily_all <- dwn %>%
-  summarise(avg = round(mean(count, na.rm = TRUE), 1))
+avg_daily_all <- avg_daily %>%
+  ungroup() %>%
+  summarise(avg = round(sum(avg, na.rm = TRUE), 1))
+
+
 
 # Une todo y da nombres
-end <-
-  fechas %>%
+end <- fechas %>%
   left_join(avg_daily) %>%
   left_join(last_day) %>%
   left_join(lastweek) %>%
