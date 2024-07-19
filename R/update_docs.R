@@ -57,21 +57,14 @@
 #' @export
 #'
 #'
-update_docs <- function(pkg = ".",
-                        url_update = TRUE,
-                        create_codemeta = TRUE,
-                        create_cff = TRUE,
-                        build_readme = TRUE,
-                        verbose = TRUE,
-                        precompute = TRUE,
-                        opt_imgs = TRUE,
+update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
+                        create_cff = TRUE, build_readme = TRUE, verbose = TRUE,
+                        precompute = TRUE, opt_imgs = TRUE,
                         opt_dir = c(
-                          "man/figures", "vignettes",
-                          "pkgdown/favicon"
-                        ),
-                        opt_ext = "png$|jpg$",
-                        opt_overwrite = TRUE,
-                        ...) {
+                          "pkgdown/favicon", "man/figures",
+                          "vignettes"
+                        ), opt_ext = "png$|jpg$",
+                        opt_overwrite = TRUE, ...) {
   # Add global .gitignore
   if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
   add_global_gitgnore(pkg = pkg)
