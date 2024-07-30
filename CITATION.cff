@@ -65,6 +65,7 @@ references:
     email: diego.hernangomezherrero@gmail.com
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2024'
+  doi: 10.32614/CRAN.package.cffr
   version: '>= 0.2.0'
 - type: software
   title: cli
@@ -77,6 +78,7 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2024'
+  doi: 10.32614/CRAN.package.cli
   version: '>= 3.4.0'
 - type: software
   title: codemetar
@@ -93,6 +95,7 @@ references:
     given-names: Maëlle
     orcid: https://orcid.org/0000-0002-2815-0399
   year: '2024'
+  doi: 10.32614/CRAN.package.codemetar
   version: '>= 0.3.3'
 - type: software
   title: devtools
@@ -112,6 +115,7 @@ references:
     email: jenny@rstudio.com
     orcid: https://orcid.org/0000-0002-6983-2759
   year: '2024'
+  doi: 10.32614/CRAN.package.devtools
   version: '>= 2.4.1'
 - type: software
   title: jsonld
@@ -125,6 +129,7 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2024'
+  doi: 10.32614/CRAN.package.jsonld
 - type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
@@ -137,6 +142,7 @@ references:
     email: xie@yihui.name
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2024'
+  doi: 10.32614/CRAN.package.knitr
   version: '>= 1.33'
 - type: software
   title: lintr
@@ -163,6 +169,7 @@ references:
     email: patilindrajeet.science@gmail.com
     orcid: https://orcid.org/0000-0003-1995-6531
   year: '2024'
+  doi: 10.32614/CRAN.package.lintr
   version: '>= 2.0.1'
 - type: software
   title: resmush
@@ -176,6 +183,7 @@ references:
     email: diego.hernangomezherrero@gmail.com
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2024'
+  doi: 10.32614/CRAN.package.resmush
 - type: software
   title: roxygen2
   abstract: 'roxygen2: In-Line Documentation for R'
@@ -196,6 +204,7 @@ references:
   - family-names: Eugster
     given-names: Manuel
   year: '2024'
+  doi: 10.32614/CRAN.package.roxygen2
   version: '>= 7.1.0'
 - type: software
   title: roxygen2md
@@ -208,6 +217,7 @@ references:
     given-names: Kirill
     email: kirill@cynkra.com
   year: '2024'
+  doi: 10.32614/CRAN.package.roxygen2md
 - type: software
   title: stringr
   abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
@@ -219,6 +229,7 @@ references:
     given-names: Hadley
     email: hadley@posit.co
   year: '2024'
+  doi: 10.32614/CRAN.package.stringr
 - type: software
   title: styler
   abstract: 'styler: Non-Invasive Pretty Printing of R Code'
@@ -234,6 +245,7 @@ references:
     given-names: Lorenz
     email: lorenz.walthert@icloud.com
   year: '2024'
+  doi: 10.32614/CRAN.package.styler
   version: '>= 1.5.1'
 - type: software
   title: urlchecker
@@ -250,6 +262,7 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2024'
+  doi: 10.32614/CRAN.package.urlchecker
   version: '>= 1.0.0'
 - type: software
   title: usethis
@@ -275,6 +288,7 @@ references:
     email: andy.teucher@posit.co
     orcid: https://orcid.org/0000-0002-7840-692X
   year: '2024'
+  doi: 10.32614/CRAN.package.usethis
   version: '>= 2.2.2'
 - type: software
   title: withr
@@ -300,6 +314,7 @@ references:
   - family-names: Chang
     given-names: Winston
   year: '2024'
+  doi: 10.32614/CRAN.package.withr
 - type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'
@@ -311,6 +326,7 @@ references:
     given-names: Jim
     email: james.f.hester@gmail.com
   year: '2024'
+  doi: 10.32614/CRAN.package.covr
   version: '>= 3.5.1'
 - type: software
   title: gitdevr
@@ -323,6 +339,7 @@ references:
     email: diego.hernangomezherrero@gmail.com
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2024'
+  doi: 10.32614/CRAN.package.gitdevr
 - type: software
   title: goodpractice
   abstract: 'goodpractice: Advice on R Package Building'
@@ -353,6 +370,7 @@ references:
     given-names: Hannah
     email: halexander@mango-solutions.com
   year: '2024'
+  doi: 10.32614/CRAN.package.goodpractice
   version: '>= 1.0.2'
 - type: software
   title: magick
@@ -369,6 +387,7 @@ references:
   identifiers:
   - type: url
     value: https://ropensci.r-universe.dev/magick
+  doi: 10.32614/CRAN.package.magick
 - type: software
   title: pkgdown
   abstract: 'pkgdown: Make Static HTML Documentation for a Package'
@@ -392,6 +411,7 @@ references:
     given-names: Salim
     orcid: https://orcid.org/0000-0002-5329-5987
   year: '2024'
+  doi: 10.32614/CRAN.package.pkgdown
 - type: software
   title: rcmdcheck
   abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
@@ -403,6 +423,7 @@ references:
     given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2024'
+  doi: 10.32614/CRAN.package.rcmdcheck
   version: '>= 1.3.3'
 - type: software
   title: remotes
@@ -425,6 +446,7 @@ references:
   - family-names: Tenenbaum
     given-names: Dan
   year: '2024'
+  doi: 10.32614/CRAN.package.remotes
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
@@ -468,6 +490,7 @@ references:
     email: rich@posit.co
     orcid: https://orcid.org/0000-0003-3925-190X
   year: '2024'
+  doi: 10.32614/CRAN.package.rmarkdown
   version: '>= 2.9'
 - type: software
   title: sessioninfo
@@ -487,6 +510,7 @@ references:
   - family-names: Hester
     given-names: Jim
   year: '2024'
+  doi: 10.32614/CRAN.package.sessioninfo
 - type: software
   title: tidyverse
   abstract: 'tidyverse: Easily Install and Load the ''Tidyverse'''
@@ -498,6 +522,7 @@ references:
     given-names: Hadley
     email: hadley@rstudio.com
   year: '2024'
+  doi: 10.32614/CRAN.package.tidyverse
 - type: software
   title: V8
   abstract: 'V8: Embedded JavaScript and WebAssembly Engine for R'
@@ -510,5 +535,6 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2024'
+  doi: 10.32614/CRAN.package.V8
   version: '>= 4.0.0'
 

@@ -113,6 +113,8 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_build_ignore("CODE_OF_CONDUCT.md")
   usethis::use_build_ignore("CONTRIBUTING.md")
   usethis::use_build_ignore(".github")
+  usethis::use_build_ignore("docs")
+
 
   # PDF on plots
   usethis::use_git_ignore("Rplots.pdf", directory = pkg)

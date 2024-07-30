@@ -40,7 +40,6 @@ vignettes/*.pdf
 pkgdev.Rcheck/
 pkgdev*.tar.gz
 pkgdev*.tgz
-docs/
 inst/doc
 CRAN-SUBMISSION
 .github/pkg.lock

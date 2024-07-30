@@ -7,7 +7,6 @@
 ^_pkgdown\.yaml$
 ^_pkgdown\.yml$
 ^pkgdown$
-^docs$
 ^codemeta\.json$
 ^vignettes/precompute\.Rmd\.orig$
 ^revdep$
@@ -27,3 +26,4 @@
 ^Rplots\.pdf$
 ^vignettes/precompute2\.Rmd\.orig$
 ^codecov\.yml$
+^docs$
