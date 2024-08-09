@@ -30,7 +30,9 @@ Imports:
     styler (>= 1.5.1),
     urlchecker (>= 1.0.0),
     usethis (>= 2.2.2),
-    withr
+    withr,
+    rcmdcheck,
+    cpp11
 Suggests: 
     covr (>= 3.5.1),
     gitdevr,
