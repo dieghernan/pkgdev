@@ -19,10 +19,12 @@ Imports:
     cffr (>= 0.2.0),
     cli (>= 3.4.0),
     codemetar (>= 0.3.3),
+    cpp11,
     devtools (>= 2.4.1),
     jsonld,
     knitr (>= 1.33),
     lintr (>= 2.0.1),
+    rcmdcheck,
     resmush,
     roxygen2 (>= 7.1.0),
     roxygen2md,
@@ -30,9 +32,7 @@ Imports:
     styler (>= 1.5.1),
     urlchecker (>= 1.0.0),
     usethis (>= 2.2.2),
-    withr,
-    rcmdcheck,
-    cpp11
+    withr
 Suggests: 
     covr (>= 3.5.1),
     gitdevr,

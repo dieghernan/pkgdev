@@ -98,6 +98,25 @@ references:
   doi: 10.32614/CRAN.package.codemetar
   version: '>= 0.3.3'
 - type: software
+  title: cpp11
+  abstract: 'cpp11: A C++11 Interface for R''s C Interface'
+  notes: Imports
+  url: https://cpp11.r-lib.org
+  repository: https://CRAN.R-project.org/package=cpp11
+  authors:
+  - family-names: Vaughan
+    given-names: Davis
+    email: davis@posit.co
+    orcid: https://orcid.org/0000-0003-4777-038X
+  - family-names: Hester
+    given-names: Jim
+    orcid: https://orcid.org/0000-0002-2739-7082
+  - family-names: François
+    given-names: Romain
+    orcid: https://orcid.org/0000-0002-2444-4226
+  year: '2024'
+  doi: 10.32614/CRAN.package.cpp11
+- type: software
   title: devtools
   abstract: 'devtools: Tools to Make Developing R Packages Easier'
   notes: Imports
@@ -171,6 +190,18 @@ references:
   year: '2024'
   doi: 10.32614/CRAN.package.lintr
   version: '>= 2.0.1'
+- type: software
+  title: rcmdcheck
+  abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
+  notes: Imports
+  url: https://r-lib.github.io/rcmdcheck/
+  repository: https://CRAN.R-project.org/package=rcmdcheck
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  year: '2024'
+  doi: 10.32614/CRAN.package.rcmdcheck
 - type: software
   title: resmush
   abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
@@ -414,7 +445,7 @@ references:
 - type: software
   title: rcmdcheck
   abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
-  notes: Suggests
+  notes: Imports
   url: https://r-lib.github.io/rcmdcheck/
   repository: https://CRAN.R-project.org/package=rcmdcheck
   authors:
