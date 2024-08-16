@@ -193,7 +193,7 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/ropensci/cffr"
+      "sameAs": "https://CRAN.R-project.org/package=cffr"
     },
     "3": {
       "@type": "SoftwareApplication",
@@ -398,7 +398,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "313.537KB",
+  "fileSize": "313.518KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
