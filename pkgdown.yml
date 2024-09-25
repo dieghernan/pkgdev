@@ -1,11 +1,11 @@
 pandoc: 3.1.11
-pkgdown: 2.1.0
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   articles/downloads: downloads.html
   precompute: precompute.html
   precompute2: precompute2.html
-last_built: 2024-09-18T10:11Z
+last_built: 2024-09-25T10:11Z
 urls:
   reference: https://dieghernan.github.io/pkgdev/reference
   article: https://dieghernan.github.io/pkgdev/articles
