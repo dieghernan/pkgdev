@@ -123,17 +123,11 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   if (verbose) cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
 
 
-  # Use keywords
+  # Extract keywords and save it for latter
   d <- desc::desc(file.path(pkg, "DESCRIPTION"))
   k <- d$get("X-schema.org-keywords")
   k <- gsub("\\n", "", unname(k))
   key <- trimws(unlist(strsplit(k, ",")))
-  key <- key[!is.na(key)]
-  if (!any(is.na(key))) {
-    p <- desc::desc_set_list("X-schema.org-keywords", key,
-      file = file.path(pkg, "DESCRIPTION")
-    )
-  }
 
   usethis::use_tidy_description()
 
@@ -282,18 +276,22 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     cffread <- cffr::cff_read(file.path(pkg, "CITATION.cff"))
 
 
-    key <- unique(unname(c(key, cffread$keywords)))
-    key <- trimws(key)
-    key <- key[!is.na(key)]
-
-    if (is.character(key)) {
-      p <- desc::desc_set_list("X-schema.org-keywords", key,
-        file = file.path(pkg, "DESCRIPTION")
-      )
-    }
-
-    usethis::use_tidy_description()
+    key <- unname(c(key, cffread$keywords))
   }
+
+  # Finally add all the keywords (DESCRIPTION and cff)
+
+  key <- trimws(key)
+  key <- key[!is.na(key)]
+  if (length(key) > 0) {
+    key <- unique(tolower(key))
+
+    p <- desc::desc_set_list("X-schema.org-keywords", key,
+      file = file.path(pkg, "DESCRIPTION")
+    )
+  }
+
+  usethis::use_tidy_description()
 
   if (dir.exists("inst")) {
     list_inst <- list.files("inst")
