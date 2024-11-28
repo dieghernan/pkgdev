@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.2 (2024-10-31)",
+  "runtimePlatform": "R version 4.4.2 (2024-10-31 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -398,7 +398,8 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "313.518KB",
+  "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
+  "fileSize": "315.703KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -417,6 +418,5 @@
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
-  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental",
-  "keywords": ["r", "rstats", "r-package", "developer-tools", "experimental", "github-actions"]
+  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental"
 }
