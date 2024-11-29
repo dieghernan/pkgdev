@@ -117,6 +117,23 @@ references:
   year: '2024'
   doi: 10.32614/CRAN.package.cpp11
 - type: software
+  title: desc
+  abstract: 'desc: Manipulate DESCRIPTION Files'
+  notes: Imports
+  url: https://desc.r-lib.org/
+  repository: https://CRAN.R-project.org/package=desc
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  - family-names: Müller
+    given-names: Kirill
+  - family-names: Hester
+    given-names: Jim
+    email: james.f.hester@gmail.com
+  year: '2024'
+  doi: 10.32614/CRAN.package.desc
+- type: software
   title: devtools
   abstract: 'devtools: Tools to Make Developing R Packages Easier'
   notes: Imports
@@ -202,6 +219,7 @@ references:
     email: csardi.gabor@gmail.com
   year: '2024'
   doi: 10.32614/CRAN.package.rcmdcheck
+  version: '>= 1.3.3'
 - type: software
   title: resmush
   abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
@@ -442,19 +460,6 @@ references:
     orcid: https://orcid.org/0000-0002-5329-5987
   year: '2024'
   doi: 10.32614/CRAN.package.pkgdown
-- type: software
-  title: rcmdcheck
-  abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
-  notes: Imports
-  url: https://r-lib.github.io/rcmdcheck/
-  repository: https://CRAN.R-project.org/package=rcmdcheck
-  authors:
-  - family-names: Csárdi
-    given-names: Gábor
-    email: csardi.gabor@gmail.com
-  year: '2024'
-  doi: 10.32614/CRAN.package.rcmdcheck
-  version: '>= 1.3.3'
 - type: software
   title: remotes
   abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''

@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.2 (2024-10-31)",
+  "runtimePlatform": "R version 4.4.2 (2024-10-31 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -98,19 +98,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=pkgdown"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "rcmdcheck",
-      "name": "rcmdcheck",
-      "version": ">= 1.3.3",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rcmdcheck"
     },
     {
       "@type": "SoftwareApplication",
@@ -235,6 +222,18 @@
     },
     "6": {
       "@type": "SoftwareApplication",
+      "identifier": "desc",
+      "name": "desc",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=desc"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
       "version": ">= 2.4.1",
@@ -246,7 +245,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "jsonld",
       "name": "jsonld",
@@ -258,7 +257,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonld"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -271,7 +270,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "lintr",
       "name": "lintr",
@@ -284,10 +283,11 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lintr"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "rcmdcheck",
       "name": "rcmdcheck",
+      "version": ">= 1.3.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -296,7 +296,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rcmdcheck"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "resmush",
       "name": "resmush",
@@ -308,7 +308,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=resmush"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -321,7 +321,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2md",
       "name": "roxygen2md",
@@ -333,7 +333,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2md"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -345,7 +345,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -358,7 +358,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -371,7 +371,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "17": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -384,7 +384,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "18": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -399,7 +399,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "314.247KB",
+  "fileSize": "315.891KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -414,9 +414,5 @@
       "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
       "url": "https://dieghernan.github.io/pkgdev/"
     }
-  ],
-  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
-  "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
-  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental"
+  ]
 }

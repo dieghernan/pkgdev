@@ -128,7 +128,14 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   k <- d$get("X-schema.org-keywords")
   k <- gsub("\\n", "", unname(k))
   key <- trimws(unlist(strsplit(k, ",")))
+  key <- key[!is.na(key)]
+  if (length(key) > 0) {
+    key <- unique(tolower(key))
 
+    desc::desc_set_list("X-schema.org-keywords", key,
+      file = file.path(pkg, "DESCRIPTION")
+    )
+  }
   usethis::use_tidy_description()
 
 
@@ -286,7 +293,7 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   if (length(key) > 0) {
     key <- unique(tolower(key))
 
-    p <- desc::desc_set_list("X-schema.org-keywords", key,
+    desc::desc_set_list("X-schema.org-keywords", key,
       file = file.path(pkg, "DESCRIPTION")
     )
   }
