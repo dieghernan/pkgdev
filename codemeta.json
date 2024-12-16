@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.2 (2024-10-31 ucrt)",
+  "runtimePlatform": "R version 4.4.2 (2024-10-31)",
   "author": [
     {
       "@type": "Person",
@@ -399,7 +399,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "315.891KB",
+  "fileSize": "314.422KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -414,5 +414,9 @@
       "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
       "url": "https://dieghernan.github.io/pkgdev/"
     }
-  ]
+  ],
+  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
+  "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
+  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
+  "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental"
 }
