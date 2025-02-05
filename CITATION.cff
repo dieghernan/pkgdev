@@ -171,12 +171,12 @@ references:
   title: jsonld
   abstract: 'jsonld: JSON for Linking Data'
   notes: Imports
-  url: https://docs.ropensci.org/jsonld
+  url: https://docs.ropensci.org/jsonld/
   repository: https://CRAN.R-project.org/package=jsonld
   authors:
   - family-names: Ooms
     given-names: Jeroen
-    email: jeroen@berkeley.edu
+    email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
   doi: 10.32614/CRAN.package.jsonld
@@ -402,7 +402,6 @@ references:
     email: diego.hernangomezherrero@gmail.com
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2025'
-  doi: 10.32614/CRAN.package.gitdevr
 - type: software
   title: goodpractice
   abstract: 'goodpractice: Advice on R Package Building'
@@ -444,12 +443,9 @@ references:
   authors:
   - family-names: Ooms
     given-names: Jeroen
-    email: jeroen@berkeley.edu
+    email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
-  identifiers:
-  - type: url
-    value: https://ropensci.r-universe.dev/magick
   doi: 10.32614/CRAN.package.magick
 - type: software
   title: pkgdown
@@ -582,7 +578,7 @@ references:
   authors:
   - family-names: Ooms
     given-names: Jeroen
-    email: jeroen@berkeley.edu
+    email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
   doi: 10.32614/CRAN.package.V8
