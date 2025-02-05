@@ -30,6 +30,8 @@
 #' @param opt_imgs Logical. Optimize images with [resmush::resmush_dir()]?
 #' @param opt_dir,opt_ext,opt_overwrite
 #'   See `dir`, `ext` and `overwrite` in [resmush::resmush_dir()].
+#' @param add_contributors Logical. Would add contributors using
+#'   [allcontributors::add_contributors()].
 #' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
@@ -64,7 +66,7 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
                           "pkgdown/favicon", "man/figures",
                           "vignettes"
                         ), opt_ext = "png$|jpg$",
-                        opt_overwrite = TRUE, ...) {
+                        opt_overwrite = TRUE, add_contributors = TRUE, ...) {
   # Add global .gitignore
   if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
   add_global_gitgnore(pkg = pkg)
@@ -262,6 +264,19 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   has_readme <- file.exists(readme_rmd)
 
   if (build_readme && has_readme) {
+    if (add_contributors) {
+      if (verbose) {
+        cli::cli_alert_info(
+          "Adding contributors with {.pkg allcontributors}"
+        )
+      }
+
+      allcontributors::add_contributors(
+        repo = ".", files = readme_rmd,
+        ncols = 8
+      )
+    }
+
     if (verbose) cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }

@@ -16,6 +16,7 @@ BugReports: https://github.com/dieghernan/pkgdev/issues
 Depends: 
     R (>= 3.6.0)
 Imports: 
+    allcontributors,
     cffr (>= 0.2.0),
     cli (>= 3.4.0),
     codemetar (>= 0.3.3),

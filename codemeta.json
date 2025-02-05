@@ -171,6 +171,18 @@
     },
     "2": {
       "@type": "SoftwareApplication",
+      "identifier": "allcontributors",
+      "name": "allcontributors",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=allcontributors"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
       "identifier": "cffr",
       "name": "cffr",
       "version": ">= 0.2.0",
@@ -182,7 +194,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=cffr"
     },
-    "3": {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "cli",
       "name": "cli",
@@ -195,7 +207,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=cli"
     },
-    "4": {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "codemetar",
       "name": "codemetar",
@@ -208,7 +220,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=codemetar"
     },
-    "5": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "cpp11",
       "name": "cpp11",
@@ -220,7 +232,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=cpp11"
     },
-    "6": {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "desc",
       "name": "desc",
@@ -232,7 +244,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=desc"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
@@ -245,7 +257,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "jsonld",
       "name": "jsonld",
@@ -257,7 +269,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonld"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -270,7 +282,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "lintr",
       "name": "lintr",
@@ -283,7 +295,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lintr"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "rcmdcheck",
       "name": "rcmdcheck",
@@ -296,7 +308,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=rcmdcheck"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "resmush",
       "name": "resmush",
@@ -308,7 +320,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=resmush"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -321,7 +333,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2md",
       "name": "roxygen2md",
@@ -333,7 +345,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2md"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -345,7 +357,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -358,7 +370,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "17": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -371,7 +383,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "18": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -384,7 +396,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "19": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -399,7 +411,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "314.422KB",
+  "fileSize": "316.166KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

@@ -56,3 +56,34 @@ gha_update_docs()
 - **{usethis} package**: [Create a release checklist in a GitHub
   issue](https://usethis.r-lib.org/reference/use_release_issue.html)
 - The whole [{usethis} package](https://usethis.r-lib.org)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+All contributions to this project are gratefully acknowledged using the
+[`allcontributors` package](https://github.com/ropensci/allcontributors)
+following the [all-contributors](https://allcontributors.org)
+specification. Contributions of any kind are welcome!
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/dieghernan">
+<img src="https://avatars.githubusercontent.com/u/25656809?v=4" width="100px;" alt=""/>
+</a><br>
+<a href="https://github.com/dieghernan/pkgdev/commits?author=dieghernan">dieghernan</a>
+</td>
+<td align="center">
+<a href="https://github.com/actions-user">
+<img src="https://avatars.githubusercontent.com/u/65916846?v=4" width="100px;" alt=""/>
+</a><br>
+<a href="https://github.com/dieghernan/pkgdev/commits?author=actions-user">actions-user</a>
+</td>
+</tr>
+</table>
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->

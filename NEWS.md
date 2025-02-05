@@ -9,6 +9,8 @@
 -   **CAUTION**: `update_docs()` modifies RStudio Global and Project options.
 -   New capability for optimizing images with `resmush::resmush_dir()`.
 -   New function to check titles in `man` dir: `check_rd_titles()`.
+-   New capabilities to add contributors with
+    `allcontributors::add_contributors()`.
 
 # pkgdev 0.1.0
 

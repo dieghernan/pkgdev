@@ -16,6 +16,7 @@ update_docs(
   opt_dir = c("pkgdown/favicon", "man/figures", "vignettes"),
   opt_ext = "png$|jpg$",
   opt_overwrite = TRUE,
+  add_contributors = TRUE,
   ...
 )
 }
@@ -42,6 +43,9 @@ a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 \item{opt_imgs}{Logical. Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}?}
 
 \item{opt_dir, opt_ext, opt_overwrite}{See \code{dir}, \code{ext} and \code{overwrite} in \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.}
+
+\item{add_contributors}{Logical. Would add contributors using
+\code{\link[allcontributors:add_contributors]{allcontributors::add_contributors()}}.}
 
 \item{...}{Additional arguments to functions}
 }
