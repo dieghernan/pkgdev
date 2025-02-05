@@ -446,6 +446,9 @@ references:
     email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
+  identifiers:
+  - type: url
+    value: https://ropensci.r-universe.dev/magick
   doi: 10.32614/CRAN.package.magick
 - type: software
   title: pkgdown
