@@ -49,9 +49,10 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    dieghernan/gitdevr
+    dieghernan/gitdevr,
+    dieghernan/allcontributors
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, jsonlite,
-    lubridate, reactable, Polychrome, pkgsearch, htmltools
+    lubridate, reactable, Polychrome, pkgsearch, htmltools, dieghernan/allcontributors
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

@@ -273,6 +273,7 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
 
       allcontributors::add_contributors(
         repo = ".", files = readme_rmd,
+        exclude_users = c("actions-user", "ImgBotApp"),
         ncols = 8
       )
     }
