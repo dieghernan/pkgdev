@@ -68,11 +68,11 @@ All contributions to this project are gratefully acknowledged using the
 following the [allcontributors](https://allcontributors.org)
 specification. Contributions of any kind are welcome!
 
-<table>
+<table class="table allctb-table">
 <tr>
 <td align="center">
 <a href="https://github.com/dieghernan">
-<img src="https://avatars.githubusercontent.com/u/25656809?v=4" width="100px;" alt=""/>
+<img src="https://avatars.githubusercontent.com/u/25656809?v=4" width="100px;" class="allctb-avatar" alt=""/>
 </a><br>
 <a href="https://github.com/dieghernan/pkgdev/commits?author=dieghernan">dieghernan</a>
 </td>
