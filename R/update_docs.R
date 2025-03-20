@@ -289,6 +289,8 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
       dir = opt_dir, ext = opt_ext, report = verbose,
       overwrite = opt_overwrite
     )
+    # Second pass, this affects if optipng is installed
+    lapply(opt_dir, xfun::optipng)
   }
 
 

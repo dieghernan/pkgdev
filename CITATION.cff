@@ -379,6 +379,19 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.withr
 - type: software
+  title: xfun
+  abstract: 'xfun: Supporting Functions for Packages Maintained by ''Yihui Xie'''
+  notes: Imports
+  url: https://github.com/yihui/xfun
+  repository: https://CRAN.R-project.org/package=xfun
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2025'
+  doi: 10.32614/CRAN.package.xfun
+- type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'
   notes: Suggests
@@ -446,9 +459,6 @@ references:
     email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
-  identifiers:
-  - type: url
-    value: https://ropensci.r-universe.dev/magick
   doi: 10.32614/CRAN.package.magick
 - type: software
   title: pkgdown

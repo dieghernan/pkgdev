@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.3 (2025-02-28)",
+  "runtimePlatform": "R version 4.4.3 (2025-02-28 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -408,10 +408,22 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=withr"
     },
+    "21": {
+      "@type": "SoftwareApplication",
+      "identifier": "xfun",
+      "name": "xfun",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=xfun"
+    },
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "316.257KB",
+  "fileSize": "316.439KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
