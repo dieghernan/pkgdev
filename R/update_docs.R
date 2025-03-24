@@ -285,6 +285,7 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   }
 
   if (opt_imgs) {
+  pkgdown::build_favicons(overwrite=TRUE)
     resmush::resmush_dir(
       dir = opt_dir, ext = opt_ext, report = verbose,
       overwrite = opt_overwrite
