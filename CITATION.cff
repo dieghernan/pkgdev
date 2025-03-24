@@ -282,6 +282,30 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.roxygen2md
 - type: software
+  title: pkgdown
+  abstract: 'pkgdown: Make Static HTML Documentation for a Package'
+  notes: Imports
+  url: https://pkgdown.r-lib.org/
+  repository: https://CRAN.R-project.org/package=pkgdown
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+    orcid: https://orcid.org/0000-0003-4757-117X
+  - family-names: Hesselberth
+    given-names: Jay
+    orcid: https://orcid.org/0000-0002-6299-179X
+  - family-names: Salmon
+    given-names: Maëlle
+    orcid: https://orcid.org/0000-0002-2815-0399
+  - family-names: Roy
+    given-names: Olivier
+  - family-names: Brüggemann
+    given-names: Salim
+    orcid: https://orcid.org/0000-0002-5329-5987
+  year: '2025'
+  doi: 10.32614/CRAN.package.pkgdown
+- type: software
   title: stringr
   abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
   notes: Imports
@@ -459,34 +483,7 @@ references:
     email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
-  identifiers:
-  - type: url
-    value: https://ropensci.r-universe.dev/magick
   doi: 10.32614/CRAN.package.magick
-- type: software
-  title: pkgdown
-  abstract: 'pkgdown: Make Static HTML Documentation for a Package'
-  notes: Suggests
-  url: https://pkgdown.r-lib.org/
-  repository: https://CRAN.R-project.org/package=pkgdown
-  authors:
-  - family-names: Wickham
-    given-names: Hadley
-    email: hadley@posit.co
-    orcid: https://orcid.org/0000-0003-4757-117X
-  - family-names: Hesselberth
-    given-names: Jay
-    orcid: https://orcid.org/0000-0002-6299-179X
-  - family-names: Salmon
-    given-names: Maëlle
-    orcid: https://orcid.org/0000-0002-2815-0399
-  - family-names: Roy
-    given-names: Olivier
-  - family-names: Brüggemann
-    given-names: Salim
-    orcid: https://orcid.org/0000-0002-5329-5987
-  year: '2025'
-  doi: 10.32614/CRAN.package.pkgdown
 - type: software
   title: remotes
   abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''
