@@ -44,6 +44,7 @@ Suggests:
     magick,
     remotes,
     rmarkdown (>= 2.9),
+    rstudioapi,
     sessioninfo,
     tidyverse,
     V8 (>= 4.0.0)

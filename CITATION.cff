@@ -483,9 +483,6 @@ references:
     email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
-  identifiers:
-  - type: url
-    value: https://ropensci.r-universe.dev/magick
   doi: 10.32614/CRAN.package.magick
 - type: software
   title: remotes
@@ -554,6 +551,27 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.rmarkdown
   version: '>= 2.9'
+- type: software
+  title: rstudioapi
+  abstract: 'rstudioapi: Safely Access the RStudio API'
+  notes: Suggests
+  url: https://rstudio.github.io/rstudioapi/
+  repository: https://CRAN.R-project.org/package=rstudioapi
+  authors:
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@rstudio.com
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@posit.co
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  - family-names: Ritchie
+    given-names: Gary
+    email: gary@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.rstudioapi
 - type: software
   title: sessioninfo
   abstract: 'sessioninfo: R Session Information'
