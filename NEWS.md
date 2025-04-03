@@ -31,7 +31,7 @@
     rstudioapi::addTheme(theme, apply = TRUE, force = TRUE)
     ```
 
-    Alternatively, you can download the `*.rstheme` file and install it using
+    Alternatively, you can [download](https://github.com/dieghernan/pkgdev/tree/main/inst/themes) the `*.rstheme` file and install it using
     `rstudioapi::addTheme()`.
 
 # pkgdev 0.1.0
