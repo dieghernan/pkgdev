@@ -1,8 +1,8 @@
-tm_path <- "inst/themes/Selenized White.tmTheme"
+tm_path <- "data-raw/oldthemes/Selenized White.tmTheme"
 
 rstudioapi::convertTheme(tm_path,
   add = FALSE,
-  outputLocation = "inst/themes/",
+  outputLocation = "data-raw/oldthemes/",
   force = TRUE
 )
 
@@ -40,7 +40,5 @@ cod_css <- c(
 pre_tem <- c(pre_tem, cod_css)
 final_tm <- c(pre_tem, pos_tem)
 
-writeLines(final_tm[final_tm != ""], rtheme)
 
-rstudioapi::addTheme(rtheme, apply = TRUE, force = TRUE)
-rstudioapi::getThemeInfo()
+sass::sass(final_tm, output = rtheme)

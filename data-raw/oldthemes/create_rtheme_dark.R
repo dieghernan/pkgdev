@@ -1,8 +1,8 @@
-tm_path <- "inst/themes/Selenized Dark.tmTheme"
+tm_path <- "data-raw/oldthemes/Selenized Dark.tmTheme"
 
 rstudioapi::convertTheme(tm_path,
   add = FALSE,
-  outputLocation = "inst/themes/",
+  outputLocation = "data-raw/oldthemes",
   force = TRUE
 )
 
@@ -14,7 +14,7 @@ tm <- readLines(rtheme)
 
 # Find line with cursor
 curs_lin <- grep("ace_cursor", tm)
-tm[curs_lin + 1] <- paste0("  color: ", cursor_col, ";")
+tm[curs_lin + 1] <- paste0(" color: ", cursor_col, ";")
 
 # Add rules (css inside)
 tem_lin <- grep("terminal", tm)[1]
@@ -25,7 +25,7 @@ pos_tem <- tm[seq(tem_lin, length(tm))]
 head_col <- "#EBC13D"
 newl <- c(
   ".ace_heading, .ace_markup.ace_heading, .ace_meta.ace_tag {",
-  paste0("  color: ", head_col, ";"),
+  paste0("color: ", head_col, ";"),
   "}"
 )
 pre_tem <- c(pre_tem, newl)
@@ -34,12 +34,10 @@ pre_tem <- c(pre_tem, newl)
 code_col <- "#4695F7"
 cod_css <- c(
   ".ace_support.ace_function {",
-  paste0("  color: ", code_col, ";"), "}"
+  paste0("color: ", code_col, ";"), "}"
 )
 
 pre_tem <- c(pre_tem, cod_css)
 final_tm <- c(pre_tem, pos_tem)
 
-writeLines(final_tm[final_tm != ""], rtheme)
-
-rstudioapi::addTheme(rtheme, apply = TRUE, force = TRUE)
+pp <- sass::sass(final_tm, output = rtheme)

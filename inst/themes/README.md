@@ -62,7 +62,7 @@ From <https://github.com/jan-warchol/selenized/blob/master/the-values.md>
 
 ## Development notes
 
-Specification using [**rsthemes**](https://github.com/gadenbuie/rsthemes)
+Specification using `*.tmTheme` files.
 
 The conversion script can be found in `rthemes_create.R`. This would generate a
 `rsthemes_Selenized_XXX.R` script that can be `source()`d to build the `rstheme`

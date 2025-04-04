@@ -27,3 +27,5 @@
 ^vignettes/precompute2\.Rmd\.orig$
 ^codecov\.yml$
 ^docs$
+^inst/themes/\.sass_cache_keys$
+^\.sass_cache_keys$

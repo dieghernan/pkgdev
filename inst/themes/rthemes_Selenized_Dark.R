@@ -1,44 +1,38 @@
-nm <- "Selenized Dark"
-dark <- TRUE
-path <- file.path("inst/themes", nm) %>%  paste0(".rstheme")
+library(tidyverse)
 
-rsthemes::rstheme(
-  theme_name = nm,
-  theme_path = path,
-  ui_background = "#103C48",
-  ui_foreground = "#ADBCBC",
-  code_comment = "#72898F",
-  code_string = "#41C7B9",
-  code_function = "#4695F7",
-  code_value = "#41C7B9",
-  code_variable = "#4695F7",
-  code_message = "#41C7B9",
-  code_operator = "#75B938",
-  code_reserved = "#75B938",
-  theme_dark = dark,
-  theme_palette = list(
-    red = "#FA5750",
-    green = "#75B938",
-    yellow = "#DBB32D",
-    blue = "#4695F7",
-    magenta = "#F275BE",
-    cyan = "#41C7B9",
-    orange = "#ED8649",
-    violet = "#AF88EB"
-  ),
-  ui_cursor = "#ADBCBC",
-  ui_selection = "#2D5B69",
-  rmd_heading_foreground = "#EBC13D",
-  rmd_chunk_background = "#184956",
-  ui_line_active_gutter = "#2D5B69",
-  ui_invisible = "#184956",
-  theme_apply = FALSE
+tm_path <- "inst/themes/Selenized Dark.tmTheme"
+
+rstudioapi::convertTheme(tm_path,
+                         add = FALSE,
+                         outputLocation = "inst/themes/",
+                         force = TRUE
 )
 
-# Modify name
-readLines(path) %>%
-  str_remove_all(fixed("{rsthemes}")) %>%
-  writeLines(path)
+# Modify some elements ----
+cursor_col <- "#CAD8D9"
+rtheme <- gsub(".tmTheme", ".rstheme", tm_path)
 
-rstudioapi::addTheme(path, apply = TRUE, force = TRUE)
+tm <- readLines(rtheme)
 
+curs_lin <- grep("ace_cursor", tm)
+tm[curs_lin + 1] <- paste0("color: ", cursor_col, ";")
+
+# Add rules before terminal
+tem_lin <- grep("terminal", tm)[1] -1
+partial1 <- tm[seq(1, tem_lin)]
+partial2 <- tm[seq(tem_lin + 1, length(tm))]
+
+# Insert new rules
+head_col <- "#EBC13D"
+head_css <- paste0(
+  ".ace_heading {color: ",
+  head_col, ";}")
+
+
+# Re-generate css and write
+final_tm <- c(partial1, head_css, partial2)
+
+final_tm %>%
+  sass::sass(output = rtheme)
+
+rstudioapi::addTheme(rtheme, apply = TRUE, force = TRUE)
