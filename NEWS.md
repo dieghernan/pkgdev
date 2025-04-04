@@ -20,10 +20,11 @@
 -   New capabilities to add contributors with
     `allcontributors::add_contributors()`.
 
--   Add a custom [RStudio
-    Theme](https://docs.posit.co/ide/user/ide/guide/ui/appearance.html) based on
-    [Selenized](https://github.com/jan-warchol/selenized), a re-design of
-    [Solarized](https://ethanschoonover.com/solarized/). To install it run
+-   Add a collection of [RStudio
+    Themes](https://docs.posit.co/ide/user/ide/guide/ui/appearance.html) based
+    on [Selenized](https://github.com/jan-warchol/selenized) by Jan Warchol, a
+    re-design of [Solarized](https://ethanschoonover.com/solarized/) by Ethan
+    Schoonover. To install a theme run:
 
     ``` r
     theme <- system.file("themes/Selenized Dark.rstheme", package = "pkgdev") 
@@ -31,8 +32,9 @@
     rstudioapi::addTheme(theme, apply = TRUE, force = TRUE)
     ```
 
-    Alternatively, you can [download](https://github.com/dieghernan/pkgdev/tree/main/inst/themes) the `*.rstheme` file and install it using
-    `rstudioapi::addTheme()`.
+    Alternatively, you can
+    [download](https://github.com/dieghernan/pkgdev/tree/main/inst/themes) the
+    `*.rstheme` file and install it using `rstudioapi::addTheme()`.
 
 # pkgdev 0.1.0
 
