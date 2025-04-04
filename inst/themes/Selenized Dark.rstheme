@@ -103,6 +103,10 @@
   color: #DBB32D;
 }
 
+.ace_storage.ace_type {
+  color: #75B938;
+}
+
 .ace_invalid {
   font-weight: bold;
   color: #FF665C;

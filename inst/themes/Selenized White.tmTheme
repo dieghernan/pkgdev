@@ -153,7 +153,7 @@
 			<key>name</key>
 			<string>Function and class defs</string>
 			<key>scope</key>
-			<string>storage.type.function, storage.type.class</string>
+			<string>storage.type, storage.type.function, storage.type.class</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -175,7 +175,7 @@
 			<key>name</key>
 			<string>Imported package and module names</string>
 			<key>scope</key>
-			<string>storage.modifier.import.java</string>
+			<string>storage.modifier, storage.modifier.import.java</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
