@@ -1,9 +1,11 @@
 library(tidyverse)
 
-tm_path <- "inst/themes/OKSolar Dark.tmTheme"
-xml2::read_xml(tm_path) %>%
+tm_path <- "inst/themes/Skeletor.tmTheme"
+
+xml2::read_xml(tm_path) |>
   xml2::write_xml(tm_path)
 
+file.exists(tm_path)
 rstudioapi::convertTheme(tm_path,
                          add = FALSE,
                          outputLocation = "inst/themes/",
@@ -11,7 +13,7 @@ rstudioapi::convertTheme(tm_path,
 )
 
 # Modify some elements ----
-cursor_col <- "#8FAAAB"
+cursor_col <- "#F3E4A2"
 rtheme <- gsub(".tmTheme", ".rstheme", tm_path)
 
 tm <- readLines(rtheme)
@@ -25,11 +27,10 @@ partial1 <- tm[seq(1, tem_lin)]
 partial2 <- tm[seq(tem_lin + 1, length(tm))]
 
 # Insert new rules
-head_col <- "#AC8300"
+head_col <- "#BD93F9"
 head_css <- paste0(
   ".ace_heading {color: ",
-  head_col, ";}")
-
+  head_col, "; }")
 
 # Re-generate css and write
 final_tm <- c(partial1, head_css, partial2)

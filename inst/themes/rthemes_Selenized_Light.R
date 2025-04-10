@@ -1,6 +1,8 @@
 library(tidyverse)
 
 tm_path <- "inst/themes/Selenized Light.tmTheme"
+xml2::read_xml(tm_path) %>%
+  xml2::write_xml(tm_path)
 
 rstudioapi::convertTheme(tm_path,
                          add = FALSE,

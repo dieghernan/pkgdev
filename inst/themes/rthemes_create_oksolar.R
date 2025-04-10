@@ -165,4 +165,4 @@ rstudioapi::applyTheme("OKSolar Dark")
 aa <- rstudioapi::getThemes()
 aa[grepl("OKSo", names(aa), ignore.case = TRUE)]
 
-readL
+
