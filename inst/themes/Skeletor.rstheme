@@ -83,10 +83,6 @@
   color: #BD93F9;
 }
 
-.ace_support.ace_class {
-  color: #93B4FF;
-}
-
 .ace_support.ace_type {
   color: #93B4FF;
 }
