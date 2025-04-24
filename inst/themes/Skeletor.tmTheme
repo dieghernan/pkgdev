@@ -308,7 +308,7 @@
         <key>name</key>
         <string>JS Skeletor class-name</string>
         <key>scope</key>
-        <string/>
+        <string>support.class.js</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
