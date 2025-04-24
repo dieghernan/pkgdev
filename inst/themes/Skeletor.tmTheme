@@ -51,17 +51,6 @@
       </dict>
       <dict>
         <key>name</key>
-        <string>Prismjs class-name</string>
-        <key>scope</key>
-        <string>  </string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>red</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
         <string>Prismjs Function</string>
         <key>scope</key>
         <string>entity.name, support.function, storage.type</string>
@@ -324,17 +313,6 @@
         <dict>
           <key>foreground</key>
           <string>#93b4ff</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>JS Skeletor class-name</string>
-        <key>scope</key>
-        <string>entity.name.type.instance.js, support.class</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#93B4FF</string>
         </dict>
       </dict>
       <dict>
