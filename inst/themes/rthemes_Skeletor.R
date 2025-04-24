@@ -13,7 +13,7 @@ rstudioapi::convertTheme(tm_path,
 )
 
 # Modify some elements ----
-cursor_col <- "#F3E4A2"
+cursor_col <- "#f3e4a2"
 rtheme <- gsub(".tmTheme", ".rstheme", tm_path)
 
 tm <- readLines(rtheme)
@@ -27,13 +27,14 @@ partial1 <- tm[seq(1, tem_lin)]
 partial2 <- tm[seq(tem_lin + 1, length(tm))]
 
 # Insert new rules
-head_col <- "#BD93F9"
+head_col <- "#bd93f9"
 head_css <- paste0(
   ".ace_heading {color: ",
-  head_col, "; }")
+  head_col, "; font-weight: bold;}")
 
 # Re-generate css and write
 final_tm <- c(partial1, head_css, partial2)
+
 
 final_tm %>%
   sass::sass(output = rtheme)

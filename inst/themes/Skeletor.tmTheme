@@ -16,39 +16,88 @@
           <key>background</key>
           <string>#2B2836</string>
           <key>caret</key>
-          <string>#DCE7FD</string>
+          <string>#FFFFFF</string>
           <key>foreground</key>
-          <string>#DCE7FD</string>
+          <string>#FFFFFF</string>
           <key>invisibles</key>
-          <string>#7B94A5</string>
+          <string>#655E7F</string>
           <key>lineHighlight</key>
-          <string>#655E7F</string>
-          <key>selection</key>
-          <string>#655E7F</string>
-          <key>selectionBackground</key>
-          <string>#655E7F</string>
-          <key>guide</key>
           <string>#7B94A5</string>
-          <key>activeGuide</key>
+          <key>selection</key>
           <string>#7B94A5</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Comment</string>
+        <string>Prismjs Keyword</string>
         <key>scope</key>
-        <string>comment</string>
+        <string>keyword.control, storage.modifier,  meta.import.java</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#655E7F</string>
+          <string>#BD93F9</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Strings and properties</string>
+        <string>Prismjs Builtin</string>
         <key>scope</key>
-        <string>string,constant</string>
+        <string>constant.other</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#f3e4a2</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs class-name</string>
+        <key>scope</key>
+        <string>  </string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>red</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Function</string>
+        <key>scope</key>
+        <string>entity.name, support.function, storage.type</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#BD93F9</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Boolean</string>
+        <key>scope</key>
+        <string>constant.language.boolean</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#ff8adb</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Number</string>
+        <key>scope</key>
+        <string>constant.numeric</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#ff8adb</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs String</string>
+        <key>scope</key>
+        <string>string</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
@@ -57,73 +106,7 @@
       </dict>
       <dict>
         <key>name</key>
-        <string>Numbers and booleans</string>
-        <key>scope</key>
-        <string>constant.numeric, constant.language</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#FF8ADB</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Operators and tags</string>
-        <key>scope</key>
-        <string>keyword.operator, keyword.control, entity.name.tag, support</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#F3E4A2</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Entity</string>
-        <key>scope</key>
-        <string>entity</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#DCE7FD</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Functions</string>
-        <key>scope</key>
-        <string>storage.type.function</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#BD93F9</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Attribute Names</string>
-        <key>scope</key>
-        <string>entity.other.attribute-name</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#BD93F9</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Keywords</string>
-        <key>scope</key>
-        <string>keyword</string>
-        <key>settings</key>
-        <dict>
-          <key>foreground</key>
-          <string>#BD93F9</string>
-        </dict>
-      </dict>
-      <dict>
-        <key>name</key>
-        <string>Regex</string>
+        <string>Prismjs Regex</string>
         <key>scope</key>
         <string>string.regexp</string>
         <key>settings</key>
@@ -134,80 +117,267 @@
       </dict>
       <dict>
         <key>name</key>
-        <string>Invalid</string>
+        <string>Prismjs Operator</string>
         <key>scope</key>
-        <string>invalid</string>
+        <string>keyword.operator</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#F36A66</string>
+          <string>#f3e4a2</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Variable</string>
+        <key>scope</key>
+        <string>variable</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#ffffff</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Constant</string>
+        <key>scope</key>
+        <string>constant.language</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#93b4ff</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Property</string>
+        <key>scope</key>
+        <string>support.type</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#93B4FF</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Comment</string>
+        <key>scope</key>
+        <string>comment</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#655E7F</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Doctype</string>
+        <key>scope</key>
+        <string>meta.tag.sgml.doctype, entity.name.tag.doctype</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#655E7F</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Tag</string>
+        <key>scope</key>
+        <string>entity.name.tag</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#f3e4a2</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs attr-name</string>
+        <key>scope</key>
+        <string>entity.other.attribute-name.html</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#bd93f9</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs attr-value</string>
+        <key>scope</key>
+        <string>string.quoted.html</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#93B4FF</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs hexcode color</string>
+        <key>scope</key>
+        <string>constant.other.color</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#ffffff</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs namespace</string>
+        <key>scope</key>
+        <string>entity.name.type</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#A7AEC2</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>Prismjs Bold</string>
+        <key>scope</key>
+        <string>markup.bold</string>
+        <key>settings</key>
+        <dict>
           <key>fontStyle</key>
           <string> bold</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Storage</string>
+        <string>Prismjs Italic</string>
         <key>scope</key>
-        <string>storage</string>
+        <string>markup.italic</string>
         <key>settings</key>
         <dict>
-          <key>foreground</key>
-          <string>#F3E4A2</string>
+          <key>fontStyle</key>
+          <string> italic</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Meta functions</string>
+        <string>Prismjs Selector</string>
         <key>scope</key>
-        <string>meta.function</string>
+        <string>meta.selector.css, entity.name.tag.css, entity.other.attribute-name</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#DCE7FD</string>
+          <string>#bd93f9</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Markup Heading</string>
+        <string>Prismjs Title</string>
         <key>scope</key>
-        <string>markup.heading, meta.tag</string>
+        <string>markup.heading</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#BD93F9</string>
+          <string>#bd93f9</string>
+          <key>fontStyle</key>
+          <string> bold</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Variable</string>
+        <string>Invalid</string>
         <key>scope</key>
-        <string>  </string>
+        <string>invalid</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#DCE7FD</string>
+          <string>#f36a66</string>
         </dict>
       </dict>
       <dict>
         <key>name</key>
-        <string>Support function</string>
+        <string>JS Skeletor Source</string>
         <key>scope</key>
-        <string>support.function</string>
+        <string>source.js</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#F3E4A2</string>
+          <string>#dce7fd</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>JS Skeletor Keyword</string>
+        <key>scope</key>
+        <string>storage.type.js, keyword.control.js, constant.language.null.js</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#f3e4a2</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>JS Skeletor class-name</string>
+        <key>scope</key>
+        <string/>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#93b4ff</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>JS Skeletor class-name</string>
+        <key>scope</key>
+        <string>entity.name.type.instance.js, support.class</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#93B4FF</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>PHP Skeletor Keyword</string>
+        <key>scope</key>
+        <string>storage.type.php,  variable.other.php, punctuation.definition.variable.php</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#84fba2</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>PHP Skeletor Constant</string>
+        <key>scope</key>
+        <string>constant.language.php</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#ff8adb</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>PHP Skeletor Property</string>
+        <key>scope</key>
+        <string>variable.other.property.php</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#93B4FF</string>
         </dict>
       </dict>
     </array>
     <key>colorSpaceName</key>
     <string>sRGB</string>
     <key>semanticClass</key>
-    <string>theme.dark.selenized_dark</string>
+    <string>theme.dark.ok_solar_dark</string>
     <key>author</key>
     <string>dieghernan</string>
     <key>comment</key>
-    <string>Skeletor Theme for TextMate</string>
+    <string>Skeletor theme based on https://github.com/ramonmcros/skeletor-syntax (c) Ramón M. Cros MIT License</string>
   </dict>
 </plist>
