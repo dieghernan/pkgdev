@@ -22,7 +22,7 @@
         "name": "R",
         "url": "https://r-project.org"
       },
-      "runtimePlatform": "R version 4.5.0 (2025-04-11)",
+      "runtimePlatform": "R version 4.5.1 (2025-06-13)",
       "version": "0.1.0.9060"
     },
     {

@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.5.0 (2025-04-11)",
+  "runtimePlatform": "R version 4.5.1 (2025-06-13)",
   "author": [
     {
       "@type": "Person",
@@ -451,7 +451,7 @@
       "url": "https://dieghernan.github.io/pkgdev/"
     }
   ],
-  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/master/NEWS.md",
+  "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/main/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
   "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental"
