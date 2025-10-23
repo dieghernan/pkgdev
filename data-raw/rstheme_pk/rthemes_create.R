@@ -121,7 +121,6 @@ bkcols[!bkcols %in% tb$white_spec]
 gsub("Dark", "White", bpath) %>% source()
 
 
-
 # Final check
 rstudioapi::applyTheme("Selenized Dark")
 

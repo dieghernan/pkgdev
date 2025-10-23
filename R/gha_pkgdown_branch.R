@@ -66,8 +66,6 @@ gha_pkgdown_branch <-
     )
 
 
-
-
     # Get action file
     filepath <-
       system.file("yaml/pkgdown-gh-pages.yaml", package = "pkgdev")

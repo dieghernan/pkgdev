@@ -69,7 +69,6 @@ fechas <- lapply(unique(dwn$package), first_date_on_cran) %>%
   bind_rows()
 
 
-
 dwn <- dwn %>%
   left_join(fechas %>% select(package, d_cran = date)) %>%
   filter(date >= d_cran) %>%
@@ -188,7 +187,6 @@ avg_daily <- dwn %>%
 avg_daily_all <- avg_daily %>%
   ungroup() %>%
   summarise(avg = round(sum(avg, na.rm = TRUE), 1))
-
 
 
 # Une todo y da nombres
