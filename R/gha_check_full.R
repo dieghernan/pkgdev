@@ -16,7 +16,7 @@
 #' create your own cron tag.
 #'
 #'
-#' @seealso [usethis::use_github_action_check_full()]
+#' @seealso [usethis::use_github_action()]
 #'
 #' @source
 #' [r-lib/actions](https://github.com/r-lib/actions/tree/master/examples)
