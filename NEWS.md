@@ -17,8 +17,6 @@
 
 -   New function to check titles in `man` dir: `check_rd_titles()`.
 
--   New capabilities to add contributors with
-    `allcontributors::add_contributors()`.
 
 -   Add a collection of [RStudio
     Themes](https://docs.posit.co/ide/user/ide/guide/ui/appearance.html) based

@@ -30,8 +30,7 @@
 #' @param opt_imgs Logical. Optimize images with [resmush::resmush_dir()]?
 #' @param opt_dir,opt_ext,opt_overwrite
 #'   See `dir`, `ext` and `overwrite` in [resmush::resmush_dir()].
-#' @param add_contributors Logical. Would add contributors using
-#'   [allcontributors::add_contributors()].
+#' @param add_contributors Deprecated.
 #' @param ... Additional arguments to functions
 #'
 #' @inheritParams styler::style_pkg
@@ -139,7 +138,7 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     )
   }
   usethis::use_tidy_description()
-
+  usethis::use_air()
 
   if (url_update) {
     if (verbose) cli::cli_alert_info("Checking URLs with {.pkg urlchecker}")
@@ -264,22 +263,6 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   has_readme <- file.exists(readme_rmd)
 
   if (build_readme && has_readme) {
-    if (add_contributors) {
-      if (verbose) {
-        cli::cli_alert_info(
-          "Adding contributors with {.pkg allcontributors}"
-        )
-      }
-
-      allcontributors::add_contributors(
-        repo = ".", files = readme_rmd,
-        exclude_label = c("wontfix", "bot"),
-        exclude_users = c("actions-user", "ImgBotApp", "github-actions"),
-        ncols = 8,
-        force_update = TRUE
-      )
-    }
-
     if (verbose) cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
