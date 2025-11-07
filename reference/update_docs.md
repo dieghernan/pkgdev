@@ -99,8 +99,7 @@ update_docs(
 
 - add_contributors:
 
-  Logical. Would add contributors using
-  `allcontributors::add_contributors()`.
+  Deprecated.
 
 - ...:
 
