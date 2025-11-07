@@ -54,20 +54,6 @@ references:
   year: '2025'
   version: '>= 3.6.0'
 - type: software
-  title: allcontributors
-  abstract: 'allcontributors: Acknowledge all Contributors to a Project'
-  notes: Imports
-  url: https://github.com/ropensci/allcontributors
-  repository: https://CRAN.R-project.org/package=allcontributors
-  authors:
-  - family-names: Padgham
-    given-names: Mark
-    email: mark.padgham@email.com
-  - family-names: Hartgerink
-    given-names: Chris
-  year: '2025'
-  doi: 10.32614/CRAN.package.allcontributors
-- type: software
   title: cffr
   abstract: 'cffr: Generate Citation File Format (''cff'') Metadata for R Packages'
   notes: Imports
