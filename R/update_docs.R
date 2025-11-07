@@ -58,18 +58,30 @@
 #' @export
 #'
 #'
-update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
-                        create_cff = TRUE, build_readme = TRUE, verbose = TRUE,
-                        precompute = TRUE, opt_imgs = TRUE,
-                        opt_dir = c(
-                          "pkgdown/favicon", "man/figures",
-                          "vignettes"
-                        ), opt_ext = "png$|jpg$",
-                        opt_overwrite = TRUE, add_contributors = TRUE, ...) {
+update_docs <- function(
+  pkg = ".",
+  url_update = TRUE,
+  create_codemeta = TRUE,
+  create_cff = TRUE,
+  build_readme = TRUE,
+  verbose = TRUE,
+  precompute = TRUE,
+  opt_imgs = TRUE,
+  opt_dir = c(
+    "pkgdown/favicon",
+    "man/figures",
+    "vignettes"
+  ),
+  opt_ext = "png$|jpg$",
+  opt_overwrite = TRUE,
+  add_contributors = TRUE,
+  ...
+) {
   # Add global .gitignore
-  if (verbose) cli::cli_alert_info("Adding {.file .gitignore} to root")
+  if (verbose) {
+    cli::cli_alert_info("Adding {.file .gitignore} to root")
+  }
   add_global_gitgnore(pkg = pkg)
-
 
   this <- list.files(".", pattern = "Rproj$")
 
@@ -77,13 +89,16 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     if (verbose) {
       cli::cli_alert_info("Add project options to {.file {this}} file")
     }
-    usethis::write_union(this, c(
-      "MarkdownWrap: Column",
-      "MarkdownWrapAtColumn: 80",
-      "AutoAppendNewline: Yes",
-      "StripTrailingWhitespace: Yes",
-      "LineEndingConversion: Posix"
-    ))
+    usethis::write_union(
+      this,
+      c(
+        "MarkdownWrap: Column",
+        "MarkdownWrapAtColumn: 80",
+        "AutoAppendNewline: Yes",
+        "StripTrailingWhitespace: Yes",
+        "LineEndingConversion: Posix"
+      )
+    )
   }
 
   # Add Global options
@@ -105,12 +120,15 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     visual_markdown_editing_list_spacing = "tight"
   )
 
-  if (verbose) cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
+  if (verbose) {
+    cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
+  }
   usethis::use_blank_slate()
 
-
   if (!file.exists(".lintr")) {
-    if (verbose) cli::cli_alert_info("Add {.file .lintr} file")
+    if (verbose) {
+      cli::cli_alert_info("Add {.file .lintr} file")
+    }
     lintr::use_lintr()
 
     # Ignore data-raw
@@ -120,9 +138,9 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     writeLines(newln, ".lintr")
   }
 
-
-  if (verbose) cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
-
+  if (verbose) {
+    cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
+  }
 
   # Extract keywords and save it for latter
   d <- desc::desc(file.path(pkg, "DESCRIPTION"))
@@ -133,7 +151,9 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   if (length(key) > 0) {
     key <- unique(tolower(key))
 
-    desc::desc_set_list("X-schema.org-keywords", key,
+    desc::desc_set_list(
+      "X-schema.org-keywords",
+      key,
       file = file.path(pkg, "DESCRIPTION")
     )
   }
@@ -141,23 +161,33 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   usethis::use_air()
 
   if (url_update) {
-    if (verbose) cli::cli_alert_info("Checking URLs with {.pkg urlchecker}")
+    if (verbose) {
+      cli::cli_alert_info("Checking URLs with {.pkg urlchecker}")
+    }
     urlchecker::url_update(pkg)
   }
 
-  if (verbose) cli::cli_alert_info("Compressing data in {.path ./R}")
+  if (verbose) {
+    cli::cli_alert_info("Compressing data in {.path ./R}")
+  }
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
   if (dir.exists(file.path(pkg, "data"))) {
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
   }
-  if (verbose) cli::cli_alert_info("Styling package with {.pkg styler}")
+  if (verbose) {
+    cli::cli_alert_info("Styling package with {.pkg styler}")
+  }
   styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
 
   if (dir.exists(file.path(pkg, "vignettes"))) {
-    styler::style_dir(file.path(pkg, "vignettes"), filetype = c(
-      "R", "Rmd",
-      "Rprofile"
-    ))
+    styler::style_dir(
+      file.path(pkg, "vignettes"),
+      filetype = c(
+        "R",
+        "Rmd",
+        "Rprofile"
+      )
+    )
   }
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
@@ -192,15 +222,18 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
 
   # Clean trailing spaces on yamls
   if (!env_var_is_true("CI")) {
-    actions <- list.files(".github",
-      pattern = "yaml$|yml$", full.names = TRUE,
+    actions <- list.files(
+      ".github",
+      pattern = "yaml$|yml$",
+      full.names = TRUE,
       recursive = TRUE
     )
   } else {
     actions <- NULL
   }
   others <- list.files(
-    pattern = "yaml$|yml$", full.names = TRUE,
+    pattern = "yaml$|yml$",
+    full.names = TRUE,
     recursive = TRUE
   )
   allyml <- c(actions, others)
@@ -211,18 +244,23 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
       newlns <- trimws(lns, which = "right")
 
       # Add EOL
-      if (!identical(newlns[length(newlns)], "")) newlns <- c(newlns, "")
+      if (!identical(newlns[length(newlns)], "")) {
+        newlns <- c(newlns, "")
+      }
       usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
     })
   }
 
-  if (verbose) cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
+  if (verbose) {
+    cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
+  }
   roxygen2::roxygenise()
 
-  if (verbose) cli::cli_alert_info("Checking {.var .Rd} titles")
+  if (verbose) {
+    cli::cli_alert_info("Checking {.var .Rd} titles")
+  }
 
   rdtit <- check_rd_titles(pkg)
-
 
   if (!is.null(rdtit)) {
     enddot <- rdtit[rdtit$last == ".", ]
@@ -236,10 +274,11 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     }
   }
 
-  if (verbose) cli::cli_alert_info("Looking for {.val #'} in {.var .Rd} files")
+  if (verbose) {
+    cli::cli_alert_info("Looking for {.val #'} in {.var .Rd} files")
+  }
 
   rdhash <- check_rd_hash(pkg)
-
 
   if (!is.null(rdhash)) {
     has_hash <- rdhash[rdhash$bad_hash == TRUE, ]
@@ -253,9 +292,10 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
     }
   }
 
-
   if (precompute) {
-    if (verbose) cli::cli_alert_info("Precomputing vignettes")
+    if (verbose) {
+      cli::cli_alert_info("Precomputing vignettes")
+    }
     precompute_vignette_all(pkg = pkg, ...)
   }
   # Check README.Rmd
@@ -263,20 +303,23 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   has_readme <- file.exists(readme_rmd)
 
   if (build_readme && has_readme) {
-    if (verbose) cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
+    if (verbose) {
+      cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
+    }
     devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
 
   if (opt_imgs) {
     pkgdown::build_favicons(overwrite = TRUE)
     resmush::resmush_dir(
-      dir = opt_dir, ext = opt_ext, report = verbose,
+      dir = opt_dir,
+      ext = opt_ext,
+      report = verbose,
       overwrite = opt_overwrite
     )
     # Second pass, this affects if optipng is installed
     lapply(opt_dir, xfun::optipng)
   }
-
 
   if (create_cff) {
     if (verbose) {
@@ -285,7 +328,6 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
 
     cffr::cff_write(...)
     cffread <- cffr::cff_read(file.path(pkg, "CITATION.cff"))
-
 
     key <- unname(c(key, cffread$keywords))
   }
@@ -297,7 +339,9 @@ update_docs <- function(pkg = ".", url_update = TRUE, create_codemeta = TRUE,
   if (length(key) > 0) {
     key <- unique(tolower(key))
 
-    desc::desc_set_list("X-schema.org-keywords", key,
+    desc::desc_set_list(
+      "X-schema.org-keywords",
+      key,
       file = file.path(pkg, "DESCRIPTION")
     )
   }

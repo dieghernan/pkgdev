@@ -1,6 +1,7 @@
 tm_path <- "data-raw/oldthemes/Selenized Dark.tmTheme"
 
-rstudioapi::convertTheme(tm_path,
+rstudioapi::convertTheme(
+  tm_path,
   add = FALSE,
   outputLocation = "data-raw/oldthemes",
   force = TRUE
@@ -34,7 +35,8 @@ pre_tem <- c(pre_tem, newl)
 code_col <- "#4695F7"
 cod_css <- c(
   ".ace_support.ace_function {",
-  paste0("color: ", code_col, ";"), "}"
+  paste0("color: ", code_col, ";"),
+  "}"
 )
 
 pre_tem <- c(pre_tem, cod_css)

@@ -4,10 +4,11 @@ tm_path <- "inst/themes/Selenized Dark.tmTheme"
 xml2::read_xml(tm_path) %>%
   xml2::write_xml(tm_path)
 
-rstudioapi::convertTheme(tm_path,
-                         add = FALSE,
-                         outputLocation = "inst/themes/",
-                         force = TRUE
+rstudioapi::convertTheme(
+  tm_path,
+  add = FALSE,
+  outputLocation = "inst/themes/",
+  force = TRUE
 )
 
 # Modify some elements ----
@@ -20,7 +21,7 @@ curs_lin <- grep("ace_cursor", tm)
 tm[curs_lin + 1] <- paste0("color: ", cursor_col, ";")
 
 # Add rules before terminal
-tem_lin <- grep("terminal", tm)[1] -1
+tem_lin <- grep("terminal", tm)[1] - 1
 partial1 <- tm[seq(1, tem_lin)]
 partial2 <- tm[seq(tem_lin + 1, length(tm))]
 
@@ -28,7 +29,9 @@ partial2 <- tm[seq(tem_lin + 1, length(tm))]
 head_col <- "#EBC13D"
 head_css <- paste0(
   ".ace_heading {color: ",
-  head_col, ";}")
+  head_col,
+  ";}"
+)
 
 
 # Re-generate css and write

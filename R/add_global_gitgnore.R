@@ -74,8 +74,12 @@ add_global_gitgnore <- function(pkg = ".") {
 
   if (dir.exists(file.path(pkg, "revdep"))) {
     revdepig <- c(
-      "checks", "library", "checks.noindex", "library.noindex",
-      "data.sqlite", "*.html"
+      "checks",
+      "library",
+      "checks.noindex",
+      "library.noindex",
+      "data.sqlite",
+      "*.html"
     )
 
     usethis::use_git_ignore(revdepig, directory = file.path(pkg, "revdep"))
@@ -83,7 +87,6 @@ add_global_gitgnore <- function(pkg = ".") {
 
   # Ignore this also on build
   usethis::use_build_ignore("revdep")
-
 
   # Codemeta
 
@@ -116,7 +119,6 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_build_ignore("CONTRIBUTING.md")
   usethis::use_build_ignore(".github")
   usethis::use_build_ignore("docs")
-
 
   # PDF on plots
   usethis::use_git_ignore("Rplots.pdf", directory = pkg)

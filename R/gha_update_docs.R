@@ -29,10 +29,12 @@
 #' }
 #'
 gha_update_docs <-
-  function(pkg = ".",
-           overwrite = TRUE,
-           platform = "macOS",
-           version = "latest") {
+  function(
+    pkg = ".",
+    overwrite = TRUE,
+    platform = "macOS",
+    version = "latest"
+  ) {
     # Check destdir
 
     destdir <- file.path(pkg, ".github", "workflows")
@@ -51,24 +53,19 @@ gha_update_docs <-
     usethis::use_build_ignore("docs")
     usethis::use_git_ignore("docs/", pkg)
 
-
     # Add files to git ignore
-    usethis::use_git_ignore("R-version",
+    usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
+    usethis::use_git_ignore(
+      "depends.Rds",
       directory = file.path(pkg, ".github")
     )
-    usethis::use_git_ignore("depends.Rds",
-      directory = file.path(pkg, ".github")
-    )
-    usethis::use_git_ignore("*.html",
-      directory = file.path(pkg, ".github")
-    )
+    usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
 
     # Get action file
     filepath <- system.file("yaml/update-docs.yaml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
-
 
     if (result) {
       cli::cli_alert_success(paste(
@@ -79,7 +76,6 @@ gha_update_docs <-
       cli::cli_alert_danger(cli::col_red("File not updated"))
       return(invisible())
     }
-
 
     # Add platform
     add_platform <- readLines(file.path(destdir, "update-docs.yaml"))
@@ -103,7 +99,6 @@ gha_update_docs <-
       "Your package would be deployed on",
       "{.val {paste0(platform, '-', version)}}"
     ))
-
 
     return(invisible())
   }

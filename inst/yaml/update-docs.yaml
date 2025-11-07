@@ -30,7 +30,7 @@ jobs:
             any::rcmdcheck
             dieghernan/pkgdev
           needs: website
-          
+
       - name: Install Air
         uses: posit-dev/setup-air@v1
 

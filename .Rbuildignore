@@ -29,3 +29,5 @@
 ^docs$
 ^inst/themes/\.sass_cache_keys$
 ^\.sass_cache_keys$
+^[.]?air[.]toml$
+^\.vscode$

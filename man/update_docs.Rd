@@ -44,8 +44,7 @@ a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 
 \item{opt_dir, opt_ext, opt_overwrite}{See \code{dir}, \code{ext} and \code{overwrite} in \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.}
 
-\item{add_contributors}{Logical. Would add contributors using
-\code{\link[allcontributors:add_contributors]{allcontributors::add_contributors()}}.}
+\item{add_contributors}{Deprecated.}
 
 \item{...}{Additional arguments to functions}
 }

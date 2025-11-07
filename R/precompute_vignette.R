@@ -42,10 +42,12 @@
 #' @export
 #'
 #'
-precompute_vignette <- function(source,
-                                pkg = ".",
-                                figure_ext = ".png",
-                                create_r_file = FALSE) {
+precompute_vignette <- function(
+  source,
+  pkg = ".",
+  figure_ext = ".png",
+  create_r_file = FALSE
+) {
   pkg <- devtools::as.package(pkg)
   local_install2(pkg)
 
@@ -109,8 +111,11 @@ local_install2 <- function(pkg = ".", quiet = TRUE, env = parent.frame()) {
     i = "Installing {.pkg {nm}} {.strong  v{ver}} in temporary library"
   ))
   withr::local_temp_libpaths(.local_envir = env)
-  devtools::install(pkg,
+  devtools::install(
+    pkg,
     upgrade = "never",
-    reload = FALSE, quick = TRUE, quiet = quiet
+    reload = FALSE,
+    quick = TRUE,
+    quiet = quiet
   )
 }

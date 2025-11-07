@@ -6,7 +6,8 @@ font_add_google("Ubuntu", "ubuntu")
 
 showtext_auto()
 
-sticker("./data-raw/tools.png",
+sticker(
+  "./data-raw/tools.png",
   package = "pkgdev",
   p_family = "ubuntu",
   s_width = 0.55,

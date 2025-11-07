@@ -31,10 +31,12 @@
 #' }
 #'
 gha_pkgdown_branch <-
-  function(pkg = ".",
-           overwrite = TRUE,
-           platform = "macOS",
-           version = "latest") {
+  function(
+    pkg = ".",
+    overwrite = TRUE,
+    platform = "macOS",
+    version = "latest"
+  ) {
     # Check destdir
 
     destdir <- file.path(pkg, ".github", "workflows")
@@ -53,18 +55,13 @@ gha_pkgdown_branch <-
     usethis::use_build_ignore("docs")
     usethis::use_git_ignore("docs/", pkg)
 
-
     # Add files to git ignore
-    usethis::use_git_ignore("R-version",
+    usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
+    usethis::use_git_ignore(
+      "depends.Rds",
       directory = file.path(pkg, ".github")
     )
-    usethis::use_git_ignore("depends.Rds",
-      directory = file.path(pkg, ".github")
-    )
-    usethis::use_git_ignore("*.html",
-      directory = file.path(pkg, ".github")
-    )
-
+    usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
 
     # Get action file
     filepath <-
@@ -72,7 +69,6 @@ gha_pkgdown_branch <-
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
-
 
     if (result) {
       cli::cli_alert_success(paste(
@@ -83,7 +79,6 @@ gha_pkgdown_branch <-
       cli::cli_alert_danger(cli::col_red("File not updated"))
       return(invisible())
     }
-
 
     # Add platform
     add_platform <- readLines(file.path(destdir, "pkgdown-gh-pages.yaml"))

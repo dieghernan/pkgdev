@@ -32,9 +32,7 @@
 #' }
 #'
 gha_check_full <-
-  function(pkg = ".",
-           overwrite = TRUE,
-           cron_expr = "30 08 1 * *") {
+  function(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *") {
     # Check destdir
 
     destdir <- file.path(pkg, ".github", "workflows")
@@ -46,18 +44,13 @@ gha_check_full <-
     # Add files to build ignore
     usethis::use_build_ignore(".github")
 
-
     # Add files to git ignore
-    usethis::use_git_ignore("R-version",
+    usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
+    usethis::use_git_ignore(
+      "depends.Rds",
       directory = file.path(pkg, ".github")
     )
-    usethis::use_git_ignore("depends.Rds",
-      directory = file.path(pkg, ".github")
-    )
-    usethis::use_git_ignore("*.html",
-      directory = file.path(pkg, ".github")
-    )
-
+    usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
 
     # Get action file
     filepath <-
@@ -65,7 +58,6 @@ gha_check_full <-
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
-
 
     if (result) {
       cli::cli_alert_success(paste(
@@ -81,7 +73,8 @@ gha_check_full <-
     add_cron <- readLines(file.path(destdir, "check-full.yaml"))
     add_cron <- gsub(
       pattern = "ADD_CRON_EXPRESSION",
-      replacement = cron_expr, x = add_cron
+      replacement = cron_expr,
+      x = add_cron
     )
 
     writeLines(add_cron, con = file.path(destdir, "check-full.yaml"))

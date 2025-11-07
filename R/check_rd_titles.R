@@ -17,10 +17,7 @@
 check_rd_titles <- function(pkg = ".") {
   path <- file.path(pkg, "man")
   # List files
-  allman <- list.files(path,
-    pattern = ".Rd",
-    full.names = TRUE
-  )
+  allman <- list.files(path, pattern = ".Rd", full.names = TRUE)
 
   if (length(allman) == 0) {
     cli::cli_alert_info("No {.var .Rd} files found in {.file path}")
@@ -45,7 +42,6 @@ check_rd_titles <- function(pkg = ".") {
       last = last
     )
   })
-
 
   enddf <- do.call("rbind", allf)
   enddf$check_case <- enddf$title == enddf$tosent
