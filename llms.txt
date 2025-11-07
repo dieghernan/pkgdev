@@ -1,0 +1,92 @@
+# pkgdev
+
+**pkgdev** is a small package that includes a set of functions that
+takes advantage of [GitHub Actions
+(GHA)](https://github.com/features/actions) for making your life easier
+as a R package developer. This package is primarily intended for
+personal use, however feel free to use it (at your own risk 😉).
+
+## Installation
+
+You can install the developing version of `pkgdev` with:
+
+``` r
+devtools::install_github("dieghernan/pkgdev")
+```
+
+Alternatively, you can install `pkgdev` using the
+[r-universe](https://dieghernan.r-universe.dev/pkgdev):
+
+``` r
+# Install pkgdev in R:
+install.packages("pkgdev", repos = c(
+  "https://dieghernan.r-universe.dev",
+  "https://cloud.r-project.org"
+))
+```
+
+## Example
+
+``` r
+library(pkgdev)
+
+gha_update_docs()
+```
+
+## Related resources
+
+- The [tidyverse style guide](https://style.tidyverse.org/).
+- **ThinkR**: [Preparing your package for a CRAN
+  submission](https://github.com/ThinkR-open/prepare-for-cran)
+- Davis Vaughan:
+  [extrachecks](https://github.com/DavisVaughan/extrachecks).
+- **{usethis} package**: [Create a release checklist in a GitHub
+  issue](https://usethis.r-lib.org/reference/use_release_issue.html)
+- The whole [{usethis} package](https://usethis.r-lib.org)
+
+# Package index
+
+## GitHub Actions
+
+Install GHA on your package
+
+- [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
+  : Create a GitHub action that checks regularly your package
+- [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
+  : Create a GitHub action that builds a pkgdown site
+- [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
+  : Create a GitHub action that documents and checks your package
+
+## Other helpers
+
+- [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
+  :
+
+  Add `.gitignore` to package
+
+- [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  : Precompute vignettes
+
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  : Document your package
+
+- [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
+  : Check the titles of a Rd file
+
+## About the package
+
+- [`pkgdev`](https://dieghernan.github.io/pkgdev/reference/pkgdev-package.md)
+  [`pkgdev-package`](https://dieghernan.github.io/pkgdev/reference/pkgdev-package.md)
+  : pkgdev: Helpers to Develop a Package using GitHub Actions
+
+# Articles
+
+### All vignettes
+
+- [Downloads of my
+  packages](https://dieghernan.github.io/pkgdev/articles/downloads.md):
+- [Example of a precomputed
+  vignette](https://dieghernan.github.io/pkgdev/articles/precompute.md):
+- [A second precomputed
+  vignette](https://dieghernan.github.io/pkgdev/articles/precompute2.md):
