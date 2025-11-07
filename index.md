@@ -43,3 +43,12 @@ gha_update_docs()
 - **{usethis} package**: [Create a release checklist in a GitHub
   issue](https://usethis.r-lib.org/reference/use_release_issue.html)
 - The whole [{usethis} package](https://usethis.r-lib.org)
+
+## Contributors
+
+All contributions to this project are gratefully acknowledged using the
+[`allcontributors` package](https://github.com/ropensci/allcontributors)
+following the [allcontributors](https://allcontributors.org)
+specification. Contributions of any kind are welcome!
+
+[TABLE]
