@@ -302,6 +302,18 @@ update_docs <- function(
   readme_rmd <- file.path(pkg, "README.Rmd")
   has_readme <- file.exists(readme_rmd)
 
+  if (has_readme) {
+    rm_lines <- readLines("README.Rmd")
+    if (any(rm_lines == "## Contributors")) {
+      start_contrib <- match("## Contributors", rm_lines)
+      tot_lines <- length(rm_lines)
+
+      newlines <- rm_lines[-seq(start_contrib, tot_lines)]
+
+      writeLines(newlines, "README.Rmd")
+    }
+  }
+
   if (build_readme && has_readme) {
     if (verbose) {
       cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")

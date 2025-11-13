@@ -74,3 +74,4 @@ gha_update_docs()
 -   **{usethis} package**: [Create a release checklist in a GitHub
     issue](https://usethis.r-lib.org/reference/use_release_issue.html)
 -   The whole [{usethis} package](https://usethis.r-lib.org)
+
