@@ -330,7 +330,7 @@ update_docs <- function(
     )
     # Second pass, this affects if optipng is installed
     lapply(opt_dir, xfun::optipng)
-        pkgdown::build_favicons(overwrite = TRUE)
+    pkgdown::build_favicons(overwrite = TRUE)
   }
 
   if (create_cff) {
