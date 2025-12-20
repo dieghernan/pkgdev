@@ -322,12 +322,13 @@ update_docs <- function(
   }
 
   if (opt_imgs) {
+  try(
     resmush::resmush_dir(
       dir = opt_dir,
       ext = opt_ext,
       report = verbose,
       overwrite = opt_overwrite
-    )
+    ))
     # Second pass, this affects if optipng is installed
     lapply(opt_dir, xfun::optipng)
     pkgdown::build_favicons(overwrite = TRUE)
