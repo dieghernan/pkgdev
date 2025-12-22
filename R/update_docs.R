@@ -322,6 +322,7 @@ update_docs <- function(
   }
 
   if (opt_imgs) {
+  # Dec'25: APIs error, use try
   try(
     resmush::resmush_dir(
       dir = opt_dir,
@@ -331,7 +332,7 @@ update_docs <- function(
     ))
     # Second pass, this affects if optipng is installed
     lapply(opt_dir, xfun::optipng)
-    pkgdown::build_favicons(overwrite = TRUE)
+    try(pkgdown::build_favicons(overwrite = TRUE))
   }
 
   if (create_cff) {
