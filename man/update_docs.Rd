@@ -13,7 +13,7 @@ update_docs(
   verbose = TRUE,
   precompute = TRUE,
   opt_imgs = TRUE,
-  opt_dir = c("pkgdown/favicon", "man/figures", "vignettes"),
+  opt_dir = c("man/figures", "vignettes", "pkgdown/favicon"),
   opt_ext = "png$|jpg$",
   opt_overwrite = TRUE,
   add_contributors = TRUE,
