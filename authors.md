@@ -11,12 +11,12 @@
 Source:
 [`inst/CITATION`](https://github.com/dieghernan/pkgdev/blob/main/inst/CITATION)
 
-Hernangómez, D (2025). pkgdev: Helpers to Develop a Package using GitHub
+Hernangómez, D (2026). pkgdev: Helpers to Develop a Package using GitHub
 Actions. https://dieghernan.github.io/pkgdev/
 
     @Manual{,
       title = {pkgdev: Helpers to Develop a Package using GitHub Actions},
       author = {Diego Hernangómez},
-      year = {2025},
+      year = {2026},
       url = {https://dieghernan.github.io/pkgdev/},
     }
