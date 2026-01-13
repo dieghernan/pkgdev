@@ -6,8 +6,6 @@ Install GHA on your package
 
 - [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
   : Create a GitHub action that checks regularly your package
-- [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
-  : Create a GitHub action that builds a pkgdown site
 - [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
   : Create a GitHub action that documents and checks your package
 

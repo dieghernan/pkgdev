@@ -19,24 +19,6 @@ gha_update_docs(
 
 [r-lib/actions](https://github.com/r-lib/actions/tree/master/examples)
 
-## Arguments
-
-- pkg:
-
-  Path to a (subdirectory of an) R package.
-
-- overwrite:
-
-  Overwrite the action if it was already present.
-
-- platform:
-
-  Platform to use for deploying the package. See **Details**
-
-- version:
-
-  Version of the platform. See **Details**.
-
 ## Value
 
 A GitHub Action on `.github/workflows`.
@@ -49,7 +31,7 @@ options.
 ## See also
 
 [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md),
-[`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
+[`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.html)
 
 ## Examples
 
