@@ -102,5 +102,5 @@ gha_update_docs <-
       "{.val {paste0(platform, '-', version)}}"
     ))
 
-    return(invisible())
+    invisible()
   }

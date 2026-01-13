@@ -52,7 +52,7 @@ references:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
   year: '2026'
-  version: '>= 3.6.0'
+  version: '>= 4.1.0'
 - type: software
   title: cffr
   abstract: 'cffr: Generate Citation File Format (''cff'') Metadata for R Packages'
@@ -196,7 +196,6 @@ references:
   - family-names: Chirico
     given-names: Michael
     email: michaelchirico4@gmail.com
-    orcid: https://orcid.org/0000-0003-0787-087X
   - family-names: Ren
     given-names: Kun
   - family-names: Rosenstock
@@ -205,9 +204,6 @@ references:
     given-names: Indrajeet
     email: patilindrajeet.science@gmail.com
     orcid: https://orcid.org/0000-0003-1995-6531
-  - family-names: Gruson
-    given-names: Hugo
-    orcid: https://orcid.org/0000-0002-4094-1476
   year: '2026'
   doi: 10.32614/CRAN.package.lintr
   version: '>= 2.0.1'

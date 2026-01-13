@@ -75,7 +75,7 @@ precompute_vignette <- function(
       knitr::purl(src_path, output = r_file)
     }
   }
-  return(invisible())
+  invisible()
 }
 
 #' @rdname precompute

@@ -376,7 +376,7 @@ update_docs <- function(
     codemetar::write_codemeta(write_minimeta = TRUE)
   }
 
-  return(invisible())
+  invisible()
 }
 
 env_var_is_true <- function(x) {

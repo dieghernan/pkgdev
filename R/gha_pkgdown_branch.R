@@ -104,5 +104,5 @@ gha_pkgdown_branch <-
       "{.val {paste0(platform, '-', version)}}"
     ))
 
-    return(invisible())
+    invisible()
   }

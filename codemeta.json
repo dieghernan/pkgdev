@@ -167,7 +167,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 3.6.0"
+      "version": ">= 4.1.0"
     },
     "2": {
       "@type": "SoftwareApplication",
@@ -423,7 +423,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "814.73KB",
+  "fileSize": "814.698KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
