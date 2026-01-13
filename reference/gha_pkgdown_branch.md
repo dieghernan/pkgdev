@@ -1,13 +1,12 @@
-# Create a GitHub action that documents and checks your package
+# Create a GitHub action that builds a pkgdown site
 
-The GitHub action created would document your package (see
-[`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)),
-would check it and would deploy the package on a gh-pages branch.
+The GitHub action created would deploy a pkgdown site of your package on
+the gh-pages branch.
 
 ## Usage
 
 ``` r
-gha_update_docs(
+gha_pkgdown_branch(
   pkg = ".",
   overwrite = TRUE,
   platform = "macOS",
@@ -39,7 +38,7 @@ gha_update_docs(
 
 ## Value
 
-A GitHub Action on `.github/workflows`.
+A GitHub Action on `<pkg>/.github/workflows`.
 
 ## Details
 
@@ -48,14 +47,13 @@ options.
 
 ## See also
 
-[`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md),
-[`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
+[`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
 
 ## Examples
 
 ``` r
 if (FALSE) { # \dontrun{
 # With Ubuntu 20.04
-gha_update_docs(platform = "ubuntu", version = "20.04")
+gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 } # }
 ```
