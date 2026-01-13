@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 
 name: update-docs
+permissions:
+  contents: write
 
 jobs:
   update-docs:
@@ -13,7 +15,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - uses: r-lib/actions/setup-pandoc@v2
 
@@ -29,6 +31,12 @@ jobs:
             any::rcmdcheck
             dieghernan/pkgdev
           needs: website
+
+      - name: Run jarl
+        uses: etiennebacher/setup-jarl@v0.1.0
+        continue-on-error: true
+        with:
+          args: check . --fix 
 
       - name: Install Air
         uses: posit-dev/setup-air@v1

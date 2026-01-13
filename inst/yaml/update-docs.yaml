@@ -10,7 +10,8 @@ name: update-docs
 jobs:
   update-docs:
     runs-on: <OS>-<version>
-    permissions: write-all
+    permissions:
+      contents: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
