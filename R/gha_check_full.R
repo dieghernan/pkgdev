@@ -74,7 +74,8 @@ gha_check_full <-
     add_cron <- gsub(
       pattern = "ADD_CRON_EXPRESSION",
       replacement = cron_expr,
-      x = add_cron
+      x = add_cron,
+      fixed = TRUE
     )
 
     writeLines(add_cron, con = file.path(destdir, "check-full.yaml"))

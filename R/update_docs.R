@@ -281,7 +281,7 @@ update_docs <- function(
   rdhash <- check_rd_hash(pkg)
 
   if (!is.null(rdhash)) {
-    has_hash <- rdhash[rdhash$bad_hash == TRUE, ]
+    has_hash <- rdhash[rdhash$bad_hash, ]
 
     if (nrow(has_hash) != 0) {
       cli::cli_alert_warning("Found {.val #'} in {.var Rd} files")

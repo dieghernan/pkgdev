@@ -83,14 +83,16 @@ gha_update_docs <-
     add_platform <- gsub(
       pattern = "<OS>",
       replacement = platform,
-      x = add_platform
+      x = add_platform,
+      fixed = TRUE
     )
 
     # Add version
     add_platform <- gsub(
       pattern = "<version>",
       replacement = version,
-      x = add_platform
+      x = add_platform,
+      fixed = TRUE
     )
 
     writeLines(add_platform, con = file.path(destdir, "update-docs.yaml"))

@@ -175,11 +175,11 @@ for (i in ncols) {
   rs_bk <- gsub(tb$dark_spec[i], tb$black_spec[i], rs_bk, ignore.case = TRUE)
 }
 
-rs_bk <- gsub("Selenized Dark", "Selenized Black", rs_bk)
-rs_bk <- gsub("selenized_dark", "selenized_black", rs_bk)
+rs_bk <- gsub("Selenized Dark", "Selenized Black", rs_bk, fixed = TRUE)
+rs_bk <- gsub("selenized_dark", "selenized_black", rs_bk, fixed = TRUE)
 rs_bk == rs
 rs_bk %>%
-  writeLines(gsub("Dark", "Black", bpath))
+  writeLines(gsub("Dark", "Black", bpath, fixed = TRUE))
 
 # Same with the script
 sf_bk <- sf
@@ -188,18 +188,18 @@ for (i in ncols) {
   sf_bk <- gsub(tb$dark_spec[i], tb$black_spec[i], sf_bk, ignore.case = TRUE)
 }
 
-sf_bk <- gsub("Selenized Dark", "Selenized Black", sf_bk)
-sf_bk <- gsub("selenized_dark", "selenized_black", sf_bk)
+sf_bk <- gsub("Selenized Dark", "Selenized Black", sf_bk, fixed = TRUE)
+sf_bk <- gsub("selenized_dark", "selenized_black", sf_bk, fixed = TRUE)
 sf_bk == sf
 sf_bk %>%
-  writeLines(gsub("Dark", "Black", spath))
+  writeLines(gsub("Dark", "Black", spath, fixed = TRUE))
 
 
 # Check
 
-bkcols <- gsub("Dark", "Black", bpath) %>%
+bkcols <- gsub("Dark", "Black", bpath, fixed = TRUE) %>%
   readLines() %>%
-  c(readLines(gsub("Dark", "Black", spath))) %>%
+  c(readLines(gsub("Dark", "Black", spath, fixed = TRUE))) %>%
   paste(collapse = "") %>%
   str_split("#") %>%
   map(str_sub, end = 6) %>%
@@ -208,7 +208,7 @@ bkcols <- gsub("Dark", "Black", bpath) %>%
 
 bkcols[!bkcols %in% tb$black_spec]
 
-gsub("Dark", "Black", spath) %>% source()
+gsub("Dark", "Black", spath, fixed = TRUE) %>% source()
 
 rstudioapi::applyTheme("Selenized Black")
 
@@ -220,12 +220,12 @@ for (i in ncols) {
   rs_bk <- gsub(tb$dark_spec[i], tb$light_spec[i], rs_bk, ignore.case = TRUE)
 }
 
-rs_bk <- gsub("Selenized Dark", "Selenized Light", rs_bk)
-rs_bk <- gsub("selenized_dark", "selenized_light", rs_bk)
+rs_bk <- gsub("Selenized Dark", "Selenized Light", rs_bk, fixed = TRUE)
+rs_bk <- gsub("selenized_dark", "selenized_light", rs_bk, fixed = TRUE)
 rs_bk <- gsub("theme.dark", "theme.light", rs_bk)
 rs_bk == rs
 rs_bk %>%
-  writeLines(gsub("Dark", "Light", bpath))
+  writeLines(gsub("Dark", "Light", bpath, fixed = TRUE))
 
 # Same with the script
 sf_bk <- sf
@@ -234,18 +234,18 @@ for (i in ncols) {
   sf_bk <- gsub(tb$dark_spec[i], tb$light_spec[i], sf_bk, ignore.case = TRUE)
 }
 
-sf_bk <- gsub("Selenized Dark", "Selenized Light", sf_bk)
-sf_bk <- gsub("selenized_dark", "selenized_light", sf_bk)
+sf_bk <- gsub("Selenized Dark", "Selenized Light", sf_bk, fixed = TRUE)
+sf_bk <- gsub("selenized_dark", "selenized_light", sf_bk, fixed = TRUE)
 sf_bk == sf
 sf_bk %>%
-  writeLines(gsub("Dark", "Light", spath))
+  writeLines(gsub("Dark", "Light", spath, fixed = TRUE))
 
 
 # Check
 
-bkcols <- gsub("Dark", "Light", bpath) %>%
+bkcols <- gsub("Dark", "Light", bpath, fixed = TRUE) %>%
   readLines() %>%
-  c(readLines(gsub("Dark", "Light", spath))) %>%
+  c(readLines(gsub("Dark", "Light", spath, fixed = TRUE))) %>%
   paste(collapse = "") %>%
   str_split("#") %>%
   map(str_sub, end = 6) %>%
@@ -254,7 +254,7 @@ bkcols <- gsub("Dark", "Light", bpath) %>%
 
 bkcols[!bkcols %in% tb$light_spec]
 
-gsub("Dark", "Light", spath) %>% source()
+gsub("Dark", "Light", spath, fixed = TRUE) %>% source()
 
 # Create White -----
 ncols <- seq_len(nrow(tb))
@@ -264,12 +264,12 @@ for (i in ncols) {
   rs_bk <- gsub(tb$dark_spec[i], tb$white_spec[i], rs_bk, ignore.case = TRUE)
 }
 
-rs_bk <- gsub("Selenized Dark", "Selenized White", rs_bk)
-rs_bk <- gsub("selenized_dark", "selenized_white", rs_bk)
+rs_bk <- gsub("Selenized Dark", "Selenized White", rs_bk, fixed = TRUE)
+rs_bk <- gsub("selenized_dark", "selenized_white", rs_bk, fixed = TRUE)
 rs_bk <- gsub("theme.dark", "theme.light", rs_bk)
 rs_bk == rs
 rs_bk %>%
-  writeLines(gsub("Dark", "White", bpath))
+  writeLines(gsub("Dark", "White", bpath, fixed = TRUE))
 
 # Same with the script
 sf_bk <- sf
@@ -278,18 +278,18 @@ for (i in ncols) {
   sf_bk <- gsub(tb$dark_spec[i], tb$white_spec[i], sf_bk, ignore.case = TRUE)
 }
 
-sf_bk <- gsub("Selenized Dark", "Selenized White", sf_bk)
-sf_bk <- gsub("selenized_dark", "selenized_white", sf_bk)
+sf_bk <- gsub("Selenized Dark", "Selenized White", sf_bk, fixed = TRUE)
+sf_bk <- gsub("selenized_dark", "selenized_white", sf_bk, fixed = TRUE)
 sf_bk == sf
 sf_bk %>%
-  writeLines(gsub("Dark", "White", spath))
+  writeLines(gsub("Dark", "White", spath, fixed = TRUE))
 
 
 # Check
 
-bkcols <- gsub("Dark", "White", bpath) %>%
+bkcols <- gsub("Dark", "White", bpath, fixed = TRUE) %>%
   readLines() %>%
-  c(readLines(gsub("Dark", "White", spath))) %>%
+  c(readLines(gsub("Dark", "White", spath, fixed = TRUE))) %>%
   paste(collapse = "") %>%
   str_split("#") %>%
   map(str_sub, end = 6) %>%
@@ -298,7 +298,7 @@ bkcols <- gsub("Dark", "White", bpath) %>%
 
 bkcols[!bkcols %in% tb$white_spec]
 
-gsub("Dark", "White", spath) %>% source()
+gsub("Dark", "White", spath, fixed = TRUE) %>% source()
 
 
 # Final check

@@ -3,7 +3,6 @@
 export(add_global_gitgnore)
 export(check_rd_titles)
 export(gha_check_full)
-export(gha_pkgdown_branch)
 export(gha_update_docs)
 export(precompute_vignette)
 export(precompute_vignette_all)

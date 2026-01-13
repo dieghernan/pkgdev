@@ -14,15 +14,6 @@ gha_update_docs(
   version = "latest"
 )
 }
-\arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
-
-\item{overwrite}{Overwrite the action if it was already present.}
-
-\item{platform}{Platform to use for deploying the package. See \strong{Details}}
-
-\item{version}{Version of the platform. See \strong{Details}.}
-}
 \value{
 A GitHub Action on \code{.github/workflows}.
 }

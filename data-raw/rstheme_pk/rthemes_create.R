@@ -159,14 +159,14 @@ for (i in ncols) {
   rs_bk <- gsub(tb$dark_spec[i], tb$black_spec[i], rs_bk, ignore.case = TRUE)
 }
 
-rs_bk <- gsub("Selenized Dark", "Selenized Black", rs_bk)
+rs_bk <- gsub("Selenized Dark", "Selenized Black", rs_bk, fixed = TRUE)
 rs_bk == rs
 rs_bk %>%
-  writeLines(gsub("Dark", "Black", bpath))
+  writeLines(gsub("Dark", "Black", bpath, fixed = TRUE))
 
 # Check
 
-bkcols <- gsub("Dark", "Black", bpath) %>%
+bkcols <- gsub("Dark", "Black", bpath, fixed = TRUE) %>%
   readLines() %>%
   paste(collapse = "") %>%
   str_split("#") %>%
@@ -176,7 +176,7 @@ bkcols <- gsub("Dark", "Black", bpath) %>%
 
 bkcols[!bkcols %in% tb$black_spec]
 
-gsub("Dark", "Black", bpath) %>% source()
+gsub("Dark", "Black", bpath, fixed = TRUE) %>% source()
 
 
 # Create Light -----
@@ -187,16 +187,16 @@ for (i in ncols) {
 }
 rs_bk == rs
 
-rs_bk <- gsub("Selenized Dark", "Selenized Light", rs_bk)
-rs_bk <- gsub("dark <- TRUE", "dark <- FALSE", rs_bk)
+rs_bk <- gsub("Selenized Dark", "Selenized Light", rs_bk, fixed = TRUE)
+rs_bk <- gsub("dark <- TRUE", "dark <- FALSE", rs_bk, fixed = TRUE)
 
 rs_bk == rs
 rs_bk %>%
-  writeLines(gsub("Dark", "Light", bpath))
+  writeLines(gsub("Dark", "Light", bpath, fixed = TRUE))
 
 # Check
 
-bkcols <- gsub("Dark", "Light", bpath) %>%
+bkcols <- gsub("Dark", "Light", bpath, fixed = TRUE) %>%
   readLines() %>%
   paste(collapse = "") %>%
   str_split("#") %>%
@@ -206,7 +206,7 @@ bkcols <- gsub("Dark", "Light", bpath) %>%
 
 bkcols[!bkcols %in% tb$light_spec]
 
-gsub("Dark", "Light", bpath) %>% source()
+gsub("Dark", "Light", bpath, fixed = TRUE) %>% source()
 
 
 # Create White -----
@@ -217,16 +217,16 @@ for (i in ncols) {
 }
 rs_bk == rs
 
-rs_bk <- gsub("Selenized Dark", "Selenized White", rs_bk)
-rs_bk <- gsub("dark <- TRUE", "dark <- FALSE", rs_bk)
+rs_bk <- gsub("Selenized Dark", "Selenized White", rs_bk, fixed = TRUE)
+rs_bk <- gsub("dark <- TRUE", "dark <- FALSE", rs_bk, fixed = TRUE)
 
 rs_bk == rs
 rs_bk %>%
-  writeLines(gsub("Dark", "White", bpath))
+  writeLines(gsub("Dark", "White", bpath, fixed = TRUE))
 
 # Check
 
-bkcols <- gsub("Dark", "White", bpath) %>%
+bkcols <- gsub("Dark", "White", bpath, fixed = TRUE) %>%
   readLines() %>%
   paste(collapse = "") %>%
   str_split("#") %>%
@@ -236,7 +236,7 @@ bkcols <- gsub("Dark", "White", bpath) %>%
 
 bkcols[!bkcols %in% tb$white_spec]
 
-gsub("Dark", "White", bpath) %>% source()
+gsub("Dark", "White", bpath, fixed = TRUE) %>% source()
 
 
 # Final check

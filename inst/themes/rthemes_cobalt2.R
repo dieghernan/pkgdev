@@ -19,7 +19,7 @@ rtheme <- gsub(".tmTheme", ".rstheme", tm_path)
 
 tm <- readLines(rtheme)
 
-curs_lin <- grep("ace_cursor", tm)
+curs_lin <- grep("ace_cursor", tm, fixed = TRUE)
 tm[curs_lin + 1] <- paste0("color: ", cursor_col, ";")
 
 # Add rules before terminal
