@@ -1,7 +1,7 @@
 library(tidyverse)
 
 tm_path <- "inst/themes/OkSolar Light.tmTheme"
-xml2::read_xml(tm_path) %>%
+xml2::read_xml(tm_path) |>
   xml2::write_xml(tm_path)
 
 rstudioapi::convertTheme(
@@ -37,7 +37,7 @@ head_css <- paste0(
 # Re-generate css and write
 final_tm <- c(partial1, head_css, partial2)
 
-final_tm %>%
+final_tm |>
   sass::sass(output = rtheme)
 
 rstudioapi::addTheme(rtheme, apply = TRUE, force = TRUE)

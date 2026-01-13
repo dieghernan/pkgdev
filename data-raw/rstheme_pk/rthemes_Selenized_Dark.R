@@ -2,7 +2,7 @@ library(tidyverse)
 
 nm <- "Selenized Dark"
 dark <- TRUE
-path <- file.path("inst/themes", nm) %>% paste0(".rstheme")
+path <- file.path("inst/themes", nm) |> paste0(".rstheme")
 
 rsthemes::rstheme(
   theme_name = nm,
@@ -38,8 +38,8 @@ rsthemes::rstheme(
 )
 
 # Modify name
-readLines(path) %>%
-  str_remove_all(fixed("{rsthemes}")) %>%
+readLines(path) |>
+  str_remove_all(fixed("{rsthemes}")) |>
   writeLines(path)
 
 rstudioapi::addTheme(path, apply = TRUE, force = TRUE)

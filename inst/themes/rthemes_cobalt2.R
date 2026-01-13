@@ -40,7 +40,7 @@ str <- paste0(
 # Re-generate css and write
 final_tm <- c(partial1, head_css, str, partial2)
 
-final_tm %>%
+final_tm |>
   sass::sass(output = rtheme)
 
 rstudioapi::addTheme(rtheme, apply = TRUE, force = TRUE)

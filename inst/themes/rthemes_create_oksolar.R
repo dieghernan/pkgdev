@@ -57,7 +57,7 @@ tb$dark_spec <- c(
   "#53d6c7",
   "#fd9456",
   "#bd96fa"
-) %>%
+) |>
   toupper()
 
 tb$oksolar_dark_spec <- c(
@@ -83,7 +83,7 @@ tb$oksolar_dark_spec <- c(
   "#259d94",
   "#d56500",
   "#7d80d1"
-) %>%
+) |>
   toupper()
 
 tb$oksolar_light_spec <- c(
@@ -109,7 +109,7 @@ tb$oksolar_light_spec <- c(
   "#259d94",
   "#d56500",
   "#7d80d1"
-) %>%
+) |>
   toupper()
 
 
@@ -120,14 +120,14 @@ tb$oksolar_light_spec <- c(
 #   "#70b433", "#dbb32d", "#368aeb", "#eb6eb7", "#3fc5b7", "#e67f43", "#a580e2",
 #   "#ff5e56", "#83c746", "#efc541", "#4f9cfe", "#ff81ca", "#56d8c9", "#fa9153",
 #   "#b891f5"
-# ) %>% toupper()
+# ) |> toupper()
 #
 # tb$light_spec <- c(
 #   "#fbf3db", "#ece3cc", "#d5cdb6", "#909995", "#53676d", "#3a4d53", "#d2212d",
 #   "#489100", "#ad8900", "#0072d4", "#ca4898", "#009c8f", "#c25d1e", "#8762c6",
 #   "#cc1729", "#428b00", "#a78300", "#006dce", "#c44392", "#00978a", "#bc5819",
 #   "#825dc0"
-# ) %>%
+# ) |>
 #   toupper()
 #
 # tb$white_spec <- c(
@@ -135,7 +135,7 @@ tb$oksolar_light_spec <- c(
 #   "#1d9700", "#c49700", "#0064e4", "#dd0f9d", "#00ad9c", "#d04a00", "#7f51d6",
 #   "#bf0000", "#008400", "#af8500", "#0054cf", "#c7008b", "#009a8a", "#ba3700",
 #   "#6b40c3"
-# ) %>% toupper()
+# ) |> toupper()
 
 # OK Solar Dark ------
 bpath <- "inst/themes/Selenized Dark.tmTheme"
@@ -160,7 +160,7 @@ rs_bk <- gsub("selenized_dark", "oksolar_dark", rs_bk, fixed = TRUE)
 rs_bk == rs
 
 
-rs_bk %>%
+rs_bk |>
   writeLines(gsub("Selenized Dark", "OKSolar Dark", bpath, fixed = TRUE))
 
 # Same with the script
@@ -178,24 +178,24 @@ for (i in ncols) {
 sf_bk <- gsub("Selenized Dark", "OKSolar Dark", sf_bk, fixed = TRUE)
 sf_bk <- gsub("selenized_dark", "oksolar_dark", sf_bk, fixed = TRUE)
 sf_bk == sf
-sf_bk %>%
+sf_bk |>
   writeLines(gsub("Selenized_Dark", "OKSolar_Dark", spath, fixed = TRUE))
 
 
 # Check
 
-bkcols <- gsub("Selenized Dark", "OKSolar Dark", bpath, fixed = TRUE) %>%
-  readLines() %>%
-  c(readLines(gsub("Selenized_Dark", "OKSolar_Dark", spath, fixed = TRUE))) %>%
-  paste(collapse = "") %>%
-  str_split("#") %>%
-  map(str_sub, end = 6) %>%
-  unlist() %>%
+bkcols <- gsub("Selenized Dark", "OKSolar Dark", bpath, fixed = TRUE) |>
+  readLines() |>
+  c(readLines(gsub("Selenized_Dark", "OKSolar_Dark", spath, fixed = TRUE))) |>
+  paste(collapse = "") |>
+  str_split("#") |>
+  map(str_sub, end = 6) |>
+  unlist() |>
   paste0("#", .)
 
 bkcols[!bkcols %in% tb$oksolar_dark_spec]
 
-gsub("Selenized_Dark", "OKSolar_Dark", spath, fixed = TRUE) %>% source()
+gsub("Selenized_Dark", "OKSolar_Dark", spath, fixed = TRUE) |> source()
 
 rstudioapi::applyTheme("OKSolar Dark")
 rstudioapi::applyTheme("Selenized Dark")
@@ -217,7 +217,7 @@ rs_bk <- gsub("Selenized Dark", "OkSolar Light", rs_bk, fixed = TRUE)
 rs_bk <- gsub("selenized_dark", "oksolar_light", rs_bk, fixed = TRUE)
 rs_bk <- gsub("theme.dark", "theme.light", rs_bk)
 rs_bk == rs
-rs_bk %>%
+rs_bk |>
   writeLines(gsub("Selenized Dark", "OkSolar Light", bpath, fixed = TRUE))
 
 # Same with the script
@@ -235,24 +235,24 @@ for (i in ncols) {
 sf_bk <- gsub("Selenized Dark", "OkSolar Light", sf_bk, fixed = TRUE)
 sf_bk <- gsub("selenized_dark", "oksolar_light", sf_bk, fixed = TRUE)
 sf_bk == sf
-sf_bk %>%
+sf_bk |>
   writeLines(gsub("Selenized_Dark", "OkSolar_Light", spath, fixed = TRUE))
 
 
 # Check
 
-bkcols <- gsub("Selenized Dark", "OkSolar Light", bpath, fixed = TRUE) %>%
-  readLines() %>%
-  c(readLines(gsub("Selenized_Dark", "OkSolar_Light", spath, fixed = TRUE))) %>%
-  paste(collapse = "") %>%
-  str_split("#") %>%
-  map(str_sub, end = 6) %>%
-  unlist() %>%
+bkcols <- gsub("Selenized Dark", "OkSolar Light", bpath, fixed = TRUE) |>
+  readLines() |>
+  c(readLines(gsub("Selenized_Dark", "OkSolar_Light", spath, fixed = TRUE))) |>
+  paste(collapse = "") |>
+  str_split("#") |>
+  map(str_sub, end = 6) |>
+  unlist() |>
   paste0("#", .)
 
 bkcols[!bkcols %in% tb$oksolar_light_spec]
 
-gsub("Selenized_Dark", "OkSolar_Light", spath, fixed = TRUE) %>% source()
+gsub("Selenized_Dark", "OkSolar_Light", spath, fixed = TRUE) |> source()
 
 
 # Final check

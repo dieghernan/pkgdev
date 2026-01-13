@@ -1,16 +1,16 @@
 ss <- xml2::read_xml("inst/themes/Selenized Dark.tmTheme")
 library(tidyverse)
 
-thecols_init <- xml_text(ss) %>%
-  str_split("#") %>%
-  lapply(str_sub, end = 6) %>%
-  unlist() %>%
-  paste0("#", .) %>%
+thecols_init <- xml_text(ss) |>
+  str_split("#") |>
+  lapply(str_sub, end = 6) |>
+  unlist() |>
+  paste0("#", .) |>
   toupper()
 
 thecols <- unique(thecols_init)
-tb_theme <- tibble(cols = thecols_init) %>%
-  group_by(cols) %>%
+tb_theme <- tibble(cols = thecols_init) |>
+  group_by(cols) |>
   count()
 
 rstudioapi::getThemeInfo()
@@ -38,7 +38,7 @@ thespec <- c(
   "#53d6c7",
   "#fd9456",
   "#bd96fa"
-) %>%
+) |>
   toupper()
 
 thecols[!thecols %in% thespec]
@@ -71,8 +71,8 @@ tb$nm <- c(
   "br_violet"
 )
 
-tb <- tb %>%
-  select(nm, cols, in_theme) %>%
+tb <- tb |>
+  select(nm, cols, in_theme) |>
   left_join(tb_theme)
 clipr::write_clip(tb)
 # Fix uppercase
@@ -111,7 +111,7 @@ tb$black_spec <- c(
   "#56d8c9",
   "#fa9153",
   "#b891f5"
-) %>%
+) |>
   toupper()
 
 # "#ADBCBC" "#2D5B69" "#FA5750" "#75B938" "#41C7B9"
@@ -130,12 +130,12 @@ writeLines(lb, btheme)
 
 ss <- xml2::read_xml(btheme)
 
-thecols_init <- xml_text(ss) %>%
-  str_split("#") %>%
-  lapply(str_sub, end = 6) %>%
-  unlist() %>%
-  paste0("#", .) %>%
-  toupper() %>%
+thecols_init <- xml_text(ss) |>
+  str_split("#") |>
+  lapply(str_sub, end = 6) |>
+  unlist() |>
+  paste0("#", .) |>
+  toupper() |>
   unique()
 
 thecols_init[!thecols_init %in% tb$black_spec]
@@ -164,7 +164,7 @@ tb$light_spec <- c(
   "#00978a",
   "#bc5819",
   "#825dc0"
-) %>%
+) |>
   toupper()
 
 
@@ -182,12 +182,12 @@ writeLines(lb, ltheme)
 
 ss <- xml2::read_xml(ltheme)
 
-thecols_init <- xml_text(ss) %>%
-  str_split("#") %>%
-  lapply(str_sub, end = 6) %>%
-  unlist() %>%
-  paste0("#", .) %>%
-  toupper() %>%
+thecols_init <- xml_text(ss) |>
+  str_split("#") |>
+  lapply(str_sub, end = 6) |>
+  unlist() |>
+  paste0("#", .) |>
+  toupper() |>
   unique()
 
 thecols_init[!thecols_init %in% tb$light_spec]
@@ -217,7 +217,7 @@ tb$white_spec <- c(
   "#009a8a",
   "#ba3700",
   "#6b40c3"
-) %>%
+) |>
   toupper()
 
 wtheme <- "inst/themes/Selenized White.tmTheme"
@@ -234,12 +234,12 @@ writeLines(lb, wtheme)
 
 ss <- xml2::read_xml(wtheme)
 
-thecols_init <- xml_text(ss) %>%
-  str_split("#") %>%
-  lapply(str_sub, end = 6) %>%
-  unlist() %>%
-  paste0("#", .) %>%
-  toupper() %>%
+thecols_init <- xml_text(ss) |>
+  str_split("#") |>
+  lapply(str_sub, end = 6) |>
+  unlist() |>
+  paste0("#", .) |>
+  toupper() |>
   unique()
 
 thecols_init[!thecols_init %in% tb$white_spec]

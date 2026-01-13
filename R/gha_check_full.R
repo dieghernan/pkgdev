@@ -80,5 +80,5 @@ gha_check_full <-
 
     writeLines(add_cron, con = file.path(destdir, "check-full.yaml"))
 
-    return(invisible())
+    invisible()
   }

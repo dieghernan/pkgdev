@@ -51,7 +51,7 @@ tb$dark_spec <- c(
   "#53d6c7",
   "#fd9456",
   "#bd96fa"
-) %>%
+) |>
   toupper()
 
 tb$black_spec <- c(
@@ -77,7 +77,7 @@ tb$black_spec <- c(
   "#56d8c9",
   "#fa9153",
   "#b891f5"
-) %>%
+) |>
   toupper()
 
 tb$light_spec <- c(
@@ -103,7 +103,7 @@ tb$light_spec <- c(
   "#00978a",
   "#bc5819",
   "#825dc0"
-) %>%
+) |>
   toupper()
 
 tb$white_spec <- c(
@@ -129,7 +129,7 @@ tb$white_spec <- c(
   "#009a8a",
   "#ba3700",
   "#6b40c3"
-) %>%
+) |>
   toupper()
 
 clipr::write_clip(tb)
@@ -139,11 +139,11 @@ clipr::write_clip(tb)
 bpath <- "inst/themes/rthemes_Selenized_Dark.R"
 rs <- readLines(bpath)
 
-thecols <- rs %>%
-  paste(collapse = "") %>%
-  str_split("#") %>%
-  map(str_sub, end = 6) %>%
-  unlist() %>%
+thecols <- rs |>
+  paste(collapse = "") |>
+  str_split("#") |>
+  map(str_sub, end = 6) |>
+  unlist() |>
   paste0("#", .)
 
 thecols[!thecols %in% tb$dark_spec]
@@ -161,22 +161,22 @@ for (i in ncols) {
 
 rs_bk <- gsub("Selenized Dark", "Selenized Black", rs_bk, fixed = TRUE)
 rs_bk == rs
-rs_bk %>%
+rs_bk |>
   writeLines(gsub("Dark", "Black", bpath, fixed = TRUE))
 
 # Check
 
-bkcols <- gsub("Dark", "Black", bpath, fixed = TRUE) %>%
-  readLines() %>%
-  paste(collapse = "") %>%
-  str_split("#") %>%
-  map(str_sub, end = 6) %>%
-  unlist() %>%
+bkcols <- gsub("Dark", "Black", bpath, fixed = TRUE) |>
+  readLines() |>
+  paste(collapse = "") |>
+  str_split("#") |>
+  map(str_sub, end = 6) |>
+  unlist() |>
   paste0("#", .)
 
 bkcols[!bkcols %in% tb$black_spec]
 
-gsub("Dark", "Black", bpath, fixed = TRUE) %>% source()
+gsub("Dark", "Black", bpath, fixed = TRUE) |> source()
 
 
 # Create Light -----
@@ -191,22 +191,22 @@ rs_bk <- gsub("Selenized Dark", "Selenized Light", rs_bk, fixed = TRUE)
 rs_bk <- gsub("dark <- TRUE", "dark <- FALSE", rs_bk, fixed = TRUE)
 
 rs_bk == rs
-rs_bk %>%
+rs_bk |>
   writeLines(gsub("Dark", "Light", bpath, fixed = TRUE))
 
 # Check
 
-bkcols <- gsub("Dark", "Light", bpath, fixed = TRUE) %>%
-  readLines() %>%
-  paste(collapse = "") %>%
-  str_split("#") %>%
-  map(str_sub, end = 6) %>%
-  unlist() %>%
+bkcols <- gsub("Dark", "Light", bpath, fixed = TRUE) |>
+  readLines() |>
+  paste(collapse = "") |>
+  str_split("#") |>
+  map(str_sub, end = 6) |>
+  unlist() |>
   paste0("#", .)
 
 bkcols[!bkcols %in% tb$light_spec]
 
-gsub("Dark", "Light", bpath, fixed = TRUE) %>% source()
+gsub("Dark", "Light", bpath, fixed = TRUE) |> source()
 
 
 # Create White -----
@@ -221,22 +221,22 @@ rs_bk <- gsub("Selenized Dark", "Selenized White", rs_bk, fixed = TRUE)
 rs_bk <- gsub("dark <- TRUE", "dark <- FALSE", rs_bk, fixed = TRUE)
 
 rs_bk == rs
-rs_bk %>%
+rs_bk |>
   writeLines(gsub("Dark", "White", bpath, fixed = TRUE))
 
 # Check
 
-bkcols <- gsub("Dark", "White", bpath, fixed = TRUE) %>%
-  readLines() %>%
-  paste(collapse = "") %>%
-  str_split("#") %>%
-  map(str_sub, end = 6) %>%
-  unlist() %>%
+bkcols <- gsub("Dark", "White", bpath, fixed = TRUE) |>
+  readLines() |>
+  paste(collapse = "") |>
+  str_split("#") |>
+  map(str_sub, end = 6) |>
+  unlist() |>
   paste0("#", .)
 
 bkcols[!bkcols %in% tb$white_spec]
 
-gsub("Dark", "White", bpath, fixed = TRUE) %>% source()
+gsub("Dark", "White", bpath, fixed = TRUE) |> source()
 
 
 # Final check
