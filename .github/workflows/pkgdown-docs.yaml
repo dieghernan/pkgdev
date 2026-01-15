@@ -44,4 +44,3 @@ jobs:
           git add -A
           git commit -m 'Update docs folder' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
-

@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [main, master]
   schedule:
-    - cron:  '30 14 * * 3'
+    - cron: "30 14 * * 3"
   repository_dispatch:
     types: [trigger-check-workflow]
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: ubuntu-latest, r: 'release'}
+          - { os: ubuntu-latest, r: "release" }
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
@@ -55,4 +55,3 @@ jobs:
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
-

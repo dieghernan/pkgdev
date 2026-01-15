@@ -1,4 +1,6 @@
 on:
+  push:
+    branches: [main, master]
   workflow_dispatch:
 
 name: update-docs
@@ -66,4 +68,3 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           Rscript -e 'pkgdown::deploy_to_branch(new_process = TRUE, run_dont_run = TRUE, lazy = TRUE)'
-

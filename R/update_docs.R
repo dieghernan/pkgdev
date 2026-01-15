@@ -260,15 +260,10 @@ ignore = [\"implicit_assignment\"]",
       lns <- readLines(x, warn = FALSE)
       lns <- gsub("install-r: true", "", lns, fixed = TRUE)
       # Remove extra spaces
-      lns_blank <- lns == ""
       lag_line <- c(lns[-1], "")
       newlns <- lns[lns != lag_line]
       newlns <- trimws(newlns, which = "right")
 
-      # Add EOL
-      if (!identical(newlns[length(newlns)], "")) {
-        newlns <- c(newlns, "")
-      }
       usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
     })
   }
