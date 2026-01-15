@@ -31,3 +31,4 @@
 ^\.sass_cache_keys$
 ^[.]?air[.]toml$
 ^\.vscode$
+^jarl\.toml$

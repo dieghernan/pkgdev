@@ -160,6 +160,23 @@ update_docs <- function(
   usethis::use_tidy_description()
   usethis::use_air()
 
+  #   Use jarl config
+  if (!file.exists("jarl.toml")) {
+    cli::cli_alert_info("Configuring {.pkg jarl}")
+    cli::cli_alert("See more in {.url https://jarl.etiennebacher.com/}")
+    cli::cli_alert(
+      paste0(
+        "Read {.href [jarl's docs ](https://jarl.etiennebacher.com/)} ",
+        "to learn about jarl linter."
+      )
+    )
+    writeLines(
+      "[lint]
+ignore = [\"implicit_assignment\"]",
+      "jarl.toml"
+    )
+  }
+
   if (url_update) {
     if (verbose) {
       cli::cli_alert_info("Checking URLs with {.pkg urlchecker}")
@@ -241,7 +258,12 @@ update_docs <- function(
   if (length(allyml) > 0) {
     lapply(allyml, function(x) {
       lns <- readLines(x, warn = FALSE)
-      newlns <- trimws(lns, which = "right")
+      lns <- gsub("install-r: true", "", lns, fixed = TRUE)
+      # Remove extra spaces
+      lns_blank <- lns == ""
+      lag_line <- c(lns[-1], "")
+      newlns <- lns[lns != lag_line]
+      newlns <- trimws(newlns, which = "right")
 
       # Add EOL
       if (!identical(newlns[length(newlns)], "")) {

@@ -17,7 +17,6 @@
 
 -   New function to check titles in `man` dir: `check_rd_titles()`.
 
-
 -   Add a collection of [RStudio
     Themes](https://docs.posit.co/ide/user/ide/guide/ui/appearance.html) based
     on [Selenized](https://github.com/jan-warchol/selenized) by Jan Warchol, a
@@ -33,6 +32,8 @@
     Alternatively, you can
     [download](https://github.com/dieghernan/pkgdev/tree/main/inst/themes) the
     `*.rstheme` file and install it using `rstudioapi::addTheme()`.
+
+-   Add configuration for [jarl linter](https://jarl.etiennebacher.com/).
 
 # pkgdev 0.1.0
 

@@ -27,6 +27,11 @@ on:
 permissions:
   contents: read
 
+# This will cancel running jobs once a new run is triggered
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
 jobs:
   lintr:
     name: Run lintr scanning
@@ -54,8 +59,12 @@ jobs:
 
       - name: Run lintr
         run: |
+          # Lintr package
           out <- lintr::lint_package()
+          # Create SARIF report
           lintr::sarif_output(out, "lintr-results.sarif")
+          # Display
+          out
         shell: Rscript {0}
         continue-on-error: true
 

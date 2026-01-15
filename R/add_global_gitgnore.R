@@ -124,5 +124,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore("Rplots.pdf", directory = pkg)
   usethis::use_build_ignore("Rplots.pdf")
 
+  #   jarl
+  usethis::use_build_ignore("jarl.toml")
   invisible()
 }
