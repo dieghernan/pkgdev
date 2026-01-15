@@ -29,25 +29,7 @@ Invisible, and writes a global `.gitignore` file
 ``` r
 # \dontrun{
 add_global_gitgnore()
-#> ✔ Setting active project to "/tmp/RtmpcBf5A7/file1df950f64c42".
-#> ✔ Adding ".Rproj.user" to .gitignore.
-#> ✔ Adding ".Rhistory" to .gitignore.
-#> ✔ Adding ".Rapp.history" to .gitignore.
-#> ✔ Adding ".RData" to .gitignore.
-#> ✔ Adding ".Rdata" to .gitignore.
-#> ✔ Adding ".Ruserdata" to .gitignore.
-#> ✔ Adding "*-Ex.R" to .gitignore.
-#> ✔ Adding "/*.tar.gz" to .gitignore.
-#> ✔ Adding "/*.Rcheck/" to .gitignore.
-#> ✔ Adding ".Rproj.user/" to .gitignore.
-#> ✔ Adding "vignettes/*.html" to .gitignore.
-#> ✔ Adding "vignettes/*.pdf" to .gitignore.
-#> ✔ Adding ".httr-oauth" to .gitignore.
-#> ✔ Adding "*_cache/" to .gitignore.
-#> ✔ Adding "/cache/" to .gitignore.
-#> ✔ Adding "*.utf8.md" to .gitignore.
-#> ✔ Adding "*.knit.md" to .gitignore.
-#> ✔ Adding ".Renviron" to .gitignore.
+#> ✔ Setting active project to "/tmp/Rtmpfnrbp1/file1df2515764c6".
 #> ✔ Configuring core.excludesFile: ~/.gitignore
 #> ✔ Creating the global (user-level) gitignore: ~/.gitignore
 #> ✔ Adding ".Rproj.user", ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and
