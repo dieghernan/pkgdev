@@ -30,7 +30,7 @@ library(tidyverse)
 Sys.setenv("R_CRAN_WEB" = "https://cloud.r-project.org")
 crandb <- unique(tools::CRAN_package_db()$Package)
 mypaks <- c(
-  "giscoR", "rogtemplate", "mapSpain", "tidyBdE", "climaemet",
+  "giscoR", "rogtemplate", "mapSpain", "tidyBdE", "climaemet", "geobounds",
   "CatastRo", "CatastRoNav", "rostemplate", "igoR",
   "nominatimlite", "cffr", "pkgdev", "rasterpic", "tidyterra",
   "gitdevr", "arcgeocoder", "resmush"
