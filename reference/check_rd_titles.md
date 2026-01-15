@@ -21,8 +21,10 @@ A data frame with the results.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
+# \dontrun{
 
 check_rd_titles()
-} # }
+#> ℹ No `.Rd` files found in path
+#> NULL
+# }
 ```

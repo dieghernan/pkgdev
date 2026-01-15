@@ -70,8 +70,10 @@ lines if you are producing plots:
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
+# \dontrun{
 
 precompute_vignette(source = "precompute.Rmd.orig")
-} # }
+#> Error in package_file(path = x): Could not find package root.
+#> ℹ Is . inside a package?
+# }
 ```

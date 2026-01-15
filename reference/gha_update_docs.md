@@ -54,8 +54,11 @@ options.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
+# \dontrun{
 # With Ubuntu 20.04
 gha_update_docs(platform = "ubuntu", version = "20.04")
-} # }
+#> ✔ Adding "R-version" to .github/.gitignore.
+#> Warning: cannot open file '/tmp/RtmpcBf5A7/file1df950f64c42/.github/.gitignore': No such file or directory
+#> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
+# }
 ```

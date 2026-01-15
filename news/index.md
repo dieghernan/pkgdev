@@ -43,6 +43,8 @@
   the `*.rstheme` file and install it using
   [`rstudioapi::addTheme()`](https://rstudio.github.io/rstudioapi/reference/addTheme.html).
 
+- Add configuration for [jarl linter](https://jarl.etiennebacher.com/).
+
 ## pkgdev 0.1.0
 
 - Added a `NEWS.md` file to track changes to the package.

@@ -52,8 +52,16 @@ options.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
+# \dontrun{
 # With Ubuntu 20.04
 gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
-} # }
+#> ✔ Adding "^_pkgdown\\.yaml$" to .Rbuildignore.
+#> ✔ Adding "^_pkgdown\\.yml$" to .Rbuildignore.
+#> ✔ Adding "^pkgdown$" to .Rbuildignore.
+#> ✔ Adding "^docs$" to .Rbuildignore.
+#> ✔ Adding "docs/" to .gitignore.
+#> ✔ Adding "R-version" to .github/.gitignore.
+#> Warning: cannot open file '/tmp/RtmpcBf5A7/file1df950f64c42/.github/.gitignore': No such file or directory
+#> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
+# }
 ```
