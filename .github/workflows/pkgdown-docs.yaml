@@ -3,6 +3,7 @@
 on:
   workflow_dispatch:
 
+
 name: pkgdown-docs
 permissions:
   contents: write
@@ -13,34 +14,34 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v6
+    - uses: actions/checkout@v6
 
-      - uses: r-lib/actions/setup-pandoc@v2
+    - uses: r-lib/actions/setup-pandoc@v2
 
-      - uses: r-lib/actions/setup-r@v2
-        with:
-          use-public-rspm: true
+    - uses: r-lib/actions/setup-r@v2
+      with:
+        use-public-rspm: true
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: |
-            local::.
-            any::pkgdown
-            any::devtools
-          needs: website
+    - uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        extra-packages: |
+          local::.
+          any::pkgdown
+          any::devtools
+        needs: website
 
-      - name: Update pkgdown in docs folder
-        run: |
+    - name: Update pkgdown in docs folder
+      run: |
+        
+        pkgdown::clean_site()
+        pkgdown::build_site()
 
-          pkgdown::clean_site()
-          pkgdown::build_site()
+      shell: Rscript {0}
 
-        shell: Rscript {0}
-
-      - name: Commit results
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m 'Update docs folder' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+    - name: Commit results
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add -A
+        git commit -m 'Update docs folder' || echo "No changes to commit"
+        git push origin || echo "No changes to commit"
