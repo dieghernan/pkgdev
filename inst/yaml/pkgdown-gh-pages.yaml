@@ -8,7 +8,6 @@ on:
     types: [ published ]
   workflow_dispatch:
 
-
 name: pkgdown-gh-pages
 permissions: write-all
 # This will cancel running jobs once a new run is triggered
