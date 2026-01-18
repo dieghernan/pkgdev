@@ -47,3 +47,5 @@ revdep/cloud.noindex
 Rplots.pdf
 docs
 .sass_cache_keys
+/.quarto/
+**/*.quarto_ipynb

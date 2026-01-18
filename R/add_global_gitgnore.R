@@ -126,11 +126,11 @@ add_global_gitgnore <- function(pkg = ".") {
 
   # jarl
   usethis::use_build_ignore("jarl.toml")
-  
+
   # Positron and quarto
   usethis::use_git_ignore(c("/.quarto/", "**/*.quarto_ipynb"), directory = pkg)
-  
-    usethis::use_build_ignore(c("/.quarto/", "[.]quarto_ipynb$"), escape = FALSE)
-  
+
+  usethis::use_build_ignore(c("/.quarto/", "[.]quarto_ipynb$"), escape = FALSE)
+
   invisible()
 }
