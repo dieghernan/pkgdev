@@ -190,7 +190,7 @@ ignore = [\"implicit_assignment\"]",
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
   if (dir.exists(file.path(pkg, "data"))) {{
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
-  } >
+  } 
     if (Sys.which("air") != "") {
       if (verbose) {
         cli::cli_alert_info("Styling package with {.pkg air}")
