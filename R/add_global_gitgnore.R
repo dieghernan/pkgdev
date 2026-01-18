@@ -124,7 +124,13 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore("Rplots.pdf", directory = pkg)
   usethis::use_build_ignore("Rplots.pdf")
 
-  #   jarl
+  # jarl
   usethis::use_build_ignore("jarl.toml")
+  
+  # Positron and quarto
+  usethis::use_git_ignore(c("/.quarto/", "**/*.quarto_ipynb"))
+  
+    usethis::use_build_ignore(c("/.quarto/", "**/*.quarto_ipynb"))
+  
   invisible()
 }
