@@ -188,15 +188,33 @@ ignore = [\"implicit_assignment\"]",
     cli::cli_alert_info("Compressing data in {.path ./R}")
   }
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
-  if (dir.exists(file.path(pkg, "data"))) {{
+  if (dir.exists(file.path(pkg, "data"))) {
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
+  }
+
+  if (Sys.which("jarl") != "") {
+    if (verbose) {
+      cli::cli_alert_info("Linting package with {.pkg jarl}")
+    }
+
+    # Get R version from DESCRIPTION
+    deps <- d$get_deps()
+    if ("R" %in% deps$package) {
+      rversion <- deps$version[deps$package == "R"]
+      rversion <- trimws(gsub(">|=", "", rversion))
+      jarl_args <- paste0("check . --min-r-version ", rversion)
+    } else {
+      jarl_args <- "check ."
+    }
+
+    system2("jarl", jarl_args)
   }
   if (Sys.which("air") != "") {
     if (verbose) {
       cli::cli_alert_info("Styling package with {.pkg air}")
     }
     system2("air", "format .")
-  }}
+  }
 
   if (verbose) {
     cli::cli_alert_info("Styling package with {.pkg styler}")
