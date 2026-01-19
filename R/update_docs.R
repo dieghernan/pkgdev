@@ -107,17 +107,27 @@ update_docs <- function(
   }
 
   usethis::use_rstudio_preferences(
-    graphics_backend = "ragg",
-    rainbow_parentheses = TRUE,
-    visual_markdown_editing_wrap_at_column = 80L,
-    visual_markdown_editing_wrap = "column",
+    auto_append_newline = TRUE,
+    auto_detect_indentation = TRUE,
+    auto_discover_package_dependencies = TRUE,
     check_arguments_to_r_function_calls = TRUE,
     check_unexpected_assignment_in_function_call = TRUE,
-    warn_if_no_such_variable_in_scope = TRUE,
-    warn_variable_defined_but_not_used = TRUE,
-    style_diagnostics = TRUE,
+    graphics_backend = "ragg",
+    insert_native_pipe_operator = TRUE,
+    margin_column = 80,
+    margin_column_editor_width = TRUE,
+    rainbow_parentheses = TRUE,
+    reformat_on_save = TRUE,
     show_doc_outline_rmd = TRUE,
-    visual_markdown_editing_list_spacing = "tight"
+    strip_trailing_whitespace = TRUE,
+    style_diagnostics = TRUE,
+    use_air_formatter = TRUE,
+    use_roxygen = TRUE,
+    visual_markdown_editing_list_spacing = "tight",
+    visual_markdown_editing_wrap = "column",
+    visual_markdown_editing_wrap_at_column = 80L,
+    warn_if_no_such_variable_in_scope = TRUE,
+    warn_variable_defined_but_not_used = TRUE
   )
 
   if (verbose) {
@@ -160,16 +170,74 @@ update_docs <- function(
   usethis::use_tidy_description()
   usethis::use_air()
 
-  #   Use jarl config
-  if (!file.exists("jarl.toml")) {
-    cli::cli_alert_info("Configuring {.pkg jarl}")
-    cli::cli_alert("See more in {.url https://jarl.etiennebacher.com/}")
-    cli::cli_alert(
-      paste0(
-        "Read {.href [jarl's docs ](https://jarl.etiennebacher.com/)} ",
-        "to learn about jarl linter."
+  setting_json_file <- file.path(pkg, ".vscode", "settings.json")
+
+  if (file.exists(setting_json_file)) {
+    if (verbose) {
+      cli::cli_alert_info("Configuring {.pkg VSCode} project settings.")
+    }
+
+    settings_json <- jsonlite::read_json(setting_json_file)
+
+    settings_json <- modifyList(
+      settings_json,
+      list(
+        `[yaml]` = list(editor.defaultFormatter = "redhat.vscode-yaml"),
+        redhat.telemetry.enabled = TRUE,
+        yaml.completion = TRUE,
+        yaml.format.printWidth = 80,
+        yaml.validate = TRUE
       )
     )
+
+    settings_json |> jsonlite::toJSON(pretty = TRUE, auto_unbox = TRUE)
+
+    jsonlite::write_json(
+      settings_json,
+      path = setting_json_file,
+      pretty = TRUE,
+      auto_unbox = TRUE
+    )
+  }
+
+  if (verbose) {
+    cli::cli_alert_info("Configuring {.pkg VSCode} project extensions.")
+  }
+
+  ext_json_file <- file.path(pkg, ".vscode", "extensions.json")
+  recommend_ext <- c(
+    "Posit.air-vscode",
+    "redhat.vscode-yaml",
+    "quarto.quarto",
+    "github.vscode-github-actions",
+    "GitHub.vscode-pull-request-github"
+  )
+
+  if (file.exists(ext_json_file)) {
+    # Recommended
+    already <- jsonlite::read_json(ext_json_file)
+    recommend_ext <- unique(c(unlist(already$recommendations), recommend_ext))
+  }
+
+  jsonlite::write_json(
+    list(recommendations = list(recommend_ext)),
+    path = ext_json_file,
+    pretty = TRUE,
+    auto_unbox = TRUE
+  )
+
+  #   Use jarl config
+  if (!file.exists("jarl.toml")) {
+    if (verbose) {
+      cli::cli_alert_info("Configuring {.pkg jarl}")
+      cli::cli_alert("See more in {.url https://jarl.etiennebacher.com/}")
+      cli::cli_alert(
+        paste0(
+          "Read {.href [jarl's docs ](https://jarl.etiennebacher.com/)} ",
+          "to learn about jarl linter."
+        )
+      )
+    }
     writeLines(
       "[lint]
 ignore = [\"implicit_assignment\"]",

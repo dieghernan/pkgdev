@@ -4,6 +4,6 @@
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
+#' @importFrom utils modifyList packageVersion
 ## usethis namespace: end
-#' @importFrom utils packageVersion
 NULL

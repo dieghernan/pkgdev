@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.5.2 (2025-10-31 ucrt)",
+  "runtimePlatform": "R version 4.5.2 (2025-10-31)",
   "author": [
     {
       "@type": "Person",
@@ -398,6 +398,11 @@
     },
     "20": {
       "@type": "SoftwareApplication",
+      "identifier": "utils",
+      "name": "utils"
+    },
+    "21": {
+      "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
       "provider": {
@@ -408,7 +413,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=withr"
     },
-    "21": {
+    "22": {
       "@type": "SoftwareApplication",
       "identifier": "xfun",
       "name": "xfun",
@@ -423,7 +428,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "845.628KB",
+  "fileSize": "818.645KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
