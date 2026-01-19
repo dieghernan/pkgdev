@@ -220,7 +220,7 @@ update_docs <- function(
   }
 
   jsonlite::write_json(
-    list(recommendations = list(recommend_ext)),
+    list(recommendations = recommend_ext),
     path = ext_json_file,
     pretty = TRUE,
     auto_unbox = TRUE
