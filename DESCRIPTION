@@ -23,6 +23,7 @@ Imports:
     desc,
     devtools (>= 2.4.1),
     jsonld,
+    jsonlite,
     knitr (>= 1.33),
     lintr (>= 2.0.1),
     pkgdown,
@@ -52,7 +53,7 @@ VignetteBuilder:
     knitr
 Remotes:
     dieghernan/gitdevr
-Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, jsonlite,
+Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse,
     lubridate, reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
