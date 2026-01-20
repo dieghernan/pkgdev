@@ -182,16 +182,23 @@ update_docs <- function(
     settings_json <- modifyList(
       settings_json,
       list(
-        `[yaml]` = list(editor.defaultFormatter = "redhat.vscode-yaml"),
-        redhat.telemetry.enabled = TRUE,
+        `[github-actions-workflow]` = list(
+          editor.defaultFormatter = "kennylong.kubernetes-yaml-formatter"
+        ),
+        `[yaml]` = list(
+          editor.defaultFormatter = "kennylong.kubernetes-yaml-formatter"
+        ),
+        `better-yaml.directives` = FALSE,
+        `better-yaml.flowCollectionPadding` = FALSE,
+        `better-yaml.lineWidth` = 80,
+        redhat.telemetry.enabled = NULL,
         yaml.completion = TRUE,
         yaml.format.printWidth = 80,
         yaml.validate = TRUE
       )
     )
 
-    settings_json |> jsonlite::toJSON(pretty = TRUE, auto_unbox = TRUE)
-
+    settings_json <- settings_json[sort(names(settings_json))]
     jsonlite::write_json(
       settings_json,
       path = setting_json_file,
@@ -207,7 +214,7 @@ update_docs <- function(
   ext_json_file <- file.path(pkg, ".vscode", "extensions.json")
   recommend_ext <- c(
     "Posit.air-vscode",
-    "redhat.vscode-yaml",
+    "kennylong.kubernetes-yaml-formatter",
     "quarto.quarto",
     "github.vscode-github-actions",
     "GitHub.vscode-pull-request-github"
@@ -217,6 +224,9 @@ update_docs <- function(
     # Recommended
     already <- jsonlite::read_json(ext_json_file)
     recommend_ext <- unique(c(unlist(already$recommendations), recommend_ext))
+    recommend_ext <- sort(recommend_ext[
+      !grepl("redhat", recommend_ext, fixed = TRUE)
+    ])
   }
 
   jsonlite::write_json(
