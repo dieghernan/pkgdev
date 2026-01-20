@@ -363,7 +363,7 @@ ignore = [\"implicit_assignment\"]",
       # This just removes trailing spaces and the install-r: true line
       lns <- readLines(x, warn = FALSE)
       lns <- gsub("install-r: true", "", lns, fixed = TRUE)
-      newlns <- trimws(newlns, which = "right")
+      newlns <- trimws(lns, which = "right")
 
       usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
     })
