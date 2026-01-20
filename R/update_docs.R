@@ -360,14 +360,12 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(allyml) > 0) {
     lapply(allyml, function(x) {
+      # This just removes trailing spaces and the install-r: true line
       lns <- readLines(x, warn = FALSE)
       lns <- gsub("install-r: true", "", lns, fixed = TRUE)
-      # Remove extra spaces
-      lag_line <- c(lns[-1], "")
-      newlns <- lns[lns != lag_line]
       newlns <- trimws(newlns, which = "right")
 
-      usethis::write_over(x, newlns, quiet = FALSE, overwrite = TRUE)
+      usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
     })
   }
 
