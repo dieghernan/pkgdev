@@ -1,4 +1,4 @@
-url: "https://dieghernan.github.io/pkgdev/"
+url: https://dieghernan.github.io/pkgdev/
 
 template:
   bootstrap: 5
@@ -14,16 +14,16 @@ authors:
     href: "https://dieghernan.github.io/"
 
 reference:
-  - title: GitHub Actions
-    desc: Install GHA on your package
-  - contents:
-      - starts_with("gha_")
-  - title: Other helpers
-  - contents:
-      - add_global_gitgnore
-      - precompute_vignette
-      - update_docs
-      - check_rd_titles
-  - title: About the package
-  - contents:
-      - pkgdev-package
+- title: GitHub Actions
+  desc: Install GHA on your package
+- contents:
+  - starts_with("gha_")
+- title: Other helpers
+- contents:
+  - add_global_gitgnore
+  - precompute_vignette
+  - update_docs
+  - check_rd_titles
+- title: About the package
+- contents:
+  - pkgdev-package
