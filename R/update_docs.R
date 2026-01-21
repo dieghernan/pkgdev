@@ -340,6 +340,28 @@ ignore = [\"implicit_assignment\"]",
     styler::style_dir(file.path(pkg, "man", "chunks"))
   }
 
+  # Replace link-citations: yes for link-citations: true
+  rmd <- list.files(
+    pattern = "Rmd$|Rmd.orig$",
+    recursive = TRUE,
+    full.names = TRUE
+  )
+
+  if (length(rmd) > 0) {
+    lapply(rmd, function(x) {
+      lns <- readLines(x, warn = FALSE)
+      lns <- gsub(
+        "link-citations: yes",
+        "link-citations: true",
+        lns,
+        fixed = TRUE
+      )
+
+      usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
+      invisible()
+    })
+  }
+
   # Clean trailing spaces on yamls
   if (!env_var_is_true("CI")) {
     actions <- list.files(
@@ -363,7 +385,6 @@ ignore = [\"implicit_assignment\"]",
       # This just removes trailing spaces and the install-r: true line
       lns <- readLines(x, warn = FALSE)
       lns <- gsub("install-r: true", "", lns, fixed = TRUE)
-      newlns <- trimws(lns, which = "right")
 
       usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
     })
