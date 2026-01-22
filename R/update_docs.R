@@ -77,6 +77,9 @@ update_docs <- function(
   add_contributors = TRUE,
   ...
 ) {
+  #   Clean revdepcheck
+  revdepcheck::revdep_reset(pkg)
+
   # Add global .gitignore
   if (verbose) {
     cli::cli_alert_info("Adding {.file .gitignore} to root")
