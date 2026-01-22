@@ -77,7 +77,7 @@ update_docs <- function(
   add_contributors = TRUE,
   ...
 ) {
-  #   Clean revdepcheck
+  # Clean revdepcheck
   revdepcheck::revdep_reset(pkg)
 
   # Add global .gitignore
