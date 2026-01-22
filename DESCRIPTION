@@ -53,7 +53,8 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    dieghernan/gitdevr, r-lib/revdepcheck
+    dieghernan/gitdevr,
+    r-lib/revdepcheck
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8

@@ -275,6 +275,18 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.resmush
 - type: software
+  title: revdepcheck
+  abstract: 'revdepcheck: Automated Reverse Dependency Checking'
+  notes: Imports
+  url: https://revdepcheck.r-lib.org
+  authors:
+  - family-names: Csárdi
+    given-names: Gábor
+    email: csardi.gabor@gmail.com
+  - family-names: Wickham
+    given-names: Hadley
+  year: '2026'
+- type: software
   title: roxygen2
   abstract: 'roxygen2: In-Line Documentation for R'
   notes: Imports
