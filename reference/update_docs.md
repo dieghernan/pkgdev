@@ -133,8 +133,6 @@ overall code and the use of `codemeta.json`.
 # \dontrun{
 
 update_docs()
-#> ℹ Adding .gitignore to root
-#> Warning: cannot open file '.gitignore': No such file or directory
-#> Error in file(con, "r"): cannot open the connection
+#> Error: `pkgdir` must contain a DESCRIPTION file
 # }
 ```

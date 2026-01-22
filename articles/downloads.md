@@ -1,6 +1,6 @@
 # Downloads of my packages
 
-*Updated: 21 Jan 2026*
+*Updated: 22 Jan 2026*
 
 ## On CRAN
 
