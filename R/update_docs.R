@@ -118,6 +118,7 @@ update_docs <- function(
     clean_before_install = TRUE,
     cleanup_after_r_cmd_check = TRUE,
     code_formatter = "external",
+    code_formatter_external_command = "air format",
     check_arguments_to_r_function_calls = TRUE,
     check_unexpected_assignment_in_function_call = TRUE,
     enable_splash_screen = FALSE,
