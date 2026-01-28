@@ -88,6 +88,11 @@ footer {
 	font-weight: 700;
 }
 
+/* Dark mode footer */
+[data-bs-theme="dark"] footer {
+	background-color: #22272e !important;
+}
+
 footer a {
 	color: #58a6ff;
 	text-decoration: none;
@@ -162,12 +167,12 @@ img.logo {
 	display: inline;
 }
 
-/* Hack to reduce brightness of plots in dark mode */
+/* Hack to reduce color in dark mode */
 [data-bs-theme="dark"] img.r-plt,
 [data-bs-theme="dark"] pre .r-plt.img img,
 [data-bs-theme="dark"] .cell-output-display img,
 [data-bs-theme="dark"] .html-widget {
-	filter: brightness(66%) !important;
+	filter: grayscale(33%) !important;
 }
 
 blockquote {
@@ -541,5 +546,126 @@ pre code span.wa
 
 /* Warning - pygments.gr */ {
 		color: var(--bs-danger-text-emphasis);
+	}
+}
+
+/* Dark reactable */
+
+[data-bs-theme="dark"] {
+	.reactable.html-widget {
+		filter: none !important;
+	}
+	.Reactable a {
+		color: #2b8ffd;
+	}
+
+	.Reactable {
+		background-color: var(--bs-body-bg);
+		color: var(--bs-light);
+	}
+
+	.rt-sticky,
+	.rt-tbody,
+	.rt-tr,
+	.rt-tr-group {
+		background-color: inherit;
+	}
+
+	.rt-table {
+		border-color: var(--bs-gray-900);
+	}
+
+	.rt-th {
+		border-bottom: 2px solid var(--bs-gray-900);
+		border-left-color: var(--bs-gray-900);
+	}
+
+	.rt-td {
+		border-left-color: var(--bs-gray-900);
+		border-top: 1px solid var(--bs-gray-900);
+	}
+
+	.rt-th-group:after {
+		background-color: var(--bs-gray-900);
+	}
+
+	.rt-tr-striped {
+		background-color: rgba(0, 0, 0, 0.03);
+	}
+
+	.rt-tr-striped-sticky {
+		background-color: var(--bs-gray-900);
+	}
+
+	.rt-tr-highlight:hover {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+
+	.rt-tr-highlight-sticky:hover {
+		background-color: var(--bs-gray);
+	}
+	.rt-td-filter {
+		border-bottom: 1px solid var(--bs-gray-900);
+	}
+
+	.rt-filter {
+		background-color: var(--bs-gray-900);
+		border: 1px solid var(--bs-gray-900);
+		color: inherit;
+	}
+
+	.rt-filter:focus {
+		border: 1px solid var(--bs-gray-900);
+	}
+
+	.rt-expander:after {
+		border-top: 7px solid var(--bs-gray-900);
+	}
+
+	.rt-pagination {
+		border-top: 1px solid var(--bs-gray-900);
+	}
+
+	.rt-page-jump,
+	.rt-page-size-select {
+		background-color: var(--bs-body-bg);
+		border: 1px solid var(--bs-gray-900);
+	}
+
+	.rt-page-button:hover {
+		background-color: rgba(0, 0, 0, 0.04);
+	}
+
+	.rt-page-button:active {
+		background-color: rgba(0, 0, 0, 0.08);
+	}
+
+	.rt-keyboard-active .rt-page-button:focus {
+		background-color: rgba(0, 0, 0, 0.04);
+	}
+
+	.rt-page-button:disabled:focus,
+	.rt-page-button:disabled:hover {
+		background-color: transparent;
+	}
+
+	.rt-tbody-no-data .rt-td {
+		border-color: transparent;
+	}
+
+	.rt-search {
+		background-color: var(--bs-gray-900);
+		border: 1px solid var(--bs-gray-900);
+		color: var(--bs-light);
+	}
+
+	.rt-search:active,
+	.rt-search:focus {
+		border: 1px solid var(--bs-gray-900);
+	}
+
+	.rt-borderless .rt-td,
+	.rt-tr-group:first-child > .rt-tr:first-child .rt-td {
+		border-top-color: var(--bs-gray-900);
 	}
 }
