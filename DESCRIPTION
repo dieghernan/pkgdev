@@ -29,7 +29,6 @@ Imports:
     pkgdown,
     rcmdcheck (>= 1.3.3),
     resmush,
-    revdepcheck,
     roxygen2 (>= 7.1.0),
     roxygen2md,
     stringr,
@@ -53,8 +52,7 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
-    dieghernan/gitdevr,
-    r-lib/revdepcheck
+    dieghernan/gitdevr
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8

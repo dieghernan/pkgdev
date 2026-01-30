@@ -78,7 +78,9 @@ update_docs <- function(
   ...
 ) {
   # Clean revdepcheck
-  revdepcheck::revdep_reset(pkg)
+  unlink(file.path(".", "revdep", "lib"), recursive = TRUE)
+  unlink(file.path(".", "revdep", "checks"), recursive = TRUE)
+  unlink(file.path(".", "revdep", "db"), recursive = TRUE)
 
   # Add global .gitignore
   if (verbose) {
