@@ -334,12 +334,6 @@
     },
     "15": {
       "@type": "SoftwareApplication",
-      "identifier": "revdepcheck",
-      "name": "revdepcheck",
-      "sameAs": "https://github.com/r-lib/revdepcheck"
-    },
-    "16": {
-      "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
       "version": ">= 7.1.0",
@@ -351,7 +345,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "17": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2md",
       "name": "roxygen2md",
@@ -363,7 +357,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2md"
     },
-    "18": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -375,7 +369,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "19": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -388,7 +382,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "20": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -401,7 +395,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "21": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -414,12 +408,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "22": {
+    "21": {
       "@type": "SoftwareApplication",
       "identifier": "utils",
       "name": "utils"
     },
-    "23": {
+    "22": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -431,7 +425,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=withr"
     },
-    "24": {
+    "23": {
       "@type": "SoftwareApplication",
       "identifier": "xfun",
       "name": "xfun",
@@ -446,7 +440,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "847.594KB",
+  "fileSize": "847.705KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
