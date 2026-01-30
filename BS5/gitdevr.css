@@ -17,6 +17,10 @@ main img {
 }
 
 /* ---Navbar tweaks--- */
+[data-bs-theme="dark"] .navbar {
+	background-color: var(--bs-body-bg) !important;
+}
+
 .navbar {
 	font-family: "Inter Tight", Roboto;
 }
@@ -44,7 +48,7 @@ main img {
 }
 
 #navbar .dropdown-menu .dropdown-item {
-	color: #fff !important;
+	color: #fff;
 	font-weight: 800;
 }
 
@@ -53,10 +57,26 @@ main img {
 	color: #6a788a !important;
 }
 
+#navbar .nav-link {
+	color: var(--brand-white);
+}
+
 #navbar .dropdown-menu .dropdown-item:hover,
-#navbar .dropdown-menu .dropdown-item:focus {
-	color: #6a788a !important;
+#navbar .dropdown-menu .dropdown-item:focus,
+#navbar .dropdown-menu .dropdown-item.active:hover,
+#navbar .dropdown-menu .dropdown-item.active:focus {
+	color: #6a788a;
 	background-color: #f8f9fa;
+}
+
+#navbar .nav-item.active .nav-link,
+#navbar .dropdown-menu .dropdown-item.active {
+	color: #d3d4d5;
+}
+
+#navbar .dropdown-menu .dropdown-item .fa {
+	opacity: 1;
+	color: inherit;
 }
 
 .navbar-toggler {
@@ -90,7 +110,7 @@ footer {
 
 /* Dark mode footer */
 [data-bs-theme="dark"] footer {
-	background-color: #22272e !important;
+	background-color: var(--bs-body-bg) !important;
 }
 
 footer a {
@@ -159,6 +179,24 @@ footer .pkgdown-footer-left {
 }
 
 /* ---Misc--- */
+/* Hack to change root variables in dark mode GitDev Dark */
+
+[data-bs-theme="dark"] {
+	color-scheme: dark;
+	--bs-body-bg: #24292f;
+	--bs-body-color: #fff;
+	--bs-primary-color: rgb(56.1, 60.6, 66.9);
+	--bs-secondary-color: #6c757d;
+	--bs-success-color: #2da44e;
+	--bs-info-color: #9686be;
+	--bs-warning-color: #d4a72c;
+	--bs-danger-color: #d86f75;
+	--bs-light-color: #f8f9fa;
+	--bs-dark-color: #343a40;
+	--bs-link-color: #2b8ffd;
+	--bs-link-hover-color: #025cc0;
+}
+
 img.logo {
 	display: none;
 }
@@ -209,7 +247,7 @@ code {
 
 	code {
 		color: #e75ca2;
-		background-color: RGBA(var(--bs-emphasis-color-rgb), 0.04);
+		background-color: rgba(var(--bs-emphasis-color-rgb), 0.04);
 	}
 }
 
@@ -228,7 +266,11 @@ code {
 
 /* --- Highlighter based in gitdevr --- */
 pre {
-	background-color: RGBA(var(--bs-emphasis-color-rgb), 0.04);
+	border: none;
+}
+
+pre {
+	background-color: #f8f9fa;
 	color: var(--bs-primary);
 }
 
@@ -397,20 +439,20 @@ pre code span.wa
 
 [data-bs-theme="dark"] {
 	pre {
-		background-color: RGBA(var(--bs-emphasis-color-rgb), 0.04);
-		color: var(--bs-light-text-emphasis);
+		background-color: #2f363d;
+		color: var(--bs-light-color);
 	}
 
 	pre code
 
 /* Normal - pygments.n */ {
-		color: var(--bs-light-text-emphasis);
+		color: var(--bs-light-color);
 	}
 
 	pre code span.al
 
 /* Alert - pygments.gr */ {
-		color: var(--bs-danger-text-emphasis);
+		color: var(--bs-danger-color);
 	}
 
 	pre code span.an
@@ -421,25 +463,25 @@ pre code span.wa
 	}
 	pre code span.at
 /* Attribute - e.g value (non numeric) in YAML */ {
-		color: var(--bs--info-text-emphasis);
+		color: var(--bs--info-color);
 	}
 
 	pre code span.cf
 
 /* ControlFlow - like Operator -> pygments.o */ {
-		color: var(--bs-info-text-emphasis);
+		color: var(--bs-info-color);
 	}
 
 	pre code span.ch
 
 /* Char - pygments.s2 */ {
-		color: var(--bs--warning-text-emphasis);
+		color: var(--bs--warning-color);
 	}
 
 	pre code span.cn
 
 /* Constant - pygments.nb */ {
-		color: var(--bs--warning-text-emphasis);
+		color: var(--bs--warning-color);
 	}
 
 	pre code span.co
@@ -466,25 +508,25 @@ pre code span.wa
 	pre code span.dv
 
 /* DecVal - pygments.m */ {
-		color: var(--bs-info-text-emphasis);
+		color: var(--bs-info-color);
 	}
 
 	pre code span.er
 
 /* Error - pygments.gr */ {
-		color: var(--bs-danger-text-emphasis);
+		color: var(--bs-danger-color);
 	}
 
 	pre code span.fl
 
 /* Float - pygments.m */ {
-		color: var(--bs-info-text-emphasis);
+		color: var(--bs-info-color);
 	}
 
 	pre code span.fu
 
 /* Function - pygments.n */ {
-		color: #2b8ffd;
+		color: var(--bs-link-color);
 	}
 
 	pre code span.in
@@ -497,55 +539,55 @@ pre code span.wa
 	pre code span.kw
 
 /* Keyword - pygments.k */ {
-		color: var(--bs-info-text-emphasis);
+		color: var(--bs-info-color);
 		font-weight: bold;
 	}
 
 	pre code span.op
   /* Operator - pygments.o */ {
-		color: var(--bs-info-text-emphasis);
+		color: var(--bs-info-color);
 	}
 
 	pre code span.ot
 
 /* Other - pygments.sx */ {
-		color: var(--bs-success-text-emphasis);
+		color: var(--bs-success-color);
 	}
 
 	pre code span.sc
 
 /* SpecialChar - pygments.s2 */ {
-		color: var(--bs-success-text-emphasis);
+		color: var(--bs-success-color);
 	}
 
 	pre code span.ss
 
 /* SpecialString - pygments.s2 */ {
-		color: var(--bs-success-text-emphasis);
+		color: var(--bs-success-color);
 	}
 
 	pre code span.st
 
 /* String - pygments.s2 */ {
-		color: var(--bs-success-text-emphasis);
+		color: var(--bs-success-color);
 	}
 
 	pre code span.va
 
 /* Variable - pygments.n */ {
-		color: var(--bs-light-text-emphasis);
+		color: var(--bs-light-color);
 	}
 
 	pre code span.vs
 
 /* VerbatimString - pygments.s2 */ {
-		color: var(--bs-danger-text-emphasis);
+		color: var(--bs-danger-color);
 	}
 
 	pre code span.wa
 
 /* Warning - pygments.gr */ {
-		color: var(--bs-danger-text-emphasis);
+		color: var(--bs-danger-color);
 	}
 }
 

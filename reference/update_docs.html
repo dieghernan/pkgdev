@@ -31,11 +31,9 @@ Write CITATION.cff with cffr::cff_write()
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <nav class="navbar fixed-top navbar- navbar-expand-lg bg-"><div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="../index.html">
-      <img src="../apple-touch-icon.png" alt="pkgdev logo" height="34" width="34" class="d-inline-block me-1">
-      pkgdev</a>
+    <a class="navbar-brand me-2" href="../index.html"><img src="../apple-touch-icon.png" alt="pkgdev logo" height="34" width="34" class="d-inline-block me-1">pkgdev</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9060</small>
 
@@ -186,7 +184,9 @@ and the use of <code>codemeta.json</code>.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">update_docs</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> `pkgdir` must contain a DESCRIPTION file</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Adding <span style="color: #0000BB;">.gitignore</span> to root</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot open file '.gitignore': No such file or directory</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in file(con, "r"):</span> cannot open the connection</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
