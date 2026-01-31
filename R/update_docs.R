@@ -290,14 +290,10 @@ ignore = [\"implicit_assignment\"]",
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
   }
 
-  
-  if (Sys.which("git") != ""){
-  
-  system2("git", 
-  "config --global core.autocrlf true")
-  
+  if (Sys.which("git") != "") {
+    system2("git", "config --global core.autocrlf true")
   }
-  
+
   if (Sys.which("jarl") != "") {
     if (verbose) {
       cli::cli_alert_info("Linting package with {.pkg jarl}")
