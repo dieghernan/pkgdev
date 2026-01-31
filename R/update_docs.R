@@ -127,6 +127,7 @@ update_docs <- function(
     graphics_backend = "ragg",
     insert_native_pipe_operator = TRUE,
     insert_spaces_around_equals = TRUE,
+    line_ending_conversion = "posix",
     margin_column = 80,
     margin_column_editor_width = FALSE,
     rainbow_parentheses = TRUE,
@@ -170,7 +171,7 @@ update_docs <- function(
     cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
   }
 
-  # Extract keywords and save it for latter
+  # Extract keywords and save it for later
   d <- desc::desc(file.path(pkg, "DESCRIPTION"))
   k <- d$get("X-schema.org-keywords")
   k <- gsub("\\n", "", unname(k))
@@ -212,7 +213,8 @@ update_docs <- function(
         redhat.telemetry.enabled = NULL,
         yaml.completion = TRUE,
         yaml.format.printWidth = 80,
-        yaml.validate = TRUE
+        yaml.validate = TRUE,
+        files.eol = "\n"
       )
     )
 
@@ -288,6 +290,14 @@ ignore = [\"implicit_assignment\"]",
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
   }
 
+  
+  if (Sys.which("git") != ""){
+  
+  system2("git", 
+  "config --global core.autocrlf true")
+  
+  }
+  
   if (Sys.which("jarl") != "") {
     if (verbose) {
       cli::cli_alert_info("Linting package with {.pkg jarl}")
