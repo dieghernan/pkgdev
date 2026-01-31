@@ -30,7 +30,7 @@ Invisible, and writes a global `.gitignore` file
 # \dontrun{
 add_global_gitgnore()
 #> ✔ Setting active project to
-#>   "C:/Users/runneradmin/AppData/Local/Temp/RtmpCcLBJd/fileae453df4001".
+#>   "C:/Users/runneradmin/AppData/Local/Temp/RtmpOQEh9D/file18c4133557f6".
 #> Warning: cannot open file '.gitignore': No such file or directory
 #> Error in file(con, "r"): cannot open the connection
 # }
