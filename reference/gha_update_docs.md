@@ -58,7 +58,7 @@ options.
 # With Ubuntu 20.04
 gha_update_docs(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpDMyoD6/file1e78102e8a7d/.github/.gitignore': No such file or directory
+#> Warning: cannot open file 'C:/Users/runneradmin/AppData/Local/Temp/Rtmp2BZeLi/file1d3c4e7c6baa/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```
