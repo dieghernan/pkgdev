@@ -8,10 +8,10 @@ personal use, however feel free to use it (at your own risk 😉).
 
 ## Installation
 
-You can install the developing version of `pkgdev` with:
+You can install the developing version of **pkgdev** with:
 
 ``` r
-devtools::install_github("dieghernan/pkgdev")
+pak::pak("dieghernan/pkgdev")
 ```
 
 Alternatively, you can install `pkgdev` using the
