@@ -1,7 +1,7 @@
 ---
 output: github_document
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 80
 ---
 
@@ -40,10 +40,10 @@ intended for personal use, however feel free to use it (at your own risk
 
 ## Installation
 
-You can install the developing version of `pkgdev` with:
+You can install the developing version of **pkgdev** with:
 
 ```{r, eval=FALSE}
-devtools::install_github("dieghernan/pkgdev")
+pak::pak("dieghernan/pkgdev")
 ```
 
 Alternatively, you can install `pkgdev` using the
@@ -74,4 +74,3 @@ gha_update_docs()
 -   **{usethis} package**: [Create a release checklist in a GitHub
     issue](https://usethis.r-lib.org/reference/use_release_issue.html)
 -   The whole [{usethis} package](https://usethis.r-lib.org)
-

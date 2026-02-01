@@ -78,9 +78,10 @@ update_docs <- function(
   ...
 ) {
   # Clean revdepcheck
-  unlink(file.path(".", "revdep", "lib"), recursive = TRUE)
-  unlink(file.path(".", "revdep", "checks"), recursive = TRUE)
-  unlink(file.path(".", "revdep", "db"), recursive = TRUE)
+  unlink(file.path(pkg, "revdep", "lib"), recursive = TRUE, force = TRUE)
+  unlink(file.path(pkg, "revdep", "checks"), recursive = TRUE, force = TRUE)
+  unlink(file.path(pkg, "revdep", "db"), recursive = TRUE, force = TRUE)
+  unlink(file.path(pkg, "revdep", "lib"), recursive = TRUE, force = TRUE)
 
   # Add global .gitignore
   if (verbose) {
