@@ -131,13 +131,15 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore(c("/.quarto/", "**/*.quarto_ipynb"), directory = pkg)
 
   usethis::use_build_ignore(c("/.quarto/", "[.]quarto_ipynb$"), escape = FALSE)
-  
+
   usethis::use_build_ignore(
-    c("vignettes/.quarto",
-      "vignettes/articles/.quarto", 
+    c(
+      "vignettes/.quarto",
+      "vignettes/articles/.quarto",
       "vignettes/articles/*_files",
-      "vignettes/articles")
-  ) 
+      "vignettes/articles"
+    )
+  )
 
   invisible()
 }
