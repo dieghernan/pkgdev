@@ -3,9 +3,7 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   articles/downloads: downloads.html
-  precompute: precompute.html
-  precompute2: precompute2.html
-last_built: 2026-01-31T23:41Z
+last_built: 2026-02-01T15:47Z
 urls:
   reference: https://dieghernan.github.io/pkgdev/reference
   article: https://dieghernan.github.io/pkgdev/articles

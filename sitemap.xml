@@ -1,13 +1,11 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://dieghernan.github.io/pkgdev/404.html</loc></url>
-<url><loc>https://dieghernan.github.io/pkgdev/articles/downloads.html</loc></url>
-<url><loc>https://dieghernan.github.io/pkgdev/articles/index.html</loc></url>
-<url><loc>https://dieghernan.github.io/pkgdev/articles/precompute.html</loc></url>
-<url><loc>https://dieghernan.github.io/pkgdev/articles/precompute2.html</loc></url>
-<url><loc>https://dieghernan.github.io/pkgdev/authors.html</loc></url>
-<url><loc>https://dieghernan.github.io/pkgdev/index.html</loc></url>
 <url><loc>https://dieghernan.github.io/pkgdev/LICENSE-text.html</loc></url>
 <url><loc>https://dieghernan.github.io/pkgdev/LICENSE.html</loc></url>
+<url><loc>https://dieghernan.github.io/pkgdev/articles/downloads.html</loc></url>
+<url><loc>https://dieghernan.github.io/pkgdev/articles/index.html</loc></url>
+<url><loc>https://dieghernan.github.io/pkgdev/authors.html</loc></url>
+<url><loc>https://dieghernan.github.io/pkgdev/index.html</loc></url>
 <url><loc>https://dieghernan.github.io/pkgdev/news/index.html</loc></url>
 <url><loc>https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.html</loc></url>
 <url><loc>https://dieghernan.github.io/pkgdev/reference/check_rd_titles.html</loc></url>
