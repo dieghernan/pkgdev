@@ -69,8 +69,7 @@ update_docs <- function(
   opt_imgs = TRUE,
   opt_dir = c(
     "man/figures",
-    "vignettes",
-    "pkgdown/favicon"
+    "vignettes"
   ),
   opt_ext = "png$|jpg$",
   opt_overwrite = TRUE,
