@@ -37,7 +37,7 @@ gha_update_docs()
 
 - The [tidyverse style guide](https://style.tidyverse.org/).
 - **ThinkR**: [Preparing your package for a CRAN
-  submission](https://github.com/ThinkR-open/prepare-for-cran)
+  submission](https://github.com/ThinkR-open/prepare-for-cran).
 - Davis Vaughan:
   [extrachecks](https://github.com/DavisVaughan/extrachecks).
 - **{usethis} package**: [Create a release checklist in a GitHub

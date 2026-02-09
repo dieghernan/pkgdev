@@ -22,6 +22,10 @@ Install GHA on your package
   [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
   : Precompute vignettes
 
+- [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
+  [`build_readme_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
+  : Build a Quarto files package
+
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   : Document your package
 
