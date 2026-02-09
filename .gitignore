@@ -49,3 +49,4 @@ docs
 .sass_cache_keys
 /.quarto/
 **/*.quarto_ipynb
+**/.quarto/

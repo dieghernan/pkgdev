@@ -48,8 +48,8 @@ precompute_vignette <- function(
   figure_ext = ".png",
   create_r_file = FALSE
 ) {
-  pkg <- devtools::as.package(pkg)
-  local_install2(pkg)
+  pkg_build <- devtools::as.package(pkg)
+  local_install2(pkg_build)
 
   for (f_path in source) {
     src_path <- file.path("vignettes", f_path)
@@ -57,7 +57,22 @@ precompute_vignette <- function(
     usethis::use_build_ignore(src_path)
 
     cli::cli_alert("Precomputing {.file {src_path}}")
+
+    if (grepl("qmd$", out)) {
+      usethis::use_git_ignore("**/.quarto/", directory = pkg)
+      usethis::use_git_ignore(
+        "*_files",
+        directory = file.path(pkg, "vignettes")
+      )
+      usethis::use_build_ignore("vignettes/*_files")
+    }
     knitr::knit(input = src_path, output = out, quiet = TRUE)
+
+    usethis::use_git_ignore(
+      c("*.html", "*.R"),
+      directory = file.path(pkg, "vignettes")
+    )
+
     cli::cli_alert("Resulting vignette in {.file {out}}")
     # Move plot files to dir
 
@@ -86,7 +101,7 @@ precompute_vignette <- function(
 precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
   vignette_list <- list.files("vignettes")
 
-  find_vignettes <- grep(".Rmd.orig$", vignette_list)
+  find_vignettes <- grep(".Rmd.orig$|.qmd.orig$", vignette_list)
   if (length(find_vignettes) > 0) {
     vig <- vignette_list[find_vignettes]
     precompute_vignette(source = vig, pkg = pkg, ...)

@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/dieghernan/pkgdev",
   "issueTracker": "https://github.com/dieghernan/pkgdev/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0.9060",
+  "version": "0.1.0.9100",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.5.2 (2025-10-31 ucrt)",
+  "runtimePlatform": "R version 4.5.2 (2025-10-31)",
   "author": [
     {
       "@type": "Person",
@@ -89,6 +89,18 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "quarto",
+      "name": "quarto",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=quarto"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "remotes",
       "name": "remotes",
       "provider": {
@@ -103,7 +115,6 @@
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
-      "version": ">= 2.9",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -440,7 +451,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "840.07KB",
+  "fileSize": "1767.227KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

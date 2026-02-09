@@ -1,7 +1,7 @@
 Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
-Version: 0.1.0.9060
+Version: 0.1.0.9100
 Authors@R: 
     person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))
@@ -43,14 +43,16 @@ Suggests:
     gitdevr,
     goodpractice (>= 1.0.2),
     magick,
+    quarto,
     remotes,
-    rmarkdown (>= 2.9),
+    rmarkdown,
     rstudioapi,
     sessioninfo,
     tidyverse,
     V8 (>= 4.0.0)
 VignetteBuilder: 
-    knitr
+    knitr,
+    quarto
 Remotes:
     dieghernan/gitdevr
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,

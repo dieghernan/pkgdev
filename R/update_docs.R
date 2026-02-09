@@ -463,25 +463,23 @@ ignore = [\"implicit_assignment\"]",
   }
   # Check README.Rmd
   readme_rmd <- file.path(pkg, "README.Rmd")
+  readme_qmd <- file.path(pkg, "README.qmd")
   has_readme <- file.exists(readme_rmd)
+  has_readme_qmd <- file.exists(readme_qmd)
+  has_any_readme <- any(has_readme, has_readme_qmd)
 
-  if (has_readme) {
-    rm_lines <- readLines("README.Rmd")
-    if (any(rm_lines == "## Contributors")) {
-      start_contrib <- match("## Contributors", rm_lines)
-      tot_lines <- length(rm_lines)
-
-      newlines <- rm_lines[-seq(start_contrib, tot_lines)]
-
-      writeLines(newlines, "README.Rmd")
+  if (build_readme && has_any_readme) {
+    if (has_readme_qmd) {
+      if (verbose) {
+        cli::cli_alert_info("Rebuilding {.file {readme_qmd}}")
+      }
+      build_readme_qmd(pkg, quiet = isFALSE(verbose))
+    } else {
+      if (verbose) {
+        cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
+      }
+      devtools::build_readme(pkg, quiet = isFALSE(verbose))
     }
-  }
-
-  if (build_readme && has_readme) {
-    if (verbose) {
-      cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
-    }
-    devtools::build_readme(pkg, quiet = isFALSE(verbose))
   }
 
   if (opt_imgs) {

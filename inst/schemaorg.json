@@ -22,8 +22,8 @@
         "name": "R",
         "url": "https://r-project.org"
       },
-      "runtimePlatform": "R version 4.5.2 (2025-10-31 ucrt)",
-      "version": "0.1.0.9060"
+      "runtimePlatform": "R version 4.5.2 (2025-10-31)",
+      "version": "0.1.0.9100"
     },
     {
       "type": "SoftwareSourceCode",

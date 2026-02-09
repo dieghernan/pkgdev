@@ -22,8 +22,19 @@ reference:
 - contents:
   - add_global_gitgnore
   - precompute_vignette
+  - build_qmd
   - update_docs
   - check_rd_titles
 - title: About the package
 - contents:
   - pkgdev-package
+
+articles:
+- title: Downloads
+  navbar: Downloads
+  contents:
+  - articles/downloads
+- title: Testing precomputes
+  desc: Testing precomputes
+  contents:
+  - starts_with("test")
