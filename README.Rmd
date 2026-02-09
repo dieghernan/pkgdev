@@ -46,7 +46,7 @@ You can install the developing version of **pkgdev** with:
 pak::pak("dieghernan/pkgdev")
 ```
 
-Alternatively, you can install `pkgdev` using the
+Alternatively, you can install **pkgdev** using the
 [r-universe](https://dieghernan.r-universe.dev/pkgdev):
 
 ```{r, eval=FALSE}
