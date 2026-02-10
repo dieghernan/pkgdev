@@ -321,16 +321,15 @@ ignore = [\"implicit_assignment\"]",
   if (verbose) {
     cli::cli_alert_info("Styling package with {.pkg styler}")
   }
-  styler::style_pkg(filetype = c("R", "Rmd", "Rprofile"))
+
+  fmt_file_type <- c("r", "rmd", "rprofile", "qmd")
+
+  styler::style_pkg(filetype = fmt_file_type)
 
   if (dir.exists(file.path(pkg, "vignettes"))) {
     styler::style_dir(
       file.path(pkg, "vignettes"),
-      filetype = c(
-        "R",
-        "Rmd",
-        "Rprofile"
-      )
+      filetype = fmt_file_type
     )
   }
 
@@ -341,7 +340,7 @@ ignore = [\"implicit_assignment\"]",
         "{.path {file.path('inst', 'examples')}}"
       ))
     }
-    styler::style_dir(file.path(pkg, "inst", "examples"))
+    styler::style_dir(file.path(pkg, "inst", "examples"), filetype = fmt_file_type)
   }
 
   if (dir.exists(file.path(pkg, "man", "roxygen2"))) {
@@ -351,7 +350,7 @@ ignore = [\"implicit_assignment\"]",
         "{.path {file.path('man', 'roxygen2')}}"
       ))
     }
-    styler::style_dir(file.path(pkg, "man", "roxygen2"))
+    styler::style_dir(file.path(pkg, "man", "roxygen2"), filetype = fmt_file_type)
   }
 
   if (dir.exists(file.path(pkg, "man", "chunks"))) {
@@ -361,7 +360,7 @@ ignore = [\"implicit_assignment\"]",
         "{.path {file.path('man', 'chunks')}}"
       ))
     }
-    styler::style_dir(file.path(pkg, "man", "chunks"))
+    styler::style_dir(file.path(pkg, "man", "chunks"), filetype = fmt_file_type)
   }
 
   # Replace link-citations: yes for link-citations: true
