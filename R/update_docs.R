@@ -340,7 +340,10 @@ ignore = [\"implicit_assignment\"]",
         "{.path {file.path('inst', 'examples')}}"
       ))
     }
-    styler::style_dir(file.path(pkg, "inst", "examples"), filetype = fmt_file_type)
+    styler::style_dir(
+      file.path(pkg, "inst", "examples"),
+      filetype = fmt_file_type
+    )
   }
 
   if (dir.exists(file.path(pkg, "man", "roxygen2"))) {
@@ -350,7 +353,10 @@ ignore = [\"implicit_assignment\"]",
         "{.path {file.path('man', 'roxygen2')}}"
       ))
     }
-    styler::style_dir(file.path(pkg, "man", "roxygen2"), filetype = fmt_file_type)
+    styler::style_dir(
+      file.path(pkg, "man", "roxygen2"),
+      filetype = fmt_file_type
+    )
   }
 
   if (dir.exists(file.path(pkg, "man", "chunks"))) {
