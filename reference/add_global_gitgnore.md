@@ -29,7 +29,11 @@ Invisible, and writes a global `.gitignore` file
 ``` r
 # \dontrun{
 add_global_gitgnore()
-#> ✔ Setting active project to "/tmp/Rtmpxbab1b/file2696656d47d2".
+#> ✔ Setting active project to "/tmp/RtmpUYADAh/file1eec6614cbb5".
+#> ✔ Configuring core.excludesFile: ~/.gitignore
+#> ✔ Creating the global (user-level) gitignore: ~/.gitignore
+#> ✔ Adding ".Rproj.user", ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and
+#>   ".quarto" to /home/runner/.gitignore.
 #> Warning: cannot open file '.gitignore': No such file or directory
 #> Error in file(con, "r"): cannot open the connection
 # }
