@@ -344,8 +344,8 @@ ignore = [\"implicit_assignment\"]",
       invisible()
     })
   }
-  
-    qmd <- list.files(
+
+  qmd <- list.files(
     pattern = "qmd$|qmd.orig$",
     recursive = TRUE,
     full.names = TRUE
