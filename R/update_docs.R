@@ -340,7 +340,33 @@ ignore = [\"implicit_assignment\"]",
       )
 
       usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
-      knitr::convert_chunk_header(x, x)
+      knitr::convert_chunk_header(x, x, type = "yaml")
+      invisible()
+    })
+  }
+  
+    qmd <- list.files(
+    pattern = "qmd$|qmd.orig$",
+    recursive = TRUE,
+    full.names = TRUE
+  )
+
+  if (length(qmd) > 0) {
+    if (verbose) {
+      cli::cli_alert_info("Adapting {.str qmd} files to {.pkg quarto}")
+    }
+
+    lapply(qmd, function(x) {
+      lns <- readLines(x, warn = FALSE)
+      lns <- gsub(
+        "link-citations: yes",
+        "link-citations: true",
+        lns,
+        fixed = TRUE
+      )
+
+      usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
+      knitr::convert_chunk_header(x, x, type = "yaml")
       invisible()
     })
   }
