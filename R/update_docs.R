@@ -318,6 +318,33 @@ ignore = [\"implicit_assignment\"]",
     system2("air", "format .")
   }
 
+    # Replace link-citations: yes for link-citations: true
+  rmd <- list.files(
+    pattern = "Rmd$|Rmd.orig$",
+    recursive = TRUE,
+    full.names = TRUE
+  )
+
+  if (length(rmd) > 0) {
+  if (verbose) {
+    cli::cli_alert_info("Adapting {.str Rmd} files to {.pkg quarto}")
+  }
+
+    lapply(rmd, function(x) {
+      lns <- readLines(x, warn = FALSE)
+      lns <- gsub(
+        "link-citations: yes",
+        "link-citations: true",
+        lns,
+        fixed = TRUE
+      )
+
+      usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
+      knitr::convert_chunk_header(x,x)
+      invisible()
+    })
+  }
+
   if (verbose) {
     cli::cli_alert_info("Styling package with {.pkg styler}")
   }
@@ -369,27 +396,7 @@ ignore = [\"implicit_assignment\"]",
     styler::style_dir(file.path(pkg, "man", "chunks"), filetype = fmt_file_type)
   }
 
-  # Replace link-citations: yes for link-citations: true
-  rmd <- list.files(
-    pattern = "Rmd$|Rmd.orig$",
-    recursive = TRUE,
-    full.names = TRUE
-  )
 
-  if (length(rmd) > 0) {
-    lapply(rmd, function(x) {
-      lns <- readLines(x, warn = FALSE)
-      lns <- gsub(
-        "link-citations: yes",
-        "link-citations: true",
-        lns,
-        fixed = TRUE
-      )
-
-      usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
-      invisible()
-    })
-  }
 
   # Clean trailing spaces on yamls
   if (!env_var_is_true("CI")) {
