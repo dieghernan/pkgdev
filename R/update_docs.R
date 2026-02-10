@@ -318,7 +318,7 @@ ignore = [\"implicit_assignment\"]",
     system2("air", "format .")
   }
 
-    # Replace link-citations: yes for link-citations: true
+  # Replace link-citations: yes for link-citations: true
   rmd <- list.files(
     pattern = "Rmd$|Rmd.orig$",
     recursive = TRUE,
@@ -326,9 +326,9 @@ ignore = [\"implicit_assignment\"]",
   )
 
   if (length(rmd) > 0) {
-  if (verbose) {
-    cli::cli_alert_info("Adapting {.str Rmd} files to {.pkg quarto}")
-  }
+    if (verbose) {
+      cli::cli_alert_info("Adapting {.str Rmd} files to {.pkg quarto}")
+    }
 
     lapply(rmd, function(x) {
       lns <- readLines(x, warn = FALSE)
@@ -340,7 +340,7 @@ ignore = [\"implicit_assignment\"]",
       )
 
       usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
-      knitr::convert_chunk_header(x,x)
+      knitr::convert_chunk_header(x, x)
       invisible()
     })
   }
@@ -395,8 +395,6 @@ ignore = [\"implicit_assignment\"]",
     }
     styler::style_dir(file.path(pkg, "man", "chunks"), filetype = fmt_file_type)
   }
-
-
 
   # Clean trailing spaces on yamls
   if (!env_var_is_true("CI")) {

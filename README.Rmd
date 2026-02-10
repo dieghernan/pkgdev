@@ -7,7 +7,8 @@ editor_options:
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r}
+#| include = FALSE
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -42,14 +43,16 @@ intended for personal use, however feel free to use it (at your own risk
 
 You can install the developing version of **pkgdev** with:
 
-```{r, eval=FALSE}
+```{r}
+#| eval = FALSE
 pak::pak("dieghernan/pkgdev")
 ```
 
 Alternatively, you can install **pkgdev** using the
 [r-universe](https://dieghernan.r-universe.dev/pkgdev):
 
-```{r, eval=FALSE}
+```{r}
+#| eval = FALSE
 # Install pkgdev in R:
 install.packages("pkgdev", repos = c(
   "https://dieghernan.r-universe.dev",
@@ -59,7 +62,8 @@ install.packages("pkgdev", repos = c(
 
 ## Example
 
-```{r, eval=FALSE}
+```{r}
+#| eval = FALSE
 library(pkgdev)
 
 gha_update_docs()

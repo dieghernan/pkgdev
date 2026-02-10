@@ -7,7 +7,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
+```{r}
+#| include = FALSE
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -22,7 +23,9 @@ knitr::opts_chunk$set(
 
 This is an example of a precomputed vignette:
 
-```{r plot, fig.cap="A plot with a long caption here"}
+```{r}
+#| label = "plot",
+#| fig.cap = "A plot with a long caption here"
 library("ggplot2")
 
 ggplot(faithfuld, aes(waiting, eruptions)) +
