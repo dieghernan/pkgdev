@@ -5,7 +5,7 @@ articles:
   articles/downloads: downloads.html
   test-precompute-knitr: test-precompute-knitr.html
   test-precompute-quarto: test-precompute-quarto.html
-last_built: 2026-02-11T07:36Z
+last_built: 2026-02-11T10:25Z
 urls:
   reference: https://dieghernan.github.io/pkgdev/reference
   article: https://dieghernan.github.io/pkgdev/articles
