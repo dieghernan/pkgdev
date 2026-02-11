@@ -1,7 +1,7 @@
 Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
-Version: 0.1.0.9110
+Version: 0.1.0.9115
 Authors@R: 
     person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))

@@ -27,12 +27,42 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
   if (!all(ok)) {
     cli::cli_abort("Can't find file{?s}: {.path {files[!ok]}}.")
   }
-  local_install2(pkg, quiet = TRUE)
+
+  # Install in temp library
+  new_loc <- file.path(tempdir(), "locallib")
+  if (!dir.exists(new_loc)) {
+    dir.create(new_loc, recursive = TRUE)
+  }
+  old <- .libPaths()
+  new <- c(new_loc, old)
+  .libPaths(new)
+
+  devtools::install(
+    pkg,
+    upgrade = "never",
+    reload = FALSE,
+    quick = TRUE,
+    quiet = TRUE
+  )
+  nm <- pkg$package
+
+  # nolint start
+  ver <- packageVersion(nm)
+  # nolint end
+  cli::cli_inform(c(
+    i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
+  ))
+
   for (path in paths) {
     cli::cli_inform(c(i = "Building {.path {path}}"))
 
     quarto::quarto_render(input = path, ..., quiet = quiet)
   }
+
+  # Restore libraries paths
+  unlink(new_loc, force = TRUE)
+  .libPaths(old)
+
   invisible(TRUE)
 }
 

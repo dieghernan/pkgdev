@@ -49,7 +49,31 @@ precompute_vignette <- function(
   create_r_file = FALSE
 ) {
   pkg_build <- devtools::as.package(pkg)
-  local_install2(pkg_build)
+
+  # Install in temp library
+  new_loc <- file.path(tempdir(), "locallib")
+  if (!dir.exists(new_loc)) {
+    dir.create(new_loc, recursive = TRUE)
+  }
+  old <- .libPaths()
+  new <- c(new_loc, old)
+  .libPaths(new)
+
+  devtools::install(
+    pkg_build,
+    upgrade = "never",
+    reload = FALSE,
+    quick = TRUE,
+    quiet = TRUE
+  )
+  nm <- pkg_build$package
+
+  # nolint start
+  ver <- packageVersion(nm)
+  # nolint end
+  cli::cli_inform(c(
+    i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
+  ))
 
   for (f_path in source) {
     src_path <- file.path("vignettes", f_path)
@@ -90,6 +114,11 @@ precompute_vignette <- function(
       knitr::purl(src_path, output = r_file)
     }
   }
+
+  # Restore libraries paths
+  unlink(new_loc, force = TRUE)
+  .libPaths(old)
+
   invisible()
 }
 
@@ -110,28 +139,4 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
       "No vignettes for precomputing found in {.path {file.path(dir)}}"
     )
   }
-}
-
-
-# From devtools
-local_install2 <- function(pkg = ".", quiet = TRUE, env = parent.frame()) {
-  pkg <- devtools::as.package(pkg)
-  devtools::load_all(pkg, quiet = TRUE)
-
-  withr::local_temp_libpaths(.local_envir = env)
-  devtools::install(
-    pkg,
-    upgrade = "never",
-    reload = FALSE,
-    quick = TRUE,
-    quiet = quiet
-  )
-  nm <- pkg$package
-
-  # nolint start
-  ver <- packageVersion(nm)
-  # nolint end
-  cli::cli_inform(c(
-    i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
-  ))
 }
