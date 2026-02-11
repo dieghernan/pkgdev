@@ -1,7 +1,8 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pkgdev <img src="man/figures/logo.png" align="right" width="120"/>
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+# pkgdev <a href='https://dieghernan.github.io/pkgdev/'><img src="man/figures/logo.png" align="right" height="139"/></a>
 
 <!-- badges: start -->
 
