@@ -116,15 +116,8 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
 # From devtools
 local_install2 <- function(pkg = ".", quiet = TRUE, env = parent.frame()) {
   pkg <- devtools::as.package(pkg)
+  devtools::load_all(pkg, quiet = TRUE)
 
-  nm <- pkg$package
-  # nolint start
-  ver <- packageVersion(nm)
-  # nolint end
-
-  cli::cli_inform(c(
-    i = "Installing {.pkg {nm}} {.strong  v{ver}} in temporary library"
-  ))
   withr::local_temp_libpaths(.local_envir = env)
   devtools::install(
     pkg,
@@ -133,4 +126,12 @@ local_install2 <- function(pkg = ".", quiet = TRUE, env = parent.frame()) {
     quick = TRUE,
     quiet = quiet
   )
+  nm <- pkg$package
+
+  # nolint start
+  ver <- packageVersion(nm)
+  # nolint end
+  cli::cli_inform(c(
+    i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
+  ))
 }

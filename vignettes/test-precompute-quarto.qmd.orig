@@ -1,7 +1,7 @@
 ---
-title: "test-precompute-quarto"
+title: "Example of a precomputed vignette - Quarto"
 vignette: >
-  %\VignetteIndexEntry{test-precompute-quarto}
+  %\VignetteIndexEntry{Example of a precomputed vignette - Quarto}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 ---
