@@ -5,8 +5,6 @@
 # check-standard.yaml is likely a better choice.
 # usethis::use_github_action("check-standard") will install it.
 on:
-  push:
-    branches: [main, master]
   pull_request:
     branches: [main, master]
   schedule:
@@ -14,7 +12,10 @@ on:
   repository_dispatch:
     types: [trigger-check-workflow]
   workflow_dispatch:
-
+  workflow_run:
+    workflows: [update-docs]
+    types: completed
+    branches: [main, master]
 
 name: R-CMD-check
 permissions:

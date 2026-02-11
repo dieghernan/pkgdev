@@ -11,10 +11,10 @@
 name: lintr
 
 on:
-  push:
-    branches:
-    - main
-    - master
+  workflow_run:
+    workflows: [update-docs]
+    types: completed
+    branches: [main, master]
   workflow_dispatch:
   pull_request:
     # The branches below must be a subset of the branches above

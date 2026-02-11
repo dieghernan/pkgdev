@@ -1,27 +1,22 @@
 ---
-output: github_document
-editor_options:
-  markdown:
-    wrap: 80
+format: gfm
+default-image-extension: ''
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: "#>"
+    fig.path: "man/figures/README-"
+    tidy: "styler"
+    dev: "ragg_png"
+    warning: false
+    message: false
+    dpi: 90
+    out.width: "100%"
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
-```{r}
-#| include = FALSE
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  warning = FALSE,
-  message = FALSE,
-  tidy = "styler",
-  fig.path = "man/figures/README-",
-  dpi = 90,
-  out.width = "100%"
-)
-```
-
-# pkgdev <img src="man/figures/logo.png" align="right" width="120"/>
+# pkgdev <a href='https://dieghernan.github.io/pkgdev/'><img src="man/figures/logo.png" align="right" height="139"/></a>
 
 <!-- badges: start -->
 
@@ -44,7 +39,7 @@ intended for personal use, however feel free to use it (at your own risk
 You can install the developing version of **pkgdev** with:
 
 ```{r}
-#| eval = FALSE
+#| eval: false
 pak::pak("dieghernan/pkgdev")
 ```
 
@@ -52,7 +47,7 @@ Alternatively, you can install **pkgdev** using the
 [r-universe](https://dieghernan.r-universe.dev/pkgdev):
 
 ```{r}
-#| eval = FALSE
+#| eval: false
 # Install pkgdev in R:
 install.packages("pkgdev", repos = c(
   "https://dieghernan.r-universe.dev",
@@ -63,7 +58,7 @@ install.packages("pkgdev", repos = c(
 ## Example
 
 ```{r}
-#| eval = FALSE
+#| eval: false
 library(pkgdev)
 
 gha_update_docs()
