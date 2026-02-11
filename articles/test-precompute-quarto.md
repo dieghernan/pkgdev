@@ -1,4 +1,4 @@
-# test-precompute-quarto
+# Example of a precomputed vignette - Quarto
 
 This is an example of a precomputed vignette in Quarto
 
