@@ -48,76 +48,67 @@ precompute_vignette <- function(
   figure_ext = ".png",
   create_r_file = FALSE
 ) {
+  # pkgdown/devtools approach
   pkg_build <- devtools::as.package(pkg)
 
-  # Install in temp library
-  new_loc <- file.path(tempdir(), "locallib")
-  if (!dir.exists(new_loc)) {
-    dir.create(new_loc, recursive = TRUE)
-  }
-  old <- .libPaths()
-  new <- c(new_loc, old)
-  .libPaths(new)
-
-  devtools::install(
-    pkg_build,
-    upgrade = "never",
-    reload = FALSE,
-    quick = TRUE,
-    quiet = TRUE
-  )
-  nm <- pkg_build$package
-
-  # nolint start
-  ver <- packageVersion(nm)
-  # nolint end
-  cli::cli_inform(c(
-    i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
-  ))
-
-  for (f_path in source) {
-    src_path <- file.path("vignettes", f_path)
-    out <- gsub(".orig", "", src_path)
-    usethis::use_build_ignore(src_path)
-
-    cli::cli_alert("Precomputing {.file {src_path}}")
-
-    if (grepl("qmd$", out)) {
-      usethis::use_git_ignore("**/.quarto/", directory = pkg)
-      usethis::use_git_ignore(
-        "*_files",
-        directory = file.path(pkg, "vignettes")
-      )
-      usethis::use_build_ignore("vignettes/*_files")
-    }
-    knitr::knit(input = src_path, output = out, quiet = TRUE)
-
-    usethis::use_git_ignore(
-      c("*.html", "*.R"),
-      directory = file.path(pkg, "vignettes")
+  withr::with_temp_libpaths(code = {
+    devtools::install(
+      pkg_build,
+      upgrade = "never",
+      reload = FALSE,
+      quick = TRUE,
+      quiet = TRUE
     )
 
-    cli::cli_alert("Resulting vignette in {.file {out}}")
-    # Move plot files to dir
+    nm <- pkg_build$package
 
-    plots <- list.files(".", pattern = figure_ext)
-    plots_to_move <- file.path("vignettes", plots)
+    # nolint start
+    ver <- packageVersion(nm)
+    # nolint end
+    cli::cli_inform(c(
+      i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
+    ))
 
-    res <- file.copy(plots, plots_to_move, overwrite = TRUE)
-    rm(res)
-    rem <- file.remove(plots)
-    rm(rem)
+    for (f_path in source) {
+      src_path <- file.path("vignettes", f_path)
+      out <- gsub(".orig", "", src_path)
+      usethis::use_build_ignore(src_path)
 
-    # Create R file
-    if (create_r_file) {
-      r_file <- gsub(".Rmd", ".R", out)
-      knitr::purl(src_path, output = r_file)
+      cli::cli_alert("Precomputing {.file {src_path}}")
+
+      if (grepl("qmd$", out)) {
+        usethis::use_git_ignore("**/.quarto/", directory = pkg)
+        usethis::use_git_ignore(
+          "*_files",
+          directory = file.path(pkg, "vignettes")
+        )
+        usethis::use_build_ignore("vignettes/*_files")
+      }
+      knitr::knit(input = src_path, output = out, quiet = TRUE)
+
+      usethis::use_git_ignore(
+        c("*.html", "*.R"),
+        directory = file.path(pkg, "vignettes")
+      )
+
+      cli::cli_alert("Resulting vignette in {.file {out}}")
+      # Move plot files to dir
+
+      plots <- list.files(".", pattern = figure_ext)
+      plots_to_move <- file.path("vignettes", plots)
+
+      res <- file.copy(plots, plots_to_move, overwrite = TRUE)
+      rm(res)
+      rem <- file.remove(plots)
+      rm(rem)
+
+      # Create R file
+      if (create_r_file) {
+        r_file <- gsub(".Rmd", ".R", out)
+        knitr::purl(src_path, output = r_file)
+      }
     }
-  }
-
-  # Restore libraries paths
-  unlink(new_loc, force = TRUE)
-  .libPaths(old)
+  })
 
   invisible()
 }

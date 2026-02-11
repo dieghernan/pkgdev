@@ -28,40 +28,29 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
     cli::cli_abort("Can't find file{?s}: {.path {files[!ok]}}.")
   }
 
-  # Install in temp library
-  new_loc <- file.path(tempdir(), "locallib")
-  if (!dir.exists(new_loc)) {
-    dir.create(new_loc, recursive = TRUE)
-  }
-  old <- .libPaths()
-  new <- c(new_loc, old)
-  .libPaths(new)
+  withr::with_temp_libpaths(code = {
+    devtools::install(
+      pkg,
+      upgrade = "never",
+      reload = FALSE,
+      quick = TRUE,
+      quiet = TRUE
+    )
+    nm <- pkg$package
 
-  devtools::install(
-    pkg,
-    upgrade = "never",
-    reload = FALSE,
-    quick = TRUE,
-    quiet = TRUE
-  )
-  nm <- pkg$package
+    # nolint start
+    ver <- packageVersion(nm)
+    # nolint end
+    cli::cli_inform(c(
+      i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
+    ))
 
-  # nolint start
-  ver <- packageVersion(nm)
-  # nolint end
-  cli::cli_inform(c(
-    i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
-  ))
+    for (path in paths) {
+      cli::cli_inform(c(i = "Building {.path {path}}"))
 
-  for (path in paths) {
-    cli::cli_inform(c(i = "Building {.path {path}}"))
-
-    quarto::quarto_render(input = path, ..., quiet = quiet)
-  }
-
-  # Restore libraries paths
-  unlink(new_loc, force = TRUE)
-  .libPaths(old)
+      quarto::quarto_render(input = path, ..., quiet = quiet)
+    }
+  })
 
   invisible(TRUE)
 }
@@ -99,5 +88,3 @@ build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
 
   build_qmd(files = readme_path, path = path, ..., quiet = quiet)
 }
-
-devtools::build_readme
