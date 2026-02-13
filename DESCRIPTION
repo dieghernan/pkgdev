@@ -47,7 +47,7 @@ VignetteBuilder:
 Remotes:
     dieghernan/gitdevr,
     dieghernan/rstudiothemes,
-    quarto-dev/quarto-r
+    quarto=github::quarto-dev/quarto-r
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8
