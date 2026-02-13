@@ -1,7 +1,7 @@
 Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
-Version: 0.1.0.9130
+Version: 0.1.0.9145
 Authors@R: 
     person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))
@@ -19,42 +19,35 @@ Imports:
     cffr (>= 0.2.0),
     cli (>= 3.4.0),
     codemetar (>= 0.3.3),
-    cpp11,
     desc,
     devtools (>= 2.4.1),
-    jsonld,
     jsonlite,
     knitr (>= 1.33),
     lintr (>= 2.0.1),
     pkgdown,
-    rcmdcheck (>= 1.3.3),
+    quarto,
     resmush,
     roxygen2 (>= 7.1.0),
     roxygen2md,
     stringr,
     styler (>= 1.5.1),
+    tools,
     urlchecker (>= 1.0.0),
     usethis (>= 2.2.2),
     utils,
     withr,
     xfun
 Suggests: 
-    covr (>= 3.5.1),
     gitdevr,
-    goodpractice (>= 1.0.2),
-    magick,
-    quarto,
-    remotes,
     rmarkdown,
-    rstudioapi,
-    sessioninfo,
-    tidyverse,
-    V8 (>= 4.0.0)
+    rstudiothemes
 VignetteBuilder: 
     knitr,
     quarto
 Remotes:
-    dieghernan/gitdevr
+    dieghernan/gitdevr,
+    dieghernan/rstudiothemes,
+    quarto-dev/quarto-r
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8

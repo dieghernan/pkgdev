@@ -63,6 +63,17 @@ library(pkgdev)
 
 gha_update_docs()
 ```
+```{r}
+#| echo: false
+#| results: asis
+
+cat(paste0(
+  "Document created with package pkgdev **v",
+  packageVersion("pkgdev"), "**."
+))
+```
+
+
 
 ## Related resources
 

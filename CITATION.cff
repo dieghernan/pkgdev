@@ -8,7 +8,7 @@ message: 'To cite package "pkgdev" in publications use:'
 type: software
 license: MIT
 title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
-version: 0.1.0.9130
+version: 0.1.0.9145
 abstract: A small set of functions that takes advantage of GitHub Actions for making
   your life easier as a R package developer. This package is primarily intended for
   personal use, however feel free to use it (at your own risk :)).
@@ -98,25 +98,6 @@ references:
   doi: 10.32614/CRAN.package.codemetar
   version: '>= 0.3.3'
 - type: software
-  title: cpp11
-  abstract: 'cpp11: A C++11 Interface for R''s C Interface'
-  notes: Imports
-  url: https://cpp11.r-lib.org
-  repository: https://CRAN.R-project.org/package=cpp11
-  authors:
-  - family-names: Vaughan
-    given-names: Davis
-    email: davis@posit.co
-    orcid: https://orcid.org/0000-0003-4777-038X
-  - family-names: Hester
-    given-names: Jim
-    orcid: https://orcid.org/0000-0002-2739-7082
-  - family-names: François
-    given-names: Romain
-    orcid: https://orcid.org/0000-0002-2444-4226
-  year: '2026'
-  doi: 10.32614/CRAN.package.cpp11
-- type: software
   title: desc
   abstract: 'desc: Manipulate DESCRIPTION Files'
   notes: Imports
@@ -153,19 +134,6 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.devtools
   version: '>= 2.4.1'
-- type: software
-  title: jsonld
-  abstract: 'jsonld: JSON for Linking Data'
-  notes: Imports
-  url: https://docs.ropensci.org/jsonld/
-  repository: https://CRAN.R-project.org/package=jsonld
-  authors:
-  - family-names: Ooms
-    given-names: Jeroen
-    email: jeroenooms@gmail.com
-    orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2026'
-  doi: 10.32614/CRAN.package.jsonld
 - type: software
   title: jsonlite
   abstract: 'jsonlite: A Simple and Robust JSON Parser and Generator for R'
@@ -249,18 +217,22 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.pkgdown
 - type: software
-  title: rcmdcheck
-  abstract: 'rcmdcheck: Run ''R CMD check'' from ''R'' and Capture Results'
+  title: quarto
+  abstract: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
   notes: Imports
-  url: https://r-lib.github.io/rcmdcheck/
-  repository: https://CRAN.R-project.org/package=rcmdcheck
+  url: https://quarto-dev.github.io/quarto-r/
+  repository: https://CRAN.R-project.org/package=quarto
   authors:
-  - family-names: Csárdi
-    given-names: Gábor
-    email: csardi.gabor@gmail.com
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@posit.co
+    orcid: https://orcid.org/0000-0003-0174-9868
+  - family-names: Dervieux
+    given-names: Christophe
+    email: cderv@posit.co
+    orcid: https://orcid.org/0000-0003-4474-2498
   year: '2026'
-  doi: 10.32614/CRAN.package.rcmdcheck
-  version: '>= 1.3.3'
+  doi: 10.32614/CRAN.package.quarto
 - type: software
   title: resmush
   abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
@@ -341,6 +313,16 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.styler
   version: '>= 1.5.1'
+- type: software
+  title: tools
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  institution:
+    name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2026'
 - type: software
   title: urlchecker
   abstract: 'urlchecker: Run CRAN URL Checks from Older R Versions'
@@ -433,19 +415,6 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.xfun
 - type: software
-  title: covr
-  abstract: 'covr: Test Coverage for Packages'
-  notes: Suggests
-  url: https://covr.r-lib.org
-  repository: https://CRAN.R-project.org/package=covr
-  authors:
-  - family-names: Hester
-    given-names: Jim
-    email: james.f.hester@gmail.com
-  year: '2026'
-  doi: 10.32614/CRAN.package.covr
-  version: '>= 3.5.1'
-- type: software
   title: gitdevr
   abstract: 'gitdevr: My ''pkgdown'' Template'
   notes: Suggests
@@ -456,90 +425,6 @@ references:
     email: diego.hernangomezherrero@gmail.com
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2026'
-- type: software
-  title: goodpractice
-  abstract: 'goodpractice: Advice on R Package Building'
-  notes: Suggests
-  url: https://docs.ropensci.org/goodpractice/
-  repository: https://CRAN.R-project.org/package=goodpractice
-  authors:
-  - family-names: Padgham
-    given-names: Mark
-    email: mark@ropensci.org
-    orcid: https://orcid.org/0000-0003-2172-5265
-  - family-names: Marks
-    given-names: Karina
-    email: karina.marks@ascent.io
-  - family-names: Bortoli
-    given-names: Daniel
-    name-particle: de
-  - family-names: Csardi
-    given-names: Gabor
-    email: csardi.gabor@gmail.com
-  - family-names: Frick
-    given-names: Hannah
-    email: hannah.frick@gmail.com
-  - family-names: Jones
-    given-names: Owen
-    email: owenjonesuob@gmail.com
-  - family-names: Alexander
-    given-names: Hannah
-    email: halexander@mango-solutions.com
-  year: '2026'
-  doi: 10.32614/CRAN.package.goodpractice
-  version: '>= 1.0.2'
-- type: software
-  title: magick
-  abstract: 'magick: Advanced Graphics and Image-Processing in R'
-  notes: Suggests
-  url: https://docs.ropensci.org/magick/
-  repository: https://CRAN.R-project.org/package=magick
-  authors:
-  - family-names: Ooms
-    given-names: Jeroen
-    email: jeroenooms@gmail.com
-    orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2026'
-  doi: 10.32614/CRAN.package.magick
-- type: software
-  title: quarto
-  abstract: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
-  notes: Suggests
-  url: https://quarto-dev.github.io/quarto-r/
-  repository: https://CRAN.R-project.org/package=quarto
-  authors:
-  - family-names: Allaire
-    given-names: JJ
-    email: jj@posit.co
-    orcid: https://orcid.org/0000-0003-0174-9868
-  - family-names: Dervieux
-    given-names: Christophe
-    email: cderv@posit.co
-    orcid: https://orcid.org/0000-0003-4474-2498
-  year: '2026'
-  doi: 10.32614/CRAN.package.quarto
-- type: software
-  title: remotes
-  abstract: 'remotes: R Package Installation from Remote Repositories, Including ''GitHub'''
-  notes: Suggests
-  url: https://remotes.r-lib.org
-  repository: https://CRAN.R-project.org/package=remotes
-  authors:
-  - family-names: Csárdi
-    given-names: Gábor
-    email: csardi.gabor@gmail.com
-  - family-names: Hester
-    given-names: Jim
-  - family-names: Wickham
-    given-names: Hadley
-  - family-names: Chang
-    given-names: Winston
-  - family-names: Morgan
-    given-names: Martin
-  - family-names: Tenenbaum
-    given-names: Dan
-  year: '2026'
-  doi: 10.32614/CRAN.package.remotes
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
@@ -585,69 +470,15 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.rmarkdown
 - type: software
-  title: rstudioapi
-  abstract: 'rstudioapi: Safely Access the RStudio API'
+  title: rstudiothemes
+  abstract: 'rstudiothemes: Create ''RStudio'' Themes from Visual Studio Code and
+    ''TextMate'' Themes'
   notes: Suggests
-  url: https://rstudio.github.io/rstudioapi/
-  repository: https://CRAN.R-project.org/package=rstudioapi
+  url: https://dieghernan.github.io/rstudiothemes/
   authors:
-  - family-names: Ushey
-    given-names: Kevin
-    email: kevin@rstudio.com
-  - family-names: Allaire
-    given-names: JJ
-    email: jj@posit.co
-  - family-names: Wickham
-    given-names: Hadley
-    email: hadley@posit.co
-  - family-names: Ritchie
-    given-names: Gary
-    email: gary@posit.co
+  - family-names: Hernangómez
+    given-names: Diego
+    email: diego.hernangomezherrero@gmail.com
+    orcid: https://orcid.org/0000-0001-8457-4658
   year: '2026'
-  doi: 10.32614/CRAN.package.rstudioapi
-- type: software
-  title: sessioninfo
-  abstract: 'sessioninfo: R Session Information'
-  notes: Suggests
-  url: https://github.com/r-lib/sessioninfo#readme
-  repository: https://CRAN.R-project.org/package=sessioninfo
-  authors:
-  - family-names: Wickham
-    given-names: Hadley
-  - family-names: Chang
-    given-names: Winston
-  - family-names: Flight
-    given-names: Robert
-  - family-names: Müller
-    given-names: Kirill
-  - family-names: Hester
-    given-names: Jim
-  year: '2026'
-  doi: 10.32614/CRAN.package.sessioninfo
-- type: software
-  title: tidyverse
-  abstract: 'tidyverse: Easily Install and Load the ''Tidyverse'''
-  notes: Suggests
-  url: https://tidyverse.tidyverse.org
-  repository: https://CRAN.R-project.org/package=tidyverse
-  authors:
-  - family-names: Wickham
-    given-names: Hadley
-    email: hadley@rstudio.com
-  year: '2026'
-  doi: 10.32614/CRAN.package.tidyverse
-- type: software
-  title: V8
-  abstract: 'V8: Embedded JavaScript and WebAssembly Engine for R'
-  notes: Suggests
-  url: https://jeroen.r-universe.dev/V8
-  repository: https://CRAN.R-project.org/package=V8
-  authors:
-  - family-names: Ooms
-    given-names: Jeroen
-    email: jeroenooms@gmail.com
-    orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2026'
-  doi: 10.32614/CRAN.package.V8
-  version: '>= 4.0.0'
 
