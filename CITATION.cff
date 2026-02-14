@@ -469,16 +469,4 @@ references:
     orcid: https://orcid.org/0000-0003-3925-190X
   year: '2026'
   doi: 10.32614/CRAN.package.rmarkdown
-- type: software
-  title: rstudiothemes
-  abstract: 'rstudiothemes: Create ''RStudio'' Themes from Visual Studio Code and
-    ''TextMate'' Themes'
-  notes: Suggests
-  url: https://dieghernan.github.io/rstudiothemes/
-  authors:
-  - family-names: Hernangómez
-    given-names: Diego
-    email: diego.hernangomezherrero@gmail.com
-    orcid: https://orcid.org/0000-0001-8457-4658
-  year: '2026'
 

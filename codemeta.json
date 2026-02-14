@@ -60,12 +60,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "rstudiothemes",
-      "name": "rstudiothemes",
-      "sameAs": "https://github.com/dieghernan/rstudiothemes"
     }
   ],
   "softwareRequirements": {
@@ -326,7 +320,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "353.978KB",
+  "fileSize": "353.929KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
