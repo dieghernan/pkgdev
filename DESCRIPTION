@@ -39,14 +39,12 @@ Imports:
     xfun
 Suggests: 
     gitdevr,
-    rmarkdown,
-    rstudiothemes
+    rmarkdown
 VignetteBuilder: 
     knitr,
     quarto
 Remotes:
     dieghernan/gitdevr,
-    dieghernan/rstudiothemes,
     quarto=github::quarto-dev/quarto-r
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
