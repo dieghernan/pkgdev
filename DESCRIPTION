@@ -39,6 +39,7 @@ Imports:
     xfun
 Suggests: 
     gitdevr,
+    jsonld,
     rmarkdown
 VignetteBuilder: 
     knitr,
