@@ -426,6 +426,19 @@ references:
     orcid: https://orcid.org/0000-0001-8457-4658
   year: '2026'
 - type: software
+  title: jsonld
+  abstract: 'jsonld: JSON for Linking Data'
+  notes: Suggests
+  url: https://docs.ropensci.org/jsonld/
+  repository: https://CRAN.R-project.org/package=jsonld
+  authors:
+  - family-names: Ooms
+    given-names: Jeroen
+    email: jeroenooms@gmail.com
+    orcid: https://orcid.org/0000-0002-4035-0289
+  year: '2026'
+  doi: 10.32614/CRAN.package.jsonld
+- type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
   notes: Suggests
