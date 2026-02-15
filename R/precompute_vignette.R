@@ -98,8 +98,8 @@ precompute_vignette <- function(
       plots <- list.files(".", pattern = figure_ext)
       plots_to_move <- file.path("vignettes", plots)
 
-      res <- file.copy(plots, plots_to_move, overwrite = TRUE)
-      rem <- file.remove(plots)
+      file.copy(plots, plots_to_move, overwrite = TRUE)
+      file.remove(plots)
 
       # Create R file
       if (create_r_file) {
