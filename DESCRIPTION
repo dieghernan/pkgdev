@@ -38,14 +38,12 @@ Imports:
     withr,
     xfun
 Suggests: 
-    gitdevr,
     jsonld,
     rmarkdown
 VignetteBuilder: 
     knitr,
     quarto
 Remotes:
-    dieghernan/gitdevr,
     quarto=github::quarto-dev/quarto-r
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
