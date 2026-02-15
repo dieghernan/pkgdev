@@ -415,17 +415,6 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.xfun
 - type: software
-  title: gitdevr
-  abstract: 'gitdevr: My ''pkgdown'' Template'
-  notes: Suggests
-  url: https://dieghernan.github.io/gitdevr/
-  authors:
-  - family-names: Hernangómez
-    given-names: Diego
-    email: diego.hernangomezherrero@gmail.com
-    orcid: https://orcid.org/0000-0001-8457-4658
-  year: '2026'
-- type: software
   title: jsonld
   abstract: 'jsonld: JSON for Linking Data'
   notes: Suggests

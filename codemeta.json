@@ -45,12 +45,6 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
-      "identifier": "gitdevr",
-      "name": "gitdevr",
-      "sameAs": "https://github.com/dieghernan/gitdevr"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "jsonld",
       "name": "jsonld",
       "provider": {
@@ -332,7 +326,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "353.989KB",
+  "fileSize": "353.952KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
