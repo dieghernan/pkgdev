@@ -45,3 +45,5 @@
 ^README_files$
 ^README\.html$
 ^\.quarto$
+^\./vignettes/test-precompute-quarto\.qmd\.orig$
+^\./vignettes/test-precompute-knitr\.Rmd\.orig$

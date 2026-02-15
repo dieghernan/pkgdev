@@ -70,12 +70,13 @@ precompute_vignette <- function(
     ))
 
     for (f_path in source) {
-      src_path <- file.path("vignettes", f_path)
+      src_path <- file.path(pkg, "vignettes", f_path)
       out <- gsub(".orig", "", src_path)
-      usethis::use_build_ignore(src_path)
 
       cli::cli_alert("Precomputing {.file {src_path}}")
 
+      knitr::knit(input = src_path, output = out, quiet = TRUE)
+      usethis::use_build_ignore(src_path)
       if (grepl("qmd$", out)) {
         usethis::use_git_ignore("**/.quarto/", directory = pkg)
         usethis::use_git_ignore(
@@ -84,8 +85,6 @@ precompute_vignette <- function(
         )
         usethis::use_build_ignore("vignettes/*_files")
       }
-      knitr::knit(input = src_path, output = out, quiet = TRUE)
-
       usethis::use_git_ignore(
         c("*.html", "*.R"),
         directory = file.path(pkg, "vignettes")
@@ -98,15 +97,19 @@ precompute_vignette <- function(
       plots_to_move <- file.path("vignettes", plots)
 
       res <- file.copy(plots, plots_to_move, overwrite = TRUE)
-      rm(res)
       rem <- file.remove(plots)
-      rm(rem)
 
       # Create R file
       if (create_r_file) {
-        r_file <- gsub(".Rmd", ".R", out)
+        r_file <- gsub(".Rmd|.qmd", ".R", out)
         knitr::purl(src_path, output = r_file)
       }
+
+      # Cleanup
+      dir_clean <- gsub(".Rmd|.qmd", "_files/", out)
+      unlink(dir_clean, force = TRUE, recursive = TRUE)
+      html_clean <- gsub(".Rmd|.qmd", ".html", out)
+      unlink(html_clean, force = TRUE, recursive = TRUE)
     }
   })
 
@@ -119,7 +122,7 @@ precompute_vignette <- function(
 #' @export
 #'
 precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
-  vignette_list <- list.files("vignettes")
+  vignette_list <- list.files(file.path(pkg, dir))
 
   find_vignettes <- grep(".Rmd.orig$|.qmd.orig$", vignette_list)
   if (length(find_vignettes) > 0) {
@@ -127,7 +130,7 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
     precompute_vignette(source = vig, pkg = pkg, ...)
   } else {
     cli::cli_alert_info(
-      "No vignettes for precomputing found in {.path {file.path(dir)}}"
+      "No vignettes for precomputing found in {.path {file.path(pkg, dir)}}"
     )
   }
 }
