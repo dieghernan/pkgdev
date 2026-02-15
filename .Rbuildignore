@@ -37,13 +37,9 @@
 ^vignettes/\.quarto$
 ^vignettes/articles/\.quarto$
 ^vignettes/articles/*_files$
-^vignettes/test-precompute-knitr\.Rmd\.orig$
-^vignettes/test-precompute-quarto\.qmd\.orig$
 ^vignettes/*_files$
 ^README\.qmd$
 ^inst/README\.qmd$
 ^README_files$
 ^README\.html$
 ^\.quarto$
-^\./vignettes/test-precompute-quarto\.qmd\.orig$
-^\./vignettes/test-precompute-knitr\.Rmd\.orig$
