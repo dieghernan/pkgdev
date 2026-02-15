@@ -76,7 +76,7 @@ precompute_vignette <- function(
       cli::cli_alert("Precomputing {.file {src_path}}")
 
       knitr::knit(input = src_path, output = out, quiet = TRUE)
-      
+
       perl_path <- gsub("^\\./", "", src_path)
       usethis::use_build_ignore(perl_path)
       if (grepl("qmd$", out)) {
