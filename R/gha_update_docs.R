@@ -62,7 +62,7 @@ gha_update_docs <-
     usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
 
     # Get action file
-    filepath <- system.file("yaml/update-docs.yaml", package = "pkgdev")
+    filepath <- system.file("yaml/update-docs.yml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
@@ -78,7 +78,7 @@ gha_update_docs <-
     }
 
     # Add platform
-    add_platform <- readLines(file.path(destdir, "update-docs.yaml"))
+    add_platform <- readLines(file.path(destdir, "update-docs.yml"))
 
     add_platform <- gsub(
       pattern = "<OS>",
@@ -95,7 +95,7 @@ gha_update_docs <-
       fixed = TRUE
     )
 
-    writeLines(add_platform, con = file.path(destdir, "update-docs.yaml"))
+    writeLines(add_platform, con = file.path(destdir, "update-docs.yml"))
 
     cli::cli_alert_info(paste(
       "Your package would be deployed on",

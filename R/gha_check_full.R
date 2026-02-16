@@ -54,7 +54,7 @@ gha_check_full <-
 
     # Get action file
     filepath <-
-      system.file("yaml/check-full.yaml", package = "pkgdev")
+      system.file("yaml/check-full.yml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
@@ -70,7 +70,7 @@ gha_check_full <-
     }
 
     # Add CRON
-    add_cron <- readLines(file.path(destdir, "check-full.yaml"))
+    add_cron <- readLines(file.path(destdir, "check-full.yml"))
     add_cron <- gsub(
       pattern = "ADD_CRON_EXPRESSION",
       replacement = cron_expr,
@@ -78,7 +78,7 @@ gha_check_full <-
       fixed = TRUE
     )
 
-    writeLines(add_cron, con = file.path(destdir, "check-full.yaml"))
+    writeLines(add_cron, con = file.path(destdir, "check-full.yml"))
 
     invisible()
   }

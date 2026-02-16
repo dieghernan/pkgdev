@@ -65,7 +65,7 @@ gha_pkgdown_branch <-
 
     # Get action file
     filepath <-
-      system.file("yaml/pkgdown-gh-pages.yaml", package = "pkgdev")
+      system.file("yaml/pkgdown-gh-pages.yml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
@@ -81,7 +81,7 @@ gha_pkgdown_branch <-
     }
 
     # Add platform
-    add_platform <- readLines(file.path(destdir, "pkgdown-gh-pages.yaml"))
+    add_platform <- readLines(file.path(destdir, "pkgdown-gh-pages.yml"))
 
     add_platform <- gsub(
       pattern = "<OS>",
@@ -98,7 +98,7 @@ gha_pkgdown_branch <-
       fixed = TRUE
     )
 
-    writeLines(add_platform, con = file.path(destdir, "pkgdown-gh-pages.yaml"))
+    writeLines(add_platform, con = file.path(destdir, "pkgdown-gh-pages.yml"))
     cli::cli_alert_info(paste(
       "Your package would be deployed on",
       "{.val {paste0(platform, '-', version)}}"
