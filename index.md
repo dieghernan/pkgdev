@@ -33,6 +33,8 @@ library(pkgdev)
 gha_update_docs()
 ```
 
+Document created with package pkgdev **v0.1.0.9150**.
+
 ## Related resources
 
 - The [tidyverse style guide](https://style.tidyverse.org/).
