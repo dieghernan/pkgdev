@@ -148,7 +148,7 @@ add_global_gitgnore <- function(pkg = ".") {
 
   if (length(list.files(pth, pattern = "qmd$")) > 0) {
     usethis::use_git_ignore(
-      c("/.quarto/", "*_files", "*.html", "*.R"),
+      c("/.quarto/", "*_files", "*.html", "*.R", "_quarto.yaml", "_quarto.yml"),
       directory = pth
     )
   }
@@ -157,7 +157,7 @@ add_global_gitgnore <- function(pkg = ".") {
 
   if (length(list.files(pth, pattern = "qmd$")) > 0) {
     usethis::use_git_ignore(
-      c("/.quarto/", "*_files", "*.html", "*.R"),
+      c("/.quarto/", "*_files", "*.html", "*.R", "_quarto.yaml", "_quarto.yml"),
       directory = pth
     )
   }

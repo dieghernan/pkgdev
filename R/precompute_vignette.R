@@ -95,8 +95,8 @@ precompute_vignette <- function(
       cli::cli_alert("Resulting vignette in {.file {out}}")
       # Move plot files to dir
 
-      plots <- list.files(".", pattern = figure_ext)
-      plots_to_move <- file.path("vignettes", plots)
+      plots <- list.files(pkg, pattern = figure_ext)
+      plots_to_move <- file.path(pkg, "vignettes", plots)
 
       file.copy(plots, plots_to_move, overwrite = TRUE)
       file.remove(plots)
@@ -112,6 +112,11 @@ precompute_vignette <- function(
       unlink(dir_clean, force = TRUE, recursive = TRUE)
       html_clean <- gsub(".Rmd|.qmd", ".html", out)
       unlink(html_clean, force = TRUE, recursive = TRUE)
+
+      ff <- list.files(file.path(pkg, "vignettes"), full.names = TRUE)
+
+      ff[grepl("_quarto.yaml|_quarto.yml", ff)] |>
+        unlink(recursive = TRUE, force = TRUE)
     }
   })
 
