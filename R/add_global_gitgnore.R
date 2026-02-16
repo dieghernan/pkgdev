@@ -136,6 +136,8 @@ add_global_gitgnore <- function(pkg = ".") {
     c(
       "vignettes/.quarto",
       "vignettes/.quarto/",
+      "vignettes/_quarto.yaml",
+      "vignettes/_quarto.yml",
       ".quarto/",
       "vignettes/articles/.quarto",
       "vignettes/articles/*_files",
