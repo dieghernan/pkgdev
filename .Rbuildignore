@@ -45,3 +45,5 @@
 ^\.quarto$
 ^vignettes/test-precompute-knitr\.Rmd\.orig$
 ^vignettes/test-precompute-quarto\.qmd\.orig$
+^vignettes/_quarto\.yaml$
+^vignettes/_quarto\.yml$
