@@ -129,9 +129,14 @@ ggplot(dwn_m, aes(x = m)) +
 
 ```{r}
 #| echo = FALSE
+
+# Not this week
+thisw <- lubridate::ceiling_date(Sys.Date(), "week")
+
 dwn_w <- dwn |>
   filter(date >= (Sys.Date() - years(1))) |>
   mutate(m = lubridate::ceiling_date(date, "week")) |>
+  filter(m < thisw) |>
   group_by(package, m) |>
   summarise(downloads = sum(count))
 
@@ -203,7 +208,7 @@ end <- fechas |>
   left_join(lastmonth) |>
   left_join(lastyear) |>
   as_tibble() |>
-  arrange(desc(avg))
+  arrange(desc(lastweek))
 
 names(end) <- c(
   "package",
