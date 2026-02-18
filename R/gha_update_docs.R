@@ -62,7 +62,7 @@ gha_update_docs <-
     usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
 
     # Get action file
-    filepath <- system.file("yaml/update-docs.yml", package = "pkgdev")
+    filepath <- system.file("yaml/update-docs.yaml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)

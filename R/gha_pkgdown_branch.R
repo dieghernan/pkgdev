@@ -65,7 +65,7 @@ gha_pkgdown_branch <-
 
     # Get action file
     filepath <-
-      system.file("yaml/pkgdown-gh-pages.yml", package = "pkgdev")
+      system.file("yaml/pkgdown-gh-pages.yaml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)

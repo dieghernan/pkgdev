@@ -54,7 +54,7 @@ gha_check_full <-
 
     # Get action file
     filepath <-
-      system.file("yaml/check-full.yml", package = "pkgdev")
+      system.file("yaml/check-full.yaml", package = "pkgdev")
 
     # Copy
     result <- file.copy(filepath, destdir, overwrite = overwrite)
