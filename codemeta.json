@@ -326,7 +326,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "354.544KB",
+  "fileSize": "354.549KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -344,6 +344,6 @@
   ],
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/main/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yml",
+  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
   "developmentStatus": "https://lifecycle.r-lib.org/articles/stages.html#experimental"
 }
