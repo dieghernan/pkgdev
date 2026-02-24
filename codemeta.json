@@ -326,7 +326,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "353.862KB",
+  "fileSize": "354.619KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
