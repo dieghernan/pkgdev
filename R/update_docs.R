@@ -516,17 +516,19 @@ ignore = [\"implicit_assignment\"]",
   # Check README.Rmd
   readme_rmd <- file.path(pkg, "README.Rmd")
   readme_qmd <- file.path(pkg, "README.qmd"
-   index_rmd <- file.path(pkg, "index.Rmd")
+  index_rmd <- file.path(pkg, "index.Rmd")
   index_qmd <- file.path(pkg, "index.qmd")
   index2_rmd <- file.path(pkg, "pkgdown/index.Rmd")
   index2_qmd <- file.path(pkg, "pkgdown/index.qmd")
+  
   has_readme <- file.exists(readme_rmd)
   has_readme_qmd <- file.exists(readme_qmd)
   has_index <- file.exists(index_rmd)
   has_index_qmd <- file.exists(index_qmd)
-   has_index2 <- file.exists(index2_rmd)
-     has_index2_qmd <- file.exists(index2_qmd)
-  has_any_readme <- any(has_readme, has_readme_qmd, has_index,has_index2,has_index_qmd, has_index2_qmd)
+  has_index2 <- file.exists(index2_rmd)
+  has_index2_qmd <- file.exists(index2_qmd)
+  has_any_readme <- any(has_readme, has_readme_qmd, 
+  has_index,has_index2,has_index_qmd, has_index2_qmd)
 
   if (build_readme && has_any_readme) {
     if (has_readme_qmd) {
