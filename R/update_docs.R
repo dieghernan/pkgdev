@@ -515,10 +515,18 @@ ignore = [\"implicit_assignment\"]",
   }
   # Check README.Rmd
   readme_rmd <- file.path(pkg, "README.Rmd")
-  readme_qmd <- file.path(pkg, "README.qmd")
+  readme_qmd <- file.path(pkg, "README.qmd"
+   index_rmd <- file.path(pkg, "index.Rmd")
+  index_qmd <- file.path(pkg, "index.qmd")
+  index2_rmd <- file.path(pkg, "pkgdown/index.Rmd")
+  index2_qmd <- file.path(pkg, "pkgdown/index.qmd")
   has_readme <- file.exists(readme_rmd)
   has_readme_qmd <- file.exists(readme_qmd)
-  has_any_readme <- any(has_readme, has_readme_qmd)
+  has_index <- file.exists(index_rmd)
+  has_index_qmd <- file.exists(index_qmd)
+   has_index2 <- file.exists(index2_rmd)
+     has_index2_qmd <- file.exists(index2_qmd)
+  has_any_readme <- any(has_readme, has_readme_qmd, has_index,has_index2,has_index_qmd, has_index2_qmd)
 
   if (build_readme && has_any_readme) {
     if (has_readme_qmd) {
@@ -526,12 +534,48 @@ ignore = [\"implicit_assignment\"]",
         cli::cli_alert_info("Rebuilding {.file {readme_qmd}}")
       }
       build_readme_qmd(pkg, quiet = isFALSE(verbose))
-    } else {
+    } 
+    
+    
+if (has_index) {
+      if (verbose) {
+        cli::cli_alert_info("Rebuilding {.file {index_rmd}}")
+      }
+      devtools::build_rmd(index2_rmd, pkg, quiet = isFALSE(verbose))
+    }
+    
+    if (has_index2) {
+      if (verbose) {
+        cli::cli_alert_info("Rebuilding {.file {index2_rmd}}")
+      }
+      devtools::build_rmd(index2_rmd, pkg, quiet = isFALSE(verbose))
+    }
+    
+    
+
+    if (has_index_qmd) {
+      if (verbose) {
+        cli::cli_alert_info("Rebuilding {.file {index_qmd}}")
+      }
+      
+build_qmd(index_qmd, pkg, quiet = isFALSE(verbose))
+    }
+    
+        if (has_index2_qmd) {
+      if (verbose) {
+        cli::cli_alert_info("Rebuilding {.file {index2_qmd}}")
+      }
+      
+build_qmd(index_qmd2, pkg, quiet = isFALSE(verbose))
+    }
+    
+    if (has_readme) {
       if (verbose) {
         cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
       }
       devtools::build_readme(pkg, quiet = isFALSE(verbose))
     }
+    
   }
 
   if (opt_imgs) {
