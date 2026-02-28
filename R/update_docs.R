@@ -550,7 +550,7 @@ ignore = [\"implicit_assignment\"]",
       if (verbose) {
         cli::cli_alert_info("Rebuilding {.file {index_rmd}}")
       }
-      devtools::build_rmd(index2_rmd, pkg, quiet = isFALSE(verbose))
+      devtools::build_rmd(index_rmd, pkg, quiet = isFALSE(verbose))
     }
 
     if (has_index2) {
