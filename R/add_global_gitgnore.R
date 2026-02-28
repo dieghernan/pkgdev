@@ -144,6 +144,12 @@ add_global_gitgnore <- function(pkg = ".") {
       "vignettes/articles"
     )
   )
+  
+    usethis::use_build_ignore(
+    c("index.qmd", "index_files/", "index.html", "index.md")
+  )
+
+  usethis::use_git_ignore(c("index_files/", "*index.html", "pkgdown/*_files"))
 
   # gitignore quarto articles and vignettes
   pth <- file.path(pkg, "vignettes")
