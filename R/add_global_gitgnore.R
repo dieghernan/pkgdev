@@ -144,8 +144,8 @@ add_global_gitgnore <- function(pkg = ".") {
       "vignettes/articles"
     )
   )
-  
-    usethis::use_build_ignore(
+
+  usethis::use_build_ignore(
     c("index.qmd", "index_files/", "index.html", "index.md")
   )
 

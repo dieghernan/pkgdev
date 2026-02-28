@@ -47,3 +47,7 @@
 ^vignettes/test-precompute-quarto\.qmd\.orig$
 ^vignettes/_quarto\.yaml$
 ^vignettes/_quarto\.yml$
+^index\.qmd$
+^index_files$
+^index\.html$
+^index\.md$
