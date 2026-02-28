@@ -24,6 +24,7 @@ Imports:
     jsonlite,
     knitr (>= 1.33),
     lintr (>= 2.0.1),
+    magick,
     pkgdown,
     quarto,
     resmush,
