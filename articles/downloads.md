@@ -1,18 +1,16 @@
 # Downloads of my packages
 
-*Updated: 04 Mar 2026*
-
 ## On CRAN
 
 Downloads of my packages from CRAN.
 
 ### Historic
 
-![](downloads_files/figure-html/unnamed-chunk-3-1.png)
+![](downloads_files/figure-html/unnamed-chunk-2-1.png)
 
 ### Weekly downloads
 
-![](downloads_files/figure-html/unnamed-chunk-4-1.png)
+![](downloads_files/figure-html/unnamed-chunk-3-1.png)
 
 ### Download data
 
