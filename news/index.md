@@ -19,6 +19,7 @@
   [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md).
 - Add configuration for [jarl linter](https://jarl.etiennebacher.com/).
 - Can precompute and render Quarto files.
+- Include a RStudio Add-In
 
 ## pkgdev 0.1.0
 
