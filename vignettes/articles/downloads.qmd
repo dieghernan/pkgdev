@@ -1,23 +1,19 @@
 ---
 title: "Downloads of my packages"
+date: today
+date-format: long
+knitr:
+  opts_chunk:
+    collapse: true
+    tidy: "styler"
+    comment: "#>"
+    warning: false
+    message: false
+    error: false
+    dev: "ragg_png"
+    dpi: 300
+    out.width: "100%"
 ---
-
-*Updated: `r format(Sys.Date(),"%d %b %Y")`*
-
-```{r}
-#| include = FALSE
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  tidy = "styler",
-  comment = "#>",
-  warning = FALSE,
-  message = FALSE,
-  error = FALSE,
-  dev = "ragg_png",
-  dpi = 300,
-  out.width = "100%"
-)
-```
 
 ## On CRAN
 
@@ -33,10 +29,10 @@ Sys.setenv("R_CRAN_WEB" = "https://cloud.r-project.org")
 crandb <- unique(tools::CRAN_package_db()$Package)
 mypaks <- c(
   "giscoR", "rogtemplate", "mapSpain", "tidyBdE", "climaemet", "geobounds",
-  "CatastRo", "CatastRoNav", "rostemplate", "igoR",
+  "CatastRo", "CatastRoNav", "rostemplate", "igoR", "rstudiothemes",
   "nominatimlite", "cffr", "pkgdev", "rasterpic", "tidyterra",
   "gitdevr", "arcgeocoder", "resmush"
-)
+) |> unique()
 
 # Packages in CRAN
 mypaks <- mypaks[mypaks %in% crandb]
@@ -222,6 +218,7 @@ reactable(
   filterable = TRUE,
   searchable = TRUE,
   showPageSizeOptions = TRUE,
+  defaultPageSize = 15,
   striped = TRUE,
   defaultColDef = colDef(
     minWidth = 150, vAlign = "center", footerStyle = list(fontWeight = "bold"),
@@ -323,6 +320,7 @@ reactable(
   filterable = TRUE,
   searchable = TRUE,
   showPageSizeOptions = TRUE,
+  defaultPageSize = 15,
   striped = TRUE,
   defaultColDef = colDef(
     minWidth = 150, vAlign = "center", footerStyle = list(fontWeight = "bold"),
