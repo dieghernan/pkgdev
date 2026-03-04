@@ -1,0 +1,14 @@
+Name: Update docs
+Description: Document your package and run housekeeping tasks
+Binding: update_docs
+Interactive: true
+
+Name: Precompute vignettes
+Description: Precompute all the vignettes of the package
+Binding: precompute_vignette_all
+Interactive: true
+
+Name: Build README.qmd
+Description: Build a README.qmd file
+Binding: build_readme_qmd
+Interactive: true

@@ -11,6 +11,7 @@
 -   New function to check titles in `man` dir: `check_rd_titles()`.
 -   Add configuration for [jarl linter](https://jarl.etiennebacher.com/).
 -   Can precompute and render Quarto files.
+-   Include a RStudio Add-In
 
 # pkgdev 0.1.0
 
