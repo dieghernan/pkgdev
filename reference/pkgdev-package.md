@@ -3,7 +3,7 @@
 A small set of functions that takes advantage of GitHub Actions for
 making your life easier as a R package developer. This package is
 primarily intended for personal use, however feel free to use it (at
-your own risk :)).
+your own risk).
 
 ## See also
 
