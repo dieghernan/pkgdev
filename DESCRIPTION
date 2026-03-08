@@ -2,20 +2,20 @@ Type: Package
 Package: pkgdev
 Title: Helpers to Develop a Package using GitHub Actions
 Version: 0.1.0.9150
-Authors@R: 
+Authors@R:
     person("Diego", "Hernangómez", , "diego.hernangomezherrero@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8457-4658"))
 Description: A small set of functions that takes advantage of GitHub
     Actions for making your life easier as a R package developer. This
     package is primarily intended for personal use, however feel free to
-    use it (at your own risk :)).
+    use it (at your own risk).
 License: MIT + file LICENSE
 URL: https://dieghernan.github.io/pkgdev/,
     https://github.com/dieghernan/pkgdev
 BugReports: https://github.com/dieghernan/pkgdev/issues
-Depends: 
+Depends:
     R (>= 4.1.0)
-Imports: 
+Imports:
     cffr (>= 0.2.0),
     cli (>= 3.4.0),
     codemetar (>= 0.3.3),
@@ -38,10 +38,10 @@ Imports:
     utils,
     withr,
     xfun
-Suggests: 
+Suggests:
     jsonld,
     rmarkdown
-VignetteBuilder: 
+VignetteBuilder:
     knitr,
     quarto
 Remotes:

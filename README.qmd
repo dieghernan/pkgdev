@@ -63,6 +63,7 @@ library(pkgdev)
 
 gha_update_docs()
 ```
+
 ```{r}
 #| echo: false
 #| results: asis
@@ -72,8 +73,6 @@ cat(paste0(
   packageVersion("pkgdev"), "**."
 ))
 ```
-
-
 
 ## Related resources
 

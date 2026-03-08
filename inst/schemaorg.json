@@ -14,7 +14,7 @@
         "familyName": "Hernangómez",
         "givenName": "Diego"
       },
-      "description": "A small set of functions that takes advantage of GitHub Actions for making your life easier as a R package developer. This package is primarily intended for personal use, however feel free to use it (at your own risk :)).",
+      "description": "A small set of functions that takes advantage of GitHub Actions for making your life easier as a R package developer. This package is primarily intended for personal use, however feel free to use it (at your own risk).",
       "license": "https://spdx.org/licenses/MIT",
       "name": "pkgdev: Helpers to Develop a Package using GitHub Actions",
       "programmingLanguage": {

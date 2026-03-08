@@ -8,8 +8,6 @@ vignette: >
 
 
 
-
-
 This is an example of a precomputed vignette in Quarto
 
 
