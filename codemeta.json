@@ -141,6 +141,18 @@
     },
     "7": {
       "@type": "SoftwareApplication",
+      "identifier": "ggplot2",
+      "name": "ggplot2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+    },
+    "8": {
+      "@type": "SoftwareApplication",
       "identifier": "jsonlite",
       "name": "jsonlite",
       "provider": {
@@ -151,7 +163,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonlite"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -164,7 +176,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "lintr",
       "name": "lintr",
@@ -177,7 +189,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lintr"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "magick",
       "name": "magick",
@@ -189,7 +201,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magick"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "pkgdown",
       "name": "pkgdown",
@@ -201,7 +213,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=pkgdown"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "quarto",
       "name": "quarto",
@@ -213,7 +225,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=quarto"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "resmush",
       "name": "resmush",
@@ -225,7 +237,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=resmush"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -238,7 +250,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2md",
       "name": "roxygen2md",
@@ -250,7 +262,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2md"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -262,7 +274,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "17": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -275,12 +287,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "18": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "tools",
       "name": "tools"
     },
-    "19": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -293,7 +305,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "20": {
+    "21": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -306,12 +318,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "21": {
+    "22": {
       "@type": "SoftwareApplication",
       "identifier": "utils",
       "name": "utils"
     },
-    "22": {
+    "23": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -323,7 +335,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=withr"
     },
-    "23": {
+    "24": {
       "@type": "SoftwareApplication",
       "identifier": "xfun",
       "name": "xfun",
@@ -338,7 +350,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "356.266KB",
+  "fileSize": "356.46KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
