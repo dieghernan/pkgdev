@@ -84,12 +84,13 @@ dwn_m <- dwn |>
   summarise(downloads = sum(count))
 
 
-# factors by first date on CRAN
-fact <- fechas |>
-  arrange(date) |>
+# factors by avg. monthly downloads
+fact <- dwn_m |>
+  group_by(package) |>
+  summarise(precedence = mean(downloads, na.rm = TRUE)) |>
+  arrange(precedence) |>
   pull(package) |>
-  unique() |>
-  rev()
+  unique()
 
 dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
 ```

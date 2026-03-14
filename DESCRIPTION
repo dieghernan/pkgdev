@@ -21,6 +21,7 @@ Imports:
     codemetar (>= 0.3.3),
     desc,
     devtools (>= 2.4.1),
+    ggplot2,
     jsonlite,
     knitr (>= 1.33),
     lintr (>= 2.0.1),
