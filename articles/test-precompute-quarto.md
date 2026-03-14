@@ -4,14 +4,14 @@ This is an example of a precomputed vignette in Quarto
 
 ``` r
 library("ggplot2")
-#> Error in `library()`:
-#> ! there is no package called 'ggplot2'
 
 ggplot(faithfuld, aes(waiting, eruptions)) +
   geom_raster(aes(fill = density))
-#> Error in `ggplot()`:
-#> ! could not find function "ggplot"
 ```
+
+![A plot with a long caption here](./plot_quarto-1.png)
+
+A plot with a long caption here
 
 See here some text:
 
