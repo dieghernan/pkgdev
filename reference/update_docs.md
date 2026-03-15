@@ -21,7 +21,7 @@ Run routine checks on the package:
   <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
 
 - Rebuild `README.Rmd` (if present) with
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_rmd.html)
+  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
 
 - Optimize images with
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html)
@@ -76,7 +76,7 @@ update_docs(
 - build_readme:
 
   Logical, build `README.Rmd` with
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_rmd.html)
+  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
 
 - verbose:
 
@@ -123,7 +123,7 @@ overall code and the use of `codemeta.json`.
 [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html),
 [`urlchecker::url_check()`](https://rdrr.io/pkg/urlchecker/man/url_check.html),
 [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html),
-[`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_rmd.html),
+[`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html),
 [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html),
 [`tools::resaveRdaFiles()`](https://rdrr.io/r/tools/checkRdaFiles.html)
 

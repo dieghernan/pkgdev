@@ -22,7 +22,7 @@ build_readme_qmd(path = ".", quiet = TRUE, ...)
 
 - path:
 
-  path to the package to build the readme.
+  Path to the top-level directory of the source package.
 
 - ...:
 
@@ -31,8 +31,9 @@ build_readme_qmd(path = ".", quiet = TRUE, ...)
 
 - quiet:
 
-  If `TRUE`, suppress output.
+  If `TRUE`, suppresses most output. Set to `FALSE` if you need to
+  debug.
 
 ## See also
 
-[`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_rmd.html)
+[`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
