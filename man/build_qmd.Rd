@@ -12,11 +12,12 @@ build_readme_qmd(path = ".", quiet = TRUE, ...)
 \arguments{
 \item{files}{The Quarto files to be rendered.}
 
-\item{path}{path to the package to build the readme.}
+\item{path}{Path to the top-level directory of the source package.}
 
 \item{...}{additional arguments passed to \code{\link[quarto:quarto_render]{quarto::quarto_render()}}.}
 
-\item{quiet}{If \code{TRUE}, suppress output.}
+\item{quiet}{If \code{TRUE}, suppresses most output. Set to \code{FALSE}
+if you need to debug.}
 }
 \description{
 \code{build_qmd()} is a wrapper around \code{\link[quarto:quarto_render]{quarto::quarto_render()}} that first
@@ -25,6 +26,6 @@ clean R session. \code{build_readme_qmd()} locates your README.and builds it
 into a README.md
 }
 \seealso{
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}
+\code{\link[devtools:build_readme]{devtools::build_readme()}}
 }
 \concept{functions for rendering documentation}

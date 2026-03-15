@@ -130,7 +130,7 @@
       "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
-      "version": ">= 2.4.1",
+      "version": ">= 2.5.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -350,7 +350,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "356.46KB",
+  "fileSize": "356.532KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",

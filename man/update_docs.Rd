@@ -33,7 +33,7 @@ a codemeta file with \code{\link[codemetar:write_codemeta]{codemetar::write_code
 a CITATION.cff file with \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 
 \item{build_readme}{Logical, build \code{README.Rmd} with
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}}
+\code{\link[devtools:build_readme]{devtools::build_readme()}}}
 
 \item{verbose}{Display informative messages on the console}
 
@@ -62,7 +62,7 @@ Run routine checks on the package:
 \item Roxygenise with \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}}
 \item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/})
-\item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_rmd]{devtools::build_readme()}}
+\item Rebuild \code{README.Rmd} (if present) with \code{\link[devtools:build_readme]{devtools::build_readme()}}
 \item Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}
 \item Write codemeta.json with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}
 \item Write CITATION.cff with \code{\link[cffr:cff_write]{cffr::cff_write()}}
@@ -85,6 +85,6 @@ update_docs()
 \seealso{
 \code{\link[usethis:tidyverse]{usethis::use_tidy_description()}}, \code{\link[styler:style_pkg]{styler::style_pkg()}},
 \code{\link[urlchecker:url_check]{urlchecker::url_check()}}, \code{\link[roxygen2:roxygenize]{roxygen2::roxygenise()}},
-\code{\link[devtools:build_rmd]{devtools::build_readme()}}, \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}},
+\code{\link[devtools:build_readme]{devtools::build_readme()}}, \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}},
 \code{\link[tools:checkRdaFiles]{tools::resaveRdaFiles()}}
 }
