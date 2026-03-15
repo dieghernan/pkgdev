@@ -20,7 +20,7 @@ Imports:
     cli (>= 3.4.0),
     codemetar (>= 0.3.3),
     desc,
-    devtools (>= 2.4.1),
+    devtools (>= 2.5.0),
     ggplot2,
     jsonlite,
     knitr (>= 1.33),

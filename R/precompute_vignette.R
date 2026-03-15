@@ -54,7 +54,7 @@ precompute_vignette <- function(
   withr::with_temp_libpaths(code = {
     devtools::install(
       pkg_build,
-      upgrade = "never",
+      upgrade = FALSE,
       reload = FALSE,
       quick = TRUE,
       quiet = TRUE

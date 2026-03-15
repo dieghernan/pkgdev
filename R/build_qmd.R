@@ -31,7 +31,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
   withr::with_temp_libpaths(code = {
     devtools::install(
       pkg,
-      upgrade = "never",
+      upgrade = FALSE,
       reload = FALSE,
       quick = TRUE,
       quiet = TRUE
