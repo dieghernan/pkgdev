@@ -510,8 +510,8 @@ ignore = [\"implicit_assignment\"]",
   if (verbose) {
     cli::cli_alert_info("Checking missing fields in {.var .Rd} files")
   }
-  devtools::check_doc_fields(pkg)
-
+  devtools::check_doc_fields(pkg, fields = c("value", "examples", "encoding"))
+  
   if (precompute) {
     if (verbose) {
       cli::cli_alert_info("Precomputing vignettes")
