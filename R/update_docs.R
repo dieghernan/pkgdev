@@ -320,9 +320,9 @@ ignore = [\"implicit_assignment\"]",
     if ("R" %in% deps$package) {
       rversion <- deps$version[deps$package == "R"]
       rversion <- trimws(gsub(">|=", "", rversion))
-      jarl_args <- paste0("check . --min-r-version ", rversion)
+      jarl_args <- paste0("check --fix --min-r-version ", rversion)
     } else {
-      jarl_args <- "check ."
+      jarl_args <- "check --fix"
     }
 
     system2("jarl", jarl_args)
