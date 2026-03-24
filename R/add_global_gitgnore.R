@@ -106,6 +106,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore("cran-comments.md", directory = pkg)
 
   usethis::use_git_ignore(".github/pkg.lock", directory = pkg)
+  usethis::use_git_ignore("*.rmarkdown", directory = pkg)
 
   usethis::use_build_ignore("pkgdown")
   usethis::use_build_ignore("pkgdown.yaml")
@@ -131,6 +132,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore(c("/.quarto/", "**/*.quarto_ipynb"), directory = pkg)
 
   usethis::use_build_ignore(c("/.quarto/", "[.]quarto_ipynb$"), escape = FALSE)
+  usethis::use_build_ignore("[.]markdown$", escape = FALSE)
 
   usethis::use_build_ignore(
     c(
@@ -156,7 +158,15 @@ add_global_gitgnore <- function(pkg = ".") {
 
   if (length(list.files(pth, pattern = "qmd$")) > 0) {
     usethis::use_git_ignore(
-      c("/.quarto/", "*_files", "*.html", "*.R", "_quarto.yaml", "_quarto.yml"),
+      c(
+        "/.quarto/",
+        "*_files",
+        "*.rmarkdown",
+        "*.html",
+        "*.R",
+        "_quarto.yaml",
+        "_quarto.yml"
+      ),
       directory = pth
     )
   }
@@ -165,7 +175,15 @@ add_global_gitgnore <- function(pkg = ".") {
 
   if (length(list.files(pth, pattern = "qmd$")) > 0) {
     usethis::use_git_ignore(
-      c("/.quarto/", "*_files", "*.html", "*.R", "_quarto.yaml", "_quarto.yml"),
+      c(
+        "/.quarto/",
+        "*_files",
+        "*.rmarkdown",
+        "*.html",
+        "*.R",
+        "_quarto.yaml",
+        "_quarto.yml"
+      ),
       directory = pth
     )
   }

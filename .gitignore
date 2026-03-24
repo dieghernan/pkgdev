@@ -55,3 +55,4 @@ README.html
 index_files/
 *index.html
 pkgdown/*_files
+*.rmarkdown
