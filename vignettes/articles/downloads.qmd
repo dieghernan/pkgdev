@@ -278,6 +278,7 @@ res <- lapply(mypaks, function(x) {
   api_res <- suppressWarnings(try(download.file(
     paste0("https://packagemanager.posit.co/__api__/repos/1/packages/", x),
     tmp,
+    mode = "wb",
     quiet = TRUE
   ), silent = TRUE))
 
