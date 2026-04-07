@@ -46,7 +46,8 @@ VignetteBuilder:
     knitr,
     quarto
 Remotes:
-    quarto=github::quarto-dev/quarto-r
+    quarto=github::quarto-dev/quarto-r,
+    r-lib/roxygen2
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Encoding: UTF-8
