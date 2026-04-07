@@ -248,7 +248,7 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=roxygen2"
+      "sameAs": "https://github.com/r-lib/roxygen2"
     },
     "16": {
       "@type": "SoftwareApplication",
@@ -350,7 +350,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "357.068KB",
+  "fileSize": "357.299KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
