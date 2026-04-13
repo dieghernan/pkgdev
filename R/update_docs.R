@@ -156,6 +156,7 @@ update_docs <- function(
     syntax_color_console = TRUE,
     use_air_formatter = TRUE,
     use_roxygen = TRUE,
+    visual_markdown_editing_canonical = TRUE,
     visual_markdown_editing_is_default = TRUE,
     visual_markdown_editing_list_spacing = "tight",
     visual_markdown_editing_show_margin = TRUE,
