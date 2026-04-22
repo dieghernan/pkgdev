@@ -63,6 +63,9 @@ add_global_gitgnore <- function(pkg = ".") {
   # R Environment Variables
   usethis::use_git_ignore(".Renviron", directory = pkg)
 
+  usethis::use_git_ignore(".positai", directory = pkg)
+
+
   # Vaccinate
   usethis::git_vaccinate()
 
@@ -147,10 +150,11 @@ add_global_gitgnore <- function(pkg = ".") {
     )
   )
 
+  usethis::use_build_ignore(c(".positai", ".claude"))
+
   usethis::use_build_ignore(
     c("index.qmd", "index_files/", "index.html", "index.md")
   )
-
   usethis::use_git_ignore(c("index_files/", "*index.html", "pkgdown/*_files"))
 
   # gitignore quarto articles and vignettes
