@@ -65,7 +65,6 @@ add_global_gitgnore <- function(pkg = ".") {
 
   usethis::use_git_ignore(".positai", directory = pkg)
 
-
   # Vaccinate
   usethis::git_vaccinate()
 
