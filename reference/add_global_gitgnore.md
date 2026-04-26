@@ -29,7 +29,7 @@ Invisible, and writes a global `.gitignore` file
 ``` r
 # \dontrun{
 add_global_gitgnore()
-#> ✔ Setting active project to "/tmp/RtmpJDOIoK/file200c7707fae3".
+#> ✔ Setting active project to "/tmp/Rtmp3ERBZY/file1d154a34418".
 #> ✔ Configuring core.excludesFile: ~/.gitignore
 #> ✔ Creating the global (user-level) gitignore: ~/.gitignore
 #> ✔ Adding ".Rproj.user", ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and
