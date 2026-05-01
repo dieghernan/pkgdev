@@ -11,6 +11,7 @@ personal use, however feel free to use it (at your own risk 😉).
 You can install the developing version of **pkgdev** with:
 
 ``` r
+
 pak::pak("dieghernan/pkgdev")
 ```
 
@@ -18,6 +19,7 @@ Alternatively, you can install **pkgdev** using the
 [r-universe](https://dieghernan.r-universe.dev/pkgdev):
 
 ``` r
+
 # Install pkgdev in R:
 install.packages("pkgdev", repos = c(
   "https://dieghernan.r-universe.dev",
@@ -28,6 +30,7 @@ install.packages("pkgdev", repos = c(
 ## Example
 
 ``` r
+
 library(pkgdev)
 
 gha_update_docs()

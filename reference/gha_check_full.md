@@ -48,7 +48,7 @@ create your own cron tag.
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/Rtmpt7BmLJ/file1dbe66241d5d/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpRB6Xi4/file1fe170cd07e6/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

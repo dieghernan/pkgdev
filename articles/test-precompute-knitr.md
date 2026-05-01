@@ -3,6 +3,7 @@
 This is an example of a precomputed vignette:
 
 ``` r
+
 library("ggplot2")
 
 ggplot(faithfuld, aes(waiting, eruptions)) +
