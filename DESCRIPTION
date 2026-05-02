@@ -29,7 +29,7 @@ Imports:
     pkgdown,
     quarto,
     resmush,
-    roxygen2 (>= 7.1.0),
+    roxygen2 (>= 8.0.0),
     roxygen2md,
     stringr,
     styler (>= 1.5.1),
@@ -46,8 +46,7 @@ VignetteBuilder:
     knitr,
     quarto
 Remotes:
-    quarto=github::quarto-dev/quarto-r,
-    r-lib/roxygen2
+    quarto=github::quarto-dev/quarto-r
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Config/roxygen2/version: 8.0.0.9000
