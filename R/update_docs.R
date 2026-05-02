@@ -208,7 +208,7 @@ update_docs <- function(
   dsc_f <- file.path(pkg, "DESCRIPTION")
   dsc_lines <- readLines(dsc_f)
 
-  dsc_lines[dsc_lines == "Config/roxygen2/version: 8.0.0"] <- paste0(
+  dsc_lines[dsc_lines == "Config/roxygen2/version: 8.0.0.9000"] <- paste0(
     "Config/roxygen2/version: ",
     "8.0.0"
   )
