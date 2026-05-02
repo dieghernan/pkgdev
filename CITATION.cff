@@ -321,7 +321,7 @@ references:
     given-names: Manuel
   year: '2026'
   doi: 10.32614/CRAN.package.roxygen2
-  version: '>= 7.1.0'
+  version: '>= 8.0.0'
 - type: software
   title: roxygen2md
   abstract: 'roxygen2md: ''Roxygen'' to ''Markdown'''
