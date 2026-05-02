@@ -49,8 +49,8 @@ Remotes:
     quarto=github::quarto-dev/quarto-r
 Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
-Config/roxygen2/version: 8.0.0.9000
+Config/roxygen2/markdown: TRUE
+Config/roxygen2/version: 8.0.0
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
 X-schema.org-keywords: developer-tools, experimental, github-actions, r,
     r-package, rstats
