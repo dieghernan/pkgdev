@@ -203,6 +203,20 @@ update_docs <- function(
       file = file.path(pkg, "DESCRIPTION")
     )
   }
+
+  # Migrate to Roxygen > v8
+  dsc_f <- file.path(pkg, "DESCRIPTION")
+  dsc_lines <- readLines(dsc_f)
+
+  dsc_lines[dsc_lines == "Config/roxygen2/version: 8.0.0"] <- paste0(
+    "Config/roxygen2/version: ",
+    "8.0.0"
+  )
+  dsc_lines <- dsc_lines[!grepl("Roxygen: list", dsc_lines)]
+  dsc_lines <- unique(c(dsc_lines, "Config/roxygen2/markdown: TRUE"))
+
+  usethis::write_over(dsc_f, dsc_lines, overwrite = TRUE)
+
   usethis::use_tidy_description()
   usethis::use_air()
 
