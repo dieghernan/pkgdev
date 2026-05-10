@@ -14,10 +14,7 @@ check_rd_hash <- function(pkg = ".") {
     lns <- readLines(x)
     getti <- grepl("#'", lns, fixed = TRUE)
 
-    data.frame(
-      src = x,
-      bad_hash = any(getti)
-    )
+    data.frame(src = x, bad_hash = any(getti))
   })
 
   enddf <- do.call("rbind", allf)

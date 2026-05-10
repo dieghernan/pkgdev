@@ -35,12 +35,7 @@ check_rd_titles <- function(pkg = ".") {
     tosent <- stringr::str_to_sentence(tit)
     last <- substr(tit, nchar(tit), nchar(tit) + 10)
 
-    data.frame(
-      src = x,
-      title = tit,
-      tosent = tosent,
-      last = last
-    )
+    data.frame(src = x, title = tit, tosent = tosent, last = last)
   })
 
   enddf <- do.call("rbind", allf)

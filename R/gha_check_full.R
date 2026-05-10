@@ -31,54 +31,53 @@
 #' gha_check_full(cron_expr = "57 16 12 * *")
 #' }
 #'
-gha_check_full <-
-  function(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *") {
-    # Check destdir
+gha_check_full <- function(
+  pkg = ".",
+  overwrite = TRUE,
+  cron_expr = "30 08 1 * *"
+) {
+  # Check destdir
 
-    destdir <- file.path(pkg, ".github", "workflows")
-    checkdir <- dir.exists(destdir)
-    if (isFALSE(checkdir)) {
-      dir.create(destdir, recursive = TRUE)
-    }
-
-    # Add files to build ignore
-    usethis::use_build_ignore(".github")
-
-    # Add files to git ignore
-    usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
-    usethis::use_git_ignore(
-      "depends.Rds",
-      directory = file.path(pkg, ".github")
-    )
-    usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
-
-    # Get action file
-    filepath <-
-      system.file("yaml/check-full.yaml", package = "pkgdev")
-
-    # Copy
-    result <- file.copy(filepath, destdir, overwrite = overwrite)
-
-    if (result) {
-      cli::cli_alert_success(paste(
-        cli::col_green("Action updated correctly."),
-        "See {.file {file.path(destdir, basename(filepath))}}"
-      ))
-    } else {
-      cli::cli_alert_danger(cli::col_red("File not updated"))
-      return(invisible())
-    }
-
-    # Add CRON
-    add_cron <- readLines(file.path(destdir, "check-full.yml"))
-    add_cron <- gsub(
-      pattern = "ADD_CRON_EXPRESSION",
-      replacement = cron_expr,
-      x = add_cron,
-      fixed = TRUE
-    )
-
-    writeLines(add_cron, con = file.path(destdir, "check-full.yml"))
-
-    invisible()
+  destdir <- file.path(pkg, ".github", "workflows")
+  checkdir <- dir.exists(destdir)
+  if (isFALSE(checkdir)) {
+    dir.create(destdir, recursive = TRUE)
   }
+
+  # Add files to build ignore
+  usethis::use_build_ignore(".github")
+
+  # Add files to git ignore
+  usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
+  usethis::use_git_ignore("depends.Rds", directory = file.path(pkg, ".github"))
+  usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
+
+  # Get action file
+  filepath <- system.file("yaml/check-full.yaml", package = "pkgdev")
+
+  # Copy
+  result <- file.copy(filepath, destdir, overwrite = overwrite)
+
+  if (result) {
+    cli::cli_alert_success(paste(
+      cli::col_green("Action updated correctly."),
+      "See {.file {file.path(destdir, basename(filepath))}}"
+    ))
+  } else {
+    cli::cli_alert_danger(cli::col_red("File not updated"))
+    return(invisible())
+  }
+
+  # Add CRON
+  add_cron <- readLines(file.path(destdir, "check-full.yml"))
+  add_cron <- gsub(
+    pattern = "ADD_CRON_EXPRESSION",
+    replacement = cron_expr,
+    x = add_cron,
+    fixed = TRUE
+  )
+
+  writeLines(add_cron, con = file.path(destdir, "check-full.yml"))
+
+  invisible()
+}

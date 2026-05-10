@@ -136,24 +136,25 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_build_ignore(c("/.quarto/", "[.]quarto_ipynb$"), escape = FALSE)
   usethis::use_build_ignore("[.]markdown$", escape = FALSE)
 
-  usethis::use_build_ignore(
-    c(
-      "vignettes/.quarto",
-      "vignettes/.quarto/",
-      "vignettes/_quarto.yaml",
-      "vignettes/_quarto.yml",
-      ".quarto/",
-      "vignettes/articles/.quarto",
-      "vignettes/articles/*_files",
-      "vignettes/articles"
-    )
-  )
+  usethis::use_build_ignore(c(
+    "vignettes/.quarto",
+    "vignettes/.quarto/",
+    "vignettes/_quarto.yaml",
+    "vignettes/_quarto.yml",
+    ".quarto/",
+    "vignettes/articles/.quarto",
+    "vignettes/articles/*_files",
+    "vignettes/articles"
+  ))
 
   usethis::use_build_ignore(c(".positai", ".claude"))
 
-  usethis::use_build_ignore(
-    c("index.qmd", "index_files/", "index.html", "index.md")
-  )
+  usethis::use_build_ignore(c(
+    "index.qmd",
+    "index_files/",
+    "index.html",
+    "index.md"
+  ))
   usethis::use_git_ignore(c("index_files/", "*index.html", "pkgdown/*_files"))
 
   # gitignore quarto articles and vignettes

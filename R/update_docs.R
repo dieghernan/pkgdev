@@ -67,10 +67,7 @@ update_docs <- function(
   verbose = TRUE,
   precompute = TRUE,
   opt_imgs = TRUE,
-  opt_dir = c(
-    "man/figures",
-    "vignettes"
-  ),
+  opt_dir = c("man/figures", "vignettes"),
   opt_ext = "png$|jpg$",
   opt_overwrite = TRUE,
   add_contributors = TRUE,
@@ -292,12 +289,10 @@ update_docs <- function(
     if (verbose) {
       cli::cli_alert_info("Configuring {.pkg jarl}")
       cli::cli_alert("See more in {.url https://jarl.etiennebacher.com/}")
-      cli::cli_alert(
-        paste0(
-          "Read {.href [jarl's docs ](https://jarl.etiennebacher.com/)} ",
-          "to learn about jarl linter."
-        )
-      )
+      cli::cli_alert(paste0(
+        "Read {.href [jarl's docs ](https://jarl.etiennebacher.com/)} ",
+        "to learn about jarl linter."
+      ))
     }
     writeLines(
       "[lint]
@@ -414,10 +409,7 @@ ignore = [\"implicit_assignment\"]",
   styler::style_pkg(filetype = fmt_file_type)
 
   if (dir.exists(file.path(pkg, "vignettes"))) {
-    styler::style_dir(
-      file.path(pkg, "vignettes"),
-      filetype = fmt_file_type
-    )
+    styler::style_dir(file.path(pkg, "vignettes"), filetype = fmt_file_type)
   }
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
@@ -608,14 +600,12 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (opt_imgs) {
-    try(
-      resmush::resmush_dir(
-        dir = opt_dir,
-        ext = opt_ext,
-        report = verbose,
-        overwrite = opt_overwrite
-      )
-    )
+    try(resmush::resmush_dir(
+      dir = opt_dir,
+      ext = opt_ext,
+      report = verbose,
+      overwrite = opt_overwrite
+    ))
     # Second pass, this affects if optipng is installed
     lapply(opt_dir, xfun::optipng)
     try(pkgdown::build_favicons(overwrite = TRUE))

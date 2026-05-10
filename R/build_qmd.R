@@ -80,9 +80,12 @@ build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
     )
   }
 
-  usethis::use_build_ignore(
-    c("README.qmd", "inst/README.qmd", "README_files/", "README.html")
-  )
+  usethis::use_build_ignore(c(
+    "README.qmd",
+    "inst/README.qmd",
+    "README_files/",
+    "README.html"
+  ))
 
   usethis::use_git_ignore(c("README_files/", "README.html"), directory = path)
 
