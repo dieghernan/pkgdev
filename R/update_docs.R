@@ -522,11 +522,10 @@ ignore = [\"implicit_assignment\"]",
   }
   devtools::check_doc_fields(pkg, fields = c("value", "examples", "encoding"))
 
-
   if (verbose) {
     cli::cli_alert_info("Running {.pkg codetools}")
   }
-  
+
   desc_obj <- desc::desc(pkg)
   pkname <- desc_obj$get("Package")
   codetools::checkUsagePackage(pkname)

@@ -101,6 +101,18 @@ references:
   doi: 10.32614/CRAN.package.codemetar
   version: '>= 0.3.3'
 - type: software
+  title: codetools
+  abstract: 'codetools: Code Analysis Tools for R'
+  notes: Imports
+  url: https://gitlab.com/luke-tierney/codetools
+  repository: https://CRAN.R-project.org/package=codetools
+  authors:
+  - family-names: Tierney
+    given-names: Luke
+    email: luke-tierney@uiowa.edu
+  year: '2026'
+  doi: 10.32614/CRAN.package.codetools
+- type: software
   title: desc
   abstract: 'desc: Manipulate DESCRIPTION Files'
   notes: Imports

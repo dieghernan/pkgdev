@@ -116,6 +116,18 @@
     },
     "5": {
       "@type": "SoftwareApplication",
+      "identifier": "codetools",
+      "name": "codetools",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=codetools"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
       "identifier": "desc",
       "name": "desc",
       "provider": {
@@ -126,7 +138,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=desc"
     },
-    "6": {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "devtools",
       "name": "devtools",
@@ -139,7 +151,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "ggplot2",
       "name": "ggplot2",
@@ -151,7 +163,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=ggplot2"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "jsonlite",
       "name": "jsonlite",
@@ -163,7 +175,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=jsonlite"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
@@ -176,7 +188,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
     },
-    "10": {
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "lintr",
       "name": "lintr",
@@ -189,7 +201,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lintr"
     },
-    "11": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "magick",
       "name": "magick",
@@ -201,7 +213,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=magick"
     },
-    "12": {
+    "13": {
       "@type": "SoftwareApplication",
       "identifier": "pkgdown",
       "name": "pkgdown",
@@ -213,7 +225,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=pkgdown"
     },
-    "13": {
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "quarto",
       "name": "quarto",
@@ -225,7 +237,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=quarto"
     },
-    "14": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "resmush",
       "name": "resmush",
@@ -237,7 +249,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=resmush"
     },
-    "15": {
+    "16": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2",
       "name": "roxygen2",
@@ -250,7 +262,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2"
     },
-    "16": {
+    "17": {
       "@type": "SoftwareApplication",
       "identifier": "roxygen2md",
       "name": "roxygen2md",
@@ -262,7 +274,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=roxygen2md"
     },
-    "17": {
+    "18": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -274,7 +286,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     },
-    "18": {
+    "19": {
       "@type": "SoftwareApplication",
       "identifier": "styler",
       "name": "styler",
@@ -287,12 +299,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=styler"
     },
-    "19": {
+    "20": {
       "@type": "SoftwareApplication",
       "identifier": "tools",
       "name": "tools"
     },
-    "20": {
+    "21": {
       "@type": "SoftwareApplication",
       "identifier": "urlchecker",
       "name": "urlchecker",
@@ -305,7 +317,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=urlchecker"
     },
-    "21": {
+    "22": {
       "@type": "SoftwareApplication",
       "identifier": "usethis",
       "name": "usethis",
@@ -318,12 +330,12 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=usethis"
     },
-    "22": {
+    "23": {
       "@type": "SoftwareApplication",
       "identifier": "utils",
       "name": "utils"
     },
-    "23": {
+    "24": {
       "@type": "SoftwareApplication",
       "identifier": "withr",
       "name": "withr",
@@ -335,7 +347,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=withr"
     },
-    "24": {
+    "25": {
       "@type": "SoftwareApplication",
       "identifier": "xfun",
       "name": "xfun",
@@ -350,7 +362,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "355.868KB",
+  "fileSize": "356.063KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
