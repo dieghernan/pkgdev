@@ -144,7 +144,8 @@ add_global_gitgnore <- function(pkg = ".") {
     ".quarto/",
     "vignettes/articles/.quarto",
     "vignettes/articles/*_files",
-    "vignettes/articles"
+    "vignettes/articles",
+    ".gitattributes"
   ))
 
   usethis::use_build_ignore(c(".positai", ".claude"))
