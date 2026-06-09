@@ -331,11 +331,11 @@ ignore = [\"implicit_assignment\"]",
       rversion <- deps$version[deps$package == "R"]
       rversion <- trimws(gsub(">|=", "", rversion))
       jarl_args <- paste0(
-        "check . --fix --allow-dirty --min-r-version ",
+        "check . --fix --allow-dirty --unsafe-fixes --min-r-version ",
         rversion
       )
     } else {
-      jarl_args <- "check . --fix --allow-dirty"
+      jarl_args <- "check . --fix --allow-dirty --unsafe-fixes"
     }
 
     system2("jarl", jarl_args)
