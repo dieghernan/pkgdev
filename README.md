@@ -8,8 +8,7 @@
 
 [![r-universe](https://dieghernan.r-universe.dev/badges/pkgdev)](https://dieghernan.r-universe.dev/)
 [![R-CMD-check](https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml/badge.svg)](https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml)
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![CodeFactor](https://www.codefactor.io/repository/github/dieghernan/pkgdev/badge)](https://www.codefactor.io/repository/github/dieghernan/pkgdev)
 
 <!-- badges: end -->
