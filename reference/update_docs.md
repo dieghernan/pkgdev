@@ -24,7 +24,7 @@ Run routine checks on the package:
   [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
 
 - Optimize images with
-  [`resmush::resmush_dir()`](https://rdrr.io/pkg/resmush/man/resmush_dir.html)
+  [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html)
 
 - Write codemeta.json with
   [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html)
@@ -90,12 +90,12 @@ update_docs(
 - opt_imgs:
 
   Logical. Optimize images with
-  [`resmush::resmush_dir()`](https://rdrr.io/pkg/resmush/man/resmush_dir.html)?
+  [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html)?
 
 - opt_dir, opt_ext, opt_overwrite:
 
   See `dir`, `ext` and `overwrite` in
-  [`resmush::resmush_dir()`](https://rdrr.io/pkg/resmush/man/resmush_dir.html).
+  [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
 
 - add_contributors:
 

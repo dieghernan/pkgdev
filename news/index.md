@@ -14,7 +14,7 @@
   [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   modifies RStudio Global and Project options.
 - New capability for optimizing images with
-  [`resmush::resmush_dir()`](https://rdrr.io/pkg/resmush/man/resmush_dir.html).
+  [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
 - New function to check titles in `man` dir:
   [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md).
 - Add configuration for [jarl linter](https://jarl.etiennebacher.com/).
