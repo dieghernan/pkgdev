@@ -12,7 +12,7 @@ Run routine checks on the package:
   [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html)
 
 - Check urls with
-  [`urlchecker::url_check()`](https://rdrr.io/pkg/urlchecker/man/url_check.html)
+  [`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html)
 
 - Roxygenise with
   [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html)
@@ -61,7 +61,7 @@ update_docs(
 - url_update:
 
   Logical, do you want to update urls with
-  [`urlchecker::url_update()`](https://rdrr.io/pkg/urlchecker/man/url_update.html)?
+  [`urlchecker::url_update()`](https://urlchecker.r-lib.org/reference/url_update.html)?
 
 - create_codemeta:
 
@@ -121,7 +121,7 @@ overall code and the use of `codemeta.json`.
 
 [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html),
 [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html),
-[`urlchecker::url_check()`](https://rdrr.io/pkg/urlchecker/man/url_check.html),
+[`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html),
 [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html),
 [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html),
 [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html),
