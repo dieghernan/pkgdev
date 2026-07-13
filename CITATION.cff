@@ -398,7 +398,7 @@ references:
   title: urlchecker
   abstract: 'urlchecker: Run CRAN URL Checks from Older R Versions'
   notes: Imports
-  url: https://github.com/r-lib/urlchecker
+  url: https://urlchecker.r-lib.org/
   repository: https://CRAN.R-project.org/package=urlchecker
   authors:
   - name: R Core team
