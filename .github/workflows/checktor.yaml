@@ -1,17 +1,13 @@
 name: checktor
 
 on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: checktor-${{ github.event_name }}-${{ github.ref }}
+  group: checktor-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -41,25 +37,34 @@ jobs:
       - name: Run checktor
         shell: Rscript {0}
         run: |
-          results <- checktor::checktor()
+          results <- checktor::checktor(verbose = TRUE)
+          healthy <- checktor::is_healthy(results)
 
           report <- checktor::health_report(
             results,
             format = "markdown"
           )
 
-          writeLines(report, "checktor-report.md")
+          summary <- Sys.getenv("GITHUB_STEP_SUMMARY")
 
-          if (!checktor::is_healthy(results)) {
+          heading <- if (healthy) {
+            "## ✅ checktor passed"
+          } else {
+            "## ❌ checktor found issues"
+          }
+
+          writeLines(
+            c(
+              heading,
+              "",
+              report,
+              ""
+            ),
+            summary
+          )
+
+          if (!healthy) {
             checktor::prescribe(results)
             stop("checktor found issues.", call. = FALSE)
           }
-
-      - name: Upload checktor report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: checktor-report
-          path: checktor-report.md
-          if-no-files-found: warn
  
