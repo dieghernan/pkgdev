@@ -1,21 +1,20 @@
 # pkgdev
 
-**pkgdev** is a small package that includes a set of functions that
-takes advantage of [GitHub Actions
-(GHA)](https://github.com/features/actions) for making your life easier
-as a R package developer. This package is primarily intended for
-personal use, however feel free to use it (at your own risk 😉).
+**pkgdev** provides helpers for package maintenance, documentation
+rendering and [GitHub Actions](https://github.com/features/actions)
+workflows. It is primarily intended for personal use, but you are
+welcome to use it at your own risk.
 
 ## Installation
 
-You can install the developing version of **pkgdev** with:
+You can install the development version of **pkgdev** with:
 
 ``` r
 
 pak::pak("dieghernan/pkgdev")
 ```
 
-Alternatively, you can install **pkgdev** using the
+Alternatively, you can install **pkgdev** from
 [r-universe](https://dieghernan.r-universe.dev/pkgdev):
 
 ``` r
@@ -42,65 +41,67 @@ Document created with package pkgdev **v0.1.0.9150**.
 
 - The [tidyverse style guide](https://style.tidyverse.org/).
 - **ThinkR**: [Preparing your package for a CRAN
-  submission](https://github.com/ThinkR-open/prepare-for-cran)
+  submission](https://github.com/ThinkR-open/prepare-for-cran).
 - Davis Vaughan:
   [extrachecks](https://github.com/DavisVaughan/extrachecks).
-- **{usethis} package**: [Create a release checklist in a GitHub
+- The **usethis** package: [Create a release checklist in a GitHub
   issue](https://usethis.r-lib.org/reference/use_release_issue.html)
-- The whole [{usethis} package](https://usethis.r-lib.org)
+- The full [**usethis** package website](https://usethis.r-lib.org).
 
 # Package index
 
-## GitHub Actions
-
-Install GHA on your package
+## GitHub Actions helpers
 
 - [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
-  : Create a GitHub action that checks regularly your package
+  : Create a GitHub action that checks your package regularly
+
 - [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
-  : Create a GitHub action that builds a pkgdown site
+  :
+
+  Create a GitHub action that builds a
+  [pkgdown](https://CRAN.R-project.org/package=pkgdown) site
+
 - [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
   : Create a GitHub action that documents and checks your package
 
-## Other helpers
+## Documentation check helpers
+
+- [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
+  : Inspect Rd file titles
+
+## Package maintenance helpers
 
 - [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
   :
 
   Add `.gitignore` to package
 
-- [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
-  [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
-  : Precompute vignettes
-
-- [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
-  [`build_readme_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
-  : Build a Quarto files package
-
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   : Document your package
 
-- [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
-  : Check the titles of a Rd file
+## Documentation renderers
 
-## About the package
-
-- [`pkgdev`](https://dieghernan.github.io/pkgdev/reference/pkgdev-package.md)
-  [`pkgdev-package`](https://dieghernan.github.io/pkgdev/reference/pkgdev-package.md)
-  : pkgdev: Helpers to Develop a Package using GitHub Actions
+- [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
+  [`build_readme_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
+  : Build Quarto files for a package
+- [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  : Precompute vignettes
 
 # Articles
 
 ### Downloads
 
-- [Downloads of my
-  packages](https://dieghernan.github.io/pkgdev/articles/downloads.md):
+Explore download statistics for related packages.
 
-### Testing precomputes
+- [Package
+  downloads](https://dieghernan.github.io/pkgdev/articles/downloads.md):
 
-Testing precomputes
+### Precompute examples
 
-- [Example of a precomputed vignette -
-  Rmd](https://dieghernan.github.io/pkgdev/articles/test-precompute-knitr.md):
-- [Example of a precomputed vignette -
-  Quarto](https://dieghernan.github.io/pkgdev/articles/test-precompute-quarto.md):
+Examples used to verify precomputed vignette workflows.
+
+- [Precomputed R Markdown vignette
+  example](https://dieghernan.github.io/pkgdev/articles/test-precompute-knitr.md):
+- [Precomputed Quarto vignette
+  example](https://dieghernan.github.io/pkgdev/articles/test-precompute-quarto.md):

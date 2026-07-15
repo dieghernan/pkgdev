@@ -1,6 +1,7 @@
-# Example of a precomputed vignette - Rmd
+# Precomputed R Markdown vignette example
 
-This is an example of a precomputed vignette:
+This file is an example input for
+[`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md).
 
 ``` r
 
@@ -10,11 +11,12 @@ ggplot(faithfuld, aes(waiting, eruptions)) +
   geom_raster(aes(fill = density))
 ```
 
-![A plot with a long caption here](plot-1.png)
+![A two-dimensional density plot of the \`faithfuld\` data.](plot-1.png)
 
-A plot with a long caption here
+A two-dimensional density plot of the `faithfuld` data.
 
-See here some text:
+The remaining text is intentionally long so the precompute workflow has
+enough content to render.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
 efficitur massa risus, eu tincidunt magna finibus id. Donec quis

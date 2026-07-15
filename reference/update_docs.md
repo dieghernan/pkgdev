@@ -2,35 +2,35 @@
 
 Run routine checks on the package:
 
-- Clean DESCRIPTION with
-  [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html)
+- Clean `DESCRIPTION` with
+  [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html).
 
-- Compress the data of the paths `"./data"` and `"./R"` using
+- Compress data in the `"./data"` and `"./R"` paths using
   [`tools::resaveRdaFiles()`](https://rdrr.io/r/tools/checkRdaFiles.html).
 
 - Style code with
-  [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html)
+  [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html).
 
-- Check urls with
-  [`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html)
+- Check URLs with
+  [`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html).
 
-- Roxygenise with
-  [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html)
+- Roxygenize with
+  [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html).
 
-- Precompute vignettes if present (see
-  <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
+- Precompute vignettes, if present (see
+  <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
 
-- Rebuild `README.Rmd` (if present) with
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
+- Rebuild `README.Rmd`, if present, with
+  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html).
 
 - Optimize images with
-  [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html)
+  [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
 
-- Write codemeta.json with
-  [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html)
+- Write `codemeta.json` with
+  [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html).
 
-- Write CITATION.cff with
-  [`cffr::cff_write()`](https://docs.ropensci.org/cffr/reference/cff_write.html)
+- Write `CITATION.cff` with
+  [`cffr::cff_write()`](https://docs.ropensci.org/cffr/reference/cff_write.html).
 
 ## Usage
 
@@ -60,41 +60,43 @@ update_docs(
 
 - url_update:
 
-  Logical, do you want to update urls with
+  A logical value. Should URLs be updated with
   [`urlchecker::url_update()`](https://urlchecker.r-lib.org/reference/url_update.html)?
 
 - create_codemeta:
 
-  Logical, do you want to create a codemeta file with
+  A logical value. Should `codemeta.json` be created with
   [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html)?
 
 - create_cff:
 
-  Logical, do you want to create a CITATION.cff file with
+  A logical value. Should `CITATION.cff` be created with
   [`cffr::cff_write()`](https://docs.ropensci.org/cffr/reference/cff_write.html)?
 
 - build_readme:
 
-  Logical, build `README.Rmd` with
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
+  A logical value. Should `README.Rmd` be built with
+  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)?
 
 - verbose:
 
-  Display informative messages on the console
+  A logical value. Should informative messages be displayed on the
+  console?
 
 - precompute:
 
-  Logical, detect and precompute vignettes? See also
+  A logical value. Should vignettes be detected and precomputed? See
+  also
   [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md).
 
 - opt_imgs:
 
-  Logical. Optimize images with
+  A logical value. Should images be optimized with
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html)?
 
 - opt_dir, opt_ext, opt_overwrite:
 
-  See `dir`, `ext` and `overwrite` in
+  Options passed to the `dir`, `ext` and `overwrite` arguments of
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
 
 - add_contributors:
@@ -103,35 +105,63 @@ update_docs(
 
 - ...:
 
-  Additional arguments to functions
+  Additional arguments passed to downstream functions.
 
 ## Value
 
-invisible, or some messages on `verbose = TRUE`.
+Invisibly returns `NULL`. When `verbose = TRUE`, it emits progress
+messages.
 
 ## Details
 
-This function tries to update and clean the package following a mix of
-best practices (e.g. checking the urls, roxygenise and rebuilding the
-`README`) and some other discretionary practices I like to have in a
-package, as the `tidyverse` approach for the `DESCRIPTION` file and
-overall code and the use of `codemeta.json`.
+This function updates and cleans the package using a mix of best
+practices, such as checking URLs, roxygenizing and rebuilding the
+`README`. It also applies discretionary practices such as the tidyverse
+approach for the `DESCRIPTION` file, overall code style and
+`codemeta.json`.
 
 ## See also
 
-[`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html),
-[`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html),
-[`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html),
-[`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html),
-[`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html),
-[`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html),
-[`tools::resaveRdaFiles()`](https://rdrr.io/r/tools/checkRdaFiles.html)
+- [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
+  updates package ignore files.
+
+- [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
+  builds Quarto files.
+
+- [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
+  checks generated Rd titles.
+
+- [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  precomputes vignettes.
+
+- [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html)
+  cleans `DESCRIPTION`.
+
+- [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html)
+  styles package code.
+
+- [`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html)
+  checks URLs.
+
+- [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html)
+  updates documentation.
+
+- [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
+  builds `README.Rmd`.
+
+- [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html)
+  writes `codemeta.json`.
+
+- [`tools::resaveRdaFiles()`](https://rdrr.io/r/tools/checkRdaFiles.html)
+  compresses data files.
+
+Package maintenance helpers:
+[`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
 
 ## Examples
 
 ``` r
 # \dontrun{
-
 update_docs()
 #> ℹ Adding .gitignore to root
 #> Warning: cannot open file '.gitignore': No such file or directory

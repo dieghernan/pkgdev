@@ -2,14 +2,16 @@
 
 ### Downloads
 
-- [Downloads of my
-  packages](https://dieghernan.github.io/pkgdev/articles/downloads.md):
+Explore download statistics for related packages.
 
-### Testing precomputes
+- [Package
+  downloads](https://dieghernan.github.io/pkgdev/articles/downloads.md):
 
-Testing precomputes
+### Precompute examples
 
-- [Example of a precomputed vignette -
-  Rmd](https://dieghernan.github.io/pkgdev/articles/test-precompute-knitr.md):
-- [Example of a precomputed vignette -
-  Quarto](https://dieghernan.github.io/pkgdev/articles/test-precompute-quarto.md):
+Examples used to verify precomputed vignette workflows.
+
+- [Precomputed R Markdown vignette
+  example](https://dieghernan.github.io/pkgdev/articles/test-precompute-knitr.md):
+- [Precomputed Quarto vignette
+  example](https://dieghernan.github.io/pkgdev/articles/test-precompute-quarto.md):

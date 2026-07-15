@@ -20,7 +20,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Downloads</h6></li>
-    <li><a class="dropdown-item" href="../articles/downloads.html">Downloads of my packages</a></li>
+    <li><a class="dropdown-item" href="../articles/downloads.html">Package downloads</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="../articles/index.html">More articles...</a></li>
   </ul></li>
@@ -45,9 +45,9 @@
     </div>
 
     <div class="section level2">
-      <h2 id="github-actions">GitHub Actions<a class="anchor" aria-label="anchor" href="#github-actions"></a></h2>
+      <h2 id="github-actions-helpers">GitHub Actions helpers<a class="anchor" aria-label="anchor" href="#github-actions-helpers"></a></h2>
 
-      <div class="section-desc"><p>Install GHA on your package</p></div>
+
 
       <dl></dl></div><div class="section level2">
 
@@ -59,14 +59,14 @@
           <code><a href="gha_check_full.html">gha_check_full()</a></code>
 
         </dt>
-        <dd>Create a GitHub action that checks regularly your package</dd>
+        <dd>Create a GitHub action that checks your package regularly</dd>
 
         <dt>
 
           <code><a href="gha_pkgdown_branch.html">gha_pkgdown_branch()</a></code>
 
         </dt>
-        <dd>Create a GitHub action that builds a pkgdown site</dd>
+        <dd>Create a GitHub action that builds a <a href="https://CRAN.R-project.org/package=pkgdown" class="external-link"><span class="pkg">pkgdown</span></a> site</dd>
 
         <dt>
 
@@ -75,7 +75,23 @@
         </dt>
         <dd>Create a GitHub action that documents and checks your package</dd>
       </dl></div><div class="section level2">
-      <h2 id="other-helpers">Other helpers<a class="anchor" aria-label="anchor" href="#other-helpers"></a></h2>
+      <h2 id="documentation-check-helpers">Documentation check helpers<a class="anchor" aria-label="anchor" href="#documentation-check-helpers"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="check_rd_titles.html">check_rd_titles()</a></code>
+
+        </dt>
+        <dd>Inspect Rd file titles</dd>
+      </dl></div><div class="section level2">
+      <h2 id="package-maintenance-helpers">Package maintenance helpers<a class="anchor" aria-label="anchor" href="#package-maintenance-helpers"></a></h2>
 
 
 
@@ -93,33 +109,12 @@
 
         <dt>
 
-          <code><a href="precompute.html">precompute_vignette()</a></code> <code><a href="precompute.html">precompute_vignette_all()</a></code>
-
-        </dt>
-        <dd>Precompute vignettes</dd>
-
-        <dt>
-
-          <code><a href="build_qmd.html">build_qmd()</a></code> <code><a href="build_qmd.html">build_readme_qmd()</a></code>
-
-        </dt>
-        <dd>Build a Quarto files package</dd>
-
-        <dt>
-
           <code><a href="update_docs.html">update_docs()</a></code>
 
         </dt>
         <dd>Document your package</dd>
-
-        <dt>
-
-          <code><a href="check_rd_titles.html">check_rd_titles()</a></code>
-
-        </dt>
-        <dd>Check the titles of a Rd file</dd>
       </dl></div><div class="section level2">
-      <h2 id="about-the-package">About the package<a class="anchor" aria-label="anchor" href="#about-the-package"></a></h2>
+      <h2 id="documentation-renderers">Documentation renderers<a class="anchor" aria-label="anchor" href="#documentation-renderers"></a></h2>
 
 
 
@@ -130,10 +125,17 @@
 
       <dl><dt>
 
-          <code><a href="pkgdev-package.html">pkgdev</a></code> <code><a href="pkgdev-package.html">pkgdev-package</a></code>
+          <code><a href="build_qmd.html">build_qmd()</a></code> <code><a href="build_qmd.html">build_readme_qmd()</a></code>
 
         </dt>
-        <dd>pkgdev: Helpers to Develop a Package using GitHub Actions</dd>
+        <dd>Build Quarto files for a package</dd>
+
+        <dt>
+
+          <code><a href="precompute.html">precompute_vignette()</a></code> <code><a href="precompute.html">precompute_vignette_all()</a></code>
+
+        </dt>
+        <dd>Precompute vignettes</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

@@ -1,10 +1,10 @@
-# Downloads of my packages
+# Package downloads
 
 ## On CRAN
 
-Downloads of my packages from CRAN.
+Download data for my packages on CRAN.
 
-### Historic
+### Historical downloads
 
 ![](downloads_files/figure-html/unnamed-chunk-2-1.png)
 
@@ -16,5 +16,5 @@ Downloads of my packages from CRAN.
 
 ## On Posit Package Manager
 
-Downloads and data available of my packages from [Posit Package
+Download data for my packages from [Posit Package
 Manager](https://packagemanager.posit.co/client/#/).

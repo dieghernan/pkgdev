@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Helpers to Develop a Package using GitHub Actions • pkgdev</title>
+<title>Helpers to Develop Packages with GitHub Actions • pkgdev</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="icon" type="”image/svg+xml”" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -20,9 +20,9 @@
 <link href="deps/Roboto-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Helpers to Develop a Package using GitHub Actions">
-<meta name="description" content="A small set of functions that takes advantage of GitHub Actions for making your life easier as a R package developer. This package is primarily intended for personal use, however feel free to use it (at your own risk).">
-<meta property="og:description" content="A small set of functions that takes advantage of GitHub Actions for making your life easier as a R package developer. This package is primarily intended for personal use, however feel free to use it (at your own risk).">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Helpers to Develop Packages with GitHub Actions">
+<meta name="description" content="Helpers for package maintenance, documentation rendering and GitHub Actions workflows. The package is primarily intended for personal use, but you are welcome to use it at your own risk.">
+<meta property="og:description" content="Helpers for package maintenance, documentation rendering and GitHub Actions workflows. The package is primarily intended for personal use, but you are welcome to use it at your own risk.">
 <meta property="og:image" content="https://dieghernan.github.io/pkgdev/logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@dhernangomez">
@@ -52,7 +52,7 @@
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Downloads</h6></li>
-    <li><a class="dropdown-item" href="articles/downloads.html">Downloads of my packages</a></li>
+    <li><a class="dropdown-item" href="articles/downloads.html">Package downloads</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" href="articles/index.html">More articles...</a></li>
   </ul>
@@ -88,14 +88,14 @@
 <!-- badges: start -->
 
 <!-- badges: end -->
-<p><strong>pkgdev</strong> is a small package that includes a set of functions that takes advantage of <a href="https://github.com/features/actions" class="external-link">GitHub Actions (GHA)</a> for making your life easier as a R package developer. This package is primarily intended for personal use, however feel free to use it (at your own risk <span class="emoji" data-emoji="wink">😉</span>).</p>
+<p><strong>pkgdev</strong> provides helpers for package maintenance, documentation rendering and <a href="https://github.com/features/actions" class="external-link">GitHub Actions</a> workflows. It is primarily intended for personal use, but you are welcome to use it at your own risk.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the developing version of <strong>pkgdev</strong> with:</p>
+<p>You can install the development version of <strong>pkgdev</strong> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"dieghernan/pkgdev"</span><span class="op">)</span></span></code></pre></div>
-<p>Alternatively, you can install <strong>pkgdev</strong> using the <a href="https://dieghernan.r-universe.dev/pkgdev" class="external-link">r-universe</a>:</p>
+<p>Alternatively, you can install <strong>pkgdev</strong> from <a href="https://dieghernan.r-universe.dev/pkgdev" class="external-link">r-universe</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Install pkgdev in R:</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"pkgdev"</span>, repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
@@ -118,14 +118,11 @@
 <ul>
 <li>The <a href="https://style.tidyverse.org/" class="external-link">tidyverse style guide</a>.</li>
 <li>
-<strong>ThinkR</strong>: <a href="https://github.com/ThinkR-open/prepare-for-cran" class="external-link">Preparing your package for a CRAN submission</a>
-</li>
+<strong>ThinkR</strong>: <a href="https://github.com/ThinkR-open/prepare-for-cran" class="external-link">Preparing your package for a CRAN submission</a>.</li>
 <li>Davis Vaughan: <a href="https://github.com/DavisVaughan/extrachecks" class="external-link">extrachecks</a>.</li>
-<li>
-<strong>{usethis} package</strong>: <a href="https://usethis.r-lib.org/reference/use_release_issue.html" class="external-link">Create a release checklist in a GitHub issue</a>
+<li>The <strong>usethis</strong> package: <a href="https://usethis.r-lib.org/reference/use_release_issue.html" class="external-link">Create a release checklist in a GitHub issue</a>
 </li>
-<li>The whole <a href="https://usethis.r-lib.org" class="external-link">{usethis} package</a>
-</li>
+<li>The full <a href="https://usethis.r-lib.org" class="external-link"><strong>usethis</strong> package website</a>.</li>
 </ul>
 </div>
 </div>

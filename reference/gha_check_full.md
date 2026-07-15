@@ -1,8 +1,8 @@
-# Create a GitHub action that checks regularly your package
+# Create a GitHub action that checks your package regularly
 
-The GitHub action created would run `R CMD check` on your package. It
-uses a wide range of platforms, can be reduced by commenting or deleting
-platforms on the matrix config.
+The GitHub action runs `R CMD check` on your package. It uses a wide
+range of platforms, which can be reduced by commenting out or deleting
+platforms in the matrix configuration.
 
 ## Usage
 
@@ -12,7 +12,8 @@ gha_check_full(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *")
 
 ## Source
 
-[r-lib/actions](https://github.com/r-lib/actions/tree/master/examples)
+Examples from
+[r-lib/actions](https://github.com/r-lib/actions/tree/master/examples).
 
 ## Arguments
 
@@ -31,7 +32,8 @@ gha_check_full(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *")
 
 ## Value
 
-A GitHub Action on `<pkg>/.github/workflows`.
+Invisibly returns `NULL` after writing a GitHub Actions workflow to
+`<pkg>/.github/workflows`.
 
 ## Details
 
@@ -40,7 +42,19 @@ create your own cron tag.
 
 ## See also
 
-[`usethis::use_github_action()`](https://usethis.r-lib.org/reference/use_github_action.html)
+- [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
+  creates a [pkgdown](https://CRAN.R-project.org/package=pkgdown)
+  deployment action.
+
+- [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
+  creates a documentation and deployment action.
+
+- [`usethis::use_github_action()`](https://usethis.r-lib.org/reference/use_github_action.html)
+  creates GitHub Actions workflows.
+
+GitHub Actions helpers:
+[`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md),
+[`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
 
 ## Examples
 
@@ -48,7 +62,7 @@ create your own cron tag.
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpLPNsig/file1da3474824b/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpHJg6I5/file1aef6237dbb0/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

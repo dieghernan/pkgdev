@@ -2,24 +2,29 @@
 
 ## pkgdev (development version)
 
-- Add `pkgdown` to Imports
-- Add `.imgbotconfig` to `.Rbuildignore`.
-- Remove `crayon` and use `cli` instead.
-- Use
-  [`lintr::use_lintr()`](https://lintr.r-lib.org/reference/use_lintr.html)
-  and add specific options.
-- Clean `yaml/yml` files of trailing white spaces and adds an empty line
-  at the end of the file
-- **CAUTION**:
-  [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  modifies RStudio Global and Project options.
-- New capability for optimizing images with
+- Added `.imgbotconfig` to `.Rbuildignore`.
+- Added configuration for the [jarl
+  linter](https://jarl.etiennebacher.com/).
+- Added **pkgdown** to Imports.
+- Included an RStudio add-in.
+- Removed **crayon** and now use **cli** instead.
+- [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
+  checks titles in the `man` directory.
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  can clean YAML files of trailing whitespace and add a final blank
+  line.
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  can optimize images with
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
-- New function to check titles in `man` dir:
-  [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md).
-- Add configuration for [jarl linter](https://jarl.etiennebacher.com/).
-- Can precompute and render Quarto files.
-- Include a RStudio Add-In
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  can precompute vignettes and render Quarto files.
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  now uses
+  [`lintr::use_lintr()`](https://lintr.r-lib.org/reference/use_lintr.html)
+  and adds package-specific options.
+- **Caution:**
+  [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  modifies global and project-level RStudio options.
 
 ## pkgdev 0.1.0
 

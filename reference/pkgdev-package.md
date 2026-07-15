@@ -1,9 +1,8 @@
-# pkgdev: Helpers to Develop a Package using GitHub Actions
+# pkgdev: Helpers to Develop Packages with GitHub Actions
 
-A small set of functions that takes advantage of GitHub Actions for
-making your life easier as a R package developer. This package is
-primarily intended for personal use, however feel free to use it (at
-your own risk).
+Helpers for package maintenance, documentation rendering and GitHub
+Actions workflows. The package is primarily intended for personal use,
+but you are welcome to use it at your own risk.
 
 ## See also
 
