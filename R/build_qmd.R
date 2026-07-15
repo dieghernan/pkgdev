@@ -1,24 +1,29 @@
-#' Build a Quarto files package
+#' Build Quarto files for a package
 #'
 #' `build_qmd()` is a wrapper around [quarto::quarto_render()] that first
-#' installs a temporary copy of the package, and then renders each .Rmd in a
-#' clean R session. `build_readme_qmd()` locates your README.and builds it
-#' into a README.md
+#' installs a temporary copy of the package, then renders each `.Rmd` in a
+#' clean \R session. `build_readme_qmd()` locates your `README.qmd` and builds
+#' it into a `README.md`.
 #'
-#' @param files The Quarto files to be rendered.
-#' @param ... additional arguments passed to [quarto::quarto_render()].
 #' @rdname build_qmd
 #' @order 1
 #'
+#' @param files Quarto files to be rendered.
+#' @param ... Additional arguments passed to [quarto::quarto_render()].
 #' @inheritParams devtools::build_readme
 #' @inheritParams quarto::quarto_render
 #'
-#' @family functions for rendering documentation
+#' @return `TRUE`, invisibly.
+#'
+#' @seealso
+#' - [build_readme_qmd()] builds `README.qmd` files.
+#' - [precompute_vignette()] precomputes vignettes.
+#' - [devtools::build_readme()] builds `README` files from R Markdown.
+#'
+#' @family renderers
 #'
 #' @export
-#'
-#' @seealso [devtools::build_readme()]
-#'
+#' @encoding UTF-8
 build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
   pkg <- devtools::as.package(path)
   paths <- path.expand(files)
@@ -42,7 +47,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
     ver <- packageVersion(nm)
     # nolint end
     cli::cli_inform(c(
-      i = "Installed {.pkg {nm}} {.strong  v{ver}} in temporary library"
+      i = "Installed {.pkg {nm}} {.strong v{ver}} in temporary library"
     ))
 
     for (path in paths) {
@@ -55,9 +60,11 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
   invisible(TRUE)
 }
 
-#' @export
 #' @rdname build_qmd
 #' @order 2
+#'
+#' @export
+#' @encoding UTF-8
 build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
   pkg <- devtools::as.package(path)
   regexp <- paste0(file.path(pkg$path), "/(inst/)?readme[.]qmd")

@@ -1,74 +1,75 @@
-#' Create a GitHub action that checks regularly your package
+#' Create a GitHub action that checks your package regularly
 #'
-#' @description
-#' The GitHub action created would run `R CMD check` on your package.
-#' It uses a wide range of platforms, can be reduced by commenting or deleting
-#' platforms on the matrix config.
-#'
-#'
-#' @param overwrite	Overwrite the action if it was already present.
-#' @param cron_expr Valid cron expression. By default, the first
-#'   day of the month at 08:30 AM. See **Details**.
-#' @inheritParams update_docs
+#' The GitHub action runs `R CMD check` on your package.
+#' It uses a wide range of platforms, which can be reduced by commenting out or
+#' deleting platforms in the matrix configuration.
 #'
 #' @details
 #' Use [crontab.guru](https://crontab.guru/#30_08_1_*_*) to check and
 #' create your own cron tag.
 #'
+#' @param overwrite Overwrite the action if it was already present.
+#' @param cron_expr Valid cron expression. By default, the first day of the
+#'   month at 08:30 AM. See **Details**.
+#' @inheritParams update_docs
 #'
-#' @seealso [usethis::use_github_action()]
+#' @return Invisibly returns `NULL` after writing a GitHub Actions workflow to
+#'   `<pkg>/.github/workflows`.
 #'
-#' @source
-#' [r-lib/actions](https://github.com/r-lib/actions/tree/master/examples)
+#' @seealso
+#' - [gha_pkgdown_branch()] creates a \CRANpkg{pkgdown} deployment action.
+#' - [gha_update_docs()] creates a documentation and deployment action.
+#' - [usethis::use_github_action()] creates GitHub Actions workflows.
 #'
+#' @source Examples from
+#'   [r-lib/actions](https://github.com/r-lib/actions/tree/master/examples).
+#'
+#' @family actions
 #'
 #' @export
-#'
-#' @return A GitHub Action on `<pkg>/.github/workflows`.
+#' @encoding UTF-8
 #'
 #' @examples
 #' \dontrun{
 #' gha_check_full(cron_expr = "57 16 12 * *")
 #' }
-#'
 gha_check_full <- function(
   pkg = ".",
   overwrite = TRUE,
   cron_expr = "30 08 1 * *"
 ) {
-  # Check destdir
-
+  # Check destination directory.
   destdir <- file.path(pkg, ".github", "workflows")
   checkdir <- dir.exists(destdir)
   if (isFALSE(checkdir)) {
     dir.create(destdir, recursive = TRUE)
   }
 
-  # Add files to build ignore
+  # Add files to build ignore.
   usethis::use_build_ignore(".github")
 
-  # Add files to git ignore
+  # Add files to git ignore.
   usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("depends.Rds", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))
 
-  # Get action file
+  # Get action file.
   filepath <- system.file("yaml/check-full.yaml", package = "pkgdev")
 
-  # Copy
+  # Copy action file.
   result <- file.copy(filepath, destdir, overwrite = overwrite)
 
   if (result) {
-    cli::cli_alert_success(paste(
-      cli::col_green("Action updated correctly."),
+    cli::cli_alert_success(paste0(
+      "Action updated correctly. ",
       "See {.file {file.path(destdir, basename(filepath))}}"
     ))
   } else {
-    cli::cli_alert_danger(cli::col_red("File not updated"))
+    cli::cli_alert_danger("File was not updated.")
     return(invisible())
   }
 
-  # Add CRON
+  # Add CRON expression.
   add_cron <- readLines(file.path(destdir, "check-full.yml"))
   add_cron <- gsub(
     pattern = "ADD_CRON_EXPRESSION",

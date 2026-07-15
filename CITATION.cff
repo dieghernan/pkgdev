@@ -7,11 +7,11 @@ cff-version: 1.2.0
 message: 'To cite package "pkgdev" in publications use:'
 type: software
 license: MIT
-title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
+title: 'pkgdev: Helpers to Develop Packages with GitHub Actions'
 version: 0.1.0.9150
-abstract: A small set of functions that takes advantage of GitHub Actions for making
-  your life easier as a R package developer. This package is primarily intended for
-  personal use, however feel free to use it (at your own risk).
+abstract: Helpers for package maintenance, documentation rendering and GitHub Actions
+  workflows. The package is primarily intended for personal use, but you are welcome
+  to use it at your own risk.
 authors:
 - family-names: Hernangómez
   given-names: Diego
@@ -19,7 +19,7 @@ authors:
   orcid: https://orcid.org/0000-0001-8457-4658
 preferred-citation:
   type: manual
-  title: 'pkgdev: Helpers to Develop a Package using GitHub Actions'
+  title: 'pkgdev: Helpers to Develop Packages with GitHub Actions'
   authors:
   - family-names: Hernangómez
     given-names: Diego
@@ -289,7 +289,6 @@ references:
   abstract: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
   notes: Imports
   url: https://quarto-dev.github.io/quarto-r/
-  repository: https://CRAN.R-project.org/package=quarto
   authors:
   - family-names: Allaire
     given-names: JJ
@@ -300,7 +299,6 @@ references:
     email: cderv@posit.co
     orcid: https://orcid.org/0000-0003-4474-2498
   year: '2026'
-  doi: 10.32614/CRAN.package.quarto
 - type: software
   title: resmush
   abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
@@ -416,7 +414,6 @@ references:
   abstract: 'usethis: Automate Package and Project Setup'
   notes: Imports
   url: https://usethis.r-lib.org
-  repository: https://CRAN.R-project.org/package=usethis
   authors:
   - family-names: Wickham
     given-names: Hadley
@@ -435,7 +432,6 @@ references:
     email: andy.teucher@posit.co
     orcid: https://orcid.org/0000-0002-7840-692X
   year: '2026'
-  doi: 10.32614/CRAN.package.usethis
   version: '>= 2.2.2'
 - type: software
   title: utils

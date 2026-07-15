@@ -1,14 +1,14 @@
 ---
-title: "Example of a precomputed vignette - Quarto"
+title: "Precomputed Quarto vignette example"
 vignette: >
-  %\VignetteIndexEntry{Example of a precomputed vignette - Quarto}
+  %\VignetteIndexEntry{Precomputed Quarto vignette example}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 ---
 
 
 
-This is an example of a precomputed vignette in Quarto
+This file is an example Quarto input for `precompute_vignette()`.
 
 
 ``` r
@@ -19,11 +19,12 @@ ggplot(faithfuld, aes(waiting, eruptions)) +
 ```
 
 <div class="figure">
-<img src="./plot_quarto-1.png" alt="A plot with a long caption here" width="100%" />
-<p class="caption">A plot with a long caption here</p>
+<img src="./plot_quarto-1.png" alt="A two-dimensional density plot of the `faithfuld` data." width="100%" />
+<p class="caption">A two-dimensional density plot of the `faithfuld` data.</p>
 </div>
 
-See here some text:
+The remaining text is intentionally long so the precompute workflow has enough
+content to render.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur massa
 risus, eu tincidunt magna finibus id. Donec quis tincidunt est, sed commodo leo.

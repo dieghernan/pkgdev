@@ -1,14 +1,14 @@
 check_rd_hash <- function(pkg = ".") {
   path <- file.path(pkg, "man")
-  # List files
+  # List files.
   allman <- list.files(path, pattern = ".Rd", full.names = TRUE)
 
   if (length(allman) == 0) {
-    cli::cli_alert_info("No {.var .Rd} files found in {.file path}")
+    cli::cli_alert_info("No {.file .Rd} files found in {.file {path}}")
     return(NULL)
   }
 
-  # Extract titles, etc.
+  # Extract titles.
 
   allf <- lapply(allman, function(x) {
     lns <- readLines(x)

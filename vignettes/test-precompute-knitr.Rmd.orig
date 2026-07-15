@@ -1,8 +1,8 @@
 ---
-title: "Example of a precomputed vignette - Rmd"
+title: "Precomputed R Markdown vignette example"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Example of a precomputed vignette - Rmd}
+  %\VignetteIndexEntry{Precomputed R Markdown vignette example}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,11 +21,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-This is an example of a precomputed vignette:
+This file is an example input for `precompute_vignette()`.
 
 ```{r}
 #| label = "plot",
-#| fig.cap = "A plot with a long caption here"
+#| fig.cap = "A two-dimensional density plot of the `faithfuld` data."
 library("ggplot2")
 
 ggplot(faithfuld, aes(waiting, eruptions)) +
@@ -33,7 +33,8 @@ ggplot(faithfuld, aes(waiting, eruptions)) +
 
 ```
 
-See here some text:
+The remaining text is intentionally long so the precompute workflow has enough
+content to render.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur massa
 risus, eu tincidunt magna finibus id. Donec quis tincidunt est, sed commodo leo.

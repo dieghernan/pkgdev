@@ -2,62 +2,70 @@
 #'
 #' @description
 #' Run routine checks on the package:
-#' * Clean DESCRIPTION with [usethis::use_tidy_description()]
-#' * Compress the data of the paths `"./data"` and `"./R"` using
+#' - Clean `DESCRIPTION` with [usethis::use_tidy_description()].
+#' - Compress data in the `"./data"` and `"./R"` paths using
 #'   [tools::resaveRdaFiles()].
-#' * Style code with [styler::style_pkg()]
-#' * Check urls with [urlchecker::url_check()]
-#' * Roxygenise with [roxygen2::roxygenise()]
-#' * Precompute vignettes if present
-#'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>)
-#' * Rebuild `README.Rmd` (if present) with [devtools::build_readme()]
-#' * Optimize images with [resmush::resmush_dir()]
-#' * Write codemeta.json with [codemetar::write_codemeta()]
-#' * Write CITATION.cff with [cffr::cff_write()]
-#'
-#' @param url_update Logical, do you want to update urls with
-#'  [urlchecker::url_update()]?
-#' @param build_readme Logical, build `README.Rmd` with
-#'   [devtools::build_readme()]
-#' @param create_codemeta Logical, do you want to create
-#'   a codemeta file with [codemetar::write_codemeta()]?
-#' @param create_cff Logical, do you want to create
-#'   a CITATION.cff file with [cffr::cff_write()]?
-#' @param verbose Display informative messages on the console
-#' @param precompute Logical, detect and precompute vignettes? See also
-#'   [precompute_vignette()].
-#'
-#' @param opt_imgs Logical. Optimize images with [resmush::resmush_dir()]?
-#' @param opt_dir,opt_ext,opt_overwrite
-#'   See `dir`, `ext` and `overwrite` in [resmush::resmush_dir()].
-#' @param add_contributors Deprecated.
-#' @param ... Additional arguments to functions
-#'
-#' @inheritParams styler::style_pkg
-#'
-#' @return invisible, or some messages on `verbose = TRUE`.
+#' - Style code with [styler::style_pkg()].
+#' - Check URLs with [urlchecker::url_check()].
+#' - Roxygenize with [roxygen2::roxygenise()].
+#' - Precompute vignettes, if present
+#'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
+#' - Rebuild `README.Rmd`, if present, with [devtools::build_readme()].
+#' - Optimize images with [resmush::resmush_dir()].
+#' - Write `codemeta.json` with [codemetar::write_codemeta()].
+#' - Write `CITATION.cff` with [cffr::cff_write()].
 #'
 #' @details
-#' This function tries to update and clean the package following a mix of
-#' best practices (e.g. checking the urls, roxygenise and rebuilding the
-#' `README`) and some other discretionary practices I like to have in a package,
-#' as the `tidyverse` approach for the `DESCRIPTION` file and overall code
-#' and the use of `codemeta.json`.
+#' This function updates and cleans the package using a mix of best practices,
+#' such as checking URLs, roxygenizing and rebuilding the `README`. It also
+#' applies discretionary practices such as the tidyverse approach for the
+#' `DESCRIPTION` file, overall code style and `codemeta.json`.
+#'
+#' @param url_update A logical value. Should URLs be updated with
+#'   [urlchecker::url_update()]?
+#' @param build_readme A logical value. Should `README.Rmd` be built with
+#'   [devtools::build_readme()]?
+#' @param create_codemeta A logical value. Should `codemeta.json` be created
+#'   with [codemetar::write_codemeta()]?
+#' @param create_cff A logical value. Should `CITATION.cff` be created with
+#'   [cffr::cff_write()]?
+#' @param verbose A logical value. Should informative messages be displayed on
+#'   the console?
+#' @param precompute A logical value. Should vignettes be detected and
+#'   precomputed? See also [precompute_vignette()].
+#' @param opt_imgs A logical value. Should images be optimized with
+#'   [resmush::resmush_dir()]?
+#' @param opt_dir,opt_ext,opt_overwrite Options passed to the `dir`, `ext` and
+#'   `overwrite` arguments of [resmush::resmush_dir()].
+#' @param add_contributors Deprecated.
+#' @param ... Additional arguments passed to downstream functions.
+#' @inheritParams styler::style_pkg
+#'
+#' @return Invisibly returns `NULL`. When `verbose = TRUE`, it emits progress
+#'   messages.
+#'
+#' @seealso
+#' - [add_global_gitgnore()] updates package ignore files.
+#' - [build_qmd()] builds Quarto files.
+#' - [check_rd_titles()] checks generated Rd titles.
+#' - [precompute_vignette()] precomputes vignettes.
+#' - [usethis::use_tidy_description()] cleans `DESCRIPTION`.
+#' - [styler::style_pkg()] styles package code.
+#' - [urlchecker::url_check()] checks URLs.
+#' - [roxygen2::roxygenise()] updates documentation.
+#' - [devtools::build_readme()] builds `README.Rmd`.
+#' - [codemetar::write_codemeta()] writes `codemeta.json`.
+#' - [tools::resaveRdaFiles()] compresses data files.
+#'
+#' @family maintenance
+#'
+#' @export
+#' @encoding UTF-8
 #'
 #' @examples
 #' \dontrun{
-#'
 #' update_docs()
 #' }
-#'
-#' @seealso [usethis::use_tidy_description()], [styler::style_pkg()],
-#'   [urlchecker::url_check()], [roxygen2::roxygenise()],
-#'   [devtools::build_readme()], [codemetar::write_codemeta()],
-#'   [tools::resaveRdaFiles()]
-#'
-#' @export
-#'
-#'
 update_docs <- function(
   pkg = ".",
   url_update = TRUE,
@@ -74,7 +82,7 @@ update_docs <- function(
   ...
 ) {
   usethis::proj_set(pkg)
-  # Clean revdepcheck
+  # Clean revdepcheck.
   unlink(file.path(pkg, "revdep", "checks"), recursive = TRUE, force = TRUE)
   unlink(file.path(pkg, "revdep", "library"), recursive = TRUE, force = TRUE)
   unlink(
@@ -93,7 +101,7 @@ update_docs <- function(
     force = TRUE
   )
 
-  # Add global .gitignore
+  # Add global `.gitignore`.
   if (verbose) {
     cli::cli_alert_info("Adding {.file .gitignore} to root")
   }
@@ -103,7 +111,7 @@ update_docs <- function(
 
   if (all(file.exists(this), length(this) > 0)) {
     if (verbose) {
-      cli::cli_alert_info("Add project options to {.file {this}} file")
+      cli::cli_alert_info("Adding project options to {.file {this}} file")
     }
     usethis::write_union(
       this,
@@ -117,9 +125,9 @@ update_docs <- function(
     )
   }
 
-  # Add Global options
+  # Add global options.
   if (verbose) {
-    cli::cli_alert_info("Setting RStudio Global Options")
+    cli::cli_alert_info("Setting RStudio global options")
   }
 
   usethis::use_rstudio_preferences(
@@ -170,11 +178,11 @@ update_docs <- function(
 
   if (!file.exists(".lintr")) {
     if (verbose) {
-      cli::cli_alert_info("Add {.file .lintr} file")
+      cli::cli_alert_info("Adding {.file .lintr} file")
     }
     lintr::use_lintr()
 
-    # Ignore data-raw
+    # Ignore `data-raw`.
     lnt <- readLines(".lintr")
     unlink(".lintr")
     newln <- c(lnt, 'exclusions: list("data-raw")')
@@ -185,7 +193,7 @@ update_docs <- function(
     cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
   }
 
-  # Extract keywords and save it for later
+  # Extract keywords and save them for later.
   d <- desc::desc(file.path(pkg, "DESCRIPTION"))
   k <- d$get("X-schema.org-keywords")
   k <- gsub("\\n", "", unname(k))
@@ -201,7 +209,7 @@ update_docs <- function(
     )
   }
 
-  # Migrate to Roxygen > v8
+  # Migrate to Roxygen > v8.
   dsc_f <- file.path(pkg, "DESCRIPTION")
   dsc_lines <- readLines(dsc_f)
 
@@ -221,7 +229,7 @@ update_docs <- function(
 
   if (file.exists(setting_json_file)) {
     if (verbose) {
-      cli::cli_alert_info("Configuring {.pkg VSCode} project settings.")
+      cli::cli_alert_info("Configuring VS Code project settings")
     }
 
     settings_json <- jsonlite::read_json(setting_json_file)
@@ -256,7 +264,7 @@ update_docs <- function(
   }
 
   if (verbose) {
-    cli::cli_alert_info("Configuring {.pkg VSCode} project extensions.")
+    cli::cli_alert_info("Configuring VS Code project extensions")
   }
 
   ext_json_file <- file.path(pkg, ".vscode", "extensions.json")
@@ -269,7 +277,7 @@ update_docs <- function(
   )
 
   if (file.exists(ext_json_file)) {
-    # Recommended
+    # Keep existing recommendations.
     already <- jsonlite::read_json(ext_json_file)
     recommend_ext <- unique(c(unlist(already$recommendations), recommend_ext))
     recommend_ext <- sort(recommend_ext[
@@ -284,14 +292,14 @@ update_docs <- function(
     auto_unbox = TRUE
   )
 
-  #   Use jarl config
+  # Use `jarl` config.
   if (!file.exists("jarl.toml")) {
     if (verbose) {
       cli::cli_alert_info("Configuring {.pkg jarl}")
       cli::cli_alert("See more in {.url https://jarl.etiennebacher.com/}")
       cli::cli_alert(paste0(
-        "Read {.href [jarl's docs ](https://jarl.etiennebacher.com/)} ",
-        "to learn about jarl linter."
+        "Read {.href [jarl docs](https://jarl.etiennebacher.com/)} ",
+        "to learn about the {.pkg jarl} linter."
       ))
     }
     writeLines(
@@ -325,7 +333,7 @@ ignore = [\"implicit_assignment\"]",
       cli::cli_alert_info("Linting package with {.pkg jarl}")
     }
 
-    # Get R version from DESCRIPTION
+    # Get R version from `DESCRIPTION`.
     deps <- d$get_deps()
     if ("R" %in% deps$package) {
       rversion <- deps$version[deps$package == "R"]
@@ -347,7 +355,7 @@ ignore = [\"implicit_assignment\"]",
     system2("air", "format .")
   }
 
-  # Replace link-citations: yes for link-citations: true
+  # Replace `link-citations: yes` with `link-citations: true`.
   rmd <- list.files(
     pattern = "Rmd$|Rmd.orig$",
     recursive = TRUE,
@@ -356,7 +364,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(rmd) > 0) {
     if (verbose) {
-      cli::cli_alert_info("Adapting {.str Rmd} files to {.pkg quarto}")
+      cli::cli_alert_info("Adapting {.file .Rmd} files to {.pkg Quarto}")
     }
 
     lapply(rmd, function(x) {
@@ -382,7 +390,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(qmd) > 0) {
     if (verbose) {
-      cli::cli_alert_info("Adapting {.str qmd} files to {.pkg quarto}")
+      cli::cli_alert_info("Adapting {.file .qmd} files to {.pkg Quarto}")
     }
 
     lapply(qmd, function(x) {
@@ -414,10 +422,9 @@ ignore = [\"implicit_assignment\"]",
 
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
     if (verbose) {
-      cli::cli_alert_info(paste(
-        "Styling external examples in",
-        "{.path {file.path('inst', 'examples')}}"
-      ))
+      cli::cli_alert_info(
+        "Styling external examples in {.path {file.path('inst', 'examples')}}"
+      )
     }
     styler::style_dir(
       file.path(pkg, "inst", "examples"),
@@ -427,10 +434,9 @@ ignore = [\"implicit_assignment\"]",
 
   if (dir.exists(file.path(pkg, "man", "roxygen2"))) {
     if (verbose) {
-      cli::cli_alert_info(paste(
-        "Styling meta roxygen2 in",
-        "{.path {file.path('man', 'roxygen2')}}"
-      ))
+      cli::cli_alert_info(
+        "Styling meta roxygen2 in {.path {file.path('man', 'roxygen2')}}"
+      )
     }
     styler::style_dir(
       file.path(pkg, "man", "roxygen2"),
@@ -440,15 +446,14 @@ ignore = [\"implicit_assignment\"]",
 
   if (dir.exists(file.path(pkg, "man", "chunks"))) {
     if (verbose) {
-      cli::cli_alert_info(paste(
-        "Styling chunks in",
-        "{.path {file.path('man', 'chunks')}}"
-      ))
+      cli::cli_alert_info(
+        "Styling chunks in {.path {file.path('man', 'chunks')}}"
+      )
     }
     styler::style_dir(file.path(pkg, "man", "chunks"), filetype = fmt_file_type)
   }
 
-  # Clean trailing spaces on yamls
+  # Clean trailing spaces in YAML files.
   if (!env_var_is_true("CI")) {
     actions <- list.files(
       ".github",
@@ -468,7 +473,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(allyml) > 0) {
     lapply(allyml, function(x) {
-      # This just removes trailing spaces and the install-r: true line
+      # Remove trailing spaces and the `install-r: true` line.
       lns <- readLines(x, warn = FALSE)
       lns <- gsub("install-r: true", "", lns, fixed = TRUE)
 
@@ -477,12 +482,12 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Roxygenising package with {.pkg roxygen2}")
+    cli::cli_alert_info("Roxygenizing package with {.pkg roxygen2}")
   }
   roxygen2::roxygenise()
 
   if (verbose) {
-    cli::cli_alert_info("Checking {.var .Rd} titles")
+    cli::cli_alert_info("Checking {.file .Rd} titles")
   }
 
   rdtit <- check_rd_titles(pkg)
@@ -491,7 +496,7 @@ ignore = [\"implicit_assignment\"]",
     enddot <- rdtit[rdtit$last == ".", ]
 
     if (nrow(enddot) != 0) {
-      cli::cli_alert_warning("Found {.var Rd} files that ends with {.val .}")
+      cli::cli_alert_warning("Found {.file .Rd} files that end with {.val .}")
       rds <- as.character(enddot$src)
       rds <- paste0("{.file ", rds, "}")
       names(rds) <- rep("*", length(rds))
@@ -500,7 +505,7 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Looking for {.val #'} in {.var .Rd} files")
+    cli::cli_alert_info("Looking for {.code #'} in {.file .Rd} files")
   }
 
   rdhash <- check_rd_hash(pkg)
@@ -509,7 +514,7 @@ ignore = [\"implicit_assignment\"]",
     has_hash <- rdhash[rdhash$bad_hash, ]
 
     if (nrow(has_hash) != 0) {
-      cli::cli_alert_warning("Found {.val #'} in {.var Rd} files")
+      cli::cli_alert_warning("Found {.code #'} in {.file .Rd} files")
       rds <- as.character(has_hash$src)
       rds <- paste0("{.file ", rds, "}")
       names(rds) <- rep("*", length(rds))
@@ -518,7 +523,7 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Checking missing fields in {.var .Rd} files")
+    cli::cli_alert_info("Checking missing fields in {.file .Rd} files")
   }
   devtools::check_doc_fields(pkg, fields = c("value", "examples", "encoding"))
 
@@ -536,7 +541,7 @@ ignore = [\"implicit_assignment\"]",
     }
     precompute_vignette_all(pkg = pkg, ...)
   }
-  # Check README.Rmd
+  # Check `README.Rmd`.
   readme_rmd <- file.path(pkg, "README.Rmd")
   index_rmd <- file.path(pkg, "index.Rmd")
   index2_rmd <- file.path(pkg, "pkgdown/index.Rmd")
@@ -614,7 +619,7 @@ ignore = [\"implicit_assignment\"]",
       report = verbose,
       overwrite = opt_overwrite
     ))
-    # Second pass, this affects if optipng is installed
+    # Run a second pass when `optipng` is installed.
     lapply(opt_dir, xfun::optipng)
     try(pkgdown::build_favicons(overwrite = TRUE))
   }
@@ -630,7 +635,7 @@ ignore = [\"implicit_assignment\"]",
     key <- unname(c(key, cffread$keywords))
   }
 
-  # Finally add all the keywords (DESCRIPTION and cff)
+  # Finally, add all keywords from `DESCRIPTION` and `CITATION.cff`.
 
   key <- trimws(key)
   key <- key[!is.na(key)]

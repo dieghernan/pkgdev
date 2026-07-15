@@ -1,5 +1,5 @@
 ---
-title: "Downloads of my packages"
+title: "Package downloads"
 date: today
 date-format: long
 knitr:
@@ -17,7 +17,7 @@ knitr:
 
 ## On CRAN
 
-Downloads of my packages from CRAN.
+Download data for my packages on CRAN.
 
 ```{r}
 #| include = FALSE
@@ -34,7 +34,7 @@ mypaks <- c(
   "gitdevr", "arcgeocoder", "resmush"
 ) |> unique()
 
-# Packages in CRAN
+# Packages on CRAN.
 mypaks <- mypaks[mypaks %in% crandb]
 
 dwn <- lapply(mypaks, cranlogs::cran_downloads, from = "2016-01-01")
@@ -42,7 +42,7 @@ dwn <- dwn |>
   bind_rows() |>
   as_tibble()
 
-# First date on CRAN
+# First date on CRAN.
 
 first_date_on_cran <- function(pkg) {
   all <- pkgsearch::cran_package_history(pkg)
@@ -74,7 +74,7 @@ dwn <- dwn |>
   tidyr::replace_na(list(count = 0)) |>
   filter(date < Sys.Date())
 
-# By month
+# By month.
 library(lubridate)
 
 
@@ -84,7 +84,7 @@ dwn_m <- dwn |>
   summarise(downloads = sum(count))
 
 
-# factors by avg. monthly downloads
+# Factors by average monthly downloads.
 fact <- dwn_m |>
   group_by(package) |>
   summarise(precedence = mean(downloads, na.rm = TRUE)) |>
@@ -95,7 +95,7 @@ fact <- dwn_m |>
 dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
 ```
 
-### Historic
+### Historical downloads
 
 ```{r}
 #| echo = FALSE
@@ -127,7 +127,7 @@ ggplot(dwn_m, aes(x = m)) +
 ```{r}
 #| echo = FALSE
 
-# Not this week
+# Exclude the current week.
 thisw <- lubridate::ceiling_date(Sys.Date(), "week")
 
 dwn_w <- dwn |>
@@ -197,7 +197,7 @@ avg_daily_all <- avg_daily |>
   summarise(avg = round(sum(avg, na.rm = TRUE), 1))
 
 
-# Une todo y da nombres
+# Combine summaries and apply display names.
 end <- fechas |>
   left_join(avg_daily) |>
   left_join(last_day) |>
@@ -267,7 +267,7 @@ reactable(
 
 ## On Posit Package Manager
 
-Downloads and data available of my packages from [Posit Package
+Download data for my packages from [Posit Package
 Manager](https://packagemanager.posit.co/client/#/).
 
 ```{r}

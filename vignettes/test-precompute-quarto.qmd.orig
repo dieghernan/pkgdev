@@ -1,7 +1,7 @@
 ---
-title: "Example of a precomputed vignette - Quarto"
+title: "Precomputed Quarto vignette example"
 vignette: >
-  %\VignetteIndexEntry{Example of a precomputed vignette - Quarto}
+  %\VignetteIndexEntry{Precomputed Quarto vignette example}
   %\VignetteEngine{quarto::html}
   %\VignetteEncoding{UTF-8}
 ---
@@ -9,7 +9,7 @@ vignette: >
 ```{r}
 #| echo: false
 
-# Since we are pre-processing with knit we need this chunk as old style
+# Since this file is preprocessed with knitr, this chunk uses R Markdown style.
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -23,11 +23,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-This is an example of a precomputed vignette in Quarto
+This file is an example Quarto input for `precompute_vignette()`.
 
 ```{r}
 #| label: plot_quarto
-#| fig-cap: A plot with a long caption here
+#| fig-cap: A two-dimensional density plot of the `faithfuld` data.
 
 library("ggplot2")
 
@@ -36,7 +36,8 @@ ggplot(faithfuld, aes(waiting, eruptions)) +
 
 ```
 
-See here some text:
+The remaining text is intentionally long so the precompute workflow has enough
+content to render.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur massa
 risus, eu tincidunt magna finibus id. Donec quis tincidunt est, sed commodo leo.
