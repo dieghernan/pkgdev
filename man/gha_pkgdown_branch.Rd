@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{gha_pkgdown_branch}
 \alias{gha_pkgdown_branch}
-\title{Create a GitHub action that builds a \CRANpkg{pkgdown} site}
+\title{Create a GitHub Actions workflow that builds a \CRANpkg{pkgdown} site}
 \source{
 Examples from
 \href{https://github.com/r-lib/actions/tree/master/examples}{r-lib/actions}.
@@ -30,8 +30,8 @@ Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
 \verb{<pkg>/.github/workflows}.
 }
 \description{
-The GitHub action deploys a \CRANpkg{pkgdown} site for your package on the
-\code{gh-pages} branch.
+The GitHub Actions workflow deploys a \CRANpkg{pkgdown} site for your
+package on the \code{gh-pages} branch.
 }
 \details{
 Check \url{https://github.com/actions/runner-images} to see the available

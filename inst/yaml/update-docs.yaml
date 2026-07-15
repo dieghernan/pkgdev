@@ -19,7 +19,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
 
     - uses: r-lib/actions/setup-pandoc@v2
 
@@ -37,7 +37,7 @@ jobs:
         needs: website
 
     - name: Run jarl
-      uses: etiennebacher/setup-jarl@v0.1.0
+      uses: etiennebacher/setup-jarl@v0.1.1
       continue-on-error: true
       with:
         args: "--version"

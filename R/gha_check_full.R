@@ -1,6 +1,6 @@
-#' Create a GitHub action that checks your package regularly
+#' Create a GitHub Actions workflow that checks your package regularly
 #'
-#' The GitHub action runs `R CMD check` on your package.
+#' The GitHub Actions workflow runs `R CMD check` on your package.
 #' It uses a wide range of platforms, which can be reduced by commenting out or
 #' deleting platforms in the matrix configuration.
 #'

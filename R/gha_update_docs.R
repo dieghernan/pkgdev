@@ -1,7 +1,7 @@
-#' Create a GitHub action that documents and checks your package
+#' Create a GitHub Actions workflow that documents and checks your package
 #'
-#' The GitHub action documents your package (see [update_docs()]), checks it
-#' and deploys the package on a `gh-pages` branch.
+#' The GitHub Actions workflow documents your package (see [update_docs()]),
+#' checks it and deploys the package on a `gh-pages` branch.
 #'
 #' @inherit gha_pkgdown_branch details
 #'

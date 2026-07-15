@@ -1,7 +1,7 @@
-#' Create a GitHub action that builds a \CRANpkg{pkgdown} site
+#' Create a GitHub Actions workflow that builds a \CRANpkg{pkgdown} site
 #'
-#' The GitHub action deploys a \CRANpkg{pkgdown} site for your package on the
-#' `gh-pages` branch.
+#' The GitHub Actions workflow deploys a \CRANpkg{pkgdown} site for your
+#' package on the `gh-pages` branch.
 #'
 #' @details
 #' Check <https://github.com/actions/runner-images> to see the available

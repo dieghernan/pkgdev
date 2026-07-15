@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{gha_update_docs}
 \alias{gha_update_docs}
-\title{Create a GitHub action that documents and checks your package}
+\title{Create a GitHub Actions workflow that documents and checks your package}
 \source{
 Examples from
 \href{https://github.com/r-lib/actions/tree/master/examples}{r-lib/actions}.
@@ -30,8 +30,8 @@ Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
 \code{.github/workflows}.
 }
 \description{
-The GitHub action documents your package (see \code{\link[=update_docs]{update_docs()}}), checks it
-and deploys the package on a \code{gh-pages} branch.
+The GitHub Actions workflow documents your package (see \code{\link[=update_docs]{update_docs()}}),
+checks it and deploys the package on a \code{gh-pages} branch.
 }
 \details{
 Check \url{https://github.com/actions/runner-images} to see the available

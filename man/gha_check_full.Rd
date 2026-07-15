@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{gha_check_full}
 \alias{gha_check_full}
-\title{Create a GitHub action that checks your package regularly}
+\title{Create a GitHub Actions workflow that checks your package regularly}
 \source{
 Examples from
 \href{https://github.com/r-lib/actions/tree/master/examples}{r-lib/actions}.
@@ -24,7 +24,7 @@ Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
 \verb{<pkg>/.github/workflows}.
 }
 \description{
-The GitHub action runs \verb{R CMD check} on your package.
+The GitHub Actions workflow runs \verb{R CMD check} on your package.
 It uses a wide range of platforms, which can be reduced by commenting out or
 deleting platforms in the matrix configuration.
 }
