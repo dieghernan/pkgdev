@@ -1,6 +1,6 @@
-# Create a GitHub action that documents and checks your package
+# Create a GitHub Actions workflow that documents and checks your package
 
-The GitHub action documents your package (see
+The GitHub Actions workflow documents your package (see
 [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)),
 checks it and deploys the package on a `gh-pages` branch.
 
@@ -71,7 +71,7 @@ GitHub Actions helpers:
 # With Ubuntu 20.04
 gha_update_docs(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpHJg6I5/file1aef6237dbb0/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpuO4lqm/file1b235c24957f/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

@@ -1,6 +1,6 @@
-# Create a GitHub action that builds a [pkgdown](https://CRAN.R-project.org/package=pkgdown) site
+# Create a GitHub Actions workflow that builds a [pkgdown](https://CRAN.R-project.org/package=pkgdown) site
 
-The GitHub action deploys a
+The GitHub Actions workflow deploys a
 [pkgdown](https://CRAN.R-project.org/package=pkgdown) site for your
 package on the `gh-pages` branch.
 
@@ -67,7 +67,7 @@ GitHub Actions helpers:
 # With Ubuntu 20.04
 gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpHJg6I5/file1aef6237dbb0/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpuO4lqm/file1b235c24957f/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

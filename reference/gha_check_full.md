@@ -1,8 +1,8 @@
-# Create a GitHub action that checks your package regularly
+# Create a GitHub Actions workflow that checks your package regularly
 
-The GitHub action runs `R CMD check` on your package. It uses a wide
-range of platforms, which can be reduced by commenting out or deleting
-platforms in the matrix configuration.
+The GitHub Actions workflow runs `R CMD check` on your package. It uses
+a wide range of platforms, which can be reduced by commenting out or
+deleting platforms in the matrix configuration.
 
 ## Usage
 
@@ -62,7 +62,7 @@ GitHub Actions helpers:
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpHJg6I5/file1aef6237dbb0/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpuO4lqm/file1b235c24957f/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

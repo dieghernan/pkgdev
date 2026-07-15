@@ -3,16 +3,17 @@
 ## GitHub Actions helpers
 
 - [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
-  : Create a GitHub action that checks your package regularly
+  : Create a GitHub Actions workflow that checks your package regularly
 
 - [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
   :
 
-  Create a GitHub action that builds a
+  Create a GitHub Actions workflow that builds a
   [pkgdown](https://CRAN.R-project.org/package=pkgdown) site
 
 - [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
-  : Create a GitHub action that documents and checks your package
+  : Create a GitHub Actions workflow that documents and checks your
+  package
 
 ## Documentation check helpers
 
