@@ -204,6 +204,8 @@ references:
   - family-names: Gruson
     given-names: Hugo
     orcid: https://orcid.org/0000-0002-4094-1476
+  - family-names: Ferdman
+    given-names: Emmanuel
   year: '2026'
   doi: 10.32614/CRAN.package.lintr
   version: '>= 2.0.1'
