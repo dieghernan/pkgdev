@@ -2,7 +2,7 @@
 
 ## On CRAN
 
-Download data for my packages on CRAN.
+Download data for my CRAN packages.
 
 ### Historical downloads
 

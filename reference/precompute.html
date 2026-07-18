@@ -75,8 +75,8 @@ https://ropensci.org/blog/2019/12/08/precompute-vignettes/."><meta property="og:
 
 
 <dl><dt id="arg-source">source<a class="anchor" aria-label="anchor" href="#arg-source"></a></dt>
-<dd><p>Name of the <code>.Rmd.orig</code> file, without the path
-(e.g. <code>"some_name.Rmd.orig"</code>).</p></dd>
+<dd><p>Name of the <code>.Rmd.orig</code> or <code>.qmd.orig</code> file, without the path
+(e.g. <code>"some_name.Rmd.orig"</code> or <code>"some_name.qmd.orig"</code>).</p></dd>
 
 
 <dt id="arg-pkg">pkg<a class="anchor" aria-label="anchor" href="#arg-pkg"></a></dt>
@@ -94,7 +94,7 @@ of the vignette.</p></dd>
 
 
 <dt id="arg-dir">dir<a class="anchor" aria-label="anchor" href="#arg-dir"></a></dt>
-<dd><p>Path to the directory where the <code>"Rmd.orig"</code> files
+<dd><p>Path to the directory where the <code>.Rmd.orig</code> and <code>.qmd.orig</code> files
 are stored.</p></dd>
 
 
@@ -113,8 +113,8 @@ are stored.</p></dd>
 <h3 id="important">Important<a class="anchor" aria-label="anchor" href="#important"></a></h3>
 
 
-<p>In your <code>.Rmd.orig</code> file, make sure you have set at least the following
-lines if you are producing plots:</p>
+<p>In your <code>.Rmd.orig</code> or <code>.qmd.orig</code> file, make sure you have set at least the
+following lines if you are producing plots:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span></span>
 <span>  <span class="va">...</span>,</span>
 <span>  fig.path <span class="op">=</span> <span class="st">"./"</span>,</span>

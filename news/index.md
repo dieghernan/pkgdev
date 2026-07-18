@@ -26,9 +26,9 @@
   now uses
   [`lintr::use_lintr()`](https://lintr.r-lib.org/reference/use_lintr.html)
   and adds package-specific options.
-- **Caution:**
-  [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  modifies global and project-level RStudio options.
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  modifies global and project-level RStudio options. **Caution:** this
+  changes user settings.
 
 ## pkgdev 0.1.0
 

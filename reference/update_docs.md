@@ -20,8 +20,7 @@ Run routine checks on the package:
 - Precompute vignettes, if present (see
   <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
 
-- Rebuild `README.Rmd`, if present, with
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html).
+- Rebuild `README.qmd`, `README.Rmd` or pkgdown index files, if present.
 
 - Optimize images with
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
@@ -75,8 +74,8 @@ update_docs(
 
 - build_readme:
 
-  A logical value. Should `README.Rmd` be built with
-  [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)?
+  A logical value. Should `README.qmd`, `README.Rmd` or pkgdown index
+  files be built?
 
 - verbose:
 
@@ -147,7 +146,7 @@ approach for the `DESCRIPTION` file, overall code style and
   updates documentation.
 
 - [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
-  builds `README.Rmd`.
+  builds `README.Rmd` files.
 
 - [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html)
   writes `codemeta.json`.

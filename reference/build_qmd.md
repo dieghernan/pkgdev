@@ -3,7 +3,7 @@
 `build_qmd()` is a wrapper around
 [`quarto::quarto_render()`](https://quarto-dev.github.io/quarto-r/reference/quarto_render.html)
 that first installs a temporary copy of the package, then renders each
-`.Rmd` in a clean R session. `build_readme_qmd()` locates your
+Quarto file in a clean R session. `build_readme_qmd()` locates your
 `README.qmd` and builds it into a `README.md`.
 
 ## Usage

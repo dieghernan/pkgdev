@@ -24,8 +24,8 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 - source:
 
-  Name of the `.Rmd.orig` file, without the path (e.g.
-  `"some_name.Rmd.orig"`).
+  Name of the `.Rmd.orig` or `.qmd.orig` file, without the path (e.g.
+  `"some_name.Rmd.orig"` or `"some_name.qmd.orig"`).
 
 - pkg:
 
@@ -42,7 +42,8 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 - dir:
 
-  Path to the directory where the `"Rmd.orig"` files are stored.
+  Path to the directory where the `.Rmd.orig` and `.qmd.orig` files are
+  stored.
 
 - ...:
 
@@ -59,8 +60,8 @@ This function searches for the desired precomputed vignette in the
 
 ### Important
 
-In your `.Rmd.orig` file, make sure you have set at least the following
-lines if you are producing plots:
+In your `.Rmd.orig` or `.qmd.orig` file, make sure you have set at least
+the following lines if you are producing plots:
 
     knitr::opts_chunk$set(
       ...,
