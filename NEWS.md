@@ -5,6 +5,9 @@
 - Added **pkgdown** to Imports.
 - Included an RStudio add-in.
 - Removed **crayon** and now use **cli** instead.
+- `add_global_gitgnore()` now adds recursive `.Rbuildignore` patterns for
+  ignored directories, which avoids false positives from tools that inspect
+  source directories directly.
 - `check_rd_titles()` checks titles in the `man` directory.
 - `update_docs()` can clean YAML files of trailing whitespace and add a final
   blank line.

@@ -44,13 +44,12 @@ gha_pkgdown_branch <- function(
   }
 
   # Add files to build ignore.
-  usethis::use_build_ignore(".github")
+  use_build_ignore_dir(".github")
   usethis::use_build_ignore("_pkgdown.yaml")
   usethis::use_build_ignore("_pkgdown.yml")
 
   # Ignore folders.
-  usethis::use_build_ignore("pkgdown")
-  usethis::use_build_ignore("docs")
+  use_build_ignore_dir(c("pkgdown", "docs"))
   usethis::use_git_ignore("docs/", pkg)
 
   # Add files to git ignore.

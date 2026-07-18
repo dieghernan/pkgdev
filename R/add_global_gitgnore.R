@@ -93,7 +93,7 @@ add_global_gitgnore <- function(pkg = ".") {
   }
 
   # Ignore this on build too.
-  usethis::use_build_ignore("revdep")
+  use_build_ignore_dir("revdep")
 
   # Codemeta.
 
@@ -115,7 +115,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_git_ignore(".github/pkg.lock", directory = pkg)
   usethis::use_git_ignore("*.rmarkdown", directory = pkg)
 
-  usethis::use_build_ignore("pkgdown")
+  use_build_ignore_dir("pkgdown")
   usethis::use_build_ignore("pkgdown.yaml")
   usethis::use_build_ignore("pkgdown.yml")
   usethis::use_build_ignore("_pkgdown.yaml")
@@ -125,8 +125,7 @@ add_global_gitgnore <- function(pkg = ".") {
   usethis::use_build_ignore(".lintr")
   usethis::use_build_ignore("CODE_OF_CONDUCT.md")
   usethis::use_build_ignore("CONTRIBUTING.md")
-  usethis::use_build_ignore(".github")
-  usethis::use_build_ignore("docs")
+  use_build_ignore_dir(c("data-raw", ".github", "docs", ".vscode", "dev"))
 
   # PDF plots.
   usethis::use_git_ignore("Rplots.pdf", directory = pkg)
@@ -138,29 +137,30 @@ add_global_gitgnore <- function(pkg = ".") {
   # Positron and Quarto.
   usethis::use_git_ignore(c("/.quarto/", "**/*.quarto_ipynb"), directory = pkg)
 
-  usethis::use_build_ignore(c("/.quarto/", "[.]quarto_ipynb$"), escape = FALSE)
+  use_build_ignore_dir(".quarto")
+  usethis::use_build_ignore("[.]quarto_ipynb$", escape = FALSE)
   usethis::use_build_ignore("[.]markdown$", escape = FALSE)
 
-  usethis::use_build_ignore(c(
+  use_build_ignore_dir(c(
     "vignettes/.quarto",
-    "vignettes/.quarto/",
+    "vignettes/articles/.quarto",
+    "vignettes/articles"
+  ))
+  usethis::use_build_ignore(c(
     "vignettes/_quarto.yaml",
     "vignettes/_quarto.yml",
-    ".quarto/",
-    "vignettes/articles/.quarto",
     "vignettes/articles/*_files",
-    "vignettes/articles",
     ".gitattributes"
   ))
 
-  usethis::use_build_ignore(c(".positai", ".claude"))
+  use_build_ignore_dir(c(".positai", ".claude"))
 
   usethis::use_build_ignore(c(
     "index.qmd",
-    "index_files/",
     "index.html",
     "index.md"
   ))
+  use_build_ignore_dir("index_files")
   usethis::use_git_ignore(c("index_files/", "*index.html", "pkgdown/*_files"))
 
   # Ignore Quarto articles and vignettes.

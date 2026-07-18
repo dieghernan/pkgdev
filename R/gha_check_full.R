@@ -46,7 +46,7 @@ gha_check_full <- function(
   }
 
   # Add files to build ignore.
-  usethis::use_build_ignore(".github")
+  use_build_ignore_dir(".github")
 
   # Add files to git ignore.
   usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
