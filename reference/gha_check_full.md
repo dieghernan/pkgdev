@@ -61,8 +61,9 @@ GitHub Actions helpers:
 ``` r
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
+#> ✔ Adding "^\\.github/" to .Rbuildignore.
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpyYu6x5/file1c125704c6ae/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpBWRP1W/file1b6d4f6ebd98/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

@@ -8,6 +8,10 @@
 - Added **pkgdown** to Imports.
 - Included an RStudio add-in.
 - Removed **crayon** and now use **cli** instead.
+- [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
+  now adds recursive `.Rbuildignore` patterns for ignored directories,
+  which avoids false positives from tools that inspect source
+  directories directly.
 - [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
   checks titles in the `man` directory.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
