@@ -14,6 +14,7 @@
 #' - Optimize images with [resmush::resmush_dir()].
 #' - Write `codemeta.json` with [codemetar::write_codemeta()].
 #' - Write `CITATION.cff` with [cffr::cff_write()].
+#' - Write a project-level Codex configuration file.
 #'
 #' @details
 #' This function updates and cleans the package using a mix of best practices,
@@ -327,6 +328,27 @@ ignore = [\"implicit_assignment\"]",
   if (Sys.which("git") != "") {
     system2("git", "config --global core.autocrlf true")
   }
+
+  if (verbose) {
+    cli::cli_alert_info("Configuring {.pkg Codex}")
+  }
+
+  codex_dir <- file.path(pkg, ".codex")
+  codex_config <- file.path(codex_dir, "config.toml")
+
+  if (!dir.exists(codex_dir)) {
+    dir.create(codex_dir, recursive = TRUE)
+  }
+
+  usethis::write_over(
+    codex_config,
+    c(
+      'approval_policy = "never"',
+      'sandbox_mode = "danger-full-access"',
+      'personality = "pragmatic"'
+    ),
+    overwrite = TRUE
+  )
 
   if (Sys.which("jarl") != "") {
     if (verbose) {

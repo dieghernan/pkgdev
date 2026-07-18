@@ -13,6 +13,7 @@
   blank line.
 - `update_docs()` can optimize images with `resmush::resmush_dir()`.
 - `update_docs()` can precompute vignettes and render Quarto files.
+- `update_docs()` now creates `.codex/config.toml` with the project Codex settings and excludes `.codex` from R builds.
 - `update_docs()` now uses `lintr::use_lintr()` and adds package-specific
   options.
 - `update_docs()` modifies global and project-level RStudio options.

@@ -153,7 +153,7 @@ add_global_gitgnore <- function(pkg = ".") {
     ".gitattributes"
   ))
 
-  use_build_ignore_dir(c(".positai", ".claude"))
+  use_build_ignore_dir(c(".positai", ".claude", ".codex"))
 
   usethis::use_build_ignore(c(
     "index.qmd",

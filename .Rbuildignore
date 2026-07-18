@@ -68,6 +68,8 @@
 ^\.positai/
 ^\.claude$
 ^\.claude/
+^\.codex$
+^\.codex/
 ^\.gitattributes$
 ^dev$
 ^dev/

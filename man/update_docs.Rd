@@ -71,6 +71,7 @@ Run routine checks on the package:
 \item Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.
 \item Write \code{codemeta.json} with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}.
 \item Write \code{CITATION.cff} with \code{\link[cffr:cff_write]{cffr::cff_write()}}.
+\item Write a project-level Codex configuration file.
 }
 }
 \details{
