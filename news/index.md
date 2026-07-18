@@ -23,6 +23,9 @@
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   can precompute vignettes and render Quarto files.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  now creates `.codex/config.toml` with the project Codex settings and
+  excludes `.codex` from R builds.
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   now uses
   [`lintr::use_lintr()`](https://lintr.r-lib.org/reference/use_lintr.html)
   and adds package-specific options.

@@ -31,6 +31,8 @@ Run routine checks on the package:
 - Write `CITATION.cff` with
   [`cffr::cff_write()`](https://docs.ropensci.org/cffr/reference/cff_write.html).
 
+- Write a project-level Codex configuration file.
+
 ## Usage
 
 ``` r
