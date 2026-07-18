@@ -25,7 +25,7 @@ if you need to debug.}
 }
 \description{
 \code{build_qmd()} is a wrapper around \code{\link[quarto:quarto_render]{quarto::quarto_render()}} that first
-installs a temporary copy of the package, then renders each \code{.Rmd} in a
+installs a temporary copy of the package, then renders each Quarto file in a
 clean \R session. \code{build_readme_qmd()} locates your \code{README.qmd} and builds
 it into a \code{README.md}.
 }

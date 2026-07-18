@@ -17,7 +17,7 @@ knitr:
 
 ## On CRAN
 
-Download data for my packages on CRAN.
+Download data for my CRAN packages.
 
 ```{r}
 #| include = FALSE
@@ -313,8 +313,8 @@ res_all <- bind_rows(res) |>
   arrange(desc(mdown))
 
 names(res_all) <- c(
-  "package", "Latest Version", "Version in CRAN",
-  "Package Size", "Downloads (Last month)"
+  "package", "Latest version", "CRAN version",
+  "Package size", "Downloads (last month)"
 )
 
 reactable(
@@ -351,7 +351,7 @@ reactable(
       sticky = "left",
       rowHeader = TRUE
     ),
-    "Downloads (Last month)" = colDef(format = colFormat(separators = TRUE))
+    "Downloads (last month)" = colDef(format = colFormat(separators = TRUE))
   )
 )
 ```

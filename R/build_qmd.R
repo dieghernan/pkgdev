@@ -1,7 +1,7 @@
 #' Build Quarto files for a package
 #'
 #' `build_qmd()` is a wrapper around [quarto::quarto_render()] that first
-#' installs a temporary copy of the package, then renders each `.Rmd` in a
+#' installs a temporary copy of the package, then renders each Quarto file in a
 #' clean \R session. `build_readme_qmd()` locates your `README.qmd` and builds
 #' it into a `README.md`.
 #'

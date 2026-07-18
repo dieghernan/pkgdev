@@ -20,8 +20,8 @@ precompute_vignette(
 precompute_vignette_all(dir = "vignettes", pkg = ".", ...)
 }
 \arguments{
-\item{source}{Name of the \code{.Rmd.orig} file, without the path
-(e.g. \code{"some_name.Rmd.orig"}).}
+\item{source}{Name of the \code{.Rmd.orig} or \code{.qmd.orig} file, without the path
+(e.g. \code{"some_name.Rmd.orig"} or \code{"some_name.qmd.orig"}).}
 
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
@@ -31,7 +31,7 @@ See \strong{Details}.}
 \item{create_r_file}{Whether to create an additional \R script with the code
 of the vignette.}
 
-\item{dir}{Path to the directory where the \code{"Rmd.orig"} files
+\item{dir}{Path to the directory where the \code{.Rmd.orig} and \code{.qmd.orig} files
 are stored.}
 
 \item{...}{Parameters passed to \code{\link[=precompute_vignette]{precompute_vignette()}}.}
@@ -48,8 +48,8 @@ This function searches for the desired precomputed vignette in the
 \code{"./vignettes/"} directory and for plots in the root \code{"./"} directory.
 \subsection{Important}{
 
-In your \code{.Rmd.orig} file, make sure you have set at least the following
-lines if you are producing plots:
+In your \code{.Rmd.orig} or \code{.qmd.orig} file, make sure you have set at least the
+following lines if you are producing plots:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{knitr::opts_chunk$set(
   ...,

@@ -15,8 +15,8 @@
 - `update_docs()` can precompute vignettes and render Quarto files.
 - `update_docs()` now uses `lintr::use_lintr()` and adds package-specific
   options.
-- **Caution:** `update_docs()` modifies global and project-level RStudio
-  options.
+- `update_docs()` modifies global and project-level RStudio options.
+  **Caution:** this changes user settings.
 
 # pkgdev 0.1.0
 

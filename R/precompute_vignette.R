@@ -10,8 +10,8 @@
 #' `"./vignettes/"` directory and for plots in the root `"./"` directory.
 #'
 #' ## Important
-#' In your `.Rmd.orig` file, make sure you have set at least the following
-#' lines if you are producing plots:
+#' In your `.Rmd.orig` or `.qmd.orig` file, make sure you have set at least the
+#' following lines if you are producing plots:
 #' ```r
 #' knitr::opts_chunk$set(
 #'   ...,
@@ -21,8 +21,8 @@
 #'
 #' ```
 #'
-#' @param source Name of the `.Rmd.orig` file, without the path
-#'   (e.g. `"some_name.Rmd.orig"`).
+#' @param source Name of the `.Rmd.orig` or `.qmd.orig` file, without the path
+#'   (e.g. `"some_name.Rmd.orig"` or `"some_name.qmd.orig"`).
 #' @param figure_ext Extension of the figures plotted in the vignette.
 #'   See **Details**.
 #' @param create_r_file Whether to create an additional \R script with the code
@@ -130,7 +130,7 @@ precompute_vignette <- function(
 }
 
 #' @rdname precompute
-#' @param dir Path to the directory where the `"Rmd.orig"` files
+#' @param dir Path to the directory where the `.Rmd.orig` and `.qmd.orig` files
 #'   are stored.
 #'
 #' @export

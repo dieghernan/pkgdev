@@ -33,8 +33,8 @@ with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
 \item{create_cff}{A logical value. Should \code{CITATION.cff} be created with
 \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 
-\item{build_readme}{A logical value. Should \code{README.Rmd} be built with
-\code{\link[devtools:build_readme]{devtools::build_readme()}}?}
+\item{build_readme}{A logical value. Should \code{README.qmd}, \code{README.Rmd} or
+pkgdown index files be built?}
 
 \item{verbose}{A logical value. Should informative messages be displayed on
 the console?}
@@ -67,7 +67,7 @@ Run routine checks on the package:
 \item Roxygenize with \code{\link[roxygen2:roxygenise]{roxygen2::roxygenise()}}.
 \item Precompute vignettes, if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}).
-\item Rebuild \code{README.Rmd}, if present, with \code{\link[devtools:build_readme]{devtools::build_readme()}}.
+\item Rebuild \code{README.qmd}, \code{README.Rmd} or pkgdown index files, if present.
 \item Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.
 \item Write \code{codemeta.json} with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}.
 \item Write \code{CITATION.cff} with \code{\link[cffr:cff_write]{cffr::cff_write()}}.
@@ -94,7 +94,7 @@ update_docs()
 \item \code{\link[styler:style_pkg]{styler::style_pkg()}} styles package code.
 \item \code{\link[urlchecker:url_check]{urlchecker::url_check()}} checks URLs.
 \item \code{\link[roxygen2:roxygenise]{roxygen2::roxygenise()}} updates documentation.
-\item \code{\link[devtools:build_readme]{devtools::build_readme()}} builds \code{README.Rmd}.
+\item \code{\link[devtools:build_readme]{devtools::build_readme()}} builds \code{README.Rmd} files.
 \item \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}} writes \code{codemeta.json}.
 \item \code{\link[tools:resaveRdaFiles]{tools::resaveRdaFiles()}} compresses data files.
 }

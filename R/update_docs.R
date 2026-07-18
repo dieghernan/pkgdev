@@ -10,7 +10,7 @@
 #' - Roxygenize with [roxygen2::roxygenise()].
 #' - Precompute vignettes, if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
-#' - Rebuild `README.Rmd`, if present, with [devtools::build_readme()].
+#' - Rebuild `README.qmd`, `README.Rmd` or pkgdown index files, if present.
 #' - Optimize images with [resmush::resmush_dir()].
 #' - Write `codemeta.json` with [codemetar::write_codemeta()].
 #' - Write `CITATION.cff` with [cffr::cff_write()].
@@ -23,8 +23,8 @@
 #'
 #' @param url_update A logical value. Should URLs be updated with
 #'   [urlchecker::url_update()]?
-#' @param build_readme A logical value. Should `README.Rmd` be built with
-#'   [devtools::build_readme()]?
+#' @param build_readme A logical value. Should `README.qmd`, `README.Rmd` or
+#'   pkgdown index files be built?
 #' @param create_codemeta A logical value. Should `codemeta.json` be created
 #'   with [codemetar::write_codemeta()]?
 #' @param create_cff A logical value. Should `CITATION.cff` be created with
@@ -53,7 +53,7 @@
 #' - [styler::style_pkg()] styles package code.
 #' - [urlchecker::url_check()] checks URLs.
 #' - [roxygen2::roxygenise()] updates documentation.
-#' - [devtools::build_readme()] builds `README.Rmd`.
+#' - [devtools::build_readme()] builds `README.Rmd` files.
 #' - [codemetar::write_codemeta()] writes `codemeta.json`.
 #' - [tools::resaveRdaFiles()] compresses data files.
 #'
