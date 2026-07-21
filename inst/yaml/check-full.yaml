@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [main, master]
   schedule:
-  - cron: "ADD_CRON_EXPRESSON_HERE" # https://crontab.guru/
+  - cron: "ADD_CRON_EXPRESSION" # https://crontab.guru/
   repository_dispatch:
     types: [trigger-check-workflow]
   workflow_dispatch:

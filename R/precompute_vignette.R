@@ -79,7 +79,7 @@ precompute_vignette <- function(
       src_path <- file.path(pkg, "vignettes", f_path)
       out <- gsub(".orig", "", src_path)
 
-      cli::cli_alert("Precomputing {.file {src_path}}")
+      cli::cli_alert_info("Precomputing vignette {.file {src_path}}.")
 
       knitr::knit(input = src_path, output = out, quiet = TRUE)
 
@@ -98,7 +98,7 @@ precompute_vignette <- function(
         directory = file.path(pkg, "vignettes")
       )
 
-      cli::cli_alert("Resulting vignette in {.file {out}}")
+      cli::cli_alert_success("Wrote precomputed vignette {.file {out}}.")
 
       # Move plot files to the vignette directory.
       plots <- list.files(pkg, pattern = figure_ext)
@@ -145,7 +145,10 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
     precompute_vignette(source = vig, pkg = pkg, ...)
   } else {
     cli::cli_alert_info(
-      "No vignettes to precompute found in {.path {file.path(pkg, dir)}}"
+      c(
+        "No {.file .Rmd.orig} or {.file .qmd.orig} vignettes found in ",
+        "{.path {file.path(pkg, dir)}}."
+      )
     )
   }
 }

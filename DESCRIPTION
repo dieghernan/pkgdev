@@ -40,7 +40,8 @@ Imports:
 Suggests:
     ggplot2,
     jsonld,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder:
     knitr,
     quarto
@@ -50,6 +51,8 @@ Config/Needs/website: dieghernan/gitdevr, cranlogs, tidyverse, lubridate,
     reactable, Polychrome, pkgsearch, htmltools
 Config/roxygen2/markdown: TRUE
 Config/roxygen2/version: 8.0.0
+Config/testthat/edition: 3
+Config/testthat/parallel: true
 Encoding: UTF-8
 X-schema.org-keywords: developer-tools, experimental, github-actions, r,
     r-package, rstats

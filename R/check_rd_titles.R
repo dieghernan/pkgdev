@@ -24,7 +24,7 @@ check_rd_titles <- function(pkg = ".") {
   allman <- list.files(path, pattern = ".Rd", full.names = TRUE)
 
   if (length(allman) == 0) {
-    cli::cli_alert_info("No {.file .Rd} files found in {.file {path}}")
+    cli::cli_alert_info("No {.file .Rd} files found in {.path {path}}.")
     return(NULL)
   }
 

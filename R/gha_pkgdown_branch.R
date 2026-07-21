@@ -59,22 +59,24 @@ gha_pkgdown_branch <- function(
 
   # Get action file.
   filepath <- system.file("yaml/pkgdown-gh-pages.yaml", package = "pkgdev")
+  workflow <- file.path(destdir, basename(filepath))
 
   # Copy action file.
   result <- file.copy(filepath, destdir, overwrite = overwrite)
 
   if (result) {
-    cli::cli_alert_success(paste0(
-      "Action updated correctly. ",
-      "See {.file {file.path(destdir, basename(filepath))}}"
-    ))
+    cli::cli_alert_success(
+      "Updated GitHub Actions workflow {.file {workflow}}."
+    )
   } else {
-    cli::cli_alert_danger("File was not updated.")
+    cli::cli_alert_danger(
+      "Could not update GitHub Actions workflow {.file {workflow}}."
+    )
     return(invisible())
   }
 
   # Add platform.
-  add_platform <- readLines(file.path(destdir, "pkgdown-gh-pages.yml"))
+  add_platform <- readLines(workflow)
 
   add_platform <- gsub(
     pattern = "<OS>",
@@ -91,9 +93,9 @@ gha_pkgdown_branch <- function(
     fixed = TRUE
   )
 
-  writeLines(add_platform, con = file.path(destdir, "pkgdown-gh-pages.yml"))
+  writeLines(add_platform, con = workflow)
   cli::cli_alert_info(
-    "Your package will be deployed on {.val {paste0(platform, '-', version)}}"
+    "Configured deployment runner {.val {paste0(platform, '-', version)}}."
   )
 
   invisible()

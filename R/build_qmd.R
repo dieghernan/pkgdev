@@ -30,7 +30,11 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
 
   ok <- file.exists(paths)
   if (!all(ok)) {
-    cli::cli_abort("Can't find file{?s}: {.path {files[!ok]}}.")
+    missing <- files[!ok] # nolint
+    cli::cli_abort(c(
+      "Can't find input file.",
+      "x" = "Missing: {.path {missing}}"
+    ))
   }
 
   withr::with_temp_libpaths(code = {
@@ -79,12 +83,16 @@ build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
   readme_path <- readme_path[grepl(regexp, readme_path, ignore.case = TRUE)]
 
   if (length(readme_path) == 0) {
-    cli::cli_abort("Can't find {.file README.qmd} or {.file inst/README.qmd}.")
+    cli::cli_abort(c(
+      "Can't find a Quarto README source file.",
+      "i" = "Expected {.file README.qmd} or {.file inst/README.qmd}."
+    ))
   }
   if (length(readme_path) > 1) {
-    cli::cli_abort(
-      "Can't have both {.file README.qmd} and {.file inst/README.qmd}."
-    )
+    cli::cli_abort(c(
+      "Found multiple Quarto README source files.",
+      "x" = "Keep only one of {.file README.qmd} or {.file inst/README.qmd}."
+    ))
   }
 
   usethis::use_build_ignore(c(

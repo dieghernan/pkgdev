@@ -55,22 +55,24 @@ gha_check_full <- function(
 
   # Get action file.
   filepath <- system.file("yaml/check-full.yaml", package = "pkgdev")
+  workflow <- file.path(destdir, basename(filepath))
 
   # Copy action file.
   result <- file.copy(filepath, destdir, overwrite = overwrite)
 
   if (result) {
-    cli::cli_alert_success(paste0(
-      "Action updated correctly. ",
-      "See {.file {file.path(destdir, basename(filepath))}}"
-    ))
+    cli::cli_alert_success(
+      "Updated GitHub Actions workflow {.file {workflow}}."
+    )
   } else {
-    cli::cli_alert_danger("File was not updated.")
+    cli::cli_alert_danger(
+      "Could not update GitHub Actions workflow {.file {workflow}}."
+    )
     return(invisible())
   }
 
   # Add CRON expression.
-  add_cron <- readLines(file.path(destdir, "check-full.yml"))
+  add_cron <- readLines(workflow)
   add_cron <- gsub(
     pattern = "ADD_CRON_EXPRESSION",
     replacement = cron_expr,
@@ -78,7 +80,7 @@ gha_check_full <- function(
     fixed = TRUE
   )
 
-  writeLines(add_cron, con = file.path(destdir, "check-full.yml"))
+  writeLines(add_cron, con = workflow)
 
   invisible()
 }

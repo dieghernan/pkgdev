@@ -104,7 +104,7 @@ update_docs <- function(
 
   # Add global `.gitignore`.
   if (verbose) {
-    cli::cli_alert_info("Adding {.file .gitignore} to root")
+    cli::cli_alert_info("Updating root {.file .gitignore}.")
   }
   add_global_gitgnore(pkg = pkg)
 
@@ -112,7 +112,7 @@ update_docs <- function(
 
   if (all(file.exists(this), length(this) > 0)) {
     if (verbose) {
-      cli::cli_alert_info("Adding project options to {.file {this}} file")
+      cli::cli_alert_info("Updating project options in {.file {this}}.")
     }
     usethis::write_union(
       this,
@@ -128,7 +128,7 @@ update_docs <- function(
 
   # Add global options.
   if (verbose) {
-    cli::cli_alert_info("Setting RStudio global options")
+    cli::cli_alert_info("Updating RStudio global options.")
   }
 
   usethis::use_rstudio_preferences(
@@ -173,13 +173,13 @@ update_docs <- function(
   )
 
   if (verbose) {
-    cli::cli_alert_info("Using {.fun usethis::use_blank_slate}")
+    cli::cli_alert_info("Running {.fn usethis::use_blank_slate}.")
   }
   usethis::use_blank_slate()
 
   if (!file.exists(".lintr")) {
     if (verbose) {
-      cli::cli_alert_info("Adding {.file .lintr} file")
+      cli::cli_alert_info("Creating {.file .lintr}.")
     }
     lintr::use_lintr()
 
@@ -191,7 +191,7 @@ update_docs <- function(
   }
 
   if (verbose) {
-    cli::cli_alert_info("Cleaning {.file DESCRIPTION}")
+    cli::cli_alert_info("Cleaning {.file DESCRIPTION}.")
   }
 
   # Extract keywords and save them for later.
@@ -230,7 +230,7 @@ update_docs <- function(
 
   if (file.exists(setting_json_file)) {
     if (verbose) {
-      cli::cli_alert_info("Configuring VS Code project settings")
+      cli::cli_alert_info("Configuring VS Code project settings.")
     }
 
     settings_json <- jsonlite::read_json(setting_json_file)
@@ -265,7 +265,7 @@ update_docs <- function(
   }
 
   if (verbose) {
-    cli::cli_alert_info("Configuring VS Code project extensions")
+    cli::cli_alert_info("Configuring VS Code project extensions.")
   }
 
   ext_json_file <- file.path(pkg, ".vscode", "extensions.json")
@@ -296,11 +296,13 @@ update_docs <- function(
   # Use `jarl` config.
   if (!file.exists("jarl.toml")) {
     if (verbose) {
-      cli::cli_alert_info("Configuring {.pkg jarl}")
-      cli::cli_alert("See more in {.url https://jarl.etiennebacher.com/}")
-      cli::cli_alert(paste0(
-        "Read {.href [jarl docs](https://jarl.etiennebacher.com/)} ",
-        "to learn about the {.pkg jarl} linter."
+      cli::cli_alert_info("Configuring {.pkg jarl}.")
+      cli::cli_inform(c(
+        "i" = "See {.url https://jarl.etiennebacher.com/}.",
+        "i" = paste0(
+          "Read {.href [jarl docs](https://jarl.etiennebacher.com/)} ",
+          "to learn about the {.pkg jarl} linter."
+        )
       ))
     }
     writeLines(
@@ -312,13 +314,13 @@ ignore = [\"implicit_assignment\"]",
 
   if (url_update) {
     if (verbose) {
-      cli::cli_alert_info("Checking URLs with {.pkg urlchecker}")
+      cli::cli_alert_info("Checking URLs with {.pkg urlchecker}.")
     }
     urlchecker::url_update(pkg)
   }
 
   if (verbose) {
-    cli::cli_alert_info("Compressing data in {.path ./R}")
+    cli::cli_alert_info("Compressing data in {.path ./R}.")
   }
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
   if (dir.exists(file.path(pkg, "data"))) {
@@ -330,7 +332,7 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Configuring {.pkg Codex}")
+    cli::cli_alert_info("Configuring {.pkg Codex}.")
   }
 
   codex_dir <- file.path(pkg, ".codex")
@@ -352,7 +354,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (Sys.which("jarl") != "") {
     if (verbose) {
-      cli::cli_alert_info("Linting package with {.pkg jarl}")
+      cli::cli_alert_info("Linting package with {.pkg jarl}.")
     }
 
     # Get R version from `DESCRIPTION`.
@@ -372,7 +374,7 @@ ignore = [\"implicit_assignment\"]",
   }
   if (Sys.which("air") != "") {
     if (verbose) {
-      cli::cli_alert_info("Styling package with {.pkg air}")
+      cli::cli_alert_info("Styling package with {.pkg air}.")
     }
     system2("air", "format .")
   }
@@ -386,7 +388,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(rmd) > 0) {
     if (verbose) {
-      cli::cli_alert_info("Adapting {.file .Rmd} files to {.pkg Quarto}")
+      cli::cli_alert_info("Adapting {.file .Rmd} files to {.pkg Quarto}.")
     }
 
     lapply(rmd, function(x) {
@@ -412,7 +414,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(qmd) > 0) {
     if (verbose) {
-      cli::cli_alert_info("Adapting {.file .qmd} files to {.pkg Quarto}")
+      cli::cli_alert_info("Adapting {.file .qmd} files to {.pkg Quarto}.")
     }
 
     lapply(qmd, function(x) {
@@ -431,7 +433,7 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Styling package with {.pkg styler}")
+    cli::cli_alert_info("Styling package with {.pkg styler}.")
   }
 
   fmt_file_type <- c("r", "rmd", "rprofile", "qmd")
@@ -445,7 +447,7 @@ ignore = [\"implicit_assignment\"]",
   if (dir.exists(file.path(pkg, "inst", "examples"))) {
     if (verbose) {
       cli::cli_alert_info(
-        "Styling external examples in {.path {file.path('inst', 'examples')}}"
+        "Styling external examples in {.path {file.path('inst', 'examples')}}."
       )
     }
     styler::style_dir(
@@ -457,7 +459,7 @@ ignore = [\"implicit_assignment\"]",
   if (dir.exists(file.path(pkg, "man", "roxygen2"))) {
     if (verbose) {
       cli::cli_alert_info(
-        "Styling meta roxygen2 in {.path {file.path('man', 'roxygen2')}}"
+        "Styling meta roxygen2 in {.path {file.path('man', 'roxygen2')}}."
       )
     }
     styler::style_dir(
@@ -469,7 +471,7 @@ ignore = [\"implicit_assignment\"]",
   if (dir.exists(file.path(pkg, "man", "chunks"))) {
     if (verbose) {
       cli::cli_alert_info(
-        "Styling chunks in {.path {file.path('man', 'chunks')}}"
+        "Styling chunks in {.path {file.path('man', 'chunks')}}."
       )
     }
     styler::style_dir(file.path(pkg, "man", "chunks"), filetype = fmt_file_type)
@@ -504,12 +506,12 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Roxygenizing package with {.pkg roxygen2}")
+    cli::cli_alert_info("Roxygenizing package with {.pkg roxygen2}.")
   }
   roxygen2::roxygenise()
 
   if (verbose) {
-    cli::cli_alert_info("Checking {.file .Rd} titles")
+    cli::cli_alert_info("Checking {.file .Rd} titles.")
   }
 
   rdtit <- check_rd_titles(pkg)
@@ -518,7 +520,9 @@ ignore = [\"implicit_assignment\"]",
     enddot <- rdtit[rdtit$last == ".", ]
 
     if (nrow(enddot) != 0) {
-      cli::cli_alert_warning("Found {.file .Rd} files that end with {.val .}")
+      cli::cli_alert_warning(
+        "Found {.file .Rd} files with titles that end in {.val .}."
+      )
       rds <- as.character(enddot$src)
       rds <- paste0("{.file ", rds, "}")
       names(rds) <- rep("*", length(rds))
@@ -527,7 +531,7 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Looking for {.code #'} in {.file .Rd} files")
+    cli::cli_alert_info("Looking for {.code #'} in {.file .Rd} files.")
   }
 
   rdhash <- check_rd_hash(pkg)
@@ -536,7 +540,9 @@ ignore = [\"implicit_assignment\"]",
     has_hash <- rdhash[rdhash$bad_hash, ]
 
     if (nrow(has_hash) != 0) {
-      cli::cli_alert_warning("Found {.code #'} in {.file .Rd} files")
+      cli::cli_alert_warning(
+        "Found leaked roxygen markers in {.file .Rd} files."
+      )
       rds <- as.character(has_hash$src)
       rds <- paste0("{.file ", rds, "}")
       names(rds) <- rep("*", length(rds))
@@ -545,12 +551,12 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Checking missing fields in {.file .Rd} files")
+    cli::cli_alert_info("Checking missing fields in {.file .Rd} files.")
   }
   devtools::check_doc_fields(pkg, fields = c("value", "examples", "encoding"))
 
   if (verbose) {
-    cli::cli_alert_info("Running {.pkg codetools}")
+    cli::cli_alert_info("Running {.pkg codetools}.")
   }
 
   desc_obj <- desc::desc(pkg)
@@ -559,7 +565,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (precompute) {
     if (verbose) {
-      cli::cli_alert_info("Precomputing vignettes")
+      cli::cli_alert_info("Precomputing vignettes.")
     }
     precompute_vignette_all(pkg = pkg, ...)
   }
