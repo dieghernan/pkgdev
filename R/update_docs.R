@@ -67,6 +67,7 @@
 #' \dontrun{
 #' update_docs()
 #' }
+# nocov start
 update_docs <- function(
   pkg = ".",
   url_update = TRUE,
@@ -695,6 +696,7 @@ ignore = [\"implicit_assignment\"]",
 
   invisible()
 }
+# nocov end
 
 env_var_is_true <- function(x) {
   isTRUE(as.logical(Sys.getenv(x, "false")))
