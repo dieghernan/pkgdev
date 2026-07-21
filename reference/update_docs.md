@@ -164,7 +164,7 @@ Package maintenance helpers:
 ``` r
 # \dontrun{
 update_docs()
-#> ℹ Adding .gitignore to root
+#> ℹ Updating root .gitignore.
 #> Warning: cannot open file '.gitignore': No such file or directory
 #> Error in file(con, "r"): cannot open the connection
 # }

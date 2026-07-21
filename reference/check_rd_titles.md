@@ -29,7 +29,7 @@ runs this check after roxygenizing the package.
 ``` r
 # \dontrun{
 check_rd_titles()
-#> ℹ No .Rd files found in ./man
+#> ℹ No .Rd files found in ./man.
 #> NULL
 # }
 ```
