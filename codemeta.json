@@ -375,7 +375,7 @@
     "SystemRequirements": null
   },
   "keywords": ["developer-tools", "experimental", "github-actions", "r", "r-package", "rstats"],
-  "fileSize": "379.453KB",
+  "fileSize": "379.729KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -393,6 +393,6 @@
   ],
   "releaseNotes": "https://github.com/dieghernan/pkgdev/blob/main/NEWS.md",
   "readme": "https://github.com/dieghernan/pkgdev/blob/main/README.md",
-  "contIntegration": "https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml",
-  "developmentStatus": "https://www.repostatus.org/#wip"
+  "contIntegration": ["https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml", "https://codecov.io/gh/dieghernan/pkgdev", "https://coveralls.io/github/dieghernan/pkgdev?branch=main"],
+  "developmentStatus": "https://www.repostatus.org/#concept"
 }

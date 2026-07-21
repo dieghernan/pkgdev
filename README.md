@@ -6,12 +6,16 @@
 
 <!-- badges: start -->
 
-[![r-universe](https://dieghernan.r-universe.dev/badges/pkgdev)](https://dieghernan.r-universe.dev/)
 [![R-CMD-check](https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml/badge.svg)](https://github.com/dieghernan/pkgdev/actions/workflows/check-full.yaml)
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![r-universe](https://dieghernan.r-universe.dev/badges/pkgdev)](https://dieghernan.r-universe.dev/)
 [![CodeFactor](https://www.codefactor.io/repository/github/dieghernan/pkgdev/badge)](https://www.codefactor.io/repository/github/dieghernan/pkgdev)
+[![codecov](https://codecov.io/gh/dieghernan/pkgdev/graph/badge.svg?token=QsBsMNjzXN)](https://codecov.io/gh/dieghernan/pkgdev)
+[![Coverage
+Status](https://coveralls.io/repos/github/dieghernan/pkgdev/badge.svg?branch=main)](https://coveralls.io/github/dieghernan/pkgdev?branch=main)
+[![Project Status: Concept – Minimal or no implementation has been done
+yet, or the repository is only intended to be a limited example, demo,
+or
+proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 
 <!-- badges: end -->
 
