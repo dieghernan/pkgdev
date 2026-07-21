@@ -41,7 +41,8 @@ Suggests:
     ggplot2,
     jsonld,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    yaml
 VignetteBuilder:
     knitr,
     quarto

@@ -7,6 +7,45 @@ test_that("build_qmd() errors when a file does not exist", {
   )
 })
 
+test_that("build_qmd() renders every input file", {
+  pkg <- local_test_package()
+  first <- file.path(pkg, "first.qmd")
+  second <- file.path(pkg, "second.qmd")
+  writeLines("---\ntitle: First\n---", first)
+  writeLines("---\ntitle: Second\n---", second)
+
+  installed <- list()
+  rendered <- list()
+  local_mocked_bindings(
+    build_qmd_install = function(pkg, upgrade, reload, quick, quiet) {
+      installed[[length(installed) + 1L]] <<- list(
+        package = pkg$package,
+        upgrade = upgrade,
+        reload = reload,
+        quick = quick,
+        quiet = quiet
+      )
+    },
+    build_qmd_package_version = function(...) {
+      package_version("0.0.0.9000")
+    },
+    build_qmd_render = function(input, ..., quiet = TRUE) {
+      rendered[[length(rendered) + 1L]] <<- list(input = input, quiet = quiet)
+    }
+  )
+
+  expect_equal(build_qmd(c(first, second), path = pkg, quiet = FALSE), TRUE)
+
+  expect_length(installed, 1)
+  expect_equal(installed[[1]]$package, "testpkg")
+  expect_equal(installed[[1]]$upgrade, FALSE)
+  expect_equal(installed[[1]]$reload, FALSE)
+  expect_equal(installed[[1]]$quick, TRUE)
+  expect_equal(installed[[1]]$quiet, TRUE)
+  expect_equal(lapply(rendered, `[[`, "input"), list(first, second))
+  expect_equal(lapply(rendered, `[[`, "quiet"), list(FALSE, FALSE))
+})
+
 test_that("build_readme_qmd() errors when README.qmd is missing", {
   pkg <- local_test_package()
 

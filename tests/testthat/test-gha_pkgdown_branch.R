@@ -5,8 +5,17 @@ test_that("gha_pkgdown_branch() writes platform and version placeholders", {
 
   workflow <- file.path(pkg, ".github", "workflows", "pkgdown-gh-pages.yaml")
   lines <- readLines(workflow)
+  workflow_yaml <- yaml::read_yaml(workflow)
 
   expect_equal(file.exists(workflow), TRUE)
+  expect_contains(
+    names(workflow_yaml),
+    c("name", "permissions", "concurrency", "jobs")
+  )
+  expect_equal(
+    workflow_yaml$jobs$`pkgdown-gh-pages`$`runs-on`,
+    "ubuntu-24.04"
+  )
   expect_equal(any(grepl("runs-on: ubuntu-24.04", lines, fixed = TRUE)), TRUE)
   expect_equal(
     any(grepl("runs-on: <OS>-<version>", lines, fixed = TRUE)),

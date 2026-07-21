@@ -57,6 +57,7 @@ test_that("precompute_vignette_all() respects custom vignette directories", {
 
 test_that("precompute_vignette() writes a precomputed R Markdown vignette", {
   pkg <- local_test_project()
+  withr::local_envvar(R_USER_CACHE_DIR = withr::local_tempdir())
   dir.create(file.path(pkg, "vignettes"))
   writeLines(
     c(

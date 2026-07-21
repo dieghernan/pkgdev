@@ -25,7 +25,7 @@
 #' @export
 #' @encoding UTF-8
 build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
-  pkg <- devtools::as.package(path)
+  pkg <- build_qmd_as_package(path)
   paths <- path.expand(files)
 
   ok <- file.exists(paths)
@@ -38,7 +38,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
   }
 
   withr::with_temp_libpaths(code = {
-    devtools::install(
+    build_qmd_install(
       pkg,
       upgrade = FALSE,
       reload = FALSE,
@@ -48,7 +48,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
     nm <- pkg$package
 
     # nolint start
-    ver <- packageVersion(nm)
+    ver <- build_qmd_package_version(nm)
     # nolint end
     cli::cli_inform(c(
       i = "Installed {.pkg {nm}} {.strong v{ver}} in temporary library"
@@ -57,7 +57,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
     for (path in paths) {
       cli::cli_inform(c(i = "Building {.path {path}}"))
 
-      quarto::quarto_render(input = path, ..., quiet = quiet)
+      build_qmd_render(input = path, ..., quiet = quiet)
     }
   })
 
@@ -70,7 +70,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
 #' @export
 #' @encoding UTF-8
 build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
-  pkg <- devtools::as.package(path)
+  pkg <- build_qmd_as_package(path)
   regexp <- paste0(file.path(pkg$path), "/(inst/)?readme[.]qmd")
 
   readme_path <- list.files(
@@ -105,4 +105,20 @@ build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
   usethis::use_git_ignore(c("README_files/", "README.html"), directory = path)
 
   build_qmd(files = readme_path, path = path, ..., quiet = quiet)
+}
+
+build_qmd_as_package <- function(...) {
+  devtools::as.package(...)
+}
+
+build_qmd_install <- function(...) {
+  devtools::install(...)
+}
+
+build_qmd_package_version <- function(...) {
+  packageVersion(...)
+}
+
+build_qmd_render <- function(...) {
+  quarto::quarto_render(...)
 }

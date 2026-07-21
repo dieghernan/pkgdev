@@ -5,8 +5,17 @@ test_that("gha_update_docs() writes platform and version placeholders", {
 
   workflow <- file.path(pkg, ".github", "workflows", "update-docs.yaml")
   lines <- readLines(workflow)
+  workflow_yaml <- yaml::read_yaml(workflow)
 
   expect_equal(file.exists(workflow), TRUE)
+  expect_contains(
+    names(workflow_yaml),
+    c("name", "permissions", "concurrency", "jobs")
+  )
+  expect_equal(
+    workflow_yaml$jobs$`update-docs`$`runs-on`,
+    "windows-latest"
+  )
   expect_equal(any(grepl("runs-on: windows-latest", lines, fixed = TRUE)), TRUE)
   expect_equal(
     any(grepl("runs-on: <OS>-<version>", lines, fixed = TRUE)),
