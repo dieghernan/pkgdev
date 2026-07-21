@@ -547,4 +547,17 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.testthat
   version: '>= 3.0.0'
+- type: software
+  title: yaml
+  abstract: 'yaml: Methods to Convert R Data to YAML and Back'
+  notes: Suggests
+  url: https://yaml.r-lib.org
+  repository: https://CRAN.R-project.org/package=yaml
+  authors:
+  - family-names: Stephens
+    given-names: Jeremy
+  - family-names: Simonov
+    given-names: Kirill
+  year: '2026'
+  doi: 10.32614/CRAN.package.yaml
 
