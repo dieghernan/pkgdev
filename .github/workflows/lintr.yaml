@@ -73,3 +73,20 @@ jobs:
       with:
         sarif_file: lintr-results.sarif
         wait-for-processing: true
+
+    - name: Install jarl
+      uses: etiennebacher/setup-jarl@v0.1.1
+      continue-on-error: true
+      with:
+        args: "--version"
+
+    - name: Run jarl
+      run: |
+        jarl check . --output-format sarif > jarl-results.sarif
+      continue-on-error: true
+
+    - name: Upload analysis results to GitHub
+      uses: github/codeql-action/upload-sarif@v4
+      with:
+        sarif_file: jarl-results.sarif
+        wait-for-processing: true
