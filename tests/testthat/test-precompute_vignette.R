@@ -73,19 +73,13 @@ test_that("precompute_vignette() writes a precomputed R Markdown vignette", {
 
   precompute_vignette("test.Rmd.orig", pkg = ".")
 
-  expect_equal(file.exists(file.path(pkg, "vignettes", "test.Rmd")), TRUE)
-  expect_equal(
-    any(grepl(
-      "vignettes.*test.*Rmd.*orig",
-      readLines(file.path(pkg, ".Rbuildignore"))
-    )),
-    TRUE
-  )
-  expect_equal(
-    any(grepl(
-      "[*][.]html",
-      readLines(file.path(pkg, "vignettes", ".gitignore"))
-    )),
-    TRUE
-  )
+  expect_true(file.exists(file.path(pkg, "vignettes", "test.Rmd")))
+  expect_true(any(grepl(
+    "vignettes.*test.*Rmd.*orig",
+    readLines(file.path(pkg, ".Rbuildignore"))
+  )))
+  expect_true(any(grepl(
+    "[*][.]html",
+    readLines(file.path(pkg, "vignettes", ".gitignore"))
+  )))
 })

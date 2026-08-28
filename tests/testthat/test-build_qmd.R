@@ -34,14 +34,14 @@ test_that("build_qmd() renders every input file", {
     }
   )
 
-  expect_equal(build_qmd(c(first, second), path = pkg, quiet = FALSE), TRUE)
+  expect_true(build_qmd(c(first, second), path = pkg, quiet = FALSE))
 
   expect_length(installed, 1)
   expect_equal(installed[[1]]$package, "testpkg")
-  expect_equal(installed[[1]]$upgrade, FALSE)
-  expect_equal(installed[[1]]$reload, FALSE)
-  expect_equal(installed[[1]]$quick, TRUE)
-  expect_equal(installed[[1]]$quiet, TRUE)
+  expect_false(installed[[1]]$upgrade)
+  expect_false(installed[[1]]$reload)
+  expect_true(installed[[1]]$quick)
+  expect_true(installed[[1]]$quiet)
   expect_equal(lapply(rendered, `[[`, "input"), list(first, second))
   expect_equal(lapply(rendered, `[[`, "quiet"), list(FALSE, FALSE))
 })
@@ -84,11 +84,11 @@ test_that("build_readme_qmd() builds a root README.qmd", {
     }
   )
 
-  expect_equal(build_readme_qmd(path = ".", quiet = FALSE), TRUE)
+  expect_true(build_readme_qmd(path = ".", quiet = FALSE))
   expect_length(calls, 1)
   expect_equal(calls[[1]]$files, normalizePath(readme, winslash = "/"))
   expect_equal(calls[[1]]$path, ".")
-  expect_equal(calls[[1]]$quiet, FALSE)
+  expect_false(calls[[1]]$quiet)
 })
 
 test_that("build_readme_qmd() builds an inst README.qmd", {
@@ -105,7 +105,7 @@ test_that("build_readme_qmd() builds an inst README.qmd", {
     }
   )
 
-  expect_equal(build_readme_qmd(path = "."), TRUE)
+  expect_true(build_readme_qmd(path = "."))
   expect_length(calls, 1)
   expect_equal(calls[[1]]$files, normalizePath(readme, winslash = "/"))
   expect_equal(calls[[1]]$path, ".")

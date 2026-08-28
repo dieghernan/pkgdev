@@ -219,7 +219,7 @@ update_docs <- function(
     "Config/roxygen2/version: ",
     "8.0.0"
   )
-  dsc_lines <- dsc_lines[!grepl("Roxygen: list", dsc_lines)]
+  dsc_lines <- dsc_lines[!grepl("Roxygen: list", dsc_lines, fixed = TRUE)]
   dsc_lines <- unique(c(dsc_lines, "Config/roxygen2/markdown: TRUE"))
 
   usethis::write_over(dsc_f, dsc_lines, overwrite = TRUE)
@@ -328,7 +328,7 @@ ignore = [\"implicit_assignment\"]",
     tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
   }
 
-  if (Sys.which("git") != "") {
+  if (nzchar(Sys.which("git"))) {
     system2("git", "config --global core.autocrlf true")
   }
 
@@ -353,7 +353,7 @@ ignore = [\"implicit_assignment\"]",
     overwrite = TRUE
   )
 
-  if (Sys.which("jarl") != "") {
+  if (nzchar(Sys.which("jarl"))) {
     if (verbose) {
       cli::cli_alert_info("Linting package with {.pkg jarl}.")
     }
@@ -373,7 +373,7 @@ ignore = [\"implicit_assignment\"]",
 
     system2("jarl", jarl_args)
   }
-  if (Sys.which("air") != "") {
+  if (nzchar(Sys.which("air"))) {
     if (verbose) {
       cli::cli_alert_info("Styling package with {.pkg air}.")
     }

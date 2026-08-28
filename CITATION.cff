@@ -58,7 +58,7 @@ references:
   version: '>= 4.1.0'
 - type: software
   title: cffr
-  abstract: 'cffr: Generate Citation File Format (''CFF'') Metadata for R Packages'
+  abstract: 'cffr: Generate Citation File Format (''CFF'') Metadata'
   notes: Imports
   url: https://docs.ropensci.org/cffr/
   repository: https://CRAN.R-project.org/package=cffr

@@ -6,9 +6,9 @@ test_that("env_var_is_true() reads logical environment values", {
     PKGDEV_TEST_EMPTY = ""
   )
 
-  expect_equal(env_var_is_true("PKGDEV_TEST_TRUE"), TRUE)
-  expect_equal(env_var_is_true("PKGDEV_TEST_FALSE"), FALSE)
-  expect_equal(env_var_is_true("PKGDEV_TEST_ONE"), FALSE)
-  expect_equal(env_var_is_true("PKGDEV_TEST_EMPTY"), FALSE)
-  expect_equal(env_var_is_true("PKGDEV_TEST_MISSING"), FALSE)
+  expect_true(env_var_is_true("PKGDEV_TEST_TRUE"))
+  expect_false(env_var_is_true("PKGDEV_TEST_FALSE"))
+  expect_false(env_var_is_true("PKGDEV_TEST_ONE"))
+  expect_false(env_var_is_true("PKGDEV_TEST_EMPTY"))
+  expect_false(env_var_is_true("PKGDEV_TEST_MISSING"))
 })

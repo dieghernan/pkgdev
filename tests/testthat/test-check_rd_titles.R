@@ -22,5 +22,5 @@ test_that("check_rd_titles() reports Rd title metadata", {
   expect_equal(titles$src, rd)
   expect_equal(titles$title, "A title.")
   expect_equal(titles$last, ".")
-  expect_equal(titles$check_case, TRUE)
+  expect_true(titles$check_case)
 })
