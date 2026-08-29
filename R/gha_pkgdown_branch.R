@@ -11,14 +11,7 @@
 #' @param version Version of the platform. See **Details**.
 #' @inheritParams gha_check_full
 #'
-#' @return Invisibly returns `NULL` after writing a GitHub Actions workflow to
-#'   `<pkg>/.github/workflows`.
-#'
-#' @seealso
-#' - [gha_check_full()] creates a full package check action.
-#' - [gha_update_docs()] creates a documentation and deployment action.
-#'
-#' @inherit gha_check_full source
+#' @inherit gha_check_full return source
 #'
 #' @family actions
 #'
@@ -64,15 +57,16 @@ gha_pkgdown_branch <- function(
   # Copy action file.
   result <- file.copy(filepath, destdir, overwrite = overwrite)
 
-  if (result) {
-    cli::cli_alert_success(
-      "Updated GitHub Actions workflow {.file {workflow}}."
+  if (!result) {
+    cli::cli_abort(
+      c(
+        "Could not update GitHub Actions workflow {.file {workflow}}.",
+        "i" = if (file.exists(workflow) && !overwrite) {
+          "Set {.arg overwrite} to {.val TRUE} to replace the existing file."
+        }
+      ),
+      class = "pkgdev_workflow_copy_error"
     )
-  } else {
-    cli::cli_alert_danger(
-      "Could not update GitHub Actions workflow {.file {workflow}}."
-    )
-    return(invisible())
   }
 
   # Add platform.
@@ -94,6 +88,9 @@ gha_pkgdown_branch <- function(
   )
 
   writeLines(add_platform, con = workflow)
+  cli::cli_alert_success(
+    "Updated GitHub Actions workflow {.file {workflow}}."
+  )
   cli::cli_alert_info(
     "Configured deployment runner {.val {paste0(platform, '-', version)}}."
   )

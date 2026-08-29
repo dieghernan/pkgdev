@@ -4,11 +4,11 @@ check_rd_hash <- function(pkg = ".") {
   allman <- list.files(path, pattern = ".Rd", full.names = TRUE)
 
   if (length(allman) == 0) {
-    cli::cli_alert_info("No {.file .Rd} files found in {.path {path}}.")
+    cli::cli_alert_info("No Rd files found in {.path {path}}.")
     return(NULL)
   }
 
-  # Extract titles.
+  # Check for leaked roxygen markers.
 
   allf <- lapply(allman, function(x) {
     lns <- readLines(x)

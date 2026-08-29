@@ -1,6 +1,6 @@
 #' Inspect Rd file titles
 #'
-#' Inspect generated Rd file titles for sentence case and trailing periods.
+#' Checks generated Rd file titles for sentence case and trailing periods.
 #'
 #' @inheritParams update_docs
 #'
@@ -24,7 +24,7 @@ check_rd_titles <- function(pkg = ".") {
   allman <- list.files(path, pattern = ".Rd", full.names = TRUE)
 
   if (length(allman) == 0) {
-    cli::cli_alert_info("No {.file .Rd} files found in {.path {path}}.")
+    cli::cli_alert_info("No Rd files found in {.path {path}}.")
     return(NULL)
   }
 

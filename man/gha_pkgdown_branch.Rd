@@ -19,7 +19,7 @@ gha_pkgdown_branch(
 \arguments{
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
-\item{overwrite}{Overwrite the action if it was already present.}
+\item{overwrite}{Whether to overwrite an existing action.}
 
 \item{platform}{Platform to use for deploying the package. See \strong{Details}.}
 
@@ -44,12 +44,7 @@ gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 }
 }
 \seealso{
-\itemize{
-\item \code{\link[=gha_check_full]{gha_check_full()}} creates a full package check action.
-\item \code{\link[=gha_update_docs]{gha_update_docs()}} creates a documentation and deployment action.
-}
-
-GitHub Actions helpers:
+GitHub Actions workflow helpers:
 \code{\link[=gha_check_full]{gha_check_full()}},
 \code{\link[=gha_update_docs]{gha_update_docs()}}
 }

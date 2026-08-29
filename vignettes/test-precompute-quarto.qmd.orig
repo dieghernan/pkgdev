@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-This file is an example Quarto input for `precompute_vignette()`.
+This file is an example **Quarto** input for `precompute_vignette()`.
 
 ```{r}
 #| label: plot_quarto

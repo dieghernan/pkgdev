@@ -46,6 +46,21 @@ test_that("build_qmd() renders every input file", {
   expect_equal(lapply(rendered, `[[`, "quiet"), list(FALSE, FALSE))
 })
 
+test_that("build_qmd() honors quiet = TRUE", {
+  pkg <- local_test_package()
+  input <- file.path(pkg, "input.qmd")
+  writeLines("---\ntitle: Input\n---", input)
+
+  local_mocked_bindings(
+    build_qmd_install = function(...) invisible(),
+    build_qmd_package_version = function(...) package_version("0.0.0.9000"),
+    build_qmd_render = function(...) invisible()
+  )
+
+  expect_silent(result <- build_qmd(input, path = pkg, quiet = TRUE))
+  expect_true(result)
+})
+
 test_that("build_readme_qmd() errors when README.qmd is missing", {
   pkg <- local_test_package()
 

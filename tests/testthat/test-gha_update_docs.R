@@ -20,13 +20,16 @@ test_that("gha_update_docs() writes platform and version placeholders", {
   expect_false(any(grepl("runs-on: <OS>-<version>", lines, fixed = TRUE)))
 })
 
-test_that("gha_update_docs() respects overwrite = FALSE", {
+test_that("gha_update_docs() errors when overwrite is FALSE", {
   pkg <- local_test_project()
   dir.create(file.path(pkg, ".github", "workflows"), recursive = TRUE)
   workflow <- file.path(pkg, ".github", "workflows", "update-docs.yaml")
   writeLines("existing workflow", workflow)
 
-  gha_update_docs(pkg = ".", overwrite = FALSE)
+  expect_error(
+    gha_update_docs(pkg = ".", overwrite = FALSE),
+    class = "pkgdev_workflow_copy_error"
+  )
 
   expect_equal(readLines(workflow), "existing workflow")
 })

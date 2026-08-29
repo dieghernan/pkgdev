@@ -14,10 +14,10 @@ gha_check_full(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *")
 \arguments{
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
-\item{overwrite}{Overwrite the action if it was already present.}
+\item{overwrite}{Whether to overwrite an existing action.}
 
-\item{cron_expr}{Valid cron expression. By default, the first day of the
-month at 08:30 AM. See \strong{Details}.}
+\item{cron_expr}{A valid cron expression. Defaults to 08:30 AM on the first
+day of the month. See \strong{Details}.}
 }
 \value{
 Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
@@ -30,7 +30,7 @@ deleting platforms in the matrix configuration.
 }
 \details{
 Use \href{https://crontab.guru/#30_08_1_*_*}{crontab.guru} to check and
-create your own cron tag.
+create your own cron expression.
 }
 \examples{
 \dontrun{
@@ -38,13 +38,9 @@ gha_check_full(cron_expr = "57 16 12 * *")
 }
 }
 \seealso{
-\itemize{
-\item \code{\link[=gha_pkgdown_branch]{gha_pkgdown_branch()}} creates a \CRANpkg{pkgdown} deployment action.
-\item \code{\link[=gha_update_docs]{gha_update_docs()}} creates a documentation and deployment action.
-\item \code{\link[usethis:use_github_action]{usethis::use_github_action()}} creates GitHub Actions workflows.
-}
+\code{\link[usethis:use_github_action]{usethis::use_github_action()}} creates GitHub Actions workflows.
 
-GitHub Actions helpers:
+GitHub Actions workflow helpers:
 \code{\link[=gha_pkgdown_branch]{gha_pkgdown_branch()}},
 \code{\link[=gha_update_docs]{gha_update_docs()}}
 }

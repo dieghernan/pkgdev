@@ -19,7 +19,7 @@ gha_update_docs(
 \arguments{
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
-\item{overwrite}{Overwrite the action if it was already present.}
+\item{overwrite}{Whether to overwrite an existing action.}
 
 \item{platform}{Platform to use for deploying the package. See \strong{Details}.}
 
@@ -27,7 +27,7 @@ gha_update_docs(
 }
 \value{
 Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
-\code{.github/workflows}.
+\verb{<pkg>/.github/workflows}.
 }
 \description{
 The GitHub Actions workflow documents your package (see \code{\link[=update_docs]{update_docs()}}),
@@ -44,13 +44,9 @@ gha_update_docs(platform = "ubuntu", version = "20.04")
 }
 }
 \seealso{
-\itemize{
-\item \code{\link[=update_docs]{update_docs()}} documents and checks your package.
-\item \code{\link[=gha_check_full]{gha_check_full()}} creates a full package check action.
-\item \code{\link[=gha_pkgdown_branch]{gha_pkgdown_branch()}} creates a \CRANpkg{pkgdown} deployment action.
-}
+\code{\link[=update_docs]{update_docs()}} documents and checks your package.
 
-GitHub Actions helpers:
+GitHub Actions workflow helpers:
 \code{\link[=gha_check_full]{gha_check_full()}},
 \code{\link[=gha_pkgdown_branch]{gha_pkgdown_branch()}}
 }

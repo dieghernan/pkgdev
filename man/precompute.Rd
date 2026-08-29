@@ -25,7 +25,7 @@ precompute_vignette_all(dir = "vignettes", pkg = ".", ...)
 
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
-\item{figure_ext}{Extension of the figures plotted in the vignette.
+\item{figure_ext}{File extension for figures plotted in the vignette.
 See \strong{Details}.}
 
 \item{create_r_file}{Whether to create an additional \R script with the code
@@ -34,13 +34,13 @@ of the vignette.}
 \item{dir}{Path to the directory where the \code{.Rmd.orig} and \code{.qmd.orig} files
 are stored.}
 
-\item{...}{Parameters passed to \code{\link[=precompute_vignette]{precompute_vignette()}}.}
+\item{...}{Additional arguments passed to \code{\link[=precompute_vignette]{precompute_vignette()}}.}
 }
 \value{
 Invisibly returns \code{NULL} after writing a precomputed vignette.
 }
 \description{
-Precompute vignettes using the CRAN approach, based on
+Precompute vignettes following the CRAN approach described at
 \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}.
 }
 \details{
@@ -66,12 +66,9 @@ precompute_vignette(source = "precompute.Rmd.orig")
 }
 }
 \seealso{
-\itemize{
-\item \code{\link[=build_qmd]{build_qmd()}} builds Quarto files.
-\item \code{\link[=build_readme_qmd]{build_readme_qmd()}} builds \code{README.qmd} files.
-}
+\code{\link[=update_docs]{update_docs()}} runs the broader package maintenance workflow.
 
-Documentation renderers:
+Documentation rendering helpers:
 \code{\link[=build_qmd]{build_qmd()}}
 }
 \concept{renderers}

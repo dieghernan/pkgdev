@@ -1,8 +1,8 @@
 list(
   rd_family_title = list(
-    actions = "GitHub Actions helpers",
-    checks = "Documentation check helpers",
+    actions = "GitHub Actions workflow helpers",
+    checks = "Documentation checking helpers",
     maintenance = "Package maintenance helpers",
-    renderers = "Documentation renderers"
+    renderers = "Documentation rendering helpers"
   )
 )

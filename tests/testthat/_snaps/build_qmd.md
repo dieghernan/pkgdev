@@ -4,7 +4,7 @@
       build_qmd("missing.qmd", path = pkg)
     Condition
       Error in `build_qmd()`:
-      ! Can't find input file.
+      ! Can't find 1 input file.
       x Missing: 'missing.qmd'
 
 # build_readme_qmd() errors when README.qmd is missing

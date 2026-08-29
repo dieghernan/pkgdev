@@ -31,12 +31,11 @@ it into a \code{README.md}.
 }
 \seealso{
 \itemize{
-\item \code{\link[=build_readme_qmd]{build_readme_qmd()}} builds \code{README.qmd} files.
-\item \code{\link[=precompute_vignette]{precompute_vignette()}} precomputes vignettes.
+\item \code{\link[=update_docs]{update_docs()}} runs the broader package maintenance workflow.
 \item \code{\link[devtools:build_readme]{devtools::build_readme()}} builds \code{README} files from R Markdown.
 }
 
-Documentation renderers:
+Documentation rendering helpers:
 \code{\link[=precompute_vignette]{precompute_vignette()}}
 }
 \concept{renderers}

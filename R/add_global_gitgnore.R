@@ -1,4 +1,4 @@
-#' Add `.gitignore` to package
+#' Add a global `.gitignore` file to a package
 #'
 #' Adds a global `.gitignore` file to the package. The file is based on the
 #' default `.gitignore` provided by GitHub.
@@ -8,8 +8,6 @@
 #' @return Invisibly returns `NULL` after writing a global `.gitignore` file.
 #'
 #' @seealso
-#' - [update_docs()] runs package maintenance tasks that call
-#'   `add_global_gitgnore()`.
 #' - [usethis::use_git_ignore()] adds entries to `.gitignore`.
 #' - [usethis::git_vaccinate()] adds global Git ignore rules.
 #'
@@ -32,7 +30,6 @@ add_global_gitgnore <- function(pkg = ".") {
 
   # Session data files.
   add_global_use_git_ignore(".RData", directory = pkg)
-  # Session data files.
   add_global_use_git_ignore(".Rdata", directory = pkg)
 
   # User-specific files.
@@ -96,7 +93,6 @@ add_global_gitgnore <- function(pkg = ".") {
   use_build_ignore_dir("revdep")
 
   # Codemeta.
-
   add_global_use_build_ignore("codemeta.json")
   add_global_use_build_ignore("CITATION.cff")
 

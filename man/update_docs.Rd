@@ -34,7 +34,7 @@ with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
 \code{\link[cffr:cff_write]{cffr::cff_write()}}?}
 
 \item{build_readme}{A logical value. Should \code{README.qmd}, \code{README.Rmd} or
-pkgdown index files be built?}
+\CRANpkg{pkgdown} index files be built?}
 
 \item{verbose}{A logical value. Should informative messages be displayed on
 the console?}
@@ -57,7 +57,7 @@ Invisibly returns \code{NULL}. When \code{verbose = TRUE}, it emits progress
 messages.
 }
 \description{
-Run routine checks on the package:
+Runs routine checks on the package:
 \itemize{
 \item Clean \code{DESCRIPTION} with \code{\link[usethis:use_tidy_description]{usethis::use_tidy_description()}}.
 \item Compress data in the \code{"./data"} and \code{"./R"} paths using
@@ -65,9 +65,10 @@ Run routine checks on the package:
 \item Style code with \code{\link[styler:style_pkg]{styler::style_pkg()}}.
 \item Check URLs with \code{\link[urlchecker:url_check]{urlchecker::url_check()}}.
 \item Roxygenize with \code{\link[roxygen2:roxygenise]{roxygen2::roxygenise()}}.
-\item Precompute vignettes, if present
+\item Precompute vignettes if present
 (see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}).
-\item Rebuild \code{README.qmd}, \code{README.Rmd} or pkgdown index files, if present.
+\item Rebuild \code{README.qmd}, \code{README.Rmd} or \CRANpkg{pkgdown} index files, if
+present.
 \item Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.
 \item Write \code{codemeta.json} with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}.
 \item Write \code{CITATION.cff} with \code{\link[cffr:cff_write]{cffr::cff_write()}}.
@@ -77,8 +78,8 @@ Run routine checks on the package:
 \details{
 This function updates and cleans the package using a mix of best practices,
 such as checking URLs, roxygenizing and rebuilding the \code{README}. It also
-applies discretionary practices such as the tidyverse approach for the
-\code{DESCRIPTION} file, overall code style and \code{codemeta.json}.
+applies discretionary practices such as the \CRANpkg{tidyverse} approach
+for the \code{DESCRIPTION} file, overall code style and \code{codemeta.json}.
 }
 \examples{
 \dontrun{
@@ -87,9 +88,9 @@ update_docs()
 }
 \seealso{
 \itemize{
-\item \code{\link[=add_global_gitgnore]{add_global_gitgnore()}} updates package ignore files.
 \item \code{\link[=build_qmd]{build_qmd()}} builds Quarto files.
 \item \code{\link[=check_rd_titles]{check_rd_titles()}} checks generated Rd titles.
+\item \code{\link[=gha_update_docs]{gha_update_docs()}} automates this workflow with GitHub Actions.
 \item \code{\link[=precompute_vignette]{precompute_vignette()}} precomputes vignettes.
 \item \code{\link[usethis:use_tidy_description]{usethis::use_tidy_description()}} cleans \code{DESCRIPTION}.
 \item \code{\link[styler:style_pkg]{styler::style_pkg()}} styles package code.

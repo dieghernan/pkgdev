@@ -6,23 +6,20 @@
 #'
 #' @details
 #' Use [crontab.guru](https://crontab.guru/#30_08_1_*_*) to check and
-#' create your own cron tag.
+#' create your own cron expression.
 #'
-#' @param overwrite Overwrite the action if it was already present.
-#' @param cron_expr Valid cron expression. By default, the first day of the
-#'   month at 08:30 AM. See **Details**.
+#' @param overwrite Whether to overwrite an existing action.
+#' @param cron_expr A valid cron expression. Defaults to 08:30 AM on the first
+#'   day of the month. See **Details**.
 #' @inheritParams update_docs
 #'
 #' @return Invisibly returns `NULL` after writing a GitHub Actions workflow to
 #'   `<pkg>/.github/workflows`.
 #'
-#' @seealso
-#' - [gha_pkgdown_branch()] creates a \CRANpkg{pkgdown} deployment action.
-#' - [gha_update_docs()] creates a documentation and deployment action.
-#' - [usethis::use_github_action()] creates GitHub Actions workflows.
-#'
 #' @source Examples from
 #'   [r-lib/actions](https://github.com/r-lib/actions/tree/master/examples).
+#'
+#' @seealso [usethis::use_github_action()] creates GitHub Actions workflows.
 #'
 #' @family actions
 #'
@@ -60,18 +57,19 @@ gha_check_full <- function(
   # Copy action file.
   result <- file.copy(filepath, destdir, overwrite = overwrite)
 
-  if (result) {
-    cli::cli_alert_success(
-      "Updated GitHub Actions workflow {.file {workflow}}."
+  if (!result) {
+    cli::cli_abort(
+      c(
+        "Could not update GitHub Actions workflow {.file {workflow}}.",
+        "i" = if (file.exists(workflow) && !overwrite) {
+          "Set {.arg overwrite} to {.val TRUE} to replace the existing file."
+        }
+      ),
+      class = "pkgdev_workflow_copy_error"
     )
-  } else {
-    cli::cli_alert_danger(
-      "Could not update GitHub Actions workflow {.file {workflow}}."
-    )
-    return(invisible())
   }
 
-  # Add CRON expression.
+  # Add the cron expression.
   add_cron <- readLines(workflow)
   add_cron <- gsub(
     pattern = "ADD_CRON_EXPRESSION",
@@ -81,6 +79,10 @@ gha_check_full <- function(
   )
 
   writeLines(add_cron, con = workflow)
+
+  cli::cli_alert_success(
+    "Updated GitHub Actions workflow {.file {workflow}}."
+  )
 
   invisible()
 }

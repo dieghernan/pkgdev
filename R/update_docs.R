@@ -1,16 +1,17 @@
 #' Document your package
 #'
 #' @description
-#' Run routine checks on the package:
+#' Runs routine checks on the package:
 #' - Clean `DESCRIPTION` with [usethis::use_tidy_description()].
 #' - Compress data in the `"./data"` and `"./R"` paths using
 #'   [tools::resaveRdaFiles()].
 #' - Style code with [styler::style_pkg()].
 #' - Check URLs with [urlchecker::url_check()].
 #' - Roxygenize with [roxygen2::roxygenise()].
-#' - Precompute vignettes, if present
+#' - Precompute vignettes if present
 #'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
-#' - Rebuild `README.qmd`, `README.Rmd` or pkgdown index files, if present.
+#' - Rebuild `README.qmd`, `README.Rmd` or \CRANpkg{pkgdown} index files, if
+#'   present.
 #' - Optimize images with [resmush::resmush_dir()].
 #' - Write `codemeta.json` with [codemetar::write_codemeta()].
 #' - Write `CITATION.cff` with [cffr::cff_write()].
@@ -19,13 +20,13 @@
 #' @details
 #' This function updates and cleans the package using a mix of best practices,
 #' such as checking URLs, roxygenizing and rebuilding the `README`. It also
-#' applies discretionary practices such as the tidyverse approach for the
-#' `DESCRIPTION` file, overall code style and `codemeta.json`.
+#' applies discretionary practices such as the \CRANpkg{tidyverse} approach
+#' for the `DESCRIPTION` file, overall code style and `codemeta.json`.
 #'
 #' @param url_update A logical value. Should URLs be updated with
 #'   [urlchecker::url_update()]?
 #' @param build_readme A logical value. Should `README.qmd`, `README.Rmd` or
-#'   pkgdown index files be built?
+#'   \CRANpkg{pkgdown} index files be built?
 #' @param create_codemeta A logical value. Should `codemeta.json` be created
 #'   with [codemetar::write_codemeta()]?
 #' @param create_cff A logical value. Should `CITATION.cff` be created with
@@ -46,9 +47,9 @@
 #'   messages.
 #'
 #' @seealso
-#' - [add_global_gitgnore()] updates package ignore files.
 #' - [build_qmd()] builds Quarto files.
 #' - [check_rd_titles()] checks generated Rd titles.
+#' - [gha_update_docs()] automates this workflow with GitHub Actions.
 #' - [precompute_vignette()] precomputes vignettes.
 #' - [usethis::use_tidy_description()] cleans `DESCRIPTION`.
 #' - [styler::style_pkg()] styles package code.
@@ -294,15 +295,14 @@ update_docs <- function(
     auto_unbox = TRUE
   )
 
-  # Use `jarl` config.
+  # Use the `jarl` configuration.
   if (!file.exists("jarl.toml")) {
     if (verbose) {
-      cli::cli_alert_info("Configuring {.pkg jarl}.")
+      cli::cli_alert_info("Configuring {.code jarl}.")
       cli::cli_inform(c(
-        "i" = "See {.url https://jarl.etiennebacher.com/}.",
         "i" = paste0(
           "Read {.href [jarl docs](https://jarl.etiennebacher.com/)} ",
-          "to learn about the {.pkg jarl} linter."
+          "to learn about the {.code jarl} linter."
         )
       ))
     }
@@ -320,8 +320,10 @@ ignore = [\"implicit_assignment\"]",
     urlchecker::url_update(pkg)
   }
 
+  data_dirs <- file.path(pkg, c("R", "data"))
+  data_dirs <- data_dirs[dir.exists(data_dirs)]
   if (verbose) {
-    cli::cli_alert_info("Compressing data in {.path ./R}.")
+    cli::cli_alert_info("Compressing data in {.path {data_dirs}}.")
   }
   tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
   if (dir.exists(file.path(pkg, "data"))) {
@@ -333,7 +335,7 @@ ignore = [\"implicit_assignment\"]",
   }
 
   if (verbose) {
-    cli::cli_alert_info("Configuring {.pkg Codex}.")
+    cli::cli_alert_info("Configuring Codex.")
   }
 
   codex_dir <- file.path(pkg, ".codex")
@@ -355,7 +357,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (nzchar(Sys.which("jarl"))) {
     if (verbose) {
-      cli::cli_alert_info("Linting package with {.pkg jarl}.")
+      cli::cli_alert_info("Linting package with {.code jarl}.")
     }
 
     # Get R version from `DESCRIPTION`.
@@ -375,7 +377,7 @@ ignore = [\"implicit_assignment\"]",
   }
   if (nzchar(Sys.which("air"))) {
     if (verbose) {
-      cli::cli_alert_info("Styling package with {.pkg air}.")
+      cli::cli_alert_info("Styling package with {.code air}.")
     }
     system2("air", "format .")
   }
@@ -389,7 +391,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(rmd) > 0) {
     if (verbose) {
-      cli::cli_alert_info("Adapting {.file .Rmd} files to {.pkg Quarto}.")
+      cli::cli_alert_info("Adapting R Markdown files to Quarto.")
     }
 
     lapply(rmd, function(x) {
@@ -415,7 +417,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (length(qmd) > 0) {
     if (verbose) {
-      cli::cli_alert_info("Adapting {.file .qmd} files to {.pkg Quarto}.")
+      cli::cli_alert_info("Updating Quarto files.")
     }
 
     lapply(qmd, function(x) {
@@ -479,15 +481,15 @@ ignore = [\"implicit_assignment\"]",
   }
 
   # Clean trailing spaces in YAML files.
-  if (!env_var_is_true("CI")) {
+  if (env_var_is_true("CI")) {
+    actions <- NULL
+  } else {
     actions <- list.files(
       ".github",
       pattern = "yaml$|yml$",
       full.names = TRUE,
       recursive = TRUE
     )
-  } else {
-    actions <- NULL
   }
   others <- list.files(
     pattern = "yaml$|yml$",
@@ -512,7 +514,7 @@ ignore = [\"implicit_assignment\"]",
   roxygen2::roxygenise()
 
   if (verbose) {
-    cli::cli_alert_info("Checking {.file .Rd} titles.")
+    cli::cli_alert_info("Checking Rd titles.")
   }
 
   rdtit <- check_rd_titles(pkg)
@@ -522,17 +524,21 @@ ignore = [\"implicit_assignment\"]",
 
     if (nrow(enddot) != 0) {
       cli::cli_alert_warning(
-        "Found {.file .Rd} files with titles that end in {.val .}."
+        "Found Rd files with titles that end in {.val .}."
       )
       rds <- as.character(enddot$src)
-      rds <- paste0("{.file ", rds, "}")
+      rds <- vapply(
+        rds,
+        \(rd) cli::format_inline("{.file {rd}}"),
+        character(1)
+      )
       names(rds) <- rep("*", length(rds))
       cli::cli_bullets(rds)
     }
   }
 
   if (verbose) {
-    cli::cli_alert_info("Looking for {.code #'} in {.file .Rd} files.")
+    cli::cli_alert_info("Checking Rd files for leaked roxygen markers.")
   }
 
   rdhash <- check_rd_hash(pkg)
@@ -542,22 +548,26 @@ ignore = [\"implicit_assignment\"]",
 
     if (nrow(has_hash) != 0) {
       cli::cli_alert_warning(
-        "Found leaked roxygen markers in {.file .Rd} files."
+        "Found leaked roxygen markers in Rd files."
       )
       rds <- as.character(has_hash$src)
-      rds <- paste0("{.file ", rds, "}")
+      rds <- vapply(
+        rds,
+        \(rd) cli::format_inline("{.file {rd}}"),
+        character(1)
+      )
       names(rds) <- rep("*", length(rds))
       cli::cli_bullets(rds)
     }
   }
 
   if (verbose) {
-    cli::cli_alert_info("Checking missing fields in {.file .Rd} files.")
+    cli::cli_alert_info("Checking for missing fields in Rd files.")
   }
   devtools::check_doc_fields(pkg, fields = c("value", "examples", "encoding"))
 
   if (verbose) {
-    cli::cli_alert_info("Running {.pkg codetools}.")
+    cli::cli_alert_info("Checking code usage with {.pkg codetools}.")
   }
 
   desc_obj <- desc::desc(pkg)
@@ -598,28 +608,28 @@ ignore = [\"implicit_assignment\"]",
   if (build_readme && has_any_readme) {
     if (has_readme_qmd) {
       if (verbose) {
-        cli::cli_alert_info("Rebuilding {.file {readme_qmd}}")
+        cli::cli_alert_info("Rebuilding {.file {readme_qmd}}.")
       }
       build_readme_qmd(pkg, quiet = isFALSE(verbose))
     }
 
     if (has_index) {
       if (verbose) {
-        cli::cli_alert_info("Rebuilding {.file {index_rmd}}")
+        cli::cli_alert_info("Rebuilding {.file {index_rmd}}.")
       }
       devtools::build_rmd(index_rmd, pkg, quiet = isFALSE(verbose))
     }
 
     if (has_index2) {
       if (verbose) {
-        cli::cli_alert_info("Rebuilding {.file {index2_rmd}}")
+        cli::cli_alert_info("Rebuilding {.file {index2_rmd}}.")
       }
       devtools::build_rmd(index2_rmd, pkg, quiet = isFALSE(verbose))
     }
 
     if (has_index_qmd) {
       if (verbose) {
-        cli::cli_alert_info("Rebuilding {.file {index_qmd}}")
+        cli::cli_alert_info("Rebuilding {.file {index_qmd}}.")
       }
 
       build_qmd(index_qmd, pkg, quiet = isFALSE(verbose))
@@ -627,7 +637,7 @@ ignore = [\"implicit_assignment\"]",
 
     if (has_index2_qmd) {
       if (verbose) {
-        cli::cli_alert_info("Rebuilding {.file {index2_qmd}}")
+        cli::cli_alert_info("Rebuilding {.file {index2_qmd}}.")
       }
 
       build_qmd(index2_qmd, pkg, quiet = isFALSE(verbose))
@@ -635,7 +645,7 @@ ignore = [\"implicit_assignment\"]",
 
     if (has_readme) {
       if (verbose) {
-        cli::cli_alert_info("Rebuilding {.file {readme_rmd}}")
+        cli::cli_alert_info("Rebuilding {.file {readme_rmd}}.")
       }
       devtools::build_readme(pkg, quiet = isFALSE(verbose))
     }
@@ -655,7 +665,7 @@ ignore = [\"implicit_assignment\"]",
 
   if (create_cff) {
     if (verbose) {
-      cli::cli_alert_info("Creating {.file CITATION.cff} with {.pkg cffr}")
+      cli::cli_alert_info("Creating {.file CITATION.cff} with {.pkg cffr}.")
     }
 
     cffr::cff_write(...)
@@ -688,7 +698,7 @@ ignore = [\"implicit_assignment\"]",
   if (create_codemeta) {
     if (verbose) {
       cli::cli_alert_info(
-        "Creating {.file codemeta.json} with {.pkg codemetar}"
+        "Creating {.file codemeta.json} with {.pkg codemetar}."
       )
     }
     codemetar::write_codemeta(write_minimeta = TRUE)

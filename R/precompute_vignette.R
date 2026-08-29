@@ -1,6 +1,6 @@
 #' Precompute vignettes
 #'
-#' Precompute vignettes using the CRAN approach, based on
+#' Precompute vignettes following the CRAN approach described at
 #' <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 #'
 #' @rdname precompute
@@ -23,21 +23,19 @@
 #'
 #' @param source Name of the `.Rmd.orig` or `.qmd.orig` file, without the path
 #'   (e.g. `"some_name.Rmd.orig"` or `"some_name.qmd.orig"`).
-#' @param figure_ext Extension of the figures plotted in the vignette.
+#' @param figure_ext File extension for figures plotted in the vignette.
 #'   See **Details**.
 #' @param create_r_file Whether to create an additional \R script with the code
 #'   of the vignette.
-#' @param ... Parameters passed to [precompute_vignette()].
+#' @param ... Additional arguments passed to [precompute_vignette()].
 #' @inheritParams update_docs
 #'
 #' @return Invisibly returns `NULL` after writing a precomputed vignette.
 #'
-#' @seealso
-#' - [build_qmd()] builds Quarto files.
-#' - [build_readme_qmd()] builds `README.qmd` files.
-#'
 #' @source Based on
 #'   <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
+#'
+#' @seealso [update_docs()] runs the broader package maintenance workflow.
 #'
 #' @family renderers
 #'
@@ -72,7 +70,10 @@ precompute_vignette <- function(
     ver <- packageVersion(nm)
     # nolint end
     cli::cli_inform(c(
-      i = "Installed {.pkg {nm}} {.strong v{ver}} in temporary library"
+      "v" = paste0(
+        "Installed {.pkg {nm}} version {.val {ver}} in temporary ",
+        "library."
+      )
     ))
 
     for (f_path in source) {
@@ -134,8 +135,6 @@ precompute_vignette <- function(
 #'   are stored.
 #'
 #' @export
-#' @encoding UTF-8
-#'
 precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
   vignette_list <- list.files(file.path(pkg, dir))
 
@@ -145,8 +144,8 @@ precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {
     precompute_vignette(source = vig, pkg = pkg, ...)
   } else {
     cli::cli_alert_info(
-      c(
-        "No {.file .Rmd.orig} or {.file .qmd.orig} vignettes found in ",
+      paste0(
+        "No {.code *.Rmd.orig} or {.code *.qmd.orig} files found in ",
         "{.path {file.path(pkg, dir)}}."
       )
     )

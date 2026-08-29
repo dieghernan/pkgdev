@@ -16,8 +16,7 @@
 #' @return `TRUE`, invisibly.
 #'
 #' @seealso
-#' - [build_readme_qmd()] builds `README.qmd` files.
-#' - [precompute_vignette()] precomputes vignettes.
+#' - [update_docs()] runs the broader package maintenance workflow.
 #' - [devtools::build_readme()] builds `README` files from R Markdown.
 #'
 #' @family renderers
@@ -32,8 +31,8 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
   if (!all(ok)) {
     missing <- files[!ok] # nolint
     cli::cli_abort(c(
-      "Can't find input file.",
-      "x" = "Missing: {.path {missing}}"
+      "Can't find {length(missing)} input file{?s}.",
+      "x" = "Missing: {.file {missing}}"
     ))
   }
 
@@ -50,12 +49,19 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
     # nolint start
     ver <- build_qmd_package_version(nm)
     # nolint end
-    cli::cli_inform(c(
-      i = "Installed {.pkg {nm}} {.strong v{ver}} in temporary library"
-    ))
+    if (!quiet) {
+      cli::cli_inform(c(
+        "v" = paste0(
+          "Installed {.pkg {nm}} version {.val {ver}} in temporary ",
+          "library."
+        )
+      ))
+    }
 
     for (path in paths) {
-      cli::cli_inform(c(i = "Building {.path {path}}"))
+      if (!quiet) {
+        cli::cli_inform(c("i" = "Building {.file {path}}."))
+      }
 
       build_qmd_render(input = path, ..., quiet = quiet)
     }
@@ -68,7 +74,6 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
 #' @order 2
 #'
 #' @export
-#' @encoding UTF-8
 build_readme_qmd <- function(path = ".", quiet = TRUE, ...) {
   pkg <- build_qmd_as_package(path)
   regexp <- paste0(file.path(pkg$path), "/(inst/)?readme[.]qmd")

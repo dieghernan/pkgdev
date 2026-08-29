@@ -14,30 +14,34 @@ authors:
     href: "https://dieghernan.github.io/"
 
 reference:
-- title: GitHub Actions helpers
-  contents:
+- title: GitHub Actions workflow helpers
+  desc: Create workflows for package checks, documentation and deployment.
+- contents:
   - has_concept("actions")
-- title: Documentation check helpers
-  contents:
+- title: Documentation checking helpers
+  desc: Inspect generated package documentation.
+- contents:
   - has_concept("checks")
 - title: Package maintenance helpers
-  contents:
+  desc: Run package-wide maintenance tasks and manage ignore files.
+- contents:
   - has_concept("maintenance")
-- title: Documentation renderers
-  contents:
+- title: Documentation rendering helpers
+  desc: Render **Quarto** sources and precompute vignettes.
+- contents:
   - has_concept("renderers")
 - title: internal
-  contents:
+- contents:
   - pkgdev-package
 
 articles:
-- title: Downloads
-  desc: Explore download statistics for related packages.
+- title: Package download statistics
+  desc: Explore download statistics for packages maintained by the author.
   navbar: Downloads
   contents:
   - articles/downloads
-- title: Precompute examples
-  desc: Examples used to verify precomputed vignette workflows.
+- title: Precomputed vignette examples
+  desc: Learn how to precompute **R Markdown** and **Quarto** vignettes.
   contents:
   - test-precompute-knitr
   - test-precompute-quarto

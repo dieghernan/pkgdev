@@ -66,9 +66,11 @@ first_date_on_cran <- function(pkg) {
 fechas <- lapply(unique(dwn$package), first_date_on_cran) |>
   bind_rows()
 
+fechas_join <- fechas |>
+  select(package, d_cran = date)
 
 dwn <- dwn |>
-  left_join(fechas |> select(package, d_cran = date)) |>
+  left_join(fechas_join) |>
   filter(date >= d_cran) |>
   select(-d_cran) |>
   tidyr::replace_na(list(count = 0)) |>
@@ -232,7 +234,7 @@ reactable(
   ),
   paginationType = "jump",
   elementId = "cran-dwn",
-  columns <- list(
+  columns = list(
     package = colDef(
       cell = function(value) {
         # Render as a link
@@ -267,8 +269,8 @@ reactable(
 
 ## On Posit Package Manager
 
-Download data for my packages from [Posit Package
-Manager](https://packagemanager.posit.co/client/#/).
+Download data for my packages from [**Posit Package
+Manager**](https://packagemanager.posit.co/client/#/).
 
 ```{r}
 #| label = "data-posit",

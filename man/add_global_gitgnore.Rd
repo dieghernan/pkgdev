@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{add_global_gitgnore}
 \alias{add_global_gitgnore}
-\title{Add \code{.gitignore} to package}
+\title{Add a global \code{.gitignore} file to a package}
 \usage{
 add_global_gitgnore(pkg = ".")
 }
@@ -24,8 +24,6 @@ add_global_gitgnore()
 }
 \seealso{
 \itemize{
-\item \code{\link[=update_docs]{update_docs()}} runs package maintenance tasks that call
-\code{add_global_gitgnore()}.
 \item \code{\link[usethis:use_git_ignore]{usethis::use_git_ignore()}} adds entries to \code{.gitignore}.
 \item \code{\link[usethis:git_vaccinate]{usethis::git_vaccinate()}} adds global Git ignore rules.
 }

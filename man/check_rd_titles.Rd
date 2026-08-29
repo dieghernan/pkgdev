@@ -15,7 +15,7 @@ A data frame with one row per Rd file and columns for the source
 path, title, sentence-case title, final character and sentence-case check.
 }
 \description{
-Inspect generated Rd file titles for sentence case and trailing periods.
+Checks generated Rd file titles for sentence case and trailing periods.
 }
 \examples{
 \dontrun{

@@ -20,13 +20,16 @@ test_that("gha_check_full() writes a scheduled check workflow", {
   expect_false(any(grepl("ADD_CRON_EXPRESSION", lines, fixed = TRUE)))
 })
 
-test_that("gha_check_full() leaves existing workflow when overwrite is FALSE", {
+test_that("gha_check_full() errors when overwrite is FALSE", {
   pkg <- local_test_project()
   dir.create(file.path(pkg, ".github", "workflows"), recursive = TRUE)
   workflow <- file.path(pkg, ".github", "workflows", "check-full.yaml")
   writeLines("existing workflow", workflow)
 
-  gha_check_full(pkg = ".", overwrite = FALSE)
+  expect_error(
+    gha_check_full(pkg = ".", overwrite = FALSE),
+    class = "pkgdev_workflow_copy_error"
+  )
 
   expect_equal(readLines(workflow), "existing workflow")
 })
