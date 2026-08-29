@@ -16,5 +16,5 @@ Download data for my CRAN packages.
 
 ## On Posit Package Manager
 
-Download data for my packages from [Posit Package
-Manager](https://packagemanager.posit.co/client/#/).
+Download data for my packages from [**Posit Package
+Manager**](https://packagemanager.posit.co/client/#/).

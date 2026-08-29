@@ -1,4 +1,4 @@
-# Add `.gitignore` to package
+# Add a global `.gitignore` file to a package
 
 Adds a global `.gitignore` file to the package. The file is based on the
 default `.gitignore` provided by GitHub.
@@ -21,9 +21,6 @@ Invisibly returns `NULL` after writing a global `.gitignore` file.
 
 ## See also
 
-- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  runs package maintenance tasks that call `add_global_gitgnore()`.
-
 - [`usethis::use_git_ignore()`](https://usethis.r-lib.org/reference/use_git_ignore.html)
   adds entries to `.gitignore`.
 
@@ -38,7 +35,7 @@ Package maintenance helpers:
 ``` r
 # \dontrun{
 add_global_gitgnore()
-#> ✔ Setting active project to "/tmp/RtmpQZFTBt/file1b8a4df50de5".
+#> ✔ Setting active project to "/tmp/RtmphQ5i9x/file1e3e56a68a7e".
 #> ✔ Configuring core.excludesFile: ~/.gitignore
 #> ✔ Creating the global (user-level) gitignore: ~/.gitignore
 #> ✔ Adding ".Rproj.user", ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and

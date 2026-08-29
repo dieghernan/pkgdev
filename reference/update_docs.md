@@ -1,6 +1,6 @@
 # Document your package
 
-Run routine checks on the package:
+Runs routine checks on the package:
 
 - Clean `DESCRIPTION` with
   [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html).
@@ -17,10 +17,12 @@ Run routine checks on the package:
 - Roxygenize with
   [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html).
 
-- Precompute vignettes, if present (see
+- Precompute vignettes if present (see
   <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
 
-- Rebuild `README.qmd`, `README.Rmd` or pkgdown index files, if present.
+- Rebuild `README.qmd`, `README.Rmd` or
+  [pkgdown](https://CRAN.R-project.org/package=pkgdown) index files, if
+  present.
 
 - Optimize images with
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
@@ -76,8 +78,9 @@ update_docs(
 
 - build_readme:
 
-  A logical value. Should `README.qmd`, `README.Rmd` or pkgdown index
-  files be built?
+  A logical value. Should `README.qmd`, `README.Rmd` or
+  [pkgdown](https://CRAN.R-project.org/package=pkgdown) index files be
+  built?
 
 - verbose:
 
@@ -117,20 +120,20 @@ messages.
 
 This function updates and cleans the package using a mix of best
 practices, such as checking URLs, roxygenizing and rebuilding the
-`README`. It also applies discretionary practices such as the tidyverse
-approach for the `DESCRIPTION` file, overall code style and
-`codemeta.json`.
+`README`. It also applies discretionary practices such as the
+[tidyverse](https://CRAN.R-project.org/package=tidyverse) approach for
+the `DESCRIPTION` file, overall code style and `codemeta.json`.
 
 ## See also
-
-- [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
-  updates package ignore files.
 
 - [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
   builds Quarto files.
 
 - [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
   checks generated Rd titles.
+
+- [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
+  automates this workflow with GitHub Actions.
 
 - [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
   precomputes vignettes.

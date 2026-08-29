@@ -1,6 +1,6 @@
 # Precomputed Quarto vignette example
 
-This file is an example Quarto input for
+This file is an example **Quarto** input for
 [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md).
 
 ``` r

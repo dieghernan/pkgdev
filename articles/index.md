@@ -1,15 +1,15 @@
 # Articles
 
-### Downloads
+### Package download statistics
 
-Explore download statistics for related packages.
+Explore download statistics for packages maintained by the author.
 
 - [Package
   downloads](https://dieghernan.github.io/pkgdev/articles/downloads.md):
 
-### Precompute examples
+### Precomputed vignette examples
 
-Examples used to verify precomputed vignette workflows.
+Learn how to precompute **R Markdown** and **Quarto** vignettes.
 
 - [Precomputed R Markdown vignette
   example](https://dieghernan.github.io/pkgdev/articles/test-precompute-knitr.md):

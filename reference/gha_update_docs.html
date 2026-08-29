@@ -77,7 +77,7 @@ checks it and deploys the package on a <code>gh-pages</code> branch.</p>
 
 
 <dt id="arg-overwrite">overwrite<a class="anchor" aria-label="anchor" href="#arg-overwrite"></a></dt>
-<dd><p>Overwrite the action if it was already present.</p></dd>
+<dd><p>Whether to overwrite an existing action.</p></dd>
 
 
 <dt id="arg-platform">platform<a class="anchor" aria-label="anchor" href="#arg-platform"></a></dt>
@@ -91,7 +91,7 @@ checks it and deploys the package on a <code>gh-pages</code> branch.</p>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>Invisibly returns <code>NULL</code> after writing a GitHub Actions workflow to
-<code>.github/workflows</code>.</p>
+<code>&lt;pkg&gt;/.github/workflows</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -100,11 +100,8 @@ options.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index">
-<ul><li><p><code><a href="update_docs.html">update_docs()</a></code> documents and checks your package.</p></li>
-<li><p><code><a href="gha_check_full.html">gha_check_full()</a></code> creates a full package check action.</p></li>
-<li><p><code><a href="gha_pkgdown_branch.html">gha_pkgdown_branch()</a></code> creates a <a href="https://CRAN.R-project.org/package=pkgdown" class="external-link"><span class="pkg">pkgdown</span></a> deployment action.</p></li>
-</ul><p>GitHub Actions helpers:
+    <div class="dont-index"><p><code><a href="update_docs.html">update_docs()</a></code> documents and checks your package.</p>
+<p>GitHub Actions workflow helpers:
 <code><a href="gha_check_full.html">gha_check_full()</a></code>,
 <code><a href="gha_pkgdown_branch.html">gha_pkgdown_branch()</a></code></p></div>
     </div>
@@ -115,7 +112,7 @@ options.</p>
 <span class="r-in"><span><span class="co"># With Ubuntu 20.04</span></span></span>
 <span class="r-in"><span><span class="fu">gha_update_docs</span><span class="op">(</span>platform <span class="op">=</span> <span class="st">"ubuntu"</span>, version <span class="op">=</span> <span class="st">"20.04"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BB00;">✔</span> Adding <span style="color: #0000BB;">"R-version"</span> to <span style="color: #0000BB;">.github/.gitignore</span>.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot open file '/tmp/RtmpQZFTBt/file1b8a4df50de5/.github/.gitignore': No such file or directory</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>cannot open file '/tmp/RtmphQ5i9x/file1e3e56a68a7e/.github/.gitignore': No such file or directory</span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in file(path, open = file_mode, encoding = "utf-8"):</span> cannot open the connection</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

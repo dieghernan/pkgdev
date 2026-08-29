@@ -1,6 +1,6 @@
 # Precompute vignettes
 
-Precompute vignettes using the CRAN approach, based on
+Precompute vignettes following the CRAN approach described at
 <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 ## Usage
@@ -33,7 +33,7 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 - figure_ext:
 
-  Extension of the figures plotted in the vignette. See **Details**.
+  File extension for figures plotted in the vignette. See **Details**.
 
 - create_r_file:
 
@@ -47,7 +47,7 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 - ...:
 
-  Parameters passed to `precompute_vignette()`.
+  Additional arguments passed to `precompute_vignette()`.
 
 ## Value
 
@@ -71,13 +71,10 @@ the following lines if you are producing plots:
 
 ## See also
 
-- [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
-  builds Quarto files.
+[`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+runs the broader package maintenance workflow.
 
-- [`build_readme_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
-  builds `README.qmd` files.
-
-Documentation renderers:
+Documentation rendering helpers:
 [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
 
 ## Examples

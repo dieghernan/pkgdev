@@ -40,13 +40,11 @@ build_readme_qmd(path = ".", quiet = TRUE, ...)
 
 ## See also
 
-- `build_readme_qmd()` builds `README.qmd` files.
-
-- [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
-  precomputes vignettes.
+- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+  runs the broader package maintenance workflow.
 
 - [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
   builds `README` files from R Markdown.
 
-Documentation renderers:
+Documentation rendering helpers:
 [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)

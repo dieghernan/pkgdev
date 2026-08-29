@@ -1,7 +1,7 @@
 # pkgdev
 
 **pkgdev** provides helpers for package maintenance, documentation
-rendering and [GitHub Actions](https://github.com/features/actions)
+rendering and [**GitHub Actions**](https://github.com/features/actions)
 workflows. It is primarily intended for personal use, but you are
 welcome to use it at your own risk.
 
@@ -15,7 +15,7 @@ pak::pak("dieghernan/pkgdev")
 ```
 
 Alternatively, you can install **pkgdev** from
-[r-universe](https://dieghernan.r-universe.dev/pkgdev):
+[**r-universe**](https://dieghernan.r-universe.dev/pkgdev):
 
 ``` r
 
@@ -39,18 +39,20 @@ Document created with package pkgdev **v0.1.0.9150**.
 
 ## Related resources
 
-- The [tidyverse style guide](https://style.tidyverse.org/).
+- The [**tidyverse** style guide](https://style.tidyverse.org/).
 - **ThinkR**: [Preparing your package for a CRAN
   submission](https://github.com/ThinkR-open/prepare-for-cran).
 - Davis Vaughan:
-  [extrachecks](https://github.com/DavisVaughan/extrachecks).
+  [**extrachecks**](https://github.com/DavisVaughan/extrachecks).
 - The **usethis** package: [Create a release checklist in a GitHub
-  issue](https://usethis.r-lib.org/reference/use_release_issue.html)
+  issue](https://usethis.r-lib.org/reference/use_release_issue.html).
 - The full [**usethis** package website](https://usethis.r-lib.org).
 
 # Package index
 
-## GitHub Actions helpers
+## GitHub Actions workflow helpers
+
+Create workflows for package checks, documentation and deployment.
 
 - [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
   : Create a GitHub Actions workflow that checks your package regularly
@@ -65,22 +67,28 @@ Document created with package pkgdev **v0.1.0.9150**.
   : Create a GitHub Actions workflow that documents and checks your
   package
 
-## Documentation check helpers
+## Documentation checking helpers
+
+Inspect generated package documentation.
 
 - [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
   : Inspect Rd file titles
 
 ## Package maintenance helpers
 
+Run package-wide maintenance tasks and manage ignore files.
+
 - [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
   :
 
-  Add `.gitignore` to package
+  Add a global `.gitignore` file to a package
 
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   : Document your package
 
-## Documentation renderers
+## Documentation rendering helpers
+
+Render **Quarto** sources and precompute vignettes.
 
 - [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
   [`build_readme_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
@@ -89,18 +97,22 @@ Document created with package pkgdev **v0.1.0.9150**.
   [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
   : Precompute vignettes
 
+- [`pkgdev`](https://dieghernan.github.io/pkgdev/reference/pkgdev-package.md)
+  [`pkgdev-package`](https://dieghernan.github.io/pkgdev/reference/pkgdev-package.md)
+  : pkgdev: Helpers to Develop Packages with GitHub Actions
+
 # Articles
 
-### Downloads
+### Package download statistics
 
-Explore download statistics for related packages.
+Explore download statistics for packages maintained by the author.
 
 - [Package
   downloads](https://dieghernan.github.io/pkgdev/articles/downloads.md):
 
-### Precompute examples
+### Precomputed vignette examples
 
-Examples used to verify precomputed vignette workflows.
+Learn how to precompute **R Markdown** and **Quarto** vignettes.
 
 - [Precomputed R Markdown vignette
   example](https://dieghernan.github.io/pkgdev/articles/test-precompute-knitr.md):

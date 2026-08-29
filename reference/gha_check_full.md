@@ -23,12 +23,12 @@ Examples from
 
 - overwrite:
 
-  Overwrite the action if it was already present.
+  Whether to overwrite an existing action.
 
 - cron_expr:
 
-  Valid cron expression. By default, the first day of the month at 08:30
-  AM. See **Details**.
+  A valid cron expression. Defaults to 08:30 AM on the first day of the
+  month. See **Details**.
 
 ## Value
 
@@ -38,21 +38,14 @@ Invisibly returns `NULL` after writing a GitHub Actions workflow to
 ## Details
 
 Use [crontab.guru](https://crontab.guru/#30_08_1_*_*) to check and
-create your own cron tag.
+create your own cron expression.
 
 ## See also
 
-- [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
-  creates a [pkgdown](https://CRAN.R-project.org/package=pkgdown)
-  deployment action.
+[`usethis::use_github_action()`](https://usethis.r-lib.org/reference/use_github_action.html)
+creates GitHub Actions workflows.
 
-- [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
-  creates a documentation and deployment action.
-
-- [`usethis::use_github_action()`](https://usethis.r-lib.org/reference/use_github_action.html)
-  creates GitHub Actions workflows.
-
-GitHub Actions helpers:
+GitHub Actions workflow helpers:
 [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md),
 [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
 
@@ -62,7 +55,7 @@ GitHub Actions helpers:
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpQZFTBt/file1b8a4df50de5/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmphQ5i9x/file1e3e56a68a7e/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

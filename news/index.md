@@ -3,10 +3,10 @@
 ## pkgdev (development version)
 
 - Added `.imgbotconfig` to `.Rbuildignore`.
-- Added configuration for the [jarl
+- Added configuration for the [**jarl**
   linter](https://jarl.etiennebacher.com/).
 - Added **pkgdown** to Imports.
-- Included an RStudio add-in.
+- Included an **RStudio** add-in.
 - Removed **crayon** and now use **cli** instead.
 - [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
   now adds recursive `.Rbuildignore` patterns for ignored directories,
@@ -21,17 +21,17 @@
   can optimize images with
   [`resmush::resmush_dir()`](https://dieghernan.github.io/resmush/reference/resmush_dir.html).
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  can precompute vignettes and render Quarto files.
+  can precompute vignettes and render **Quarto** files.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  now creates `.codex/config.toml` with the project Codex settings and
-  excludes `.codex` from R builds.
+  now creates `.codex/config.toml` with the project **Codex** settings
+  and excludes `.codex` from **R** builds.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   now uses
   [`lintr::use_lintr()`](https://lintr.r-lib.org/reference/use_lintr.html)
   and adds package-specific options.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  modifies global and project-level RStudio options. **Caution:** this
-  changes user settings.
+  modifies global and project-level **RStudio** options. **Caution:**
+  this changes user settings.
 
 ## pkgdev 0.1.0
 

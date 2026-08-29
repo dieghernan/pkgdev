@@ -28,7 +28,7 @@ Examples from
 
 - overwrite:
 
-  Overwrite the action if it was already present.
+  Whether to overwrite an existing action.
 
 - platform:
 
@@ -41,7 +41,7 @@ Examples from
 ## Value
 
 Invisibly returns `NULL` after writing a GitHub Actions workflow to
-`.github/workflows`.
+`<pkg>/.github/workflows`.
 
 ## Details
 
@@ -50,17 +50,10 @@ options.
 
 ## See also
 
-- [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  documents and checks your package.
+[`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
+documents and checks your package.
 
-- [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md)
-  creates a full package check action.
-
-- [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
-  creates a [pkgdown](https://CRAN.R-project.org/package=pkgdown)
-  deployment action.
-
-GitHub Actions helpers:
+GitHub Actions workflow helpers:
 [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md),
 [`gha_pkgdown_branch()`](https://dieghernan.github.io/pkgdev/reference/gha_pkgdown_branch.md)
 
@@ -71,7 +64,7 @@ GitHub Actions helpers:
 # With Ubuntu 20.04
 gha_update_docs(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpQZFTBt/file1b8a4df50de5/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmphQ5i9x/file1e3e56a68a7e/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

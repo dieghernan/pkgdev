@@ -1,6 +1,6 @@
 # Inspect Rd file titles
 
-Inspect generated Rd file titles for sentence case and trailing periods.
+Checks generated Rd file titles for sentence case and trailing periods.
 
 ## Usage
 
@@ -29,7 +29,7 @@ runs this check after roxygenizing the package.
 ``` r
 # \dontrun{
 check_rd_titles()
-#> ℹ No .Rd files found in ./man.
+#> ℹ No Rd files found in ./man.
 #> NULL
 # }
 ```
