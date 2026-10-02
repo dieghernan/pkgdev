@@ -1,10 +1,12 @@
 #' Create a GitHub Actions workflow that documents and checks your package
 #'
+#' @description
 #' The GitHub Actions workflow documents your package (see [update_docs()]),
-#' checks it and deploys the package on a `gh-pages` branch.
+#' checks it and deploys its \CRANpkg{pkgdown} site to the `gh-pages` branch.
 #'
 #' @inherit gha_pkgdown_branch details
 #'
+#' @inheritParams update_docs
 #' @inheritParams gha_pkgdown_branch
 #'
 #' @inherit gha_check_full return source
@@ -18,7 +20,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' # With Ubuntu 20.04
+#' # With Ubuntu 20.04.
 #' gha_update_docs(platform = "ubuntu", version = "20.04")
 #' }
 gha_update_docs <- function(
@@ -43,7 +45,7 @@ gha_update_docs <- function(
   use_build_ignore_dir(c("pkgdown", "docs"))
   usethis::use_git_ignore("docs/", pkg)
 
-  # Add files to git ignore.
+  # Add files to `.gitignore`.
   usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("depends.Rds", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))

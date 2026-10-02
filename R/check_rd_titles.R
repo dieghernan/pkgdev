@@ -1,11 +1,14 @@
 #' Inspect Rd file titles
 #'
+#' @description
 #' Checks generated Rd file titles for sentence case and trailing periods.
 #'
 #' @inheritParams update_docs
 #'
-#' @return A data frame with one row per Rd file and columns for the source
-#'   path, title, sentence-case title, final character and sentence-case check.
+#' @returns A [data frame][base::data.frame] with one row per Rd file and
+#'   columns for the source path, title, sentence-case title, final character
+#'   and sentence-case check. Returns [`NULL`][base::NULL] if no Rd files
+#'   are found.
 #'
 #' @seealso [update_docs()] runs this check after roxygenizing the package.
 #'

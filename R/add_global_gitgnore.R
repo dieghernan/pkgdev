@@ -1,11 +1,12 @@
 #' Add a global `.gitignore` file to a package
 #'
+#' @description
 #' Adds a global `.gitignore` file to the package. The file is based on the
 #' default `.gitignore` provided by GitHub.
 #'
 #' @inheritParams update_docs
 #'
-#' @return Invisibly returns `NULL` after writing a global `.gitignore` file.
+#' @returns [`NULL`][base::NULL], invisibly, after updating `.gitignore` files.
 #'
 #' @seealso
 #' - [usethis::use_git_ignore()] adds entries to `.gitignore`.
@@ -35,7 +36,7 @@ add_global_gitgnore <- function(pkg = ".") {
   # User-specific files.
   add_global_use_git_ignore(".Ruserdata", directory = pkg)
 
-  # Example code in package build process.
+  # Ignore example scripts generated during the package build.
   add_global_use_git_ignore("*-Ex.R", directory = pkg)
 
   # Output files from R CMD build.
@@ -67,11 +68,10 @@ add_global_gitgnore <- function(pkg = ".") {
 
   add_global_use_git_ignore(".positai", directory = pkg)
 
-  # Vaccinate.
+  # Add global Git ignore rules.
   add_global_git_vaccinate()
 
-  # Revdep.
-  # Clean up previous versions.
+  # Remove the old rule to track reverse-dependency results selectively.
   f <- readLines(".gitignore")
   fnew <- f[f != "revdep"]
   writeLines(fnew, ".gitignore")
@@ -89,7 +89,7 @@ add_global_gitgnore <- function(pkg = ".") {
     add_global_use_git_ignore(revdepig, directory = file.path(pkg, "revdep"))
   }
 
-  # Ignore this on build too.
+  # Exclude reverse-dependency results from the package build.
   use_build_ignore_dir("revdep")
 
   # Codemeta.

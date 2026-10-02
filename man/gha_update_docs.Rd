@@ -17,21 +17,22 @@ gha_update_docs(
 )
 }
 \arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 
-\item{overwrite}{Whether to overwrite an existing action.}
+\item{overwrite}{Whether to overwrite an existing workflow file.}
 
-\item{platform}{Platform to use for deploying the package. See \strong{Details}.}
+\item{platform}{Runner operating system to use for deploying the site.
+See \strong{Details}.}
 
-\item{version}{Version of the platform. See \strong{Details}.}
+\item{version}{Runner image version. See \strong{Details}.}
 }
 \value{
-Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
-\verb{<pkg>/.github/workflows}.
+\code{\link[base:NULL]{NULL}}, invisibly, after writing a GitHub Actions
+workflow to \verb{<pkg>/.github/workflows}.
 }
 \description{
 The GitHub Actions workflow documents your package (see \code{\link[=update_docs]{update_docs()}}),
-checks it and deploys the package on a \code{gh-pages} branch.
+checks it and deploys its \CRANpkg{pkgdown} site to the \code{gh-pages} branch.
 }
 \details{
 Check \url{https://github.com/actions/runner-images} to see the available
@@ -39,7 +40,7 @@ options.
 }
 \examples{
 \dontrun{
-# With Ubuntu 20.04
+# With Ubuntu 20.04.
 gha_update_docs(platform = "ubuntu", version = "20.04")
 }
 }

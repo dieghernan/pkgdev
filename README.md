@@ -2,7 +2,7 @@
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
 
-# pkgdev <a href='https://dieghernan.github.io/pkgdev/'><img src="man/figures/logo.png" align="right" height="139"/></a>
+# pkgdev <a href='https://dieghernan.github.io/pkgdev/'><img src="man/figures/logo.png" align="right" height="139" alt="pkgdev hexagonal logo with a crossed wrench and screwdriver"/></a>
 
 <!-- badges: start -->
 
@@ -13,8 +13,7 @@
 [![Coverage
 Status](https://coveralls.io/repos/github/dieghernan/pkgdev/badge.svg?branch=main)](https://coveralls.io/github/dieghernan/pkgdev?branch=main)
 [![Project Status: Concept – Minimal or no implementation has been done
-yet, or the repository is only intended to be a limited example, demo,
-or
+yet, or the repository is only intended to be a limited example, demo or
 proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 
 <!-- badges: end -->
@@ -51,7 +50,7 @@ library(pkgdev)
 gha_update_docs()
 ```
 
-Document created with package pkgdev **v0.1.0.9150**.
+Document created with package **pkgdev** **v0.1.0.9150**.
 
 ## Related resources
 

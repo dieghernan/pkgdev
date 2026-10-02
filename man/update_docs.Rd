@@ -22,7 +22,7 @@ update_docs(
 )
 }
 \arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 
 \item{url_update}{A logical value. Should URLs be updated with
 \code{\link[urlchecker:url_update]{urlchecker::url_update()}}?}
@@ -36,11 +36,11 @@ with \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}}?}
 \item{build_readme}{A logical value. Should \code{README.qmd}, \code{README.Rmd} or
 \CRANpkg{pkgdown} index files be built?}
 
-\item{verbose}{A logical value. Should informative messages be displayed on
+\item{verbose}{A logical value. Should progress messages be displayed in
 the console?}
 
 \item{precompute}{A logical value. Should vignettes be detected and
-precomputed? See also \code{\link[=precompute_vignette]{precompute_vignette()}}.}
+precomputed? See also \code{\link[=precompute_vignette_all]{precompute_vignette_all()}}.}
 
 \item{opt_imgs}{A logical value. Should images be optimized with
 \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}?}
@@ -53,11 +53,11 @@ precomputed? See also \code{\link[=precompute_vignette]{precompute_vignette()}}.
 \item{...}{Additional arguments passed to downstream functions.}
 }
 \value{
-Invisibly returns \code{NULL}. When \code{verbose = TRUE}, it emits progress
-messages.
+\code{\link[base:NULL]{NULL}}, invisibly, after updating the package.
+Emits progress messages when \code{verbose = TRUE}.
 }
 \description{
-Runs routine checks on the package:
+Performs routine package maintenance:
 \itemize{
 \item Clean \code{DESCRIPTION} with \code{\link[usethis:use_tidy_description]{usethis::use_tidy_description()}}.
 \item Compress data in the \code{"./data"} and \code{"./R"} paths using
@@ -65,8 +65,7 @@ Runs routine checks on the package:
 \item Style code with \code{\link[styler:style_pkg]{styler::style_pkg()}}.
 \item Check URLs with \code{\link[urlchecker:url_check]{urlchecker::url_check()}}.
 \item Roxygenize with \code{\link[roxygen2:roxygenise]{roxygen2::roxygenise()}}.
-\item Precompute vignettes if present
-(see \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}).
+\item Precompute vignettes with \code{\link[=precompute_vignette_all]{precompute_vignette_all()}} if present.
 \item Rebuild \code{README.qmd}, \code{README.Rmd} or \CRANpkg{pkgdown} index files, if
 present.
 \item Optimize images with \code{\link[resmush:resmush_dir]{resmush::resmush_dir()}}.
@@ -76,10 +75,9 @@ present.
 }
 }
 \details{
-This function updates and cleans the package using a mix of best practices,
-such as checking URLs, roxygenizing and rebuilding the \code{README}. It also
-applies discretionary practices such as the \CRANpkg{tidyverse} approach
-for the \code{DESCRIPTION} file, overall code style and \code{codemeta.json}.
+This function checks URLs, regenerates roxygen2 documentation and rebuilds
+the \code{README}. It also applies the \CRANpkg{tidyverse} style to \code{DESCRIPTION}
+and package code and writes package metadata to \code{codemeta.json}.
 }
 \examples{
 \dontrun{
@@ -89,16 +87,11 @@ update_docs()
 \seealso{
 \itemize{
 \item \code{\link[=build_qmd]{build_qmd()}} builds Quarto files.
+\item \code{\link[=build_readme_qmd]{build_readme_qmd()}} builds \code{README.md} from \code{README.qmd}.
 \item \code{\link[=check_rd_titles]{check_rd_titles()}} checks generated Rd titles.
 \item \code{\link[=gha_update_docs]{gha_update_docs()}} automates this workflow with GitHub Actions.
-\item \code{\link[=precompute_vignette]{precompute_vignette()}} precomputes vignettes.
-\item \code{\link[usethis:use_tidy_description]{usethis::use_tidy_description()}} cleans \code{DESCRIPTION}.
-\item \code{\link[styler:style_pkg]{styler::style_pkg()}} styles package code.
-\item \code{\link[urlchecker:url_check]{urlchecker::url_check()}} checks URLs.
-\item \code{\link[roxygen2:roxygenise]{roxygen2::roxygenise()}} updates documentation.
+\item \code{\link[=precompute_vignette_all]{precompute_vignette_all()}} precomputes all vignette source files.
 \item \code{\link[devtools:build_readme]{devtools::build_readme()}} builds \code{README.Rmd} files.
-\item \code{\link[codemetar:write_codemeta]{codemetar::write_codemeta()}} writes \code{codemeta.json}.
-\item \code{\link[tools:resaveRdaFiles]{tools::resaveRdaFiles()}} compresses data files.
 }
 
 Package maintenance helpers:

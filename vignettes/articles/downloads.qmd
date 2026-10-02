@@ -17,10 +17,10 @@ knitr:
 
 ## On CRAN
 
-Download data for my CRAN packages.
+Download counts for my packages on CRAN.
 
 ```{r}
-#| include = FALSE
+#| include: false
 library(cranlogs)
 library(tibble)
 library(dplyr)
@@ -100,7 +100,13 @@ dwn_m$package <- factor(dwn_m$package, levels = unique(fact))
 ### Historical downloads
 
 ```{r}
-#| echo = FALSE
+#| echo: false
+#| fig-alt: >
+#|   Stacked bar chart of monthly CRAN downloads over time, starting in 2016.
+#|   The horizontal axis shows month and the vertical axis shows download count.
+#|   Colored segments identify packages and each bar's total height gives their
+#|   combined downloads. A gray smooth curve with a shaded uncertainty band
+#|   summarizes the trend in total monthly downloads.
 palk <- unname(Polychrome::kelly.colors(length(mypaks) + 1))[-1]
 
 tot <- dwn_m |>
@@ -127,7 +133,13 @@ ggplot(dwn_m, aes(x = m)) +
 ### Weekly downloads
 
 ```{r}
-#| echo = FALSE
+#| echo: false
+#| fig-alt: >
+#|   Faceted area chart of weekly CRAN downloads over the past year, with one
+#|   panel per package arranged in three columns. The horizontal axis shows
+#|   date and the vertical axis shows weekly download count. A dark smooth
+#|   curve summarizes the trend in each panel. Vertical scales vary by package,
+#|   so equal heights across panels can represent different download counts.
 
 # Exclude the current week.
 thisw <- lubridate::ceiling_date(Sys.Date(), "week")
@@ -165,8 +177,8 @@ ggplot(dwn_w, aes(x = m)) +
 ### Download data
 
 ```{r}
-#| label = "datos",
-#| echo = FALSE
+#| label: datos
+#| echo: false
 library(reactable)
 library(htmltools)
 
@@ -237,7 +249,7 @@ reactable(
   columns = list(
     package = colDef(
       cell = function(value) {
-        # Render as a link
+        # Render as a link.
         url <- paste0("https://CRAN.R-project.org/package=", value)
         badge <- paste0("https://badges.cranchecks.info/worst/", value, ".svg")
         link <- htmltools::a(href = url, target = "_blank", as.character(value))
@@ -269,12 +281,12 @@ reactable(
 
 ## On Posit Package Manager
 
-Download data for my packages from [**Posit Package
+Download counts for my packages on [**Posit Package
 Manager**](https://packagemanager.posit.co/client/#/).
 
 ```{r}
-#| label = "data-posit",
-#| echo = FALSE
+#| label: data-posit
+#| echo: false
 res <- lapply(mypaks, function(x) {
   tmp <- tempfile(fileext = ".json")
   api_res <- suppressWarnings(try(download.file(
@@ -340,7 +352,7 @@ reactable(
   columns = list(
     package = colDef(
       cell = function(value) {
-        # Render as a link
+        # Render as a link.
         url <- paste0(
           "https://packagemanager.posit.co/client/#/repos/",
           "cran/packages/", value, "/overview?search=", value,

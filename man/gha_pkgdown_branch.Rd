@@ -17,21 +17,22 @@ gha_pkgdown_branch(
 )
 }
 \arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 
-\item{overwrite}{Whether to overwrite an existing action.}
+\item{overwrite}{Whether to overwrite an existing workflow file.}
 
-\item{platform}{Platform to use for deploying the package. See \strong{Details}.}
+\item{platform}{Runner operating system to use for deploying the site.
+See \strong{Details}.}
 
-\item{version}{Version of the platform. See \strong{Details}.}
+\item{version}{Runner image version. See \strong{Details}.}
 }
 \value{
-Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
-\verb{<pkg>/.github/workflows}.
+\code{\link[base:NULL]{NULL}}, invisibly, after writing a GitHub Actions
+workflow to \verb{<pkg>/.github/workflows}.
 }
 \description{
 The GitHub Actions workflow deploys a \CRANpkg{pkgdown} site for your
-package on the \code{gh-pages} branch.
+package to the \code{gh-pages} branch.
 }
 \details{
 Check \url{https://github.com/actions/runner-images} to see the available
@@ -39,11 +40,13 @@ options.
 }
 \examples{
 \dontrun{
-# With Ubuntu 20.04
+# With Ubuntu 20.04.
 gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 }
 }
 \seealso{
+\code{\link[pkgdown:build_site]{pkgdown::build_site()}} builds the package website locally.
+
 GitHub Actions workflow helpers:
 \code{\link[=gha_check_full]{gha_check_full()}},
 \code{\link[=gha_update_docs]{gha_update_docs()}}

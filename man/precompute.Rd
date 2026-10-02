@@ -23,13 +23,13 @@ precompute_vignette_all(dir = "vignettes", pkg = ".", ...)
 \item{source}{Name of the \code{.Rmd.orig} or \code{.qmd.orig} file, without the path
 (e.g. \code{"some_name.Rmd.orig"} or \code{"some_name.qmd.orig"}).}
 
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 
 \item{figure_ext}{File extension for figures plotted in the vignette.
 See \strong{Details}.}
 
 \item{create_r_file}{Whether to create an additional \R script with the code
-of the vignette.}
+from the vignette.}
 
 \item{dir}{Path to the directory where the \code{.Rmd.orig} and \code{.qmd.orig} files
 are stored.}
@@ -37,19 +37,23 @@ are stored.}
 \item{...}{Additional arguments passed to \code{\link[=precompute_vignette]{precompute_vignette()}}.}
 }
 \value{
-Invisibly returns \code{NULL} after writing a precomputed vignette.
+\code{\link[base:NULL]{NULL}}, invisibly, after precomputing the vignettes.
 }
 \description{
 Precompute vignettes following the CRAN approach described at
 \url{https://ropensci.org/blog/2019/12/08/precompute-vignettes/}.
 }
 \details{
-This function searches for the desired precomputed vignette in the
-\code{"./vignettes/"} directory and for plots in the root \code{"./"} directory.
+This function reads vignette source files from the package's \code{vignettes}
+directory and moves plots from the package root to that directory.
+
+\code{\link[=precompute_vignette]{precompute_vignette()}} processes the files named in \code{source}.
+\code{\link[=precompute_vignette_all]{precompute_vignette_all()}} finds and processes every \code{.Rmd.orig} and
+\code{.qmd.orig} file in \code{dir}.
 \subsection{Important}{
 
-In your \code{.Rmd.orig} or \code{.qmd.orig} file, make sure you have set at least the
-following lines if you are producing plots:
+In your \code{.Rmd.orig} or \code{.qmd.orig} file, set the following chunk option when
+producing plots:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{knitr::opts_chunk$set(
   ...,

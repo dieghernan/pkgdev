@@ -1,5 +1,6 @@
 #' Create a GitHub Actions workflow that checks your package regularly
 #'
+#' @description
 #' The GitHub Actions workflow runs `R CMD check` on your package.
 #' It uses a wide range of platforms, which can be reduced by commenting out or
 #' deleting platforms in the matrix configuration.
@@ -8,13 +9,13 @@
 #' Use [crontab.guru](https://crontab.guru/#30_08_1_*_*) to check and
 #' create your own cron expression.
 #'
-#' @param overwrite Whether to overwrite an existing action.
-#' @param cron_expr A valid cron expression. Defaults to 08:30 AM on the first
+#' @param overwrite Whether to overwrite an existing workflow file.
+#' @param cron_expr A valid cron expression. Defaults to 08:30 UTC on the first
 #'   day of the month. See **Details**.
 #' @inheritParams update_docs
 #'
-#' @return Invisibly returns `NULL` after writing a GitHub Actions workflow to
-#'   `<pkg>/.github/workflows`.
+#' @returns [`NULL`][base::NULL], invisibly, after writing a GitHub Actions
+#'   workflow to `<pkg>/.github/workflows`.
 #'
 #' @source Examples from
 #'   [r-lib/actions](https://github.com/r-lib/actions/tree/master/examples).
@@ -45,7 +46,7 @@ gha_check_full <- function(
   # Add files to build ignore.
   use_build_ignore_dir(".github")
 
-  # Add files to git ignore.
+  # Add files to `.gitignore`.
   usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("depends.Rds", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))

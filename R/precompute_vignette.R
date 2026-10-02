@@ -1,17 +1,20 @@
 #' Precompute vignettes
 #'
+#' @description
 #' Precompute vignettes following the CRAN approach described at
 #' <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 #'
-#' @rdname precompute
-#'
 #' @details
-#' This function searches for the desired precomputed vignette in the
-#' `"./vignettes/"` directory and for plots in the root `"./"` directory.
+#' This function reads vignette source files from the package's `vignettes`
+#' directory and moves plots from the package root to that directory.
+#'
+#' [precompute_vignette()] processes the files named in `source`.
+#' [precompute_vignette_all()] finds and processes every `.Rmd.orig` and
+#' `.qmd.orig` file in `dir`.
 #'
 #' ## Important
-#' In your `.Rmd.orig` or `.qmd.orig` file, make sure you have set at least the
-#' following lines if you are producing plots:
+#' In your `.Rmd.orig` or `.qmd.orig` file, set the following chunk option when
+#' producing plots:
 #' ```r
 #' knitr::opts_chunk$set(
 #'   ...,
@@ -26,11 +29,11 @@
 #' @param figure_ext File extension for figures plotted in the vignette.
 #'   See **Details**.
 #' @param create_r_file Whether to create an additional \R script with the code
-#'   of the vignette.
+#'   from the vignette.
 #' @param ... Additional arguments passed to [precompute_vignette()].
 #' @inheritParams update_docs
 #'
-#' @return Invisibly returns `NULL` after writing a precomputed vignette.
+#' @returns [`NULL`][base::NULL], invisibly, after precomputing the vignettes.
 #'
 #' @source Based on
 #'   <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
@@ -38,6 +41,8 @@
 #' @seealso [update_docs()] runs the broader package maintenance workflow.
 #'
 #' @family renderers
+#'
+#' @rdname precompute
 #'
 #' @export
 #' @encoding UTF-8
@@ -71,7 +76,7 @@ precompute_vignette <- function(
     # nolint end
     cli::cli_inform(c(
       "v" = paste0(
-        "Installed {.pkg {nm}} version {.val {ver}} in temporary ",
+        "Installed {.pkg {nm}} version {.val {ver}} in a temporary ",
         "library."
       )
     ))
@@ -130,9 +135,10 @@ precompute_vignette <- function(
   invisible()
 }
 
-#' @rdname precompute
 #' @param dir Path to the directory where the `.Rmd.orig` and `.qmd.orig` files
 #'   are stored.
+#'
+#' @rdname precompute
 #'
 #' @export
 precompute_vignette_all <- function(dir = "vignettes", pkg = ".", ...) {

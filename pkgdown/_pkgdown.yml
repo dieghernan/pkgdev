@@ -14,34 +14,46 @@ authors:
     href: "https://dieghernan.github.io/"
 
 reference:
-- title: GitHub Actions workflow helpers
-  desc: Create workflows for package checks, documentation and deployment.
+- title: Package overview
+  desc: Learn about **pkgdev** and find related helpers.
 - contents:
-  - has_concept("actions")
-- title: Documentation checking helpers
-  desc: Inspect generated package documentation.
-- contents:
-  - has_concept("checks")
+  - pkgdev-package
 - title: Package maintenance helpers
-  desc: Run package-wide maintenance tasks and manage ignore files.
+  desc: >
+    Run the maintenance workflow with `update_docs()` and manage ignore files
+    with `add_global_gitgnore()`.
 - contents:
   - has_concept("maintenance")
 - title: Documentation rendering helpers
-  desc: Render **Quarto** sources and precompute vignettes.
+  desc: >
+    Render **Quarto** documents and README files, or precompute
+    **R Markdown** and **Quarto** vignettes.
 - contents:
   - has_concept("renderers")
-- title: internal
+- title: Documentation checking helpers
+  desc: Check generated Rd titles for sentence case and trailing periods.
 - contents:
-  - pkgdev-package
+  - has_concept("checks")
+- title: GitHub Actions workflow helpers
+  desc: >
+    Create workflows to check packages, update documentation and deploy
+    **pkgdown** sites.
+- contents:
+  - has_concept("actions")
 
 articles:
-- title: Package download statistics
-  desc: Explore download statistics for packages maintained by the author.
-  navbar: Downloads
-  contents:
-  - articles/downloads
 - title: Precomputed vignette examples
-  desc: Learn how to precompute **R Markdown** and **Quarto** vignettes.
+  desc: >
+    Explore example inputs for `precompute_vignette()` in **R Markdown**
+    and **Quarto** formats.
+  navbar: Precomputation
   contents:
   - test-precompute-knitr
   - test-precompute-quarto
+- title: Package download statistics
+  desc: >
+    Explore download counts for the author's packages on CRAN and
+    **Posit Package Manager**.
+  navbar: Downloads
+  contents:
+  - articles/downloads

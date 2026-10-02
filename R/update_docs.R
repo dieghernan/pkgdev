@@ -1,15 +1,14 @@
 #' Document your package
 #'
 #' @description
-#' Runs routine checks on the package:
+#' Performs routine package maintenance:
 #' - Clean `DESCRIPTION` with [usethis::use_tidy_description()].
 #' - Compress data in the `"./data"` and `"./R"` paths using
 #'   [tools::resaveRdaFiles()].
 #' - Style code with [styler::style_pkg()].
 #' - Check URLs with [urlchecker::url_check()].
 #' - Roxygenize with [roxygen2::roxygenise()].
-#' - Precompute vignettes if present
-#'   (see <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
+#' - Precompute vignettes with [precompute_vignette_all()] if present.
 #' - Rebuild `README.qmd`, `README.Rmd` or \CRANpkg{pkgdown} index files, if
 #'   present.
 #' - Optimize images with [resmush::resmush_dir()].
@@ -18,11 +17,11 @@
 #' - Write a project-level Codex configuration file.
 #'
 #' @details
-#' This function updates and cleans the package using a mix of best practices,
-#' such as checking URLs, roxygenizing and rebuilding the `README`. It also
-#' applies discretionary practices such as the \CRANpkg{tidyverse} approach
-#' for the `DESCRIPTION` file, overall code style and `codemeta.json`.
+#' This function checks URLs, regenerates roxygen2 documentation and rebuilds
+#' the `README`. It also applies the \CRANpkg{tidyverse} style to `DESCRIPTION`
+#' and package code and writes package metadata to `codemeta.json`.
 #'
+#' @param pkg Path to the package root directory.
 #' @param url_update A logical value. Should URLs be updated with
 #'   [urlchecker::url_update()]?
 #' @param build_readme A logical value. Should `README.qmd`, `README.Rmd` or
@@ -31,33 +30,27 @@
 #'   with [codemetar::write_codemeta()]?
 #' @param create_cff A logical value. Should `CITATION.cff` be created with
 #'   [cffr::cff_write()]?
-#' @param verbose A logical value. Should informative messages be displayed on
+#' @param verbose A logical value. Should progress messages be displayed in
 #'   the console?
 #' @param precompute A logical value. Should vignettes be detected and
-#'   precomputed? See also [precompute_vignette()].
+#'   precomputed? See also [precompute_vignette_all()].
 #' @param opt_imgs A logical value. Should images be optimized with
 #'   [resmush::resmush_dir()]?
 #' @param opt_dir,opt_ext,opt_overwrite Options passed to the `dir`, `ext` and
 #'   `overwrite` arguments of [resmush::resmush_dir()].
 #' @param add_contributors Deprecated.
 #' @param ... Additional arguments passed to downstream functions.
-#' @inheritParams styler::style_pkg
 #'
-#' @return Invisibly returns `NULL`. When `verbose = TRUE`, it emits progress
-#'   messages.
+#' @returns [`NULL`][base::NULL], invisibly, after updating the package.
+#'   Emits progress messages when `verbose = TRUE`.
 #'
 #' @seealso
 #' - [build_qmd()] builds Quarto files.
+#' - [build_readme_qmd()] builds `README.md` from `README.qmd`.
 #' - [check_rd_titles()] checks generated Rd titles.
 #' - [gha_update_docs()] automates this workflow with GitHub Actions.
-#' - [precompute_vignette()] precomputes vignettes.
-#' - [usethis::use_tidy_description()] cleans `DESCRIPTION`.
-#' - [styler::style_pkg()] styles package code.
-#' - [urlchecker::url_check()] checks URLs.
-#' - [roxygen2::roxygenise()] updates documentation.
+#' - [precompute_vignette_all()] precomputes all vignette source files.
 #' - [devtools::build_readme()] builds `README.Rmd` files.
-#' - [codemetar::write_codemeta()] writes `codemeta.json`.
-#' - [tools::resaveRdaFiles()] compresses data files.
 #'
 #' @family maintenance
 #'
@@ -212,7 +205,7 @@ update_docs <- function(
     )
   }
 
-  # Migrate to Roxygen > v8.
+  # Update the roxygen2 configuration for version 8.
   dsc_f <- file.path(pkg, "DESCRIPTION")
   dsc_lines <- readLines(dsc_f)
 

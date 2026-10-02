@@ -1,25 +1,27 @@
 #' Build Quarto files for a package
 #'
-#' `build_qmd()` is a wrapper around [quarto::quarto_render()] that first
+#' @description
+#' [build_qmd()] is a wrapper around [quarto::quarto_render()] that first
 #' installs a temporary copy of the package, then renders each Quarto file in a
-#' clean \R session. `build_readme_qmd()` locates your `README.qmd` and builds
-#' it into a `README.md`.
-#'
-#' @rdname build_qmd
-#' @order 1
+#' clean \R session. [build_readme_qmd()] locates your `README.qmd` and builds
+#' it into `README.md`.
 #'
 #' @param files Quarto files to be rendered.
 #' @param ... Additional arguments passed to [quarto::quarto_render()].
 #' @inheritParams devtools::build_readme
 #' @inheritParams quarto::quarto_render
 #'
-#' @return `TRUE`, invisibly.
+#' @returns A [logical][base::logical] value, `TRUE`, invisibly, after rendering
+#'   the Quarto files.
 #'
 #' @seealso
 #' - [update_docs()] runs the broader package maintenance workflow.
 #' - [devtools::build_readme()] builds `README` files from R Markdown.
 #'
 #' @family renderers
+#'
+#' @rdname build_qmd
+#' @order 1
 #'
 #' @export
 #' @encoding UTF-8
@@ -52,7 +54,7 @@ build_qmd <- function(files, path = ".", ..., quiet = TRUE) {
     if (!quiet) {
       cli::cli_inform(c(
         "v" = paste0(
-          "Installed {.pkg {nm}} version {.val {ver}} in temporary ",
+          "Installed {.pkg {nm}} version {.val {ver}} in a temporary ",
           "library."
         )
       ))

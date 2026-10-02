@@ -8,11 +8,13 @@
 check_rd_titles(pkg = ".")
 }
 \arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 }
 \value{
-A data frame with one row per Rd file and columns for the source
-path, title, sentence-case title, final character and sentence-case check.
+A \link[base:data.frame]{data frame} with one row per Rd file and
+columns for the source path, title, sentence-case title, final character
+and sentence-case check. Returns \code{\link[base:NULL]{NULL}} if no Rd files
+are found.
 }
 \description{
 Checks generated Rd file titles for sentence case and trailing periods.

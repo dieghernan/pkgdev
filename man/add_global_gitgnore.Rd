@@ -8,10 +8,10 @@
 add_global_gitgnore(pkg = ".")
 }
 \arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 }
 \value{
-Invisibly returns \code{NULL} after writing a global \code{.gitignore} file.
+\code{\link[base:NULL]{NULL}}, invisibly, after updating \code{.gitignore} files.
 }
 \description{
 Adds a global \code{.gitignore} file to the package. The file is based on the

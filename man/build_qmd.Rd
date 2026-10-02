@@ -21,13 +21,14 @@ build_readme_qmd(path = ".", quiet = TRUE, ...)
 if you need to debug.}
 }
 \value{
-\code{TRUE}, invisibly.
+A \link[base:logical]{logical} value, \code{TRUE}, invisibly, after rendering
+the Quarto files.
 }
 \description{
-\code{build_qmd()} is a wrapper around \code{\link[quarto:quarto_render]{quarto::quarto_render()}} that first
+\code{\link[=build_qmd]{build_qmd()}} is a wrapper around \code{\link[quarto:quarto_render]{quarto::quarto_render()}} that first
 installs a temporary copy of the package, then renders each Quarto file in a
-clean \R session. \code{build_readme_qmd()} locates your \code{README.qmd} and builds
-it into a \code{README.md}.
+clean \R session. \code{\link[=build_readme_qmd]{build_readme_qmd()}} locates your \code{README.qmd} and builds
+it into \code{README.md}.
 }
 \seealso{
 \itemize{

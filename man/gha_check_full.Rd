@@ -12,16 +12,16 @@ Examples from
 gha_check_full(pkg = ".", overwrite = TRUE, cron_expr = "30 08 1 * *")
 }
 \arguments{
-\item{pkg}{Path to a (subdirectory of an) R package.}
+\item{pkg}{Path to the package root directory.}
 
-\item{overwrite}{Whether to overwrite an existing action.}
+\item{overwrite}{Whether to overwrite an existing workflow file.}
 
-\item{cron_expr}{A valid cron expression. Defaults to 08:30 AM on the first
+\item{cron_expr}{A valid cron expression. Defaults to 08:30 UTC on the first
 day of the month. See \strong{Details}.}
 }
 \value{
-Invisibly returns \code{NULL} after writing a GitHub Actions workflow to
-\verb{<pkg>/.github/workflows}.
+\code{\link[base:NULL]{NULL}}, invisibly, after writing a GitHub Actions
+workflow to \verb{<pkg>/.github/workflows}.
 }
 \description{
 The GitHub Actions workflow runs \verb{R CMD check} on your package.

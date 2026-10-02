@@ -1,17 +1,22 @@
 #' Create a GitHub Actions workflow that builds a \CRANpkg{pkgdown} site
 #'
+#' @description
 #' The GitHub Actions workflow deploys a \CRANpkg{pkgdown} site for your
-#' package on the `gh-pages` branch.
+#' package to the `gh-pages` branch.
 #'
 #' @details
 #' Check <https://github.com/actions/runner-images> to see the available
 #' options.
 #'
-#' @param platform Platform to use for deploying the package. See **Details**.
-#' @param version Version of the platform. See **Details**.
+#' @param platform Runner operating system to use for deploying the site.
+#'   See **Details**.
+#' @param version Runner image version. See **Details**.
+#' @inheritParams update_docs
 #' @inheritParams gha_check_full
 #'
 #' @inherit gha_check_full return source
+#'
+#' @seealso [pkgdown::build_site()] builds the package website locally.
 #'
 #' @family actions
 #'
@@ -20,7 +25,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' # With Ubuntu 20.04
+#' # With Ubuntu 20.04.
 #' gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 #' }
 gha_pkgdown_branch <- function(
@@ -45,7 +50,7 @@ gha_pkgdown_branch <- function(
   use_build_ignore_dir(c("pkgdown", "docs"))
   usethis::use_git_ignore("docs/", pkg)
 
-  # Add files to git ignore.
+  # Add files to `.gitignore`.
   usethis::use_git_ignore("R-version", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("depends.Rds", directory = file.path(pkg, ".github"))
   usethis::use_git_ignore("*.html", directory = file.path(pkg, ".github"))

@@ -12,13 +12,16 @@
 Helpers for package maintenance, documentation rendering and GitHub Actions workflows. The package is primarily intended for personal use, but you are welcome to use it at your own risk.
 }
 \seealso{
-Useful links:
 \itemize{
-  \item \url{https://dieghernan.github.io/pkgdev/}
-  \item \url{https://github.com/dieghernan/pkgdev}
-  \item Report bugs at \url{https://github.com/dieghernan/pkgdev/issues}
+\item \code{\link[=update_docs]{update_docs()}} runs the package maintenance workflow.
+\item \code{\link[=build_qmd]{build_qmd()}} and \code{\link[=build_readme_qmd]{build_readme_qmd()}} render Quarto documents.
+\item \code{\link[=precompute_vignette]{precompute_vignette()}} and \code{\link[=precompute_vignette_all]{precompute_vignette_all()}} precompute
+vignettes.
+\item \code{\link[=check_rd_titles]{check_rd_titles()}} checks generated Rd titles.
+\item \code{\link[=add_global_gitgnore]{add_global_gitgnore()}} manages ignore files.
+\item \code{\link[=gha_check_full]{gha_check_full()}}, \code{\link[=gha_pkgdown_branch]{gha_pkgdown_branch()}} and \code{\link[=gha_update_docs]{gha_update_docs()}} create
+GitHub Actions workflows.
 }
-
 }
 \author{
 \strong{Maintainer}: Diego Hernangómez \email{diego.hernangomezherrero@gmail.com} (\href{https://orcid.org/0000-0001-8457-4658}{ORCID}) [copyright holder]
