@@ -13,11 +13,12 @@ add_global_gitgnore(pkg = ".")
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 ## Value
 
-Invisibly returns `NULL` after writing a global `.gitignore` file.
+[`NULL`](https://rdrr.io/r/base/NULL.html), invisibly, after updating
+`.gitignore` files.
 
 ## See also
 
@@ -35,7 +36,7 @@ Package maintenance helpers:
 ``` r
 # \dontrun{
 add_global_gitgnore()
-#> ✔ Setting active project to "/tmp/Rtmp4sA1Wp/file1bd5783bd747".
+#> ✔ Setting active project to "/tmp/RtmpqoTLIQ/file1ae128141660".
 #> ✔ Configuring core.excludesFile: ~/.gitignore
 #> ✔ Creating the global (user-level) gitignore: ~/.gitignore
 #> ✔ Adding ".Rproj.user", ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and

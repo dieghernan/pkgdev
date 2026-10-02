@@ -2,7 +2,9 @@
 
 The GitHub Actions workflow documents your package (see
 [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)),
-checks it and deploys the package on a `gh-pages` branch.
+checks it and deploys its
+[pkgdown](https://CRAN.R-project.org/package=pkgdown) site to the
+`gh-pages` branch.
 
 ## Usage
 
@@ -24,24 +26,25 @@ Examples from
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 - overwrite:
 
-  Whether to overwrite an existing action.
+  Whether to overwrite an existing workflow file.
 
 - platform:
 
-  Platform to use for deploying the package. See **Details**.
+  Runner operating system to use for deploying the site. See
+  **Details**.
 
 - version:
 
-  Version of the platform. See **Details**.
+  Runner image version. See **Details**.
 
 ## Value
 
-Invisibly returns `NULL` after writing a GitHub Actions workflow to
-`<pkg>/.github/workflows`.
+[`NULL`](https://rdrr.io/r/base/NULL.html), invisibly, after writing a
+GitHub Actions workflow to `<pkg>/.github/workflows`.
 
 ## Details
 
@@ -61,10 +64,10 @@ GitHub Actions workflow helpers:
 
 ``` r
 # \dontrun{
-# With Ubuntu 20.04
+# With Ubuntu 20.04.
 gha_update_docs(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/Rtmp4sA1Wp/file1bd5783bd747/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpqoTLIQ/file1ae128141660/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

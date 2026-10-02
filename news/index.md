@@ -6,8 +6,8 @@
 - Added configuration for the [**jarl**
   linter](https://jarl.etiennebacher.com/).
 - Added **pkgdown** to Imports.
-- Included an **RStudio** add-in.
-- Removed **crayon** and now use **cli** instead.
+- Added an **RStudio** add-in.
+- Replaced **crayon** with **cli**.
 - [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
   now adds recursive `.Rbuildignore` patterns for ignored directories,
   which avoids false positives from tools that inspect source
@@ -15,7 +15,7 @@
 - [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
   checks titles in the `man` directory.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  can clean YAML files of trailing whitespace and add a final blank
+  can remove trailing whitespace from YAML files and add a final blank
   line.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   can optimize images with
@@ -23,7 +23,7 @@
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   can precompute vignettes and render **Quarto** files.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
-  now creates `.codex/config.toml` with the project **Codex** settings
+  now creates `.codex/config.toml` with the project’s **Codex** settings
   and excludes `.codex` from **R** builds.
 - [`update_docs()`](https://dieghernan.github.io/pkgdev/reference/update_docs.md)
   now uses

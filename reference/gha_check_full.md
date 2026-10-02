@@ -19,21 +19,21 @@ Examples from
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 - overwrite:
 
-  Whether to overwrite an existing action.
+  Whether to overwrite an existing workflow file.
 
 - cron_expr:
 
-  A valid cron expression. Defaults to 08:30 AM on the first day of the
+  A valid cron expression. Defaults to 08:30 UTC on the first day of the
   month. See **Details**.
 
 ## Value
 
-Invisibly returns `NULL` after writing a GitHub Actions workflow to
-`<pkg>/.github/workflows`.
+[`NULL`](https://rdrr.io/r/base/NULL.html), invisibly, after writing a
+GitHub Actions workflow to `<pkg>/.github/workflows`.
 
 ## Details
 
@@ -55,7 +55,7 @@ GitHub Actions workflow helpers:
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/Rtmp4sA1Wp/file1bd5783bd747/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpqoTLIQ/file1ae128141660/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

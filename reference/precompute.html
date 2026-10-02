@@ -21,10 +21,12 @@ https://ropensci.org/blog/2019/12/08/precompute-vignettes/."><meta property="og:
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><hr class="dropdown-divider"></li>
+    <li><h6 class="dropdown-header" data-toc-skip>Precomputation</h6></li>
+    <li><a class="dropdown-item" href="../articles/test-precompute-knitr.html">Precomputed R Markdown vignette example</a></li>
+    <li><a class="dropdown-item" href="../articles/test-precompute-quarto.html">Precomputed Quarto vignette example</a></li>
+    <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Downloads</h6></li>
     <li><a class="dropdown-item" href="../articles/downloads.html">Package downloads</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="../articles/index.html">More articles...</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -80,7 +82,7 @@ https://ropensci.org/blog/2019/12/08/precompute-vignettes/."><meta property="og:
 
 
 <dt id="arg-pkg">pkg<a class="anchor" aria-label="anchor" href="#arg-pkg"></a></dt>
-<dd><p>Path to a (subdirectory of an) R package.</p></dd>
+<dd><p>Path to the package root directory.</p></dd>
 
 
 <dt id="arg-figure-ext">figure_ext<a class="anchor" aria-label="anchor" href="#arg-figure-ext"></a></dt>
@@ -90,7 +92,7 @@ See <strong>Details</strong>.</p></dd>
 
 <dt id="arg-create-r-file">create_r_file<a class="anchor" aria-label="anchor" href="#arg-create-r-file"></a></dt>
 <dd><p>Whether to create an additional <span style="R">R</span> script with the code
-of the vignette.</p></dd>
+from the vignette.</p></dd>
 
 
 <dt id="arg-dir">dir<a class="anchor" aria-label="anchor" href="#arg-dir"></a></dt>
@@ -104,17 +106,20 @@ are stored.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Invisibly returns <code>NULL</code> after writing a precomputed vignette.</p>
+    <p><code><a href="https://rdrr.io/r/base/NULL.html" class="external-link">NULL</a></code>, invisibly, after precomputing the vignettes.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>This function searches for the desired precomputed vignette in the
-<code>"./vignettes/"</code> directory and for plots in the root <code>"./"</code> directory.</p><div class="section">
+    <p>This function reads vignette source files from the package's <code>vignettes</code>
+directory and moves plots from the package root to that directory.</p>
+<p><code>precompute_vignette()</code> processes the files named in <code>source</code>.
+<code>precompute_vignette_all()</code> finds and processes every <code>.Rmd.orig</code> and
+<code>.qmd.orig</code> file in <code>dir</code>.</p><div class="section">
 <h3 id="important">Important<a class="anchor" aria-label="anchor" href="#important"></a></h3>
 
 
-<p>In your <code>.Rmd.orig</code> or <code>.qmd.orig</code> file, make sure you have set at least the
-following lines if you are producing plots:</p>
+<p>In your <code>.Rmd.orig</code> or <code>.qmd.orig</code> file, set the following chunk option when
+producing plots:</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="fu">knitr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/knitr/man/opts_chunk.html" class="external-link">opts_chunk</a></span><span class="op">$</span><span class="fu">set</span><span class="op">(</span></span>
 <span>  <span class="va">...</span>,</span>
 <span>  fig.path <span class="op">=</span> <span class="st">"./"</span>,</span>

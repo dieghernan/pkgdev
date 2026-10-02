@@ -1,6 +1,6 @@
 # Precomputed R Markdown vignette example
 
-This file is an example input for
+This file is an example **R Markdown** input for
 [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md).
 
 ``` r
@@ -11,12 +11,16 @@ ggplot(faithfuld, aes(waiting, eruptions)) +
   geom_raster(aes(fill = density))
 ```
 
-![A two-dimensional density plot of the \`faithfuld\` data.](plot-1.png)
+![Heatmap of Old Faithful geyser observations, with waiting time between
+eruptions in minutes on the horizontal axis and eruption duration in
+minutes on the vertical axis. Lighter colors indicate higher estimated
+density. Two clusters pair shorter waits with shorter eruptions and
+longer waits with longer eruptions.](plot-1.png)
 
 A two-dimensional density plot of the `faithfuld` data.
 
-The remaining text is intentionally long so the precompute workflow has
-enough content to render.
+The remaining text is intentionally long so the precomputation workflow
+has enough content to render.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
 efficitur massa risus, eu tincidunt magna finibus id. Donec quis

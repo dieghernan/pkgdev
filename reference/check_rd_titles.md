@@ -12,12 +12,14 @@ check_rd_titles(pkg = ".")
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 ## Value
 
-A data frame with one row per Rd file and columns for the source path,
-title, sentence-case title, final character and sentence-case check.
+A [data frame](https://rdrr.io/r/base/data.frame.html) with one row per
+Rd file and columns for the source path, title, sentence-case title,
+final character and sentence-case check. Returns
+[`NULL`](https://rdrr.io/r/base/NULL.html) if no Rd files are found.
 
 ## See also
 

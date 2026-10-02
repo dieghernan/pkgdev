@@ -4,7 +4,7 @@
 [`quarto::quarto_render()`](https://quarto-dev.github.io/quarto-r/reference/quarto_render.html)
 that first installs a temporary copy of the package, then renders each
 Quarto file in a clean R session. `build_readme_qmd()` locates your
-`README.qmd` and builds it into a `README.md`.
+`README.qmd` and builds it into `README.md`.
 
 ## Usage
 
@@ -36,7 +36,8 @@ build_readme_qmd(path = ".", quiet = TRUE, ...)
 
 ## Value
 
-`TRUE`, invisibly.
+A [logical](https://rdrr.io/r/base/logical.html) value, `TRUE`,
+invisibly, after rendering the Quarto files.
 
 ## See also
 

@@ -2,7 +2,7 @@
 
 The GitHub Actions workflow deploys a
 [pkgdown](https://CRAN.R-project.org/package=pkgdown) site for your
-package on the `gh-pages` branch.
+package to the `gh-pages` branch.
 
 ## Usage
 
@@ -24,24 +24,25 @@ Examples from
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 - overwrite:
 
-  Whether to overwrite an existing action.
+  Whether to overwrite an existing workflow file.
 
 - platform:
 
-  Platform to use for deploying the package. See **Details**.
+  Runner operating system to use for deploying the site. See
+  **Details**.
 
 - version:
 
-  Version of the platform. See **Details**.
+  Runner image version. See **Details**.
 
 ## Value
 
-Invisibly returns `NULL` after writing a GitHub Actions workflow to
-`<pkg>/.github/workflows`.
+[`NULL`](https://rdrr.io/r/base/NULL.html), invisibly, after writing a
+GitHub Actions workflow to `<pkg>/.github/workflows`.
 
 ## Details
 
@@ -49,6 +50,9 @@ Check <https://github.com/actions/runner-images> to see the available
 options.
 
 ## See also
+
+[`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html)
+builds the package website locally.
 
 GitHub Actions workflow helpers:
 [`gha_check_full()`](https://dieghernan.github.io/pkgdev/reference/gha_check_full.md),
@@ -58,10 +62,10 @@ GitHub Actions workflow helpers:
 
 ``` r
 # \dontrun{
-# With Ubuntu 20.04
+# With Ubuntu 20.04.
 gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/Rtmp4sA1Wp/file1bd5783bd747/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpqoTLIQ/file1ae128141660/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```

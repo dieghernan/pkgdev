@@ -29,7 +29,7 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 - figure_ext:
 
@@ -37,7 +37,7 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 - create_r_file:
 
-  Whether to create an additional R script with the code of the
+  Whether to create an additional R script with the code from the
   vignette.
 
 - dir:
@@ -51,17 +51,22 @@ Based on <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>.
 
 ## Value
 
-Invisibly returns `NULL` after writing a precomputed vignette.
+[`NULL`](https://rdrr.io/r/base/NULL.html), invisibly, after
+precomputing the vignettes.
 
 ## Details
 
-This function searches for the desired precomputed vignette in the
-`"./vignettes/"` directory and for plots in the root `"./"` directory.
+This function reads vignette source files from the package's `vignettes`
+directory and moves plots from the package root to that directory.
+
+`precompute_vignette()` processes the files named in `source`.
+`precompute_vignette_all()` finds and processes every `.Rmd.orig` and
+`.qmd.orig` file in `dir`.
 
 ### Important
 
-In your `.Rmd.orig` or `.qmd.orig` file, make sure you have set at least
-the following lines if you are producing plots:
+In your `.Rmd.orig` or `.qmd.orig` file, set the following chunk option
+when producing plots:
 
     knitr::opts_chunk$set(
       ...,

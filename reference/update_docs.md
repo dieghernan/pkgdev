@@ -1,6 +1,6 @@
 # Document your package
 
-Runs routine checks on the package:
+Performs routine package maintenance:
 
 - Clean `DESCRIPTION` with
   [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html).
@@ -17,8 +17,9 @@ Runs routine checks on the package:
 - Roxygenize with
   [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html).
 
-- Precompute vignettes if present (see
-  <https://ropensci.org/blog/2019/12/08/precompute-vignettes/>).
+- Precompute vignettes with
+  [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  if present.
 
 - Rebuild `README.qmd`, `README.Rmd` or
   [pkgdown](https://CRAN.R-project.org/package=pkgdown) index files, if
@@ -59,7 +60,7 @@ update_docs(
 
 - pkg:
 
-  Path to a (subdirectory of an) R package.
+  Path to the package root directory.
 
 - url_update:
 
@@ -84,14 +85,13 @@ update_docs(
 
 - verbose:
 
-  A logical value. Should informative messages be displayed on the
-  console?
+  A logical value. Should progress messages be displayed in the console?
 
 - precompute:
 
   A logical value. Should vignettes be detected and precomputed? See
   also
-  [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md).
+  [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md).
 
 - opt_imgs:
 
@@ -113,21 +113,24 @@ update_docs(
 
 ## Value
 
-Invisibly returns `NULL`. When `verbose = TRUE`, it emits progress
-messages.
+[`NULL`](https://rdrr.io/r/base/NULL.html), invisibly, after updating
+the package. Emits progress messages when `verbose = TRUE`.
 
 ## Details
 
-This function updates and cleans the package using a mix of best
-practices, such as checking URLs, roxygenizing and rebuilding the
-`README`. It also applies discretionary practices such as the
-[tidyverse](https://CRAN.R-project.org/package=tidyverse) approach for
-the `DESCRIPTION` file, overall code style and `codemeta.json`.
+This function checks URLs, regenerates roxygen2 documentation and
+rebuilds the `README`. It also applies the
+[tidyverse](https://CRAN.R-project.org/package=tidyverse) style to
+`DESCRIPTION` and package code and writes package metadata to
+`codemeta.json`.
 
 ## See also
 
 - [`build_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
   builds Quarto files.
+
+- [`build_readme_qmd()`](https://dieghernan.github.io/pkgdev/reference/build_qmd.md)
+  builds `README.md` from `README.qmd`.
 
 - [`check_rd_titles()`](https://dieghernan.github.io/pkgdev/reference/check_rd_titles.md)
   checks generated Rd titles.
@@ -135,29 +138,11 @@ the `DESCRIPTION` file, overall code style and `codemeta.json`.
 - [`gha_update_docs()`](https://dieghernan.github.io/pkgdev/reference/gha_update_docs.md)
   automates this workflow with GitHub Actions.
 
-- [`precompute_vignette()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
-  precomputes vignettes.
-
-- [`usethis::use_tidy_description()`](https://usethis.r-lib.org/reference/tidyverse.html)
-  cleans `DESCRIPTION`.
-
-- [`styler::style_pkg()`](https://styler.r-lib.org/reference/style_pkg.html)
-  styles package code.
-
-- [`urlchecker::url_check()`](https://urlchecker.r-lib.org/reference/url_check.html)
-  checks URLs.
-
-- [`roxygen2::roxygenise()`](https://roxygen2.r-lib.org/reference/roxygenize.html)
-  updates documentation.
+- [`precompute_vignette_all()`](https://dieghernan.github.io/pkgdev/reference/precompute.md)
+  precomputes all vignette source files.
 
 - [`devtools::build_readme()`](https://devtools.r-lib.org/reference/build_readme.html)
   builds `README.Rmd` files.
-
-- [`codemetar::write_codemeta()`](https://docs.ropensci.org/codemetar/reference/write_codemeta.html)
-  writes `codemeta.json`.
-
-- [`tools::resaveRdaFiles()`](https://rdrr.io/r/tools/checkRdaFiles.html)
-  compresses data files.
 
 Package maintenance helpers:
 [`add_global_gitgnore()`](https://dieghernan.github.io/pkgdev/reference/add_global_gitgnore.md)
