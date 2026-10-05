@@ -8,7 +8,7 @@ vignette: >
 ---
 
 ```{r}
-#| include = FALSE
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -24,8 +24,8 @@ knitr::opts_chunk$set(
 This file is an example **R Markdown** input for `precompute_vignette()`.
 
 ```{r}
-#| label = "plot",
-#| fig.cap = "A two-dimensional density plot of the `faithfuld` data."
+#| label: plot
+#| fig.cap: A two-dimensional density plot of the `faithfuld` data.
 #| fig.alt: >
 #|   Heatmap of Old Faithful geyser observations, with waiting time between
 #|   eruptions in minutes on the horizontal axis and eruption duration in

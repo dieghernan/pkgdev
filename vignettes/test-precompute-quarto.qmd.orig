@@ -27,7 +27,7 @@ This file is an example **Quarto** input for `precompute_vignette()`.
 
 ```{r}
 #| label: plot_quarto
-#| fig-cap: A two-dimensional density plot of the `faithfuld` data.
+#| fig.cap: A two-dimensional density plot of the `faithfuld` data.
 #| fig.alt: >
 #|   Heatmap of Old Faithful geyser observations, with waiting time between
 #|   eruptions in minutes on the horizontal axis and eruption duration in
