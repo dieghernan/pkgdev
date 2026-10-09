@@ -36,7 +36,7 @@ Package maintenance helpers:
 ``` r
 # \dontrun{
 add_global_gitgnore()
-#> ✔ Setting active project to "/tmp/RtmpiIIKTh/file1bff46f37145".
+#> ✔ Setting active project to "/tmp/Rtmph6zC6O/file1b382791a68f".
 #> ✔ Configuring core.excludesFile: ~/.gitignore
 #> ✔ Creating the global (user-level) gitignore: ~/.gitignore
 #> ✔ Adding ".Rproj.user", ".Rhistory", ".RData", ".httr-oauth", ".DS_Store", and
