@@ -1,58 +1,67 @@
 test_that("precompute_vignette_all() precomputes every orig vignette", {
+  state <- new.env(parent = emptyenv())
   pkg <- local_test_package()
   dir.create(file.path(pkg, "vignettes"))
   writeLines("Rmd", file.path(pkg, "vignettes", "one.Rmd.orig"))
   writeLines("qmd", file.path(pkg, "vignettes", "two.qmd.orig"))
   writeLines("plain", file.path(pkg, "vignettes", "three.Rmd"))
 
-  calls <- list()
+  state$calls <- list()
   local_mocked_bindings(
     precompute_vignette = function(source, pkg, ...) {
-      calls[[length(calls) + 1L]] <<- list(source = source, pkg = pkg)
+      state$calls[[length(state$calls) + 1L]] <- list(
+        source = source,
+        pkg = pkg
+      )
     }
   )
 
   precompute_vignette_all(pkg = pkg)
 
-  expect_length(calls, 1)
-  expect_equal(calls[[1]]$source, c("one.Rmd.orig", "two.qmd.orig"))
-  expect_equal(calls[[1]]$pkg, pkg)
+  expect_length(state$calls, 1)
+  expect_equal(state$calls[[1]]$source, c("one.Rmd.orig", "two.qmd.orig"))
+  expect_equal(state$calls[[1]]$pkg, pkg)
 })
 
 test_that("precompute_vignette_all() is quiet when no orig vignettes exist", {
+  state <- new.env(parent = emptyenv())
   pkg <- local_test_package()
   dir.create(file.path(pkg, "vignettes"))
   writeLines("plain", file.path(pkg, "vignettes", "plain.Rmd"))
 
-  calls <- 0L
+  state$calls <- 0L
   local_mocked_bindings(
     precompute_vignette = function(...) {
-      calls <<- calls + 1L
+      state$calls <- state$calls + 1L
     }
   )
 
   precompute_vignette_all(pkg = pkg)
 
-  expect_equal(calls, 0L)
+  expect_equal(state$calls, 0L)
 })
 
 test_that("precompute_vignette_all() respects custom vignette directories", {
+  state <- new.env(parent = emptyenv())
   pkg <- local_test_package()
   dir.create(file.path(pkg, "articles"))
   writeLines("article", file.path(pkg, "articles", "article.qmd.orig"))
 
-  calls <- list()
+  state$calls <- list()
   local_mocked_bindings(
     precompute_vignette = function(source, pkg, ...) {
-      calls[[length(calls) + 1L]] <<- list(source = source, pkg = pkg)
+      state$calls[[length(state$calls) + 1L]] <- list(
+        source = source,
+        pkg = pkg
+      )
     }
   )
 
   precompute_vignette_all(dir = "articles", pkg = pkg)
 
-  expect_length(calls, 1)
-  expect_equal(calls[[1]]$source, "article.qmd.orig")
-  expect_equal(calls[[1]]$pkg, pkg)
+  expect_length(state$calls, 1)
+  expect_equal(state$calls[[1]]$source, "article.qmd.orig")
+  expect_equal(state$calls[[1]]$pkg, pkg)
 })
 
 test_that("precompute_vignette() writes a precomputed R Markdown vignette", {

@@ -1,4 +1,5 @@
 test_that("add_global_gitgnore() writes package ignore files", {
+  state <- new.env(parent = emptyenv())
   pkg <- local_test_project()
   withr::local_dir(pkg)
   dir.create(file.path(pkg, "revdep"))
@@ -13,15 +14,15 @@ test_that("add_global_gitgnore() writes package ignore files", {
   )
   writeLines(c("keep", "revdep"), ".gitignore")
 
-  vaccinated <- 0L
+  state$vaccinated <- 0L
   local_mocked_bindings(
     add_global_git_vaccinate = function(...) {
-      vaccinated <<- vaccinated + 1L
+      state$vaccinated <- state$vaccinated + 1L
     }
   )
 
   expect_null(add_global_gitgnore(pkg = "."))
-  expect_equal(vaccinated, 1L)
+  expect_equal(state$vaccinated, 1L)
 
   root_gitignore <- readLines(".gitignore")
   expect_contains(root_gitignore, "keep")

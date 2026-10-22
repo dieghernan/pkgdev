@@ -103,6 +103,138 @@ update_docs <- function(
   }
   add_global_gitgnore(pkg = pkg)
 
+  update_docs_editor_settings(pkg, verbose)
+
+  if (verbose) {
+    cli::cli_alert_info("Cleaning {.file DESCRIPTION}.")
+  }
+
+  # Extract keywords and save them for later.
+  d <- desc::desc(file.path(pkg, "DESCRIPTION"))
+  k <- d$get("X-schema.org-keywords")
+  k <- gsub("\\n", "", unname(k))
+  key <- trimws(unlist(strsplit(k, ",")))
+  key <- key[!is.na(key)]
+  if (length(key) > 0) {
+    key <- unique(tolower(key))
+
+    desc::desc_set_list(
+      "X-schema.org-keywords",
+      key,
+      file = file.path(pkg, "DESCRIPTION")
+    )
+  }
+
+  # Update the roxygen2 configuration for version 8.
+  dsc_f <- file.path(pkg, "DESCRIPTION")
+  dsc_lines <- readLines(dsc_f)
+
+  dsc_lines[dsc_lines == "Config/roxygen2/version: 8.0.0.9000"] <- paste0(
+    "Config/roxygen2/version: ",
+    "8.0.0"
+  )
+  dsc_lines <- dsc_lines[!grepl("Roxygen: list", dsc_lines, fixed = TRUE)]
+  dsc_lines <- unique(c(dsc_lines, "Config/roxygen2/markdown: TRUE"))
+
+  usethis::write_over(dsc_f, dsc_lines, overwrite = TRUE)
+
+  usethis::use_tidy_description()
+  usethis::use_air()
+
+  update_docs_vscode(pkg, verbose)
+
+  if (url_update) {
+    if (verbose) {
+      cli::cli_alert_info("Checking URLs with {.pkg urlchecker}.")
+    }
+    urlchecker::url_update(pkg)
+  }
+
+  data_dirs <- file.path(pkg, c("R", "data"))
+  data_dirs <- data_dirs[dir.exists(data_dirs)]
+  if (verbose) {
+    cli::cli_alert_info("Compressing data in {.path {data_dirs}}.")
+  }
+  tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
+  if (dir.exists(file.path(pkg, "data"))) {
+    tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
+  }
+
+  update_docs_tools(pkg, verbose, d)
+
+  update_docs_format(pkg, verbose)
+
+  if (verbose) {
+    cli::cli_alert_info("Roxygenizing package with {.pkg roxygen2}.")
+  }
+  roxygen2::roxygenise()
+
+  update_docs_check_rd(pkg, verbose)
+
+  if (precompute) {
+    if (verbose) {
+      cli::cli_alert_info("Precomputing vignettes.")
+    }
+    precompute_vignette_all(pkg = pkg, ...)
+  }
+  update_docs_readme(pkg, verbose, build_readme)
+
+  if (opt_imgs) {
+    try(resmush::resmush_dir(
+      dir = opt_dir,
+      ext = opt_ext,
+      report = verbose,
+      overwrite = opt_overwrite
+    ))
+    # Run a second pass when `optipng` is installed.
+    lapply(opt_dir, xfun::optipng)
+    try(pkgdown::build_favicons(overwrite = TRUE))
+  }
+
+  if (create_cff) {
+    if (verbose) {
+      cli::cli_alert_info("Creating {.file CITATION.cff} with {.pkg cffr}.")
+    }
+
+    cffr::cff_write(...)
+    cffread <- cffr::cff_read(file.path(pkg, "CITATION.cff"))
+
+    key <- unname(c(key, cffread$keywords))
+  }
+
+  # Finally, add all keywords from `DESCRIPTION` and `CITATION.cff`.
+
+  key <- trimws(key)
+  key <- key[!is.na(key)]
+  if (length(key) > 0) {
+    key <- unique(tolower(key))
+
+    desc::desc_set_list(
+      "X-schema.org-keywords",
+      key,
+      file = file.path(pkg, "DESCRIPTION")
+    )
+  }
+
+  usethis::use_tidy_description()
+
+  if (dir.exists("inst")) {
+    list_inst <- list.files("inst")
+    if (length(list_inst) == 0) unlink("inst", recursive = TRUE)
+  }
+
+  if (create_codemeta) {
+    if (verbose) {
+      cli::cli_alert_info(
+        "Creating {.file codemeta.json} with {.pkg codemetar}."
+      )
+    }
+    codemetar::write_codemeta(write_minimeta = TRUE)
+  }
+
+  invisible()
+}
+update_docs_editor_settings <- function(pkg, verbose) {
   this <- list.files(".", pattern = "Rproj$")
 
   if (all(file.exists(this), length(this) > 0)) {
@@ -183,43 +315,9 @@ update_docs <- function(
     newln <- c(lnt, 'exclusions: list("data-raw")')
     writeLines(newln, ".lintr")
   }
+}
 
-  if (verbose) {
-    cli::cli_alert_info("Cleaning {.file DESCRIPTION}.")
-  }
-
-  # Extract keywords and save them for later.
-  d <- desc::desc(file.path(pkg, "DESCRIPTION"))
-  k <- d$get("X-schema.org-keywords")
-  k <- gsub("\\n", "", unname(k))
-  key <- trimws(unlist(strsplit(k, ",")))
-  key <- key[!is.na(key)]
-  if (length(key) > 0) {
-    key <- unique(tolower(key))
-
-    desc::desc_set_list(
-      "X-schema.org-keywords",
-      key,
-      file = file.path(pkg, "DESCRIPTION")
-    )
-  }
-
-  # Update the roxygen2 configuration for version 8.
-  dsc_f <- file.path(pkg, "DESCRIPTION")
-  dsc_lines <- readLines(dsc_f)
-
-  dsc_lines[dsc_lines == "Config/roxygen2/version: 8.0.0.9000"] <- paste0(
-    "Config/roxygen2/version: ",
-    "8.0.0"
-  )
-  dsc_lines <- dsc_lines[!grepl("Roxygen: list", dsc_lines, fixed = TRUE)]
-  dsc_lines <- unique(c(dsc_lines, "Config/roxygen2/markdown: TRUE"))
-
-  usethis::write_over(dsc_f, dsc_lines, overwrite = TRUE)
-
-  usethis::use_tidy_description()
-  usethis::use_air()
-
+update_docs_vscode <- function(pkg, verbose) {
   setting_json_file <- file.path(pkg, ".vscode", "settings.json")
 
   if (file.exists(setting_json_file)) {
@@ -304,24 +402,9 @@ ignore = [\"implicit_assignment\"]",
       "jarl.toml"
     )
   }
+}
 
-  if (url_update) {
-    if (verbose) {
-      cli::cli_alert_info("Checking URLs with {.pkg urlchecker}.")
-    }
-    urlchecker::url_update(pkg)
-  }
-
-  data_dirs <- file.path(pkg, c("R", "data"))
-  data_dirs <- data_dirs[dir.exists(data_dirs)]
-  if (verbose) {
-    cli::cli_alert_info("Compressing data in {.path {data_dirs}}.")
-  }
-  tools::resaveRdaFiles(file.path(pkg, "R"), compress = "auto")
-  if (dir.exists(file.path(pkg, "data"))) {
-    tools::resaveRdaFiles(file.path(pkg, "data"), compress = "auto")
-  }
-
+update_docs_tools <- function(pkg, verbose, d) {
   if (nzchar(Sys.which("git"))) {
     system2("git", "config --global core.autocrlf true")
   }
@@ -373,7 +456,9 @@ ignore = [\"implicit_assignment\"]",
     }
     system2("air", "format .")
   }
+}
 
+update_docs_format <- function(pkg, verbose) {
   # Replace `link-citations: yes` with `link-citations: true`.
   rmd <- list.files(
     pattern = "Rmd$|Rmd.orig$",
@@ -499,12 +584,9 @@ ignore = [\"implicit_assignment\"]",
       usethis::write_over(x, lns, quiet = FALSE, overwrite = TRUE)
     })
   }
+}
 
-  if (verbose) {
-    cli::cli_alert_info("Roxygenizing package with {.pkg roxygen2}.")
-  }
-  roxygen2::roxygenise()
-
+update_docs_check_rd <- function(pkg, verbose) {
   if (verbose) {
     cli::cli_alert_info("Checking Rd titles.")
   }
@@ -565,13 +647,9 @@ ignore = [\"implicit_assignment\"]",
   desc_obj <- desc::desc(pkg)
   pkname <- desc_obj$get("Package")
   codetools::checkUsagePackage(pkname)
+}
 
-  if (precompute) {
-    if (verbose) {
-      cli::cli_alert_info("Precomputing vignettes.")
-    }
-    precompute_vignette_all(pkg = pkg, ...)
-  }
+update_docs_readme <- function(pkg, verbose, build_readme) {
   # Check `README.Rmd`.
   readme_rmd <- file.path(pkg, "README.Rmd")
   index_rmd <- file.path(pkg, "index.Rmd")
@@ -642,62 +720,8 @@ ignore = [\"implicit_assignment\"]",
       devtools::build_readme(pkg, quiet = isFALSE(verbose))
     }
   }
-
-  if (opt_imgs) {
-    try(resmush::resmush_dir(
-      dir = opt_dir,
-      ext = opt_ext,
-      report = verbose,
-      overwrite = opt_overwrite
-    ))
-    # Run a second pass when `optipng` is installed.
-    lapply(opt_dir, xfun::optipng)
-    try(pkgdown::build_favicons(overwrite = TRUE))
-  }
-
-  if (create_cff) {
-    if (verbose) {
-      cli::cli_alert_info("Creating {.file CITATION.cff} with {.pkg cffr}.")
-    }
-
-    cffr::cff_write(...)
-    cffread <- cffr::cff_read(file.path(pkg, "CITATION.cff"))
-
-    key <- unname(c(key, cffread$keywords))
-  }
-
-  # Finally, add all keywords from `DESCRIPTION` and `CITATION.cff`.
-
-  key <- trimws(key)
-  key <- key[!is.na(key)]
-  if (length(key) > 0) {
-    key <- unique(tolower(key))
-
-    desc::desc_set_list(
-      "X-schema.org-keywords",
-      key,
-      file = file.path(pkg, "DESCRIPTION")
-    )
-  }
-
-  usethis::use_tidy_description()
-
-  if (dir.exists("inst")) {
-    list_inst <- list.files("inst")
-    if (length(list_inst) == 0) unlink("inst", recursive = TRUE)
-  }
-
-  if (create_codemeta) {
-    if (verbose) {
-      cli::cli_alert_info(
-        "Creating {.file codemeta.json} with {.pkg codemetar}."
-      )
-    }
-    codemetar::write_codemeta(write_minimeta = TRUE)
-  }
-
-  invisible()
 }
+
 # nocov end
 
 env_var_is_true <- function(x) {
