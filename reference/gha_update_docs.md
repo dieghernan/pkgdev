@@ -67,7 +67,7 @@ GitHub Actions workflow helpers:
 # With Ubuntu 20.04.
 gha_update_docs(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/Rtmpj9y8sU/file1cd2dadb70e/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/Rtmp0qD2qj/file1c5d5651b317/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```
