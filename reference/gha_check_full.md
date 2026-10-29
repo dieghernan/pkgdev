@@ -55,7 +55,7 @@ GitHub Actions workflow helpers:
 # \dontrun{
 gha_check_full(cron_expr = "57 16 12 * *")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmpPJkwOG/file1aa86d56e2b7/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/RtmpG5dDc6/file1a0c29572535/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```
