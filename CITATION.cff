@@ -57,8 +57,7 @@ references:
   doi: 10.32614/R.manuals
   version: '>= 4.1.0'
 - type: software
-  title: cffr
-  abstract: 'cffr: Generate Citation File Format (''CFF'') Metadata'
+  title: 'cffr: Generate Citation File Format (''CFF'') Metadata'
   notes: Imports
   url: https://docs.ropensci.org/cffr/
   repository: https://CRAN.R-project.org/package=cffr
@@ -71,8 +70,7 @@ references:
   doi: 10.32614/CRAN.package.cffr
   version: '>= 0.2.0'
 - type: software
-  title: cli
-  abstract: 'cli: Helpers for Developing Command Line Interfaces'
+  title: 'cli: Helpers for Developing Command Line Interfaces'
   notes: Imports
   url: https://cli.r-lib.org
   repository: https://CRAN.R-project.org/package=cli
@@ -84,8 +82,7 @@ references:
   doi: 10.32614/CRAN.package.cli
   version: '>= 3.4.0'
 - type: software
-  title: codemetar
-  abstract: 'codemetar: Generate ''CodeMeta'' Metadata for R Packages'
+  title: 'codemetar: Generate ''CodeMeta'' Metadata for R Packages'
   notes: Imports
   url: https://docs.ropensci.org/codemetar/
   repository: https://CRAN.R-project.org/package=codemetar
@@ -101,8 +98,7 @@ references:
   doi: 10.32614/CRAN.package.codemetar
   version: '>= 0.3.3'
 - type: software
-  title: codetools
-  abstract: 'codetools: Code Analysis Tools for R'
+  title: 'codetools: Code Analysis Tools for R'
   notes: Imports
   url: https://gitlab.com/luke-tierney/codetools
   repository: https://CRAN.R-project.org/package=codetools
@@ -110,11 +106,10 @@ references:
   - family-names: Tierney
     given-names: Luke
     email: luke-tierney@uiowa.edu
-  year: '2026'
+  year: '2024'
   doi: 10.32614/CRAN.package.codetools
 - type: software
-  title: desc
-  abstract: 'desc: Manipulate DESCRIPTION Files'
+  title: 'desc: Manipulate DESCRIPTION Files'
   notes: Imports
   url: https://desc.r-lib.org/
   repository: https://CRAN.R-project.org/package=desc
@@ -127,11 +122,10 @@ references:
   - family-names: Hester
     given-names: Jim
     email: james.f.hester@gmail.com
-  year: '2026'
+  year: '2023'
   doi: 10.32614/CRAN.package.desc
 - type: software
-  title: devtools
-  abstract: 'devtools: Tools to Make Developing R Packages Easier'
+  title: 'devtools: Tools to Make Developing R Packages Easier'
   notes: Imports
   url: https://devtools.r-lib.org/
   repository: https://CRAN.R-project.org/package=devtools
@@ -150,8 +144,7 @@ references:
   doi: 10.32614/CRAN.package.devtools
   version: '>= 2.5.0'
 - type: software
-  title: jsonlite
-  abstract: 'jsonlite: A Simple and Robust JSON Parser and Generator for R'
+  title: 'jsonlite: A Simple and Robust JSON Parser and Generator for R'
   notes: Imports
   url: https://jeroen.r-universe.dev/jsonlite
   repository: https://CRAN.R-project.org/package=jsonlite
@@ -160,11 +153,10 @@ references:
     given-names: Jeroen
     email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2026'
+  year: '2025'
   doi: 10.32614/CRAN.package.jsonlite
 - type: software
-  title: knitr
-  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  title: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
   notes: Imports
   url: https://yihui.org/knitr/
   repository: https://CRAN.R-project.org/package=knitr
@@ -177,8 +169,7 @@ references:
   doi: 10.32614/CRAN.package.knitr
   version: '>= 1.33'
 - type: software
-  title: lintr
-  abstract: 'lintr: A ''Linter'' for R Code'
+  title: 'lintr: A ''Linter'' for R Code'
   notes: Imports
   url: https://lintr.r-lib.org
   repository: https://CRAN.R-project.org/package=lintr
@@ -210,8 +201,7 @@ references:
   doi: 10.32614/CRAN.package.lintr
   version: '>= 2.0.1'
 - type: software
-  title: pkgdown
-  abstract: 'pkgdown: Make Static HTML Documentation for a Package'
+  title: 'pkgdown: Make Static HTML Documentation for a Package'
   notes: Imports
   url: https://pkgdown.r-lib.org/
   repository: https://CRAN.R-project.org/package=pkgdown
@@ -234,8 +224,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.pkgdown
 - type: software
-  title: quarto
-  abstract: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
+  title: 'quarto: R Interface to ''Quarto'' Markdown Publishing System'
   notes: Imports
   url: https://quarto-dev.github.io/quarto-r/
   repository: https://CRAN.R-project.org/package=quarto
@@ -251,8 +240,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.quarto
 - type: software
-  title: resmush
-  abstract: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
+  title: 'resmush: Optimize and Compress Image Files with ''reSmush.it'''
   notes: Imports
   url: https://dieghernan.github.io/resmush/
   repository: https://CRAN.R-project.org/package=resmush
@@ -264,8 +252,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.resmush
 - type: software
-  title: roxygen2
-  abstract: 'roxygen2: In-Line Documentation for R'
+  title: 'roxygen2: In-Line Documentation for R'
   notes: Imports
   url: https://roxygen2.r-lib.org/
   repository: https://CRAN.R-project.org/package=roxygen2
@@ -286,8 +273,7 @@ references:
   doi: 10.32614/CRAN.package.roxygen2
   version: '>= 8.0.0'
 - type: software
-  title: roxygen2md
-  abstract: 'roxygen2md: ''Roxygen'' to ''Markdown'''
+  title: 'roxygen2md: ''Roxygen'' to ''Markdown'''
   notes: Imports
   url: https://roxygen2md.r-lib.org/
   repository: https://CRAN.R-project.org/package=roxygen2md
@@ -295,11 +281,10 @@ references:
   - family-names: Müller
     given-names: Kirill
     email: kirill@cynkra.com
-  year: '2026'
+  year: '2024'
   doi: 10.32614/CRAN.package.roxygen2md
 - type: software
-  title: stringr
-  abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
+  title: 'stringr: Simple, Consistent Wrappers for Common String Operations'
   notes: Imports
   url: https://stringr.tidyverse.org
   repository: https://CRAN.R-project.org/package=stringr
@@ -307,11 +292,10 @@ references:
   - family-names: Wickham
     given-names: Hadley
     email: hadley@posit.co
-  year: '2026'
+  year: '2025'
   doi: 10.32614/CRAN.package.stringr
 - type: software
-  title: styler
-  abstract: 'styler: Non-Invasive Pretty Printing of R Code'
+  title: 'styler: Non-Invasive Pretty Printing of R Code'
   notes: Imports
   url: https://styler.r-lib.org
   repository: https://CRAN.R-project.org/package=styler
@@ -327,12 +311,11 @@ references:
     given-names: Indrajeet
     email: patilindrajeet.science@gmail.com
     orcid: https://orcid.org/0000-0003-1995-6531
-  year: '2026'
+  year: '2025'
   doi: 10.32614/CRAN.package.styler
   version: '>= 1.5.1'
 - type: software
-  title: tools
-  abstract: 'R: A Language and Environment for Statistical Computing'
+  title: 'R: A Language and Environment for Statistical Computing'
   notes: Imports
   authors:
   - name: R Core Team
@@ -344,8 +327,7 @@ references:
   year: '2026'
   doi: 10.32614/R.manuals
 - type: software
-  title: urlchecker
-  abstract: 'urlchecker: Run CRAN URL Checks from Older R Versions'
+  title: 'urlchecker: Run CRAN URL Checks from Older R Versions'
   notes: Imports
   url: https://urlchecker.r-lib.org/
   repository: https://CRAN.R-project.org/package=urlchecker
@@ -361,8 +343,7 @@ references:
   doi: 10.32614/CRAN.package.urlchecker
   version: '>= 1.0.0'
 - type: software
-  title: usethis
-  abstract: 'usethis: Automate Package and Project Setup'
+  title: 'usethis: Automate Package and Project Setup'
   notes: Imports
   url: https://usethis.r-lib.org
   repository: https://CRAN.R-project.org/package=usethis
@@ -387,21 +368,7 @@ references:
   doi: 10.32614/CRAN.package.usethis
   version: '>= 2.2.2'
 - type: software
-  title: utils
-  abstract: 'R: A Language and Environment for Statistical Computing'
-  notes: Imports
-  authors:
-  - name: R Core Team
-    website: https://ror.org/02zz1nj61
-  institution:
-    name: R Foundation for Statistical Computing
-    website: https://ror.org/05qewa988
-    address: Vienna, Austria
-  year: '2026'
-  doi: 10.32614/R.manuals
-- type: software
-  title: withr
-  abstract: 'withr: Run Code ''With'' Temporarily Modified Global State'
+  title: 'withr: Run Code ''With'' Temporarily Modified Global State'
   notes: Imports
   url: https://withr.r-lib.org
   repository: https://CRAN.R-project.org/package=withr
@@ -425,8 +392,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.withr
 - type: software
-  title: xfun
-  abstract: 'xfun: Supporting Functions for Packages Maintained by ''Yihui Xie'''
+  title: 'xfun: Supporting Functions for Packages Maintained by ''Yihui Xie'''
   notes: Imports
   url: https://github.com/yihui/xfun
   repository: https://CRAN.R-project.org/package=xfun
@@ -438,8 +404,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.xfun
 - type: software
-  title: ggplot2
-  abstract: 'ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics'
+  title: 'ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics'
   notes: Suggests
   url: https://ggplot2.tidyverse.org
   repository: https://CRAN.R-project.org/package=ggplot2
@@ -478,8 +443,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.ggplot2
 - type: software
-  title: jsonld
-  abstract: 'jsonld: JSON for Linking Data'
+  title: 'jsonld: JSON for Linking Data'
   notes: Suggests
   url: https://docs.ropensci.org/jsonld/
   repository: https://CRAN.R-project.org/package=jsonld
@@ -488,11 +452,10 @@ references:
     given-names: Jeroen
     email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
-  year: '2026'
+  year: '2024'
   doi: 10.32614/CRAN.package.jsonld
 - type: software
-  title: rmarkdown
-  abstract: 'rmarkdown: Dynamic Documents for R'
+  title: 'rmarkdown: Dynamic Documents for R'
   notes: Suggests
   url: https://pkgs.rstudio.com/rmarkdown/
   repository: https://CRAN.R-project.org/package=rmarkdown
@@ -535,8 +498,7 @@ references:
   year: '2026'
   doi: 10.32614/CRAN.package.rmarkdown
 - type: software
-  title: testthat
-  abstract: 'testthat: Unit Testing for R'
+  title: 'testthat: Unit Testing for R'
   notes: Suggests
   url: https://testthat.r-lib.org
   repository: https://CRAN.R-project.org/package=testthat
@@ -548,8 +510,7 @@ references:
   doi: 10.32614/CRAN.package.testthat
   version: '>= 3.0.0'
 - type: software
-  title: yaml
-  abstract: 'yaml: Methods to Convert R Data to YAML and Back'
+  title: 'yaml: Methods to Convert R Data to YAML and Back'
   notes: Suggests
   url: https://yaml.r-lib.org
   repository: https://CRAN.R-project.org/package=yaml
@@ -558,6 +519,6 @@ references:
     given-names: Jeremy
   - family-names: Simonov
     given-names: Kirill
-  year: '2026'
+  year: '2025'
   doi: 10.32614/CRAN.package.yaml
 
