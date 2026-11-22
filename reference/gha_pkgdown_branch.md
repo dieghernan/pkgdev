@@ -65,7 +65,7 @@ GitHub Actions workflow helpers:
 # With Ubuntu 20.04.
 gha_pkgdown_branch(platform = "ubuntu", version = "20.04")
 #> ✔ Adding "R-version" to .github/.gitignore.
-#> Warning: cannot open file '/tmp/RtmptR5MdO/file1a58507f6434/.github/.gitignore': No such file or directory
+#> Warning: cannot open file '/tmp/Rtmp92FMaw/file1ae056d7d3d2/.github/.gitignore': No such file or directory
 #> Error in file(path, open = file_mode, encoding = "utf-8"): cannot open the connection
 # }
 ```
